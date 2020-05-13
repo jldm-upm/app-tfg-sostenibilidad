@@ -1,11 +1,16 @@
 <template>
-  <q-page class="flex flex-center">
+  <q-page>
     index
   </q-page>
 </template>
 
 <script>
 export default {
-  name: 'PageIndex'
+  name: 'PageIndex',
+  data () {
+    return {
+
+    }
+  }
 }
 </script>

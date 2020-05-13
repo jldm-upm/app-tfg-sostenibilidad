@@ -1,11 +1,11 @@
 <template>
-  <q-page class="flex flex-center">
+  <q-page>
     list
   </q-page>
 </template>
 
 <script>
 export default {
-  name: 'PageIndex'
+  name: 'PageList'
 }
 </script>
