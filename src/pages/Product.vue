@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex flex-center">
-    index
+    product
   </q-page>
 </template>
 
