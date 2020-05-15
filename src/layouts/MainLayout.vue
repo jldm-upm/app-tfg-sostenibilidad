@@ -1,109 +1,103 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
+  <q-layout view="hHh lpR fFf">
+    <q-header
+      class="bg-primary text-white">
+      <div>
         <q-btn
-          flat
           dense
+          flat
           round
           icon="menu"
-          aria-label="Menu"
-          @click="leftDrawerOpen = !leftDrawerOpen"
-        />
-
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
+          size="lg"
+          @click="leftDrawer = !leftDrawer"/>
+        <div
+          class="text-h5 q-ma-sm text-white">
+          {{ $t('mainlayout.title') }}
+        </div>
+        <q-toolbar
+          class="bg-primary q-pa-sm">
+          <q-space />
+          <q-input
+            class="col"
+            type="search"
+            outlined
+            clearable
+            v-model="codigo"
+            clear-icon="close"
+            bg-color="white"
+            label-color="secondary"
+            @keyup.enter="buscar"
+            :label="$t('mainlayout.search')"
+            >
+          </q-input>
+            <q-btn
+              round
+              size="lg"
+              icon="camera"
+              @click.stop="camara"
+              />
+        </q-toolbar>
+      </div>
+      <q-img
+        src="statics/ml_h_bg.jpg"
+        class="header-image absolute-top">
+        <div class="absolute-top text-right text-md">
+          "Bud" by Aram Vartian is licensed under CC PDM 1.0
+        </div>
+      </q-img>
     </q-header>
 
     <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      content-class="bg-grey-1"
-    >
-      <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
-          Essential Links
-        </q-item-label>
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
+      elevated
+      overlay
+      v-model="leftDrawer"
+      side="left"
+      behavior="mobile"
+      >
+      <!-- drawer content -->
     </q-drawer>
 
     <q-page-container>
       <router-view />
     </q-page-container>
+
   </q-layout>
 </template>
 
 <script>
-import EssentialLink from 'components/EssentialLink'
-
 export default {
   name: 'MainLayout',
 
   components: {
-    EssentialLink
+
   },
 
   data () {
     return {
-      leftDrawerOpen: false,
-      essentialLinks: [
-        {
-          title: 'Docs',
-          caption: 'quasar.dev',
-          icon: 'school',
-          link: 'https://quasar.dev'
-        },
-        {
-          title: 'Github',
-          caption: 'github.com/quasarframework',
-          icon: 'code',
-          link: 'https://github.com/quasarframework'
-        },
-        {
-          title: 'Discord Chat Channel',
-          caption: 'chat.quasar.dev',
-          icon: 'chat',
-          link: 'https://chat.quasar.dev'
-        },
-        {
-          title: 'Forum',
-          caption: 'forum.quasar.dev',
-          icon: 'record_voice_over',
-          link: 'https://forum.quasar.dev'
-        },
-        {
-          title: 'Twitter',
-          caption: '@quasarframework',
-          icon: 'rss_feed',
-          link: 'https://twitter.quasar.dev'
-        },
-        {
-          title: 'Facebook',
-          caption: '@QuasarFramework',
-          icon: 'public',
-          link: 'https://facebook.quasar.dev'
-        },
-        {
-          title: 'Quasar Awesome',
-          caption: 'Community Quasar projects',
-          icon: 'favorite',
-          link: 'https://awesome.quasar.dev'
-        }
-      ]
+      codigo: '',
+      leftDrawer: false
+    }
+  },
+
+  methods: {
+    buscar () {
+      if (this.codigo.length > 0) {
+        console.log(`Buscando ${this.codigo}`)
+        this.codigo = ''
+      }
+    },
+    camara () {
+
     }
   }
 }
 </script>
+
+<style lang="scss">
+.header-image {
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    filter: grayscale(90%);
+}
+</style>
