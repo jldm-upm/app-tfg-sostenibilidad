@@ -1,8 +1,8 @@
 <template>
-  <q-layout view="hHh lpR fFf">
+  <q-layout
+    view="hHh lpR fFf">
     <q-header
-      class="bg-secondary text-white">
-      <div>
+      class="text-white">
         <q-btn
           dense
           flat
@@ -50,14 +50,10 @@
             v-ripple:secondary
             />
         </q-toolbar>
-      </div>
-      <q-img
-        src=""
-        class="header-image">
-        <div class="absolute-top text-right text-md">
-
-        </div>
-      </q-img>
+        <q-img
+          class="header-image absolute-top"
+          src="/statics/SDG_Wheel_Transparent_WEB.png"
+          />
     </q-header>
 
     <q-drawer
@@ -156,7 +152,7 @@ export default {
 .header-image {
     height: 100%;
     z-index: -1;
-    opacity: 0.5;
-    filter: grayscale(90%);
+    opacity: 0.2;
+    filter: grayscale(100%);
 }
 </style>
