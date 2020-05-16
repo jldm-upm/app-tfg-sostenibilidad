@@ -1,7 +1,7 @@
 <template>
   <q-layout view="hHh lpR fFf">
     <q-header
-      class="bg-primary text-white">
+      class="bg-secondary text-white">
       <div>
         <q-btn
           dense
@@ -26,23 +26,36 @@
             clear-icon="close"
             bg-color="white"
             label-color="secondary"
-            @keyup.enter="buscar"
             :label="$t('mainlayout.search')"
+            @keyup.enter="buscar"
             >
+            <template v-slot:prepend>
+              <q-btn
+                rounded
+                flat
+                size="lg"
+                icon="search"
+                to="/capture"
+                @click="buscar"
+                />
+            </template>
           </q-input>
-            <q-btn
-              round
-              size="lg"
-              icon="camera"
-              @click.stop="camara"
-              />
+          <q-btn
+            class="q-ml-lg"
+            rounded
+            shadow
+            size="lg"
+            icon="photo_camera"
+            to="/capture"
+            v-ripple:secondary
+            />
         </q-toolbar>
       </div>
       <q-img
-        src="statics/ml_h_bg.jpg"
-        class="header-image absolute-top">
+        src=""
+        class="header-image">
         <div class="absolute-top text-right text-md">
-          "Bud" by Aram Vartian is licensed under CC PDM 1.0
+
         </div>
       </q-img>
     </q-header>
@@ -65,29 +78,75 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
+import axios from 'axios'
+
 export default {
   name: 'MainLayout',
-
-  components: {
-
-  },
 
   data () {
     return {
       codigo: '',
+      // visibilidad panel izqdo.
       leftDrawer: false
     }
   },
 
   methods: {
+    ...mapActions('appStatus', ['setError', 'setProduct']),
+    ...mapGetters('appStatus', ['getBaseURL']),
+
     buscar () {
+      const baseURL = this.getBaseURL()
       if (this.codigo.length > 0) {
-        console.log(`Buscando ${this.codigo}`)
+        console.log(`Buscando ${this.codigo} en ${baseURL}`)
+        this.$q.loading.show()
+        axios.get(`${baseURL}/product/${this.codigo}.json`)
+          .then(response => {
+            this.$q.loading.hide()
+            if (response.data.status === 1) {
+              this.setProduct(response.data.product)
+              this.$q.notify({
+                type: 'positive',
+                message: `${this.$t('off.product.found')} ${response.data.product.product_name}`
+              })
+              this.$router.push('/product')
+                .catch(error => {
+                  if (error.name !== 'NavigationDuplicated') {
+                    throw error
+                  }
+                })
+            } else {
+              this.setError(response.data)
+              this.$q.notify({
+                type: 'negative',
+                message: `Product ${this.$t('off.product.not-found')}!`
+              })
+            }
+          })
+          .catch(error => {
+            this.$q.loading.hide()
+
+            const negType = 'negative'
+            let msg = this.$t('off.errors.server-problem')
+
+            this.setError(error)
+
+            if (error.response) {
+              msg = this.$t('off.errors.server-problem')(error.response.status)
+            } else if (error.request) {
+              msg = this.$t('off.errors.serverProblem')(error.request)
+            } else {
+              msg = this.$t('off.errors.server-problem')(this.$t('off.notResponse'))
+            }
+            this.$q.notify({
+              type: negType,
+              message: msg
+            })
+          })
+
         this.codigo = ''
       }
-    },
-    camara () {
-
     }
   }
 }

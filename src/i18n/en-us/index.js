@@ -7,5 +7,16 @@ export default {
   mainlayout: {
     search: 'Search',
     title: 'Sustanibility App'
+  },
+  off: {
+    errors: {
+      'not-response': 'Without response!',
+      'server-problem': 'Problem accessing service!'
+    },
+    product: {
+      product: 'product',
+      found: 'found',
+      'not-found': 'not found'
+    }
   }
 }
