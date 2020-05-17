@@ -89,15 +89,16 @@ export default {
   },
 
   methods: {
-    ...mapActions('appStatus', ['setError', 'setProduct']),
+    ...mapActions('appStatus', ['setLastError', 'setProduct']),
     ...mapGetters('appStatus', ['getBaseURL']),
 
     buscar () {
       const baseURL = this.getBaseURL()
       if (this.codigo.length > 0) {
-        console.log(`Buscando ${this.codigo} en ${baseURL}`)
+        const url = `${baseURL}/product/${this.codigo}.json`
+        console.log(url)
         this.$q.loading.show()
-        axios.get(`${baseURL}/product/${this.codigo}.json`)
+        axios.get(url)
           .then(response => {
             this.$q.loading.hide()
             if (response.data.status === 1) {
@@ -109,14 +110,15 @@ export default {
               this.$router.push('/product')
                 .catch(error => {
                   if (error.name !== 'NavigationDuplicated') {
+                    this.setLastError(error)
                     throw error
                   }
                 })
             } else {
-              this.setError(response.data)
+              this.setLastError(response.data)
               this.$q.notify({
                 type: 'negative',
-                message: `Product ${this.$t('off.product.not-found')}!`
+                message: `Product ${this.$t('off.product.notFound')}!`
               })
             }
           })
@@ -124,23 +126,22 @@ export default {
             this.$q.loading.hide()
 
             const negType = 'negative'
-            let msg = this.$t('off.errors.server-problem')
+            let msg = this.$t('off.errors.serverProblem')
 
-            this.setError(error)
-
+            this.setLastError(error)
+            console.log(error)
             if (error.response) {
-              msg = this.$t('off.errors.server-problem')(error.response.status)
+              msg = `${this.$t('off.errors.serverProblem')} Http.Status: ${error.response.status}`
             } else if (error.request) {
-              msg = this.$t('off.errors.serverProblem')(error.request)
+              msg = `${this.$t('off.errors.serverProblem')} Http: ${error.request}`
             } else {
-              msg = this.$t('off.errors.server-problem')(this.$t('off.notResponse'))
+              msg = `${this.$t('off.errors.serverProblem')} ${this.$t('off.errors.notResponse')}`
             }
             this.$q.notify({
               type: negType,
               message: msg
             })
           })
-
         this.codigo = ''
       }
     }

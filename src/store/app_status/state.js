@@ -1258,7 +1258,7 @@ export default function () {
     baseURL: 'https://world.openfoodfacts.org/api/v0',
     configuration: {
       labelsButtons: true,
-      productCacheSize: 10
+      cacheSizeProducts: 10
     }
   }
 }

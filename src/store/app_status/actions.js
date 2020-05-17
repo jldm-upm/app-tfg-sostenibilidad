@@ -6,7 +6,7 @@ export function setProduct ({ commit }, product) {
   commit('setProduct', product)
 }
 
-export function setError ({ commit }, error) {
+export function setLastError ({ commit }, error) {
   commit('setError', error)
 }
 

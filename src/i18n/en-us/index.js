@@ -10,13 +10,13 @@ export default {
   },
   off: {
     errors: {
-      'not-response': 'Without response!',
-      'server-problem': 'Problem accessing service!'
+      notResponse: 'Without response!',
+      serverProblem: 'Problem accessing service!'
     },
     product: {
       product: 'product',
       found: 'found',
-      'not-found': 'not found'
+      notFound: 'not found'
     }
   }
 }
