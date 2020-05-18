@@ -18,5 +18,9 @@ export default {
       found: 'found',
       notFound: 'not found'
     }
+  },
+  product: {
+    name: 'Info of the product',
+    image: 'Image'
   }
 }

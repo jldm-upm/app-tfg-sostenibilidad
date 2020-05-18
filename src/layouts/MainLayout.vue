@@ -10,10 +10,10 @@
           icon="menu"
           size="lg"
           @click="leftDrawer = !leftDrawer"/>
-        <div
-          class="text-h5 q-ma-sm text-white">
-          {{ $t('mainlayout.title') }}
-        </div>
+        <!-- <div -->
+        <!--   class="text-h5 q-ma-sm text-white"> -->
+        <!--   {{ $t('mainlayout.title') }} -->
+        <!-- </div> -->
         <q-toolbar
           class="bg-primary q-pa-sm">
           <q-space />
@@ -74,8 +74,13 @@
 </template>
 
 <script>
+// import utiles from '/utiles'
 import { mapActions, mapGetters } from 'vuex'
-import axios from 'axios'
+// import axios from 'axios'
+
+function unixTimestamp () {
+  return Math.floor(Date.now() / 1000)
+}
 
 export default {
   name: 'MainLayout',
@@ -98,14 +103,16 @@ export default {
         const url = `${baseURL}/product/${this.codigo}.json`
         console.log(url)
         this.$q.loading.show()
-        axios.get(url)
+        this.$axios.get(url)
           .then(response => {
             this.$q.loading.hide()
             if (response.data.status === 1) {
-              this.setProduct(response.data.product)
+              const product = response.data.product
+              product.cache_app_t = unixTimestamp()
+              this.setProduct(product)
               this.$q.notify({
                 type: 'positive',
-                message: `${this.$t('off.product.found')} ${response.data.product.product_name}`
+                message: `${this.$t('off.product.found')} ${product.product_name}`
               })
               this.$router.push('/product')
                 .catch(error => {
