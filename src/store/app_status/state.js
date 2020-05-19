@@ -2,8 +2,6 @@ export default function () {
   return {
     // state
     lastError: null,
-    cacheProduct: {},
-    cacheIndex: 0,
     product: {
       amino_acids_prev_tags: [],
       update_key: 'ingredients20200511',
