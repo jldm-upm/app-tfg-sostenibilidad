@@ -2,7 +2,7 @@
 export function someAction (context) {
 }
 */
-export function setProduct ({ commit }, product) {
+export function setActiveProduct ({ commit }, product) {
   commit('setProduct', product)
 }
 

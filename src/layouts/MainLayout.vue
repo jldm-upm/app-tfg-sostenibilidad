@@ -1,10 +1,13 @@
 <template>
   <q-layout
     view="hHh lpR fFf">
-    <main-toolbar></main-toolbar>
     <q-header
-      class="text-white">
-      <main-search></main-search>
+      class="bg-primary text-white">
+
+      <main-toolbar />
+
+      <main-search />
+
     </q-header>
 
     <q-drawer
@@ -30,7 +33,6 @@ export default {
 
   data () {
     return {
-      // visibilidad panel izqdo.
       leftDrawer: false
     }
   },
@@ -42,6 +44,3 @@ export default {
 
 }
 </script>
-
-<style lang="scss">
-</style>

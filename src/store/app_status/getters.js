@@ -2,8 +2,8 @@
 export function someGetter (state) {
 }
 */
-export function getProduct (state) {
-  return state.product
+export function getActiveProduct (state) {
+  return state.activeProduct
 }
 
 export function getBaseURL (state) {

@@ -1,11 +1,11 @@
 <template>
   <q-page>
-    history
+    conf
   </q-page>
 </template>
 
 <script>
 export default {
-  name: 'PageHistory'
+  name: 'PageConf'
 }
 </script>

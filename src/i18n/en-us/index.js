@@ -4,9 +4,8 @@
 export default {
   failed: 'Action failed',
   success: 'Action was successful',
-  mainlayout: {
-    search: 'Search',
-    title: 'Sustanibility App'
+  mainsearch: {
+    barcode: 'Barcode'
   },
   off: {
     errors: {
@@ -21,6 +20,11 @@ export default {
   },
   product: {
     name: 'Info of the product',
-    image: 'Image'
+    image: 'Image',
+    ingredients: 'Ingredients',
+    categories: 'Categories'
+  },
+  capture: {
+    startScan: 'Read barcode'
   }
 }

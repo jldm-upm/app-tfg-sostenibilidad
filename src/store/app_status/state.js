@@ -2,7 +2,8 @@ export default function () {
   return {
     // state
     lastError: null,
-    product: {
+    history: [],
+    activeProduct: {
       amino_acids_prev_tags: [],
       update_key: 'ingredients20200511',
       checkers: [],
@@ -1251,9 +1252,10 @@ export default function () {
       ingredients_text_en_imported: 'Noodle: rice, water. seasoning packet: peanut, sugar, hydrolyzed soy protein, green onion, corn maltodextrin, spice (including paprika), citric acid, sea salt, extractives of paprika (color), silicon dioxide (added to make free flowing), yeast extract.',
       ingredients_text_en: 'Noodle: rice, water. seasoning packet: peanut, sugar, hydrolyzed soy protein, green onion, corn maltodextrin, spice (including paprika), citric acid, sea salt, extractives of paprika (color), silicon dioxide (added to make free flowing), yeast extract.',
       nucleotides_prev_tags: []
-    },
+    }, // product
     // configuration
     baseURL: 'https://world.openfoodfacts.org/api/v0',
+    listProducts: null,
     configuration: {
       labelsButtons: true,
       cacheSizeProducts: 10

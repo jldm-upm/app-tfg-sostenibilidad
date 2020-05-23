@@ -1,7 +1,6 @@
 <template>
   <q-page>
-    <q-list>
-    </q-list>
+    list
   </q-page>
 </template>
 

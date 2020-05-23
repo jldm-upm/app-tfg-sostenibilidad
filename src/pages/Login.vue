@@ -1,12 +1,11 @@
 <template>
   <q-page>
-    <q-list>
-    </q-list>
+    login
   </q-page>
 </template>
 
 <script>
 export default {
-  name: 'PageList'
+  name: 'PageLogin'
 }
 </script>

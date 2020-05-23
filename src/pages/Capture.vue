@@ -1,23 +1,47 @@
 <template>
-  <div class="row items-center" style="height: 100vh">
-    <div class="col text-center q-pa-sm ">
-      <q-btn color="primary" icon="camera_alt" label="Ler Código de Barras"
-             class="full-width" size="lg" @click="iniciarLeitor()"
-             v-show="cameraStatus === 0"/>
-      <div class="text-h6" v-if="code">Codigo: {{ code }}</div>
-      <div id="scan" v-show="cameraStatus === 1"></div>
-      <q-page-sticky position="bottom-right" :offset="[18, 18]">
-        <q-btn  icon="cancel" color="negative" label="Fechar" v-show="cameraStatus === 1"
-                @click="onStop" />
+  <div class="row items-center"
+       style="height: 100vh">
+    <div class="col text-center q-pa-sm">
+      <q-page-sticky
+        position="bottom-right"
+        :offset="[18, 18]">
+
+        <q-btn color="primary"
+               icon="camera_alt"
+               :label="$t('capture.startScan')"
+               class="full-width"
+               size="lg"
+               @click="iniciarEscaneo()"
+               v-show="cameraStatus === 0"/>
+        <div class="text-h6"
+             v-if="code">
+          {{ code }}
+        </div>
+      </q-page-sticky>
+      <div id="scan"
+           v-show="cameraStatus === 1">
+      </div>
+      <q-page-sticky
+        position="bottom-right"
+        :offset="[18, 18]">
+        <q-btn
+          icon="cancel"
+          color="negative"
+          label="Cancelar"
+          v-show="cameraStatus === 1"
+          @click="onStop" />
       </q-page-sticky>
     </div>
   </div>
+
 </template>
 
 <script>
 import Quagga from 'quagga'
+
 export default {
-  name: 'Leitor',
+  name: 'PageCapture',
+
   data () {
     return {
       code: '',
@@ -26,7 +50,7 @@ export default {
     }
   },
   methods: {
-    iniciarLeitor () {
+    iniciarEscaneo () {
       this.cameraStatus = 1
       Quagga.init({
         inputStream: {
