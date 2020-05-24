@@ -15,11 +15,11 @@
         <q-item-label class="text-small text-primary">
           {{ product.generic_name }}
         </q-item-label>
-        <q-item-label class="text-h6">
+        <q-item-label class="text-bold">
           {{ product.product_name }}
         </q-item-label>
         <q-item-label class="text-small">
-            {{ product.brands }} - {{ product.brand_owner }} &#40;{{ product.origins }}&#41;
+            {{ $t('product.origin', { brand: product.brands, owner: product.brand_owner, origin: product.origins}) }}
         </q-item-label>
       </q-item-section>
     </q-item>

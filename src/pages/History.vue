@@ -1,11 +1,11 @@
 <template>
   <q-page>
-    list
+    history
   </q-page>
 </template>
 
 <script>
 export default {
-  name: 'PageList'
+  name: 'PageHistory'
 }
 </script>

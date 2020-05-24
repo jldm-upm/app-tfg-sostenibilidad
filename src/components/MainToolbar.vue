@@ -21,6 +21,12 @@
         />
       <q-btn
         dense
+        icon="history"
+        size="md"
+        to="/history"
+        />
+      <q-btn
+        dense
         icon="emoji_food_beverage"
         size="md"
         to="/product"

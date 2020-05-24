@@ -59,7 +59,7 @@ export default {
     buscar () {
       const baseURL = this.getBaseURL()
       if (this.codigo.length > 0) {
-        const url = `${baseURL}/product/${this.codigo}.json`
+        const url = `${baseURL}/api/v0/product/${this.codigo}.json`
         console.log(url)
         this.$q.loading.show()
         this.$axios.get(url)

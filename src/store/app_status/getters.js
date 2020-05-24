@@ -13,3 +13,7 @@ export function getBaseURL (state) {
 export function getConfiguration (state) {
   return state.configuration
 }
+
+export function getLoggedInUser (state) {
+  return state.loggedInUser
+}

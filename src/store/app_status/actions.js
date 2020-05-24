@@ -13,3 +13,7 @@ export function setLastError ({ commit }, error) {
 export function updateConfiguration ({ commit }, payload) {
   commit('updateConfiguration', payload)
 }
+
+export function setLoggedInUser ({ commit }, user) {
+  commit('setLoggedInUser')
+}

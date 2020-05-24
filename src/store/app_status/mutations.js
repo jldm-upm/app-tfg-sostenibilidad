@@ -18,3 +18,7 @@ export function setError (state, error) {
 export function updateConfiguration (state, payload) {
   Object.assign(state.configuration, payload)
 }
+
+export function setLoggedInUser (state, user) {
+  state.loggedInUser = user
+}

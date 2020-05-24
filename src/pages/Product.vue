@@ -22,7 +22,7 @@ export default {
   },
 
   components: {
-    'product-extended': require('src/components/ProductExtended.vue').default
+    'product-extended': require('src/components/Product/ProductExtended.vue').default
   }
 }
 </script>

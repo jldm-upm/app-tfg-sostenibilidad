@@ -1,6 +1,7 @@
 export default function () {
   return {
     // state
+    loggedInUser: 'chars',
     lastError: null,
     history: [],
     activeProduct: {
@@ -1254,10 +1255,9 @@ export default function () {
       nucleotides_prev_tags: []
     }, // product
     // configuration
-    baseURL: 'https://world.openfoodfacts.org/api/v0',
+    baseURL: 'http://localhost:8000',
     listProducts: null,
     configuration: {
-      labelsButtons: true,
       cacheSizeProducts: 10
     }
   }
