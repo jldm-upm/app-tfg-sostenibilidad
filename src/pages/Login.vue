@@ -27,7 +27,7 @@
 
       <q-tab-panel
         name="new">
-
+        <login-new></login-new>
       </q-tab-panel>
     </q-tab-panels>
   </q-page>
@@ -50,7 +50,8 @@ export default {
   },
 
   components: {
-    'login-tab': require('src/components/Login/Login.vue').default
+    'login-tab': require('src/components/Login/Login.vue').default,
+    'login-new': require('src/components/Login/New.vue').default
   }
 }
 </script>

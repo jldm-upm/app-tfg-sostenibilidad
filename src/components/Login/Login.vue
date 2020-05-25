@@ -9,6 +9,8 @@
       style="max-width: 400px">
 
       <q-form
+        :action="getBaseURL()"
+        method="post"
         autofocus
         @submit="onSubmit"
         @reset="onReset"
@@ -16,6 +18,7 @@
         >
         <q-input
           filled
+          name="username"
           v-model="name"
           :label="$t('login.name')"
           :hint="$t('login.name_hint')"
@@ -25,16 +28,17 @@
 
         <q-input
           filled
+          name="password"
           type="password"
           v-model="pwd"
           :label="$t('login.pwd')"
           :hint="$t('login.pwd_hint')"
           lazy-rules
-          :rules="[ val => val && val.length > 0 || $t('login.name_val') ]"
+          :rules="[ val => val && val.length > 0 || $t('login.pwd_val') ]"
           />
         <div>
           <q-btn
-            :label="$t('login.submit')"
+            :label="$t('login.submit_login')"
             type="submit"
             color="primary"/>
           <q-btn

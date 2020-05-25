@@ -29,9 +29,16 @@ export default {
     name_hint: 'Enter your user name',
     name_val: 'User name can\'t be empty',
     pwd: 'Password',
+    pwd2: 'Password confirmation',
     pwd_hint: 'Enter your secret password',
     pwd_val: 'The password can\'t be empty',
-    submit: 'Submit',
+    pwd_val2: 'The password must have a minimum length of 8 characters',
+    accept: 'Accept the terms of service',
+    readterms: 'Read the terms',
+    diffpwd: 'Password confirmation must be equal to password',
+    notaccepted: 'You must accept the terms of service. Still you can use the app without login',
+    submit_login: 'Login',
+    submit_new: 'Submit',
     reset: 'Reset'
   },
   product: {
