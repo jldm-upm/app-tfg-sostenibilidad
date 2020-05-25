@@ -1,41 +1,41 @@
 <template>
-        <q-toolbar
-          class="q-pa-sm">
-          <q-space />
-          <q-input
-            class="col"
-            type="search"
-            outlined
-            clearable
-            v-model="codigo"
-            clear-icon="close"
-            bg-color="white"
-            label-color="primary"
-            :label="$t('mainsearch.barcode')"
-            placeholder="8437000378051"
-            minlength=1
-            @keyup.enter="buscar"
-            >
-            <template v-slot:append>
-              <q-btn
-                dense
-                rounded
-                flat
-                icon="search"
-                to="/capture"
-                @click="buscar"
-                />
-            </template>
-          </q-input>
-          <q-btn
-            outlined
-            shadow
-            size="lg"
-            icon="photo_camera"
-            to="/capture"
-            v-ripple:secondary
-            />
-        </q-toolbar>
+  <q-toolbar
+    class="q-pa-sm">
+    <q-space />
+    <q-input
+      class="col"
+      type="search"
+      outlined
+      clearable
+      v-model="codigo"
+      clear-icon="close"
+      bg-color="white"
+      label-color="primary"
+      :label="$t('mainsearch.barcode')"
+      placeholder="8437000378051"
+      minlength=1
+      @keyup.enter="buscar"
+      >
+      <template v-slot:append>
+        <q-btn
+          dense
+          rounded
+          flat
+          icon="search"
+          to="/capture"
+          @click="buscar"
+          />
+      </template>
+    </q-input>
+    <q-btn
+      outlined
+      shadow
+      size="lg"
+      icon="photo_camera"
+      to="/capture"
+      v-ripple:secondary
+      />
+  </q-toolbar>
 </template>
 
 <script>
