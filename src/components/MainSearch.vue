@@ -1,41 +1,69 @@
 <template>
-  <q-toolbar
-    class="q-pa-sm">
-    <q-space />
-    <q-input
-      class="col"
-      type="search"
-      outlined
-      clearable
-      v-model="codigo"
-      clear-icon="close"
-      bg-color="white"
-      label-color="primary"
-      :label="$t('mainsearch.barcode')"
-      placeholder="8437000378051"
-      minlength=1
-      @keyup.enter="buscar"
+  <div>
+    <q-toolbar
+      class="q-pa-sm">
+      <q-space />
+      <q-input
+        class="col"
+        type="search"
+        outlined
+        clearable
+        v-model="codigo"
+        clear-icon="close"
+        bg-color="white"
+        label-color="primary"
+        :label="$t('mainsearch.barcode')"
+        placeholder="8437000378051"
+        minlength=1
+        @keyup.enter="buscar"
+        >
+        <template v-slot:append>
+          <q-btn
+            dense
+            rounded
+            flat
+            icon="search"
+            to="/capture"
+            @click="buscar"
+            />
+        </template>
+      </q-input>
+      <q-btn
+        outlined
+        shadow
+        size="lg"
+        icon="photo_camera"
+        @click="captureDialog = !captureDialog"
+        v-ripple:secondary
+        />
+    </q-toolbar>
+
+    <q-dialog
+      v-model="captureDialog"
+      persistent
+      :maximized="true"
+      transition-show="slide-up"
+      transition-hide="slide-down"
       >
-      <template v-slot:append>
-        <q-btn
-          dense
-          rounded
-          flat
-          icon="search"
-          to="/capture"
-          @click="buscar"
-          />
-      </template>
-    </q-input>
-    <q-btn
-      outlined
-      shadow
-      size="lg"
-      icon="photo_camera"
-      to="/capture"
-      v-ripple:secondary
-      />
-  </q-toolbar>
+      <q-card class="bg-primary text-white">
+        <q-bar>
+          <q-space />
+
+          <q-btn dense flat icon="close" v-close-popup>
+            <q-tooltip content-class="bg-white text-primary">{{ $t('capture.close') }}</q-tooltip>
+          </q-btn>
+        </q-bar>
+
+        <q-card-section>
+          <div class="text-h6">Alert</div>
+        </q-card-section>
+
+        <q-card-section class="q-pt-none">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis perferendis totam, ea at omnis vel numquam exercitationem aut, natus minima, porro labore.
+        </q-card-section>
+      </q-card>
+    </q-dialog>
+  </div>
 </template>
 
 <script>
@@ -48,7 +76,8 @@ function unixTimestamp () {
 export default {
   data () {
     return {
-      codigo: ''
+      codigo: '',
+      captureDialog: false
     }
   },
 
@@ -57,59 +86,78 @@ export default {
     ...mapGetters('appStatus', ['getBaseURL']),
 
     buscar () {
-      const baseURL = this.getBaseURL()
-      if (this.codigo.length > 0) {
-        const url = `${baseURL}/api/v0/product/${this.codigo}.json`
-        console.log(url)
-        this.$q.loading.show()
-        this.$axios.get(url)
-          .then(response => {
-            this.$q.loading.hide()
-            if (response.data.status === 1) {
-              const product = response.data.product
-              product.cache_app_t = unixTimestamp()
-              this.setActiveProduct(product)
-              this.$q.notify({
-                type: 'positive',
-                message: `${this.$t('off.product.found')} ${product.product_name}`
-              })
-              this.$router.push('/product')
-                .catch(error => {
-                  if (error.name !== 'NavigationDuplicated') {
-                    this.setLastError(error)
-                    throw error
-                  }
-                })
-            } else {
-              this.setLastError(response.data)
-              this.$q.notify({
-                type: 'negative',
-                message: `Product ${this.$t('off.product.notFound')}!`
-              })
-            }
-          })
-          .catch(error => {
-            this.$q.loading.hide()
+      let type = 'positive'
+      let message = `${this.$t('off.product.found')}`
 
-            const negType = 'negative'
-            let msg = this.$t('off.errors.serverProblem')
+      if (!(this.codigo) || (this.codigo.length === 0)) {
+        type = 'negative'
+        message = this.$t('off.notcode')
 
-            this.setLastError(error)
-            console.log(error)
-            if (error.response) {
-              msg = `${this.$t('off.errors.serverProblem')} Http.Status: ${error.response.status}`
-            } else if (error.request) {
-              msg = `${this.$t('off.errors.serverProblem')} Http: ${error.request}`
-            } else {
-              msg = `${this.$t('off.errors.serverProblem')} ${this.$t('off.errors.notResponse')}`
-            }
-            this.$q.notify({
-              type: negType,
-              message: msg
-            })
-          })
-        this.codigo = ''
+        return null
       }
+      const baseURL = this.getBaseURL()
+      const url = `${baseURL}/api/v0/product/${this.codigo}.json`
+      console.log(url)
+
+      this.$q.loading.show()
+      this.$axios.get(url)
+        .then((response) => {
+          this.$q.loading.hide()
+
+          if (!response) {
+            type = 'negative'
+            message = `${this.$t('off.errors.serverProblem')}`
+            this.setLastError(response)
+          } else if (response.data.status !== 1) {
+            type = 'warning'
+            message = `${this.$t('off.product.notfound')} ${response.data.status_verbose}`
+            this.setLastError(response.data)
+          } else {
+            const product = response.data.product
+            product.retrieved_t = unixTimestamp()
+
+            type = 'positive'
+            message = `${this.$t('off.product.found')} ${product.product_name}`
+
+            this.setActiveProduct(product)
+
+            this.$router.push('/product')
+              .catch(error => {
+                if (error.name !== 'NavigationDuplicated') {
+                  this.setLastError(error)
+                }
+              })
+          }
+        })
+        .catch((error) => {
+          type = 'negative'
+          message = `${this.$t('off.errors.serverProblem')}`
+          this.setLastError(error)
+
+          this.setLastError(error)
+
+          if (error.response) {
+            message = `${this.$t('off.errors.serverProblem')} Http.Status: ${error.response.status}`
+          } else if (error.request) {
+            message = `${this.$t('off.errors.serverProblem')} Http: ${JSON.stringify(error)}`
+          } else {
+            message = `${this.$t('off.errors.serverProblem')} ${this.$t('off.errors.notResponse')}`
+          }
+        })
+        .then(() => {
+          this.$q.loading.hide()
+
+          this.$q.notify({
+            type: type,
+            message: message
+          })
+        })
+
+      this.codigo = ''
+    },
+
+    capturar () {
+
     }
   }
 }

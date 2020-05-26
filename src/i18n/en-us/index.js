@@ -9,6 +9,7 @@ export default {
   },
   off: {
     loggedin: 'Successful log in',
+    notcode: 'There are not code to search',
     errors: {
       notResponse: 'Without response!',
       serverProblem: 'Problem accessing service!',
@@ -63,7 +64,17 @@ export default {
     sodium: 'sodium',
     sugars: 'sugars'
   },
+  toolbar: {
+    main: 'Main',
+    conf: 'Configure',
+    list: 'Search result',
+    history: 'History',
+    product: 'Product',
+    user: 'User Account',
+    help: 'Help`'
+  },
   capture: {
+    close: 'Close',
     startScan: 'Read barcode'
   }
 }

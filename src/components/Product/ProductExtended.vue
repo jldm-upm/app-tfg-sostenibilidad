@@ -24,13 +24,15 @@
       >
       <q-card>
         <q-card-section>
-          <q-list>
+          <q-list
+            v-if="product"
+            >
             <q-item
               dense
               v-for="category in product.categories_tags"
               :key="category"
               >
-              {{ category }}
+              {{ category | traducir }}
             </q-item>
           </q-list>
         </q-card-section>
@@ -47,7 +49,8 @@
       >
       <q-card>
         <q-card-section>
-          <q-list>
+          <q-list
+            v-if="product">
             <q-item
               dense
               v-for="ingredient in product.ingredients"
@@ -71,7 +74,9 @@
       >
       <q-card>
         <q-card-section>
-          <q-markup-table>
+          <q-markup-table
+            flat
+            bordered>
             <thead>
               <tr>
                 <th class="text-left">{{ $t('product.nutriments') }}</th>
@@ -79,13 +84,27 @@
                 <th class="text-right">{{ $t('product.nut_unit') }}</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody
+              v-if="product"
+              >
               <tr
                 v-for="(nutriment,idx) in nutriments"
                 :key="idx">
                 <td>{{ $t('nutriments.' + nutriment) }}</td>
-                <td class="text-right">{{ product.nutriments[nutriment + "_100g"]}}</td>
+                <td class="text-right">{{ product.nutriments[nutriment + "_100g"] }}</td>
                 <td class="text-right">{{ product.nutriments[nutriment + '_unit'] }}</td>
+              </tr>
+            </tbody>
+            <tbody
+              v-else
+              >
+              <tr
+                v-for="(nutriment,idx) in nutriments"
+                :key="idx"
+                >
+                <td>{{ $t('nutriments.' + nutriment) }}</td>
+                <td class="text-right">-</td>
+                <td class="text-right">-</td>
               </tr>
             </tbody>
           </q-markup-table>
@@ -97,6 +116,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   data () {
     return {
@@ -116,6 +137,21 @@ export default {
 
   components: {
     'product-resumen': require('src/components/Product/ProductResumen.vue').default
+  },
+
+  filters: {
+    traducir (value, taxonomia) {
+      let res = value
+      if (value) {
+        const tax = this.getTaxonomia(taxonomia)
+        res = tax[value]
+      }
+      return res
+    }
+  },
+
+  methods: {
+    ...mapGetters('taxonomies', ['getTaxonomia'])
   },
 
   props: ['product']

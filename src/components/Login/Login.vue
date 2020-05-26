@@ -71,8 +71,8 @@ export default {
     ...mapGetters('appStatus', ['getBaseURL']),
 
     onSubmit () {
-      const baseURL = this.getBaseURL
-      const url = baseURL + '/login'
+      const baseURL = this.getBaseURL()
+      const url = baseURL + this.resource
       const postData = { username: this.name, password: this.pwd }
 
       this.$q.loading.show()
@@ -122,6 +122,8 @@ export default {
       this.name = null
       this.pwd = null
     }
-  }
+  },
+
+  props: ['resource']
 }
 </script>

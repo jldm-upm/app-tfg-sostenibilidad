@@ -96,8 +96,8 @@ export default {
 
     onSubmit () {
       const baseURL = this.getBaseURL()
-      const url = baseURL + '/newuser'
-      const postData = { username: this.name, password: this.pwd }
+      const url = baseURL + this.resource
+      const postData = { username: this.name, password: this.pwd, accepted: this.accept }
 
       if (this.pwd !== this.pwd2) {
         this.$q.notify({
@@ -117,46 +117,46 @@ export default {
         return 0
       }
 
+      let type = ''
+      let icon = ''
+      let message = ''
       this.$q.loading.show()
       this.$axios.post(url, postData)
         .then(response => {
           this.$q.loading.hide()
           if (response.data.status === 1) {
             this.setLoggedInUser(response.data)
-
-            this.$q.notify({
-              type: 'possitive',
-              icon: 'cloud_done',
-              message: this.$t('off.loggedin')
-
-            })
+            type = 'possitive'
+            icon = 'cloud_done'
+            message = this.$t('off.loggedin')
           } else {
-            this.$q.notify({
-              type: 'negative',
-              icon: 'cloud_done',
-              message: this.$t('off.errors.loggedin')
-            })
+            type = 'negative'
+            icon = 'cloud_done'
+            message = this.$t('off.errors.loggedin')
           }
         })
         .catch(error => {
-          this.$q.loading.hide()
-
-          const negType = 'negative'
-          let msg = this.$t('off.errors.serverProblem')
+          type = 'negative'
+          message = this.$t('off.errors.serverProblem')
 
           this.setLastError(error)
-          console.log(error)
+
           if (error.response) {
             console.log('error v1')
-            msg = `${this.$t('off.errors.serverProblem')} Http.Status: ${error.response.status}`
+            message = `${this.$t('off.errors.serverProblem')} Http.Status: ${error.response.status}`
           } else if (error.request) {
-            msg = `${this.$t('off.errors.serverProblem')} Http: ${error.request}`
+            message = `${this.$t('off.errors.serverProblem')} Http: ${JSON.stringify(error)}`
           } else {
-            msg = `${this.$t('off.errors.serverProblem')} ${this.$t('off.errors.notResponse')}`
+            message = `${this.$t('off.errors.serverProblem')} ${this.$t('off.errors.notResponse')}`
           }
+        })
+        .then(() => {
+          this.$q.loading.hide()
+
           this.$q.notify({
-            type: negType,
-            message: msg
+            type: type,
+            icon: icon,
+            message: message
           })
         })
     },
@@ -164,7 +164,11 @@ export default {
     onReset () {
       this.name = null
       this.pwd = null
+      this.pwd2 = null
+      this.accept = null
     }
-  }
+  },
+
+  props: ['resource']
 }
 </script>

@@ -22,12 +22,18 @@
       >
       <q-tab-panel
         name="login">
-        <login-tab></login-tab>
+        <login-tab
+          resource="/user">
+          {{ $t('login.newTitle') }}
+        </login-tab>
       </q-tab-panel>
 
       <q-tab-panel
         name="new">
-        <login-new></login-new>
+        <login-new
+          resource="/user/new">
+          {{ $t('login.newTitle') }}
+        </login-new>
       </q-tab-panel>
     </q-tab-panels>
   </q-page>
