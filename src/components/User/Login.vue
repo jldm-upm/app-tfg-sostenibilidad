@@ -78,7 +78,7 @@ export default {
         .then(response => {
           this.$q.loading.hide()
           if (response.data.status === 1) {
-            this.setLoggedInUser(response.data)
+            this.setLoggedInUser(response.data.session)
 
             this.$q.notify({
               type: 'possitive',

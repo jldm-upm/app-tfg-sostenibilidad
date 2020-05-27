@@ -125,14 +125,15 @@ export default {
         .then(response => {
           this.$q.loading.hide()
           if (response.data.status === 1) {
-            this.setLoggedInUser(response.data)
+            this.setLoggedInUser(response.data.session)
+            console.log(JSON.stringify(response.data.session))
             type = 'possitive'
             icon = 'cloud_done'
             message = this.$t('off.loggedin')
           } else {
             type = 'negative'
             icon = 'cloud_done'
-            message = this.$t('off.errors.loggedin')
+            message = `${this.$t('off.errors.loggedin')} ${response.data.status_verbose}`
           }
         })
         .catch(error => {

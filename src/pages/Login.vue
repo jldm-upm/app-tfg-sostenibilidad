@@ -6,11 +6,13 @@
       >
       <q-tab name="login"
              icon="person"
+             :label="this.$t('login.loginTitle')"
              >
       </q-tab>
       <q-tab
         name="new"
         icon="person_add"
+        :label="this.$t('login.newTitle')"
         >
       </q-tab>
     </q-tabs>
