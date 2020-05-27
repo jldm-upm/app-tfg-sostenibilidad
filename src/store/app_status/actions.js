@@ -3,7 +3,7 @@ export function someAction (context) {
 }
 */
 export function setActiveProduct ({ commit }, product) {
-  commit('setProduct', product)
+  commit('setActiveProduct', product)
 }
 
 export function setLastError ({ commit }, error) {
