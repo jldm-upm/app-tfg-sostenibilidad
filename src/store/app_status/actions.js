@@ -14,11 +14,14 @@ export function updateConfiguration ({ commit }, payload) {
   commit('updateConfiguration', payload)
 }
 
-export function setLoggedInUser ({ commit }, user) {
-  if (user) {
-    commit('setLoggedInUser', user.session)
-    commit('setConfiguration', user.conf)
+export function setLoggedInUser ({ commit, state }, serverResponse) {
+  console.log(`setLoggedInUser: ${JSON.stringify(serverResponse)}`)
+  if (serverResponse) {
+    const resConf = {}
+    Object.assign(resConf, state.configuration, serverResponse.conf)
+    commit('setLoggedInUser', serverResponse.session)
+    commit('setConfiguration', resConf)
   } else {
-    commit('setLoggedInUser', user) // user == null
+    commit('setLoggedInUser', null)
   }
 }

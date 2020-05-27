@@ -77,8 +77,9 @@ export default {
       this.$axios.post(url, postData)
         .then(response => {
           this.$q.loading.hide()
+          console.log(response.data.session)
           if (response.data.status === 1) {
-            this.setLoggedInUser(response.data.session)
+            this.setLoggedInUser(response.data)
 
             this.$q.notify({
               type: 'possitive',

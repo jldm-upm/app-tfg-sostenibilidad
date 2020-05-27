@@ -73,9 +73,9 @@ export default {
           }
         })
         .then(() => {
+          this.$q.loading.hide()
           console.log('Al final')
           this.setLoggedInUser(null)
-          this.$q.loading.hide()
           this.$q.notify({
             type: type,
             icon: 'cloud_done',

@@ -12,14 +12,6 @@
       </q-btn>
       <q-btn
         dense
-        icon="tune"
-        size="md"
-        to="/conf"
-        >
-        <q-tooltip content-class="bg-white text-primary">{{ $t('toolbar.conf') }}</q-tooltip>
-      </q-btn>
-      <q-btn
-        dense
         icon="list"
         size="md"
         to="/list"
