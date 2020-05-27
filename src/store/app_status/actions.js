@@ -15,5 +15,10 @@ export function updateConfiguration ({ commit }, payload) {
 }
 
 export function setLoggedInUser ({ commit }, user) {
-  commit('setLoggedInUser')
+  if (user) {
+    commit('setLoggedInUser', user.session)
+    commit('setConfiguration', user.conf)
+  } else {
+    commit('setLoggedInUser', user) // user == null
+  }
 }

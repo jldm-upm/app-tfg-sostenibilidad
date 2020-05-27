@@ -9,8 +9,6 @@
       style="max-width: 400px">
 
       <q-form
-        :action="getBaseURL()"
-        method="post"
         autofocus
         @submit="onSubmit"
         @reset="onReset"

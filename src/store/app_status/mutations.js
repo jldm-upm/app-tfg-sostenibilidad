@@ -22,3 +22,9 @@ export function updateConfiguration (state, payload) {
 export function setLoggedInUser (state, user) {
   state.loggedInUser = user
 }
+
+export function setConfiguration (state, conf) {
+  const confRes = { ...state.configuration, ...conf }
+  console.log(JSON.stringify(confRes))
+  state.configuration = confRes
+}

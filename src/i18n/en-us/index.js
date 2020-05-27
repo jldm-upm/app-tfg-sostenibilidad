@@ -9,11 +9,13 @@ export default {
   },
   off: {
     loggedin: 'Successful log in',
+    loggedout: 'Successful log out',
     notcode: 'There are not code to search',
     errors: {
       notResponse: 'Without response!',
       serverProblem: 'Problem accessing service!',
-      loggedin: 'Can\'t log in'
+      loggedin: 'Can\'t log in',
+      loggedout: 'Can\' log out'
     },
     product: {
       product: 'product',
@@ -26,6 +28,9 @@ export default {
     loginTitle: 'Login as User',
     new: 'Create User',
     newTitle: 'Create User',
+    userTitle: 'User Data',
+    user: 'User',
+    logout: 'Log Out',
     name: 'User name',
     name_hint: 'Enter your user name',
     name_val: 'User name can\'t be empty',

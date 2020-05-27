@@ -7,7 +7,7 @@ export function getActiveProduct (state) {
 }
 
 export function getBaseURL (state) {
-  return state.baseURL
+  return state.configuration.baseURL
 }
 
 export function getConfiguration (state) {

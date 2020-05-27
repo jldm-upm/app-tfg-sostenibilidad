@@ -6,12 +6,12 @@
       >
       <q-tab name="login"
              icon="person"
-             :label="$t('login.login')">
+             >
       </q-tab>
       <q-tab
         name="new"
         icon="person_add"
-        :label="$t('login.new')">
+        >
       </q-tab>
     </q-tabs>
 
@@ -22,9 +22,14 @@
       >
       <q-tab-panel
         name="login">
+        <user-tab
+          v-if="getLoggedInUser()"
+          resource="/user/logout"
+          :user="getLoggedInUser()">
+        </user-tab>
         <login-tab
-          resource="/user">
-          {{ $t('login.newTitle') }}
+          v-else
+          resource="/user/login">
         </login-tab>
       </q-tab-panel>
 
@@ -32,7 +37,6 @@
         name="new">
         <login-new
           resource="/user/new">
-          {{ $t('login.newTitle') }}
         </login-new>
       </q-tab-panel>
     </q-tab-panels>
@@ -51,13 +55,14 @@ export default {
     }
   },
 
-  computed: {
+  methods: {
     ...mapGetters('appStatus', ['getLoggedInUser'])
   },
 
   components: {
-    'login-tab': require('src/components/Login/Login.vue').default,
-    'login-new': require('src/components/Login/New.vue').default
+    'login-tab': require('src/components/User/Login.vue').default,
+    'login-new': require('src/components/User/New.vue').default,
+    'user-tab': require('src/components/User/User.vue').default
   }
 }
 </script>
