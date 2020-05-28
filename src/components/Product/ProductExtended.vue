@@ -7,7 +7,7 @@
     <q-item>
       <q-item-section>
         <product-resumen
-          :product=product
+          :producto=product
           >
         </product-resumen>
       </q-item-section>

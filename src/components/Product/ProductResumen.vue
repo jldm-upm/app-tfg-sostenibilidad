@@ -5,8 +5,8 @@
         <q-avatar
           square>
           <q-img
-            v-if="product"
-            :src="product.image_small_url || product.image_url"
+            v-if="producto"
+            :src="producto.image_small_url || producto.image_url"
             spinner-color="white"
             />
           <q-icon
@@ -17,18 +17,18 @@
       </q-item-section>
 
       <q-item-section
-        v-if="product">
+        v-if="producto">
         <q-item-label class="text-orange">
-          {{ product.code }}
+          {{ producto.code }}
         </q-item-label>
         <q-item-label class="text-small text-primary">
-          {{ product.generic_name }}
+          {{ producto.generic_name }}
         </q-item-label>
         <q-item-label class="text-bold">
-          {{ product.product_name }}
+          {{ producto.product_name }}
         </q-item-label>
         <q-item-label class="text-small">
-          &#x01F69A; {{ $t('product.origin', { brand: product.brands, owner: product.brand_owner, origin: product.origins}) }}
+          &#x01F69A; {{ $t('product.origin', { brand: producto.brands, owner: producto.brand_owner, origin: producto.origins}) }}
         </q-item-label>
       </q-item-section>
 
@@ -62,6 +62,6 @@
 export default {
   name: 'ProductResumen',
 
-  props: ['product']
+  props: ['producto']
 }
 </script>
