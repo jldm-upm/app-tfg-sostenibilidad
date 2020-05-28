@@ -11,7 +11,8 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ./",
     "test": "echo \"No test specified\" && exit 0",
     "dev_android": "quasar dev -m android --ide",
-    "build_android": "quasar build -m cordova -T android"
+    "build_android": "quasar build -m cordova -T android",
+    "test_android": "cd src-cordova && phonegap serve"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
