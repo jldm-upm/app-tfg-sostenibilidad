@@ -3,6 +3,10 @@ import Vue from 'vue'
 export function someMutation (state) {
 }
 */
+export function setCodigo(state, codigo) {
+  state.codigo = codigo
+}
+
 export function setActiveProduct (state, product) {
   state.activeProduct = product
   if (state.history && (state.history.length === state.configuration.cacheSizeProducts)) {

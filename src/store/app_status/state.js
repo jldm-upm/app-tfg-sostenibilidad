@@ -1,15 +1,19 @@
 export default function () {
   return {
     // state
+    codigo: '',
     loggedInUser: null,
     lastError: null,
     history: [],
     activeProduct: null,
-    // configuration
     listProducts: null,
+    // cache
+    taxonomias: { },
+    // configuration
     configuration: {
       baseURL: 'http://localhost:8000',
-      cacheSizeProducts: 10
+      cacheSizeProducts: 10,
+      language: 'en'
     }
   }
 }

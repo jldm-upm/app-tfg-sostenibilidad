@@ -13,10 +13,6 @@
                size="lg"
                @click="iniciarEscaneo()"
                v-show="cameraStatus === 0"/>
-        <div class="text-h6"
-             v-if="code">
-          {{ code }}
-        </div>
       </q-page-sticky>
       <div id="scan"
            v-show="cameraStatus === 1">
@@ -49,6 +45,7 @@ export default {
       cameraStatus: 0
     }
   },
+
   methods: {
     iniciarEscaneo () {
       this.cameraStatus = 1
@@ -90,6 +87,13 @@ export default {
       Quagga.stop()
       this.cameraStatus = 0
     }
+  },
+  mounted () {
+    this.iniciarEscaneo()
+  },
+
+  beforeDestroy () {
+    this.onStop()
   }
 }
 </script>
@@ -99,12 +103,12 @@ video {
     width: 100%;
     height: auto;
 }
-/* #scan {
-  border-right: 15vh solid orange;
-  border-left: 15vh solid orange;
-  height: 70vh
-} */
-/* .verticalLine {
-  border-left: thick solid #ff0000;
-} */
+/* #scan { */
+/*   border-right: 15vh solid orange; */
+/*   border-left: 15vh solid orange; */
+/*   height: 70vh */
+/* } */
+/* .verticalLine { */
+/*   border-left: thick solid #ff0000; */
+/* } */
 </style>

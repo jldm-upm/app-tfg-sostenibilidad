@@ -32,7 +32,7 @@
               v-for="category in product.categories_tags"
               :key="category"
               >
-              {{ category | traducir }}
+              {{ category | traducir 'taxonomies' }}
             </q-item>
           </q-list>
         </q-card-section>
@@ -77,7 +77,42 @@
           <q-markup-table
             flat
             bordered>
-            <thead>
+            <thead class="bg-primary text-white">
+              <tr>
+                <th class="text-left">{{ $t('product.nutriments') }}</th>
+                <th class="text-right">{{ $t('product.nut_100g')}}</th>
+                <th class="text-right">{{ $t('product.nut_unit') }}</th>
+              </tr>
+            </thead>
+            <tbody
+              v-if="product"
+              >
+              <tr
+                v-for="(nutriment,idx) in nutriments"
+                :key="idx">
+                <td>{{ $t('nutriments.' + nutriment) }}</td>
+                <td class="text-right">{{ product.nutriments[nutriment + "_100g"] }}</td>
+                <td class="text-right">{{ product.nutriments[nutriment + '_unit'] }}</td>
+              </tr>
+            </tbody>
+            <tbody
+              v-else
+              >
+              <tr
+                v-for="(nutriment,idx) in nutriments"
+                :key="idx"
+                >
+                <td>{{ $t('nutriments.' + nutriment) }}</td>
+                <td class="text-right">-</td>
+                <td class="text-right">-</td>
+              </tr>
+            </tbody>
+          </q-markup-table>
+
+          <q-markup-table
+            flat
+            bordered>
+            <thead class="bg-primary text-white">
               <tr>
                 <th class="text-left">{{ $t('product.nutriments') }}</th>
                 <th class="text-right">{{ $t('product.nut_100g')}}</th>
@@ -116,11 +151,13 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   data () {
     return {
+      lang: this.$i18n.locale,
+
       nutriments: [
         'carbohydrates',
         'energy',
@@ -140,18 +177,25 @@ export default {
   },
 
   filters: {
-    traducir (value, taxonomia) {
+    traducir (taxonomia, value) {
+      console.log(`Traducir: ${value}`)
+      const tax = this.getAndUpdateTaxonomia(taxonomia)
       let res = value
       if (value) {
-        const tax = this.getTaxonomia(taxonomia)
-        res = tax[value]
+        res = this.getTraduccion(tax, value, this.lang)
       }
+      console.log(`Traducido: ${res}`)
       return res
     }
   },
 
   methods: {
-    ...mapGetters('taxonomies', ['getTaxonomia'])
+    ...mapGetters('appStatus', ['getLanguage']),
+    ...mapActions('appStatus', ['getAndUpdateTaxonomia']),
+
+    getTraduccion (taxonomia, val, lang) {
+      return taxonomia[val].name[lang]
+    }
   },
 
   props: ['product']

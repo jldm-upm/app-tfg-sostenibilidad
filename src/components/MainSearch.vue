@@ -23,8 +23,7 @@
             rounded
             flat
             icon="search"
-            to="/capture"
-            @click="buscar"
+            @click.stop="buscar"
             />
         </template>
       </q-input>
@@ -33,36 +32,10 @@
         shadow
         size="lg"
         icon="photo_camera"
-        @click="captureDialog = !captureDialog"
+        to="/capture"
         v-ripple:secondary
         />
     </q-toolbar>
-
-    <q-dialog
-      v-model="captureDialog"
-      persistent
-      :maximized="true"
-      transition-show="slide-up"
-      transition-hide="slide-down"
-      >
-      <q-card class="bg-primary text-white">
-        <q-bar>
-          <q-space />
-
-          <q-btn dense flat icon="close" v-close-popup>
-            <q-tooltip content-class="bg-white text-primary">{{ $t('capture.close') }}</q-tooltip>
-          </q-btn>
-        </q-bar>
-
-        <q-card-section>
-          <div class="text-h6">Alert</div>
-        </q-card-section>
-
-        <q-card-section class="q-pt-none">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis perferendis totam, ea at omnis vel numquam exercitationem aut, natus minima, porro labore.
-        </q-card-section>
-      </q-card>
-    </q-dialog>
   </div>
 </template>
 
@@ -76,7 +49,6 @@ function unixTimestamp () {
 export default {
   data () {
     return {
-      codigo: '',
       captureDialog: false
     }
   },
@@ -154,10 +126,6 @@ export default {
         })
 
       this.codigo = ''
-    },
-
-    capturar () {
-
     }
   }
 }
