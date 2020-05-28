@@ -1,19 +1,67 @@
 <template>
-  <div>
-    <div class="text-h6">
-      {{ $t('login.loginTitle') }}
+  <div
+    row
+    class="q-pa-md"
+    style="max-width: 400px">
+
+    <div class="text-h6 text-center">
+      {{ $t('login.confTitle') }}
     </div>
 
-    <div
-      row
-      class="q-pa-md"
-      style="max-width: 400px">
+    <div>
+      <div
+        row
+        class="q-pa-md">
+        <q-btn
+          icon-right="close"
+          :label="$t('login.logout')"
+          @click="logOut">
+          <q-tooltip content-class="bg-white text-primary">{{ $t('login.logout') }}</q-tooltip>
+        </q-btn>
+        <q-btn
+          icon-right="cloud_upload"
+          :label="$t('login.upload')"
+          @click="onSubmit">
+          <q-tooltip
+            content-class="bg-white text-primary">{{ $t('login.upload') }}</q-tooltip>
+        </q-btn>
+      </div>
 
-      <q-btn
-        @click="logOut">
-        {{ $t('login.logout') }}
-      </q-btn>
+      <q-form
+        autofocus
+        class="q-gutter-md"
+        >
 
+        <q-select
+          v-model="lang"
+          :options="langOptions"
+          :label="this.$t('configuration.language')"
+          dense
+          borderless
+          emit-value
+          map-options
+          options-dense
+          style="min-width: 150px"
+          />
+
+        <q-input
+          filled
+          type="url"
+          placeholder="https://world.openfoodfacts.org"
+          v-model="conf.baseURL"
+          :label="$t('configuration.baseURL')"
+          :hint="$t('configuration.baseURL_hint')"
+          />
+
+        <q-input
+          filled
+          type="number"
+          v-model.number="conf.historySize"
+          :label="$t('configuration.historySize')"
+          :hint="$t('configuration.historySize_hint')"
+          />
+
+      </q-form>
     </div>
   </div>
 </template>
@@ -26,12 +74,30 @@ export default {
 
   data () {
     return {
+      lang: this.$i18n.locale,
+      langOptions: [
+        { value: 'en', label: 'English' },
+        { value: 'es', label: 'Español' }
+      ]
+    }
+  },
+
+  watch: {
+    lang: function (lang) {
+      this.$i18n.locale = lang
+      this.conf.lang = lang
+    }
+  },
+
+  computed: {
+    conf () {
+      return this.getConfiguration()
     }
   },
 
   methods: {
-    ...mapActions('appStatus', ['setLastError', 'setLoggedInUser']),
-    ...mapGetters('appStatus', ['getBaseURL', 'getLoggedInUser']),
+    ...mapActions('appStatus', ['setLastError', 'setLoggedInUser', 'updateConfiguration']),
+    ...mapGetters('appStatus', ['getConfiguration', 'getLoggedInUser', 'getBaseURL']),
 
     logOut () {
       const baseURL = this.getBaseURL()
@@ -82,6 +148,10 @@ export default {
             message: msg
           })
         })
+    },
+
+    onSubmit () {
+
     }
   },
 

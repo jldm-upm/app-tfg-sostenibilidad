@@ -27,13 +27,22 @@
         <q-input
           filled
           name="password"
-          type="password"
+          :type="isPwd ? 'password' : 'text'"
           v-model="pwd"
           :label="$t('login.pwd')"
           :hint="$t('login.pwd_hint')"
           lazy-rules
           :rules="[ val => val && val.length > 0 || $t('login.pwd_val') ]"
-          />
+          >
+          <template v-slot:append>
+            <q-icon
+              :name="isPwd ? 'visibility_off' : 'visibility'"
+              class="cursor-pointer"
+              @click="isPwd = !isPwd"
+              />
+          </template>
+
+        </q-input>
         <div>
           <q-btn
             :label="$t('login.submit_login')"
@@ -60,7 +69,8 @@ export default {
   data () {
     return {
       name: null,
-      pwd: null
+      pwd: null,
+      isPwd: true
     }
   },
 

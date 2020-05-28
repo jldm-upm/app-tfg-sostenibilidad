@@ -1,16 +1,35 @@
 <template>
   <q-page>
-    <q-list v-for="(producto, index) in history"
-            :key="index">
-      <q-item
-        v-if="producto">
-        <q-item-section>
-          <product-resumen
-            :producto="producto"
-            />
-        </q-item-section>
-      </q-item>
-    </q-list>
+    <div
+      v-if="history.length > 0">
+      <q-list
+        v-for="(producto, index) in history"
+        :key="index"
+        :active="producto.code === activeProduct.code"
+        >
+        <q-item
+          @click.stop="activeProduct = producto"
+          v-if="producto">
+          <q-item-section>
+            <product-resumen
+              :producto="producto"
+              />
+          </q-item-section>
+        </q-item>
+      </q-list>
+    </div>
+    <div
+      v-else>
+      <q-list>
+        <q-item>
+          <q-item-section>
+            <product-resumen
+              :producto="null"
+              />
+          </q-item-section>
+        </q-item>
+      </q-list>
+    </div>
   </q-page>
 </template>
 
@@ -29,12 +48,24 @@ export default {
   computed: {
     history () {
       return this.getHistory()
+    },
+    activeProduct: {
+      get: () => {
+        return this.getActiveProduct()
+      },
+      set: (newValue) => {
+        return this.setActiveProduct(newValue)
+      }
     }
   },
 
   methods: {
     ...mapActions('appStatus', ['setLastError', 'setActiveProduct']),
-    ...mapGetters('appStatus', ['getHistory'])
+    ...mapGetters('appStatus', ['getHistory', 'getActiveProduct']),
+
+    elegir () {
+      this.setActiveProduct(this.history[0])
+    }
   },
 
   components: {

@@ -22,7 +22,7 @@
       <q-input
         filled
         name="password"
-        type="password"
+        :type="isPwd ? 'password' : 'text'"
         v-model="pwd"
         :label="$t('login.pwd')"
         :hint="$t('login.pwd_hint')"
@@ -31,13 +31,21 @@
                 val => val !== null && val !== '' ||  $t('login.pwd_val'),
                 val => val.length >= 8 || $t('login.pwd_val2')
                 ]"
-        />
+        >
+        <template v-slot:append>
+          <q-icon
+            :name="isPwd ? 'visibility_off' : 'visibility'"
+            class="cursor-pointer"
+            @click="isPwd = !isPwd"
+          />
+        </template>
+      </q-input>
 
       <q-input
         v-if="pwd"
         filled
         name="password2"
-        type="password"
+        :type="isPwd ? 'password' : 'text'"
         v-model="pwd2"
         :label="$t('login.pwd2')"
         :hint="$t('login.pwd_hint2')"
@@ -46,7 +54,15 @@
                 val => val !== null && val !== '' ||  $t('login.pwd_val'),
                 val => val.length >= 8 || $t('login.pwd_val2')
                 ]"
-        />
+        >
+        <template v-slot:append>
+          <q-icon
+            :name="isPwd ? 'visibility_off' : 'visibility'"
+            class="cursor-pointer"
+            @click="isPwd = !isPwd"
+          />
+        </template>
+      </q-input>
 
       <q-toggle
         v-model="accept"
@@ -83,6 +99,7 @@ export default {
 
   data () {
     return {
+      isPwd: true,
       name: null,
       pwd: null,
       pwd2: null,

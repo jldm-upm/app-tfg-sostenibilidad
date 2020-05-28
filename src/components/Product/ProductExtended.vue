@@ -108,41 +108,6 @@
               </tr>
             </tbody>
           </q-markup-table>
-
-          <q-markup-table
-            flat
-            bordered>
-            <thead class="bg-primary text-white">
-              <tr>
-                <th class="text-left">{{ $t('product.nutriments') }}</th>
-                <th class="text-right">{{ $t('product.nut_100g')}}</th>
-                <th class="text-right">{{ $t('product.nut_unit') }}</th>
-              </tr>
-            </thead>
-            <tbody
-              v-if="product"
-              >
-              <tr
-                v-for="(nutriment,idx) in nutriments"
-                :key="idx">
-                <td>{{ $t('nutriments.' + nutriment) }}</td>
-                <td class="text-right">{{ product.nutriments[nutriment + "_100g"] }}</td>
-                <td class="text-right">{{ product.nutriments[nutriment + '_unit'] }}</td>
-              </tr>
-            </tbody>
-            <tbody
-              v-else
-              >
-              <tr
-                v-for="(nutriment,idx) in nutriments"
-                :key="idx"
-                >
-                <td>{{ $t('nutriments.' + nutriment) }}</td>
-                <td class="text-right">-</td>
-                <td class="text-right">-</td>
-              </tr>
-            </tbody>
-          </q-markup-table>
         </q-card-section>
       </q-card>
     </q-expansion-item>

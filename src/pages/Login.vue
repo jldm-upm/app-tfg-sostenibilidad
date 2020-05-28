@@ -6,7 +6,7 @@
       >
       <q-tab name="login"
              icon="person"
-             :label="this.$t('login.loginTitle')"
+             :label="loginTitle"
              >
       </q-tab>
       <q-tab
@@ -25,9 +25,9 @@
       <q-tab-panel
         name="login">
         <user-tab
-          v-if="getLoggedInUser()"
+          v-if="loggedInUser"
           resource="/user/logout"
-          :user="getLoggedInUser()">
+          :user="loggedInUser">
         </user-tab>
         <login-tab
           v-else
@@ -54,6 +54,23 @@ export default {
   data () {
     return {
       tab: 'login'
+    }
+  },
+
+  computed: {
+    loginTitle () {
+      const user = this.getLoggedInUser()
+      let title = this.$t('login.loginTitle')
+
+      if (user) {
+        title = this.$t('login.confTitle')
+      }
+
+      return title
+    },
+
+    loggedInUser () {
+      return this.getLoggedInUser()
     }
   },
 

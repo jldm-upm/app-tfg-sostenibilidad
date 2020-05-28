@@ -12,7 +12,7 @@ export default function () {
     // configuration
     configuration: {
       baseURL: 'http://localhost:8000',
-      cacheSizeProducts: 10,
+      historySize: 10,
       language: 'en'
     }
   }

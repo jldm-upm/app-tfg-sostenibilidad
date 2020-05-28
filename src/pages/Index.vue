@@ -2,7 +2,7 @@
   <q-page>
     <q-img
       class="bg_image"
-      src="/statics/SDG_Wheel_Transparent_WEB.png"
+      src="./SDG_Wheel_Transparent_WEB.png"
       />
   </q-page>
 </template>

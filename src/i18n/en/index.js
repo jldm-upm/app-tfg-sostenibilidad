@@ -7,6 +7,13 @@ export default {
   mainsearch: {
     barcode: 'Barcode'
   },
+  configuration: {
+    baseURL: 'URL Server',
+    baseURL_hint: 'URL (protocol, address, port) of the server',
+    historySize: 'History Size',
+    historySize_hint: 'Maximun number visited elements to remember',
+    language: 'Language'
+  },
   off: {
     loggedin: 'Successful log in',
     loggedout: 'Successful log out',
@@ -29,14 +36,17 @@ export default {
     new: 'Create User',
     newTitle: 'Create User',
     userTitle: 'User Data',
+    confTitle: 'User Configuration',
     user: 'User',
     logout: 'Log Out',
+    upload: 'Upload to Server',
     name: 'User name',
     name_hint: 'Enter your user name',
     name_val: 'User name can\'t be empty',
     pwd: 'Password',
     pwd2: 'Password confirmation',
     pwd_hint: 'Enter your secret password',
+    pwd_hint2: 'Re-enter the password',
     pwd_val: 'The password can\'t be empty',
     pwd_val2: 'The password must have a minimum length of 8 characters',
     accept: 'Accept the terms of service',
