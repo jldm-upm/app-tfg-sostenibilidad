@@ -3,7 +3,7 @@ import Vue from 'vue'
 export function someMutation (state) {
 }
 */
-export function setCodigo(state, codigo) {
+export function setCodigo (state, codigo) {
   state.codigo = codigo
 }
 

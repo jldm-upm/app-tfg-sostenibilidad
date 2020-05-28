@@ -3,7 +3,7 @@ const axios = require('axios')
 export function someAction (context) {
 }
 */
-export function setCodigo( {commit}, codigo) {
+export function setCodigo ({ commit }, codigo) {
   commit('setCodigo', codigo)
 }
 

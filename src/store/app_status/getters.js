@@ -2,7 +2,7 @@
   export function someGetter (state) {
   }
 */
-export function getCodigo(state) {
+export function getCodigo (state) {
   return state.codigo
 }
 

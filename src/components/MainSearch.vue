@@ -9,6 +9,7 @@
         outlined
         clearable
         v-model="codigo"
+        debounce="1000"
         clear-icon="close"
         bg-color="white"
         label-color="primary"
@@ -53,9 +54,20 @@ export default {
     }
   },
 
+  computed: {
+    codigo: {
+      get: function () {
+        return this.getCodigo()
+      },
+      set: function (code) {
+        this.setCodigo(code)
+      }
+    }
+  },
+
   methods: {
-    ...mapActions('appStatus', ['setLastError', 'setActiveProduct']),
-    ...mapGetters('appStatus', ['getBaseURL']),
+    ...mapActions('appStatus', ['setLastError', 'setActiveProduct', 'setCodigo']),
+    ...mapGetters('appStatus', ['getBaseURL', 'getCodigo']),
 
     buscar () {
       let type = 'positive'

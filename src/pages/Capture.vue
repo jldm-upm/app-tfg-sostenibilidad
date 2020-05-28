@@ -35,18 +35,21 @@
 <script>
 import Quagga from 'quagga'
 
+import { mapActions } from 'vuex'
+
 export default {
   name: 'PageCapture',
 
   data () {
     return {
-      code: '',
       dialog: false,
       cameraStatus: 0
     }
   },
 
   methods: {
+    ...mapActions('appStatus', ['setCodigo']),
+
     iniciarEscaneo () {
       this.cameraStatus = 1
       Quagga.init({
@@ -79,7 +82,8 @@ export default {
       })
     },
     onDetected (data) {
-      this.code = data.codeResult.code
+      // this.code = data.codeResult.code
+      this.setCodigo(data.codeResult.code)
       this.cameraStatus = 0
       this.onStop()
     },
