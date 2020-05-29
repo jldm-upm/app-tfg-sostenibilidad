@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div class="text-h6">
+    <div class="text-h6 text-center">
       {{ $t('login.loginTitle') }}
     </div>
 
     <div
       class="q-pa-md"
-      style="max-width: 400px">
+      >
 
       <q-form
         autofocus
@@ -41,8 +41,8 @@
               @click="isPwd = !isPwd"
               />
           </template>
-
         </q-input>
+
         <div>
           <q-btn
             :label="$t('login.submit_login')"
@@ -87,7 +87,7 @@ export default {
       this.$axios.post(url, postData)
         .then(response => {
           this.$q.loading.hide()
-          console.log(response.data.session)
+          console.log(response.data)
           if (response.data.status === 1) {
             this.setLoggedInUser(response.data)
 

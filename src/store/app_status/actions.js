@@ -15,17 +15,11 @@ export function setLastError ({ commit }, error) {
   commit('setError', error)
 }
 
-export function updateConfiguration ({ commit }, payload) {
-  commit('updateConfiguration', payload)
-}
-
 export function setLoggedInUser ({ commit, state }, serverResponse) {
   console.log(`setLoggedInUser: ${JSON.stringify(serverResponse)}`)
   if (serverResponse) {
-    const resConf = {}
-    Object.assign(resConf, state.configuration, serverResponse.conf)
     commit('setLoggedInUser', serverResponse.session)
-    commit('setConfiguration', resConf)
+    commit('updateConfiguration', serverResponse.conf)
   } else {
     commit('setLoggedInUser', null)
   }
@@ -49,4 +43,22 @@ export function getAndUpdateTaxonomia ({ commit, state }, taxonomia) {
         return tax
       })
   }
+}
+
+// configuración
+
+export function updateConfiguration ({ commit }, payload) {
+  commit('updateConfiguration', payload)
+}
+
+export function setLanguage ({ commit }, value) {
+  commit('setLanguage', value)
+}
+
+export function setHistorySize ({ commit }, value) {
+  commit('setHistorysize', value)
+}
+
+export function setBaseURL ({ commit }, value) {
+  commit('setBaseURL', value)
 }

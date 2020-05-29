@@ -5,11 +5,10 @@
       <q-list
         v-for="(producto, index) in history"
         :key="index"
-        :active="producto.code === activeProduct.code"
         >
         <q-item
           @click.stop="activeProduct = producto"
-          v-if="producto">
+          :active="producto.code === activeProduct.code">
           <q-item-section>
             <product-resumen
               :producto="producto"

@@ -19,16 +19,29 @@ export function setError (state, error) {
   state.lastError = error
 }
 
-export function updateConfiguration (state, payload) {
-  Object.assign(state.configuration, payload)
-}
-
 export function setLoggedInUser (state, user) {
   state.loggedInUser = user
 }
 
+// configuration
+
 export function setConfiguration (state, conf) {
+  state.configuration = conf
+}
+
+export function updateConfiguration (state, conf) {
   const confRes = { ...state.configuration, ...conf }
-  console.log(JSON.stringify(confRes))
   state.configuration = confRes
+}
+
+export function setHistorySize (state, value) {
+  state.configuration.historySize = value
+}
+
+export function setBaseURL (state, value) {
+  state.configuration.baseURL = value
+}
+
+export function setLanguage (state, lang) {
+  state.configuration.language = lang
 }

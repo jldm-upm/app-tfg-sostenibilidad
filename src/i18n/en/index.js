@@ -8,6 +8,7 @@ export default {
     barcode: 'Barcode'
   },
   configuration: {
+    configuration: 'Configuration',
     baseURL: 'URL Server',
     baseURL_hint: 'URL (protocol, address, port) of the server',
     historySize: 'History Size',
@@ -17,6 +18,7 @@ export default {
   off: {
     loggedin: 'Successful log in',
     loggedout: 'Successful log out',
+    usersaved: 'Successful saved',
     notcode: 'There are not code to search',
     errors: {
       notResponse: 'Without response!',

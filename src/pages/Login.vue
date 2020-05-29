@@ -2,6 +2,7 @@
   <q-page>
     <q-tabs
       v-model="tab"
+      align="justify"
       class="text-teal"
       >
       <q-tab name="login"
@@ -33,6 +34,11 @@
           v-else
           resource="/user/login">
         </login-tab>
+
+        <user-configuration
+          :user="loggedInUser"
+          resource="/user/save">
+        </user-configuration>
       </q-tab-panel>
 
       <q-tab-panel
@@ -81,7 +87,8 @@ export default {
   components: {
     'login-tab': require('src/components/User/Login.vue').default,
     'login-new': require('src/components/User/New.vue').default,
-    'user-tab': require('src/components/User/User.vue').default
+    'user-tab': require('src/components/User/User.vue').default,
+    'user-configuration': require('src/components/User/Configure.vue').default
   }
 }
 </script>

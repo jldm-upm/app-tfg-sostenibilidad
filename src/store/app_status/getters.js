@@ -10,14 +10,6 @@ export function getActiveProduct (state) {
   return state.activeProduct
 }
 
-export function getBaseURL (state) {
-  return state.configuration.baseURL
-}
-
-export function getConfiguration (state) {
-  return state.configuration
-}
-
 export function getLoggedInUser (state) {
   return state.loggedInUser
 }
@@ -30,6 +22,19 @@ export function getTaxonomia (state, tax) {
   return state.taxonomia[tax]
 }
 
+// configuración
+export function getConfiguration (state) {
+  return state.configuration
+}
+
 export function getLanguage (state) {
   return state.configuration.language
+}
+
+export function getBaseURL (state) {
+  return state.configuration.baseURL
+}
+
+export function getHistorySize (state) {
+  return state.configuration.historySize
 }
