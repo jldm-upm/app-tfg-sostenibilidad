@@ -18,8 +18,8 @@ export function getHistory (state) {
   return state.history
 }
 
-export function getTaxonomia (state, tax) {
-  return state.taxonomia[tax]
+export function getTaxonomias (state) {
+  return state.taxonomias
 }
 
 // configuración

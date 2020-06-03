@@ -1,4 +1,3 @@
-const axios = require('axios')
 /*
 export function someAction (context) {
 }
@@ -22,26 +21,6 @@ export function setLoggedInUser ({ commit, state }, serverResponse) {
     commit('updateConfiguration', serverResponse.conf)
   } else {
     commit('setLoggedInUser', null)
-  }
-}
-
-export function getAndUpdateTaxonomia ({ commit, state }, taxonomia) {
-  let tax = null
-  if (state.taxonomias[taxonomia]) {
-    return state.taxonomias[taxonomia]
-  } else {
-    const urlTaxonomia = `${state.configuration.baseURL}/data/taxonomies/${taxonomia}.json`
-    axios.get(urlTaxonomia)
-      .then((resultado) => {
-        tax = resultado.data
-        commit('setTaxonomia', tax)
-      })
-      .catch((error) => {
-        tax = error
-      })
-      .finally(() => {
-        return tax
-      })
   }
 }
 

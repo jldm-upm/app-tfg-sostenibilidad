@@ -5,7 +5,8 @@ export default {
   failed: 'Action failed',
   success: 'Action was successful',
   mainsearch: {
-    barcode: 'Barcode'
+    barcode: 'Barcode',
+    capture: 'Capture Barcode'
   },
   configuration: {
     configuration: 'Configuration',
@@ -14,6 +15,9 @@ export default {
     historySize: 'History Size',
     historySize_hint: 'Maximun number visited elements to remember',
     language: 'Language'
+  },
+  history: {
+    empty: 'Empty'
   },
   off: {
     loggedin: 'Successful log in',
@@ -24,7 +28,8 @@ export default {
       notResponse: 'Without response!',
       serverProblem: 'Problem accessing service!',
       loggedin: 'Can\'t log in',
-      loggedout: 'Can\' log out'
+      loggedout: 'Can\' log out',
+      imagenotfound: 'Image not found'
     },
     product: {
       product: 'product',
@@ -61,13 +66,23 @@ export default {
   },
   product: {
     categories: 'Categories',
-    image: 'Image',
+    image: 'Product Image',
     ingredients: 'Ingredients',
     name: 'Info of the product',
     nutriments: 'Nutriments',
     origin: '{brand} - {owner} from {origin}',
     nut_100g: '100g',
-    nut_unit: 'units'
+    nut_unit: 'units',
+    attr: {
+      generic_name: 'Generic Name'
+    },
+    add_sustainability: 'Add Sustainability',
+    get_info: 'More info',
+    ratings: {
+      lvl1: 'Not At All',
+      lvl2: 'Possible',
+      lvl3: 'Good'
+    }
   },
   nutriments: {
     carbohydrates: 'carbohydrates',

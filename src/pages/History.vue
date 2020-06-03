@@ -19,21 +19,19 @@
     </div>
     <div
       v-else>
-      <q-list>
-        <q-item>
-          <q-item-section>
-            <product-resumen
-              :producto="null"
-              />
-          </q-item-section>
-        </q-item>
-      </q-list>
+      <q-icon name="clear"
+              color="red"
+              size="600px"
+              class="absolute-center">
+        <q-tooltip content-class="bg-white text-primary">{{ $t('history.empty') }}</q-tooltip>
+      </q-icon>
     </div>
   </q-page>
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import { productoVacio } from './producto_vacio.js'
 
 export default {
   name: 'PageHistory',
@@ -46,14 +44,15 @@ export default {
 
   computed: {
     history () {
-      return this.getHistory()
+      const hist = this.getHistory()
+      return hist
     },
     activeProduct: {
       get: () => {
-        return this.getActiveProduct()
+        return this.getActiveProduct() || productoVacio()
       },
       set: (newValue) => {
-        return this.setActiveProduct(newValue)
+        this.setActiveProduct(newValue)
       }
     }
   },

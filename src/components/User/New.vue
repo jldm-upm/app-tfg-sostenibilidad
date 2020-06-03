@@ -78,13 +78,17 @@
         <q-btn
           :label="$t('login.submit_new')"
           type="submit"
-          color="primary"/>
+          color="primary">
+          <q-tooltip content-class="bg-white text-primary">{{ $t('login.submit.new') }}</q-tooltip>
+        </q-btn>
         <q-btn
           :label="$t('login.reset')"
           type="reset"
           color="primary"
           flat
-          class="q-ml-sm" />
+          class="q-ml-sm">
+          <q-tooltip content-class="bg-white text-primary">{{ $t('login.reset') }}</q-tooltip>
+        </q-btn>
       </div>
     </q-form>
 

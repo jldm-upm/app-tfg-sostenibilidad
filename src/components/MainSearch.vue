@@ -35,7 +35,9 @@
         icon="photo_camera"
         to="/capture"
         v-ripple:secondary
-        />
+        >
+        <q-tooltip content-class="bg-white text-primary">{{ $t('mainsearch.capture') }}</q-tooltip>
+      </q-btn>
     </q-toolbar>
   </div>
 </template>
@@ -65,9 +67,22 @@ export default {
     }
   },
 
+  created () {
+    this.$root.$on('evtBuscar', this.evtBuscar)
+  },
+
+  beforeDestroy () {
+    this.$root.$off('evtBuscar', this.evtBuscar)
+  },
+
   methods: {
     ...mapActions('appStatus', ['setLastError', 'setActiveProduct', 'setCodigo']),
     ...mapGetters('appStatus', ['getBaseURL', 'getCodigo']),
+
+    evtBuscar (code) {
+      this.setCodigo(code)
+      this.buscar()
+    },
 
     buscar () {
       let type = 'positive'

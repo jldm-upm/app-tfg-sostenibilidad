@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 // import example from './module-example'
 import appStatus from './app_status'
+import taxonomias from './taxonomias'
 // TODO: usar VuexPersistent: https://alligator.io/vuejs/vuex-persist-state/
 
 Vue.use(Vuex)
@@ -20,7 +21,8 @@ export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
       // example
-      appStatus
+      appStatus: appStatus,
+      taxonomias: taxonomias
     },
 
     // enable strict mode (adds overhead!)

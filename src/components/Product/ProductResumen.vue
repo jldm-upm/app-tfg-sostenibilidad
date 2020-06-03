@@ -1,67 +1,95 @@
 <template>
-  <q-card>
-    <q-item>
-      <q-item-section avatar top>
+  <q-item
+    clickable>
+    <q-item-section avatar right>
+      <img
+        :alt="$t('product.image')"
+        :src="producto.image_front_thumb_url"
+        />
+    </q-item-section>
+
+    <q-item-section top class="col-6">
+      <q-item-label lines="1">
+        <span class="text-weight-medium">{{ producto.code }}<q-tooltip content-class="bg-white text-primary">{{ producto.code }}</q-tooltip></span>
+        <span class="text-grey-8">{{ producto.generic_name }}<q-tooltip content-class="bg-white text-primary">{{ producto.generic_name }}</q-tooltip></span>
+      </q-item-label>
+      <q-item-label caption lines="1">
+        {{ producto.product_name }}
+        <q-tooltip content-class="bg-white text-primary">{{ producto.product_name }}</q-tooltip>
+      </q-item-label>
+      <q-item-label lines="1" class="q-mt-xs text-body2 text-weight-bold text-primary text-uppercase">
+        <span><q-rating v-model="producto.sustainability.sustainability_level" readonly></q-rating></span>
+      </q-item-label>
+      <q-item-label>
+        {{ producto.origins }}
+      </q-item-label>
+      <div class="row q-gutter-xs">
+        <div
+          class="recuadro q-pa-xs"
+          v-for="analisis in producto.ingredients_analysis_tags"
+          :key="analisis">
+          {{ traducir(analisis,"ingredientsAnalysis") }}
+        </div>
+      </div>
+    </q-item-section>
+    <q-item-section
+      side>
+      <q-btn
+        @click.stop="dialogoSostenibilidad = true"
+        dense
+        round>
         <q-avatar
-          square>
-          <q-img
-            v-if="producto"
-            :src="producto.image_small_url || producto.image_url"
-            spinner-color="white"
-            />
-          <q-icon
-            v-else
-            name="block"
-            />
+          size="36px">
+          <img
+            src="./SDG_Wheel_Transparent_WEB_mini.png" />
         </q-avatar>
-      </q-item-section>
-
-      <q-item-section
-        v-if="producto">
-        <q-item-label class="text-orange">
-          {{ producto.code }}
-        </q-item-label>
-        <q-item-label class="text-small text-primary">
-          {{ producto.generic_name }}
-        </q-item-label>
-        <q-item-label class="text-bold">
-          {{ producto.product_name }}
-        </q-item-label>
-        <q-item-label class="text-small">
-          &#x01F69A; {{ $t('product.origin', { brand: producto.brands, owner: producto.brand_owner, origin: producto.origins}) }}
-        </q-item-label>
-      </q-item-section>
-
-      <q-item-section
-        v-else>
-        <q-item-label class="text-orange">
-          {{  new Array(12).join('_') }}
-        </q-item-label>
-        <q-item-label class="text-small text-primary">
-          {{  new Array(23).join('_') }}
-        </q-item-label>
-        <q-item-label class="text-bold">
-          {{  new Array(14).join('_') }}
-        </q-item-label>
-        <q-item-label class="text-small">
-          {{  new Array(25).join('_') }}
-        </q-item-label>
-      </q-item-section>
-    </q-item>
-
-    <q-card-section>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, eius reprehenderit eos corrupti
-      commodi magni quaerat ex numquam, dolorum officiis modi facere maiores architecto suscipit iste
-      eveniet doloribus ullam aliquid.
-    </q-card-section>
-  </q-card>
+        <q-tooltip content-class="bg-white text-primary">{{ $t('product.add_sustainability') }}</q-tooltip>
+      </q-btn>
+    </q-item-section>
+  </q-item>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'ProductResumen',
 
+  data () {
+    return {
+      dialogoSostenibilidad: false
+    }
+  },
+
+  computed: {
+    lang () {
+      return this.$i18n.locale
+    }
+  },
+
+  methods: {
+    ...mapGetters('taxonomias', ['getTaxIngredientsAnalysis']),
+
+    traducir (valor, taxomomia) {
+      // console.log(`traducir(${valor},${taxonomia})`)
+      let res = valor
+      switch (taxomomia) {
+        case 'ingredientsAnalysis':
+          res = this.getTaxIngredientsAnalysis()[valor].name[this.lang]
+          break
+      }
+      console.log(`traducir.res=${res}`)
+      return res
+    }
+  },
+
   props: ['producto']
 }
 </script>
+
+<style>
+.recuadro {
+    background-color: gray;
+    border-radius: 25px;
+}
+</style>

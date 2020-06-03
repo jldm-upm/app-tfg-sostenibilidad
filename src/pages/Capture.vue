@@ -86,6 +86,7 @@ export default {
       this.setCodigo(data.codeResult.code)
       this.cameraStatus = 0
       this.onStop()
+      this.$root.$emit('evtBuscar', data.codeResult.code)
     },
     onStop () {
       Quagga.stop()

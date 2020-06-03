@@ -1,24 +1,32 @@
 <template>
   <q-page class="column">
     <product-extended
-      :product="getActiveProduct"
+      :producto="getActiveProductOrEmpty"
       />
   </q-page>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import { productoVacio } from './producto_vacio.js'
 
 export default {
   name: 'PageProduct',
 
   data () {
     return {
+
     }
   },
 
-  computed: {
+  methods: {
     ...mapGetters('appStatus', ['getActiveProduct'])
+  },
+
+  computed: {
+    getActiveProductOrEmpty () {
+      return this.getActiveProduct() || productoVacio()
+    }
   },
 
   components: {

@@ -1,15 +1,18 @@
+const additiveClasses = require('./tax/additives_classes.js').val
+const ingredientsAnalysis = require('./tax/ingredients_analysis.js').val
+
 export default function () {
   return {
     //
     taxonomies: {
       lastupdate: 0,
 
-      additive_classes: null,
+      additiveClasses: additiveClasses,
       additives: null,
       allergens: null,
       brands: null,
       countries: null,
-      ingredients_analysis: null,
+      ingredientsAnalysis: ingredientsAnalysis,
       ingredients: null,
       languages: null,
       nova_groups: null,
