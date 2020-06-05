@@ -25,18 +25,43 @@
                 ></q-rating></span>
       </q-item-label>
       <q-item-section bottom>
-        <analisis-ingredientes
-          v-for="analisis in producto.ingredients_analysis_tags"
-          :key="analisis"
-          :ai=analisis
-          >
-        </analisis-ingredientes>
-        <label-tag
-          v-for="label in producto.labels_tags"
-          :key="label"
-          :label=label
-          >
-        </label-tag>
+        <q-list>
+          <q-item
+            >
+            <q-item-section>
+              <q-item-label>{{ $t('product.ingredients_analysis') }}</q-item-label>
+            </q-item-section>
+            <q-item-section>
+              <q-item-label
+                caption
+                lines="1"
+                v-for="analisis in producto.ingredients_analysis_tags"
+                :key="analisis"
+                >
+                <analisis-ingredientes
+                  :ai=analisis
+                  >
+                </analisis-ingredientes>
+              </q-item-label>
+            </q-item-section>
+          </q-item>
+          <q-item>
+            <q-item-section>{{ $t('product.labels') }}</q-item-section>
+            <q-item-section>
+              <q-item-label
+                caption
+                lines="1"
+                v-for="label in producto.labels_tags"
+                :key="label"
+                >
+                <label-tag
+                  :label=label
+                  >
+                </label-tag>
+              </q-item-label>
+            </q-item-section>
+          </q-item>
+        </q-list>
       </q-item-section>
     </q-item-section>
   </q-item>
@@ -61,3 +86,12 @@ export default {
   props: ['producto']
 }
 </script>
+
+<style>
+.clsai {
+
+}
+.clslabel {
+
+}
+</style>

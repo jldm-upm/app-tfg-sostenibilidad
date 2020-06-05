@@ -65,11 +65,13 @@ export default {
     reset: 'Reset'
   },
   product: {
+    ingredients_analysis: 'Analysis',
     categories: 'Categories',
     complete: 'Completed',
     notcomplete: 'Not completed',
     image: 'Image',
     ingredients: 'Ingredients',
+    labels: 'Labels',
     name: 'Info of the product',
     nutriments: 'Nutriments',
     origins: 'Origin:',

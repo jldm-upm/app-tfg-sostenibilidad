@@ -1,6 +1,5 @@
 <template>
   <div
-    class="recuadro"
     :class="{ clsDesconocido: desconocido, clsRojo: noEs, clsVerde: !(desconocido || noEs) }"
     >
     {{ traducir(ai, "ingredientsAnalysis") }}
@@ -57,13 +56,6 @@ export default {
 </script>
 
 <style>
-.recuadro {
-    border-radius: 25px;
-    color: white;
-    padding-left: 24px;
-    padding-right: 24px;
-}
-
 .clsVerde {
     background-color: green;
 }
