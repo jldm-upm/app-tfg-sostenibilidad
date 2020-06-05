@@ -34,6 +34,8 @@ export default {
 
 <style>
 .recuadro_label {
+    padding-left: 10px;
+    padding-right: 10px;
     background-color: green;
     color: white;
 }

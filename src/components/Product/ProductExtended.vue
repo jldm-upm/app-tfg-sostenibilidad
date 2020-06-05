@@ -1,21 +1,16 @@
 <template>
-  <div>
-    <product-resumen
-      :producto="producto"
-      >
-    </product-resumen>
+  <q-card>
+    <q-card-section>
+      <product-resumen
+        :producto="producto"
+        >
+      </product-resumen>
+    </q-card-section>
 
     <q-card-section>
-      <q-item-label>
-        {{ $t('product.origins') }} {{ producto.origins }}
-        <q-tooltip content-class="bg-white text-primary">{{ producto.origins }}</q-tooltip>
-      </q-item-label>
-      <q-item-label>
-        {{ $t('product.manufactured') }} {{ producto.manufacturing_places }}
-        <q-tooltip content-class="bg-white text-primary">{{ producto.origins }}</q-tooltip>
-      </q-item-label>
+      <product-origins :producto=producto></product-origins>
     </q-card-section>
-  </div>
+  </q-card>
 </template>
 
 <script>
@@ -42,7 +37,8 @@ export default {
   },
 
   components: {
-    'product-resumen': require('src/components/Product/ProductResumen.vue').default
+    'product-resumen': require('src/components/Product/ProductResumen.vue').default,
+    'product-origins': require('src/components/Product/ProductOrigins.vue').default
   },
 
   filters: {

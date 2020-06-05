@@ -57,12 +57,21 @@ export default {
 
 <style>
 .clsVerde {
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
     background-color: green;
 }
 .clsDesconocido {
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
     background-color: gray;
 }
 .clsRojo {
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
     background-color: red;
 }
 </style>
