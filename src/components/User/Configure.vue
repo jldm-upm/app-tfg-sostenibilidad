@@ -53,34 +53,40 @@
               content-class="bg-white text-primary">{{ $t('login.upload') }}</q-tooltip>
           </q-btn>
 
-          <q-select
-            v-model="lang"
-            :options="langOptions"
-            :label="this.$t('configuration.language')"
-            dense
-            borderless
-            emit-value
-            map-options
-            options-dense
-            style="min-width: 150px"
-            />
-
-          <q-input
-            v-model="baseURL"
-            filled
-            type="url"
-            placeholder="https://world.openfoodfacts.org"
-            :label="$t('configuration.baseURL')"
-            :hint="$t('configuration.baseURL_hint')"
-            />
-
-          <q-input
-            v-model.number="historySize"
-            filled
-            type="number"
-            :label="$t('configuration.historySize')"
-            :hint="$t('configuration.historySize_hint')"
-            />
+          <q-list>
+            <q-item>
+              <q-select
+                v-model="lang"
+                :options="langOptions"
+                :label="this.$t('configuration.language')"
+                dense
+                borderless
+                emit-value
+                map-options
+                options-dense
+                style="min-width: 150px"
+                />
+            </q-item>
+            <q-item>
+              <q-input
+                v-model="baseURL"
+                filled
+                type="url"
+                placeholder="https://world.openfoodfacts.org"
+                :label="$t('configuration.baseURL')"
+                :hint="$t('configuration.baseURL_hint')"
+                />
+            </q-item>
+            <q-item>
+              <q-input
+                v-model.number="historySize"
+                filled
+                type="number"
+                :label="$t('configuration.historySize')"
+                :hint="$t('configuration.historySize_hint')"
+                />
+            </q-item>
+          </q-list>
         </q-card-section>
       </q-card>
     </q-dialog>
