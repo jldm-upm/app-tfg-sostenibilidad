@@ -24,29 +24,20 @@
                 color="secondary"
                 ></q-rating></span>
       </q-item-label>
-    </q-item-section>
-
-    <q-item-section>
-      <q-list>
-        <q-item
+      <q-item-section bottom>
+        <analisis-ingredientes
           v-for="analisis in producto.ingredients_analysis_tags"
           :key="analisis"
-          class="column">
-          <analisis-ingredientes
-            :ai=analisis
-            >
-          </analisis-ingredientes>
-        </q-item>
-        <q-item
+          :ai=analisis
+          >
+        </analisis-ingredientes>
+        <label-tag
           v-for="label in producto.labels_tags"
           :key="label"
-          class="column">
-          <label-tag
-            :label=label
-            >
-          </label-tag>
-        </q-item>
-      </q-list>
+          :label=label
+          >
+        </label-tag>
+      </q-item-section>
     </q-item-section>
   </q-item>
 
