@@ -1,11 +1,14 @@
 export function productoVacio () {
   return {
     code: 'xxxxxxxxxxxxxxxx',
+    complete: 1,
     generic_name: '******* ***',
     ingredients_analysis_tags: [
       'en:palm-oil-content-unknown',
       'en:non-vegan',
-      'en:non-vegetarian'],
+      'en:vegetarian'],
+    labels_tags: ['en:gluten-free'],
+    origins: '--- ------- -------',
     product_name: '***** *********** ******* ** ****** **',
     sustainability: {
       sustainability_level: 2.5

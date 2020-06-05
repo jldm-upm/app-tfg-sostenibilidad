@@ -66,11 +66,14 @@ export default {
   },
   product: {
     categories: 'Categories',
-    image: 'Product Image',
+    complete: 'Completed',
+    notcomplete: 'Not completed',
+    image: 'Image',
     ingredients: 'Ingredients',
     name: 'Info of the product',
     nutriments: 'Nutriments',
-    origin: '{brand} - {owner} from {origin}',
+    origins: 'Origin:',
+    manufactured: 'Manufactured:',
     nut_100g: '100g',
     nut_unit: 'units',
     attr: {
@@ -83,18 +86,6 @@ export default {
       lvl2: 'Possible',
       lvl3: 'Good'
     }
-  },
-  nutriments: {
-    carbohydrates: 'carbohydrates',
-    energy: 'energy',
-    'energy-kcal': 'energy in kcal.',
-    fat: 'fat',
-    fiber: 'fiber',
-    proteins: 'proteins',
-    salt: 'salt',
-    'saturated-fat': 'saturated fat',
-    sodium: 'sodium',
-    sugars: 'sugars'
   },
   toolbar: {
     main: 'Main',

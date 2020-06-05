@@ -1,8 +1,21 @@
 <template>
-  <product-resumen
-    :producto="producto"
-    >
-  </product-resumen>
+  <div>
+    <product-resumen
+      :producto="producto"
+      >
+    </product-resumen>
+
+    <q-card-section>
+      <q-item-label>
+        {{ $t('product.origins') }} {{ producto.origins }}
+        <q-tooltip content-class="bg-white text-primary">{{ producto.origins }}</q-tooltip>
+      </q-item-label>
+      <q-item-label>
+        {{ $t('product.manufactured') }} {{ producto.manufacturing_places }}
+        <q-tooltip content-class="bg-white text-primary">{{ producto.origins }}</q-tooltip>
+      </q-item-label>
+    </q-card-section>
+  </div>
 </template>
 
 <script>

@@ -128,7 +128,6 @@ export default {
       },
       set (val) {
         this.$i18n.locale = val
-        this.$store.commit('appStatus/setLanguage', val)
       }
     }
   },
@@ -136,7 +135,7 @@ export default {
   watch: {
     lang: function (lang) {
       this.$i18n.locale = lang
-      this.conf.lang = lang
+      this.$store.commit('appStatus/setLanguage', lang)
     }
   },
 

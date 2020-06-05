@@ -6,23 +6,19 @@
         v-for="(producto, index) in history"
         :key="index"
         >
-        <q-item
-          @click.stop="activeProduct = producto"
-          :active="producto.code === activeProduct.code">
-          <q-item-section>
-            <product-resumen
-              :producto="producto"
-              />
-          </q-item-section>
-        </q-item>
+        <product-resumen
+          :active="activeProduct === producto"
+          :producto="producto"
+          />
       </q-list>
     </div>
     <div
       v-else>
-      <q-icon name="clear"
-              color="red"
-              size="600px"
-              class="absolute-center">
+      <q-icon
+        name="cancel"
+        color="red"
+        size="300px"
+        class="empty-list absolute-center">
         <q-tooltip content-class="bg-white text-primary">{{ $t('history.empty') }}</q-tooltip>
       </q-icon>
     </div>
@@ -31,7 +27,6 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import { productoVacio } from './producto_vacio.js'
 
 export default {
   name: 'PageHistory',
@@ -42,27 +37,18 @@ export default {
     }
   },
 
+  methods: {
+    ...mapActions('appStatus', ['setLastError', 'setActiveProduct']),
+    ...mapGetters('appStatus', ['getHistory', 'getActiveProduct'])
+  },
+
   computed: {
     history () {
       const hist = this.getHistory()
       return hist
     },
-    activeProduct: {
-      get: () => {
-        return this.getActiveProduct() || productoVacio()
-      },
-      set: (newValue) => {
-        this.setActiveProduct(newValue)
-      }
-    }
-  },
-
-  methods: {
-    ...mapActions('appStatus', ['setLastError', 'setActiveProduct']),
-    ...mapGetters('appStatus', ['getHistory', 'getActiveProduct']),
-
-    elegir () {
-      this.setActiveProduct(this.history[0])
+    activeProduct () {
+      return this.getActiveProduct()
     }
   },
 
@@ -72,3 +58,11 @@ export default {
 
 }
 </script>
+
+<style>
+.empty-list {
+    z-index: -1;
+    opacity: 0.2;
+    filter: grayscale(100%);
+}
+</style>

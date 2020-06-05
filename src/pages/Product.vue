@@ -1,5 +1,5 @@
 <template>
-  <q-page class="column">
+  <q-page>
     <product-extended
       :producto="getActiveProductOrEmpty"
       />
