@@ -1,6 +1,7 @@
 <template>
   <div>
     <label-tag
+      class="q-ma-xs"
       v-for="label in producto.labels_tags"
       :key="label"
       disabled

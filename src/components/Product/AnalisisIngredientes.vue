@@ -1,6 +1,7 @@
 <template>
   <div>
     <a-ingrediente
+      class="q-ma-xs"
       v-for="analisis in producto.ingredients_analysis_tags"
       :key="analisis"
 

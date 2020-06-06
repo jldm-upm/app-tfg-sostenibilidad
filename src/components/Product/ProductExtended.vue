@@ -39,7 +39,6 @@
 
       <q-tab-panel name="nutriments">
         <product-nutriments><div class="text-h6">{{ $t('product.nutriments') }}</div></product-nutriments>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </q-tab-panel>
     </q-tab-panels>
   </q-card>

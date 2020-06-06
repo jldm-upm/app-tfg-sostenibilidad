@@ -7,6 +7,7 @@ export default {
   close: 'Close',
   maximize: 'Maximize',
   minimize: 'Minimize',
+  nodata: 'No data',
   mainsearch: {
     barcode: 'Barcode',
     capture: 'Capture Barcode'
@@ -77,16 +78,20 @@ export default {
     labels: 'Labels',
     name: 'Info of the product',
     nutriments: 'Nutriments',
-    origins: 'Origin:',
-    manufactured: 'Manufactured:',
-    nut_100g: '100g',
-    nut_unit: 'units',
     attr: {
-      generic_name: 'Generic Name'
+      generic_name: 'Generic Name',
+      origins: 'Origin:',
+      manufactured: 'Manufactured:'
     },
     add_sustainability: 'Add Sustainability',
     get_info: 'More info',
-    sustainability: 'Sustainability'
+    sustainability: 'Sustainability',
+    nutriments_cols: {
+      nutriment: 'Nutriment',
+      value: 'Value',
+      unit: 'Unit',
+      '100g': '100g'
+    }
   },
   toolbar: {
     main: 'Main',

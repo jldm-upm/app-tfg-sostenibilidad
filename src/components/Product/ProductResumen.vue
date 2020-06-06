@@ -9,14 +9,16 @@
       :producto=producto>
     </product-header>
     <div class="column">
-    <analisis-ingredientes
-      :producto=producto>
-    </analisis-ingredientes>
+      <analisis-ingredientes
+        class="q-pa-sm"
+        :producto=producto>
+      </analisis-ingredientes>
     </div>
     <div class="column">
-    <labels
-      :producto=producto>
-    </labels>
+      <labels
+        class="q-pa-sm"
+        :producto=producto>
+      </labels>
     </div>
   </div>
 </template>
