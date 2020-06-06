@@ -74,8 +74,9 @@
         </a>
       </q-toggle>
 
-      <div>
+      <div class="row">
         <q-btn
+          class="col"
           :label="$t('login.submit_new')"
           type="submit"
           color="primary">
@@ -86,7 +87,7 @@
           type="reset"
           color="primary"
           flat
-          class="q-ml-sm">
+          class="col q-ml-sm">
           <q-tooltip content-class="bg-white text-primary">{{ $t('login.reset') }}</q-tooltip>
         </q-btn>
       </div>

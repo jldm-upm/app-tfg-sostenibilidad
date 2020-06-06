@@ -3,17 +3,19 @@
   <div
     class="q-gutter-md"
     >
-    <q-btn
-      clas="text-h5 text-center"
-      :label="$t('configuration.configuration')"
-      @click="dialog = true"
-      icon="settings"
-      >
-      <q-tooltip
-        content-class="bg-white text-primary">
-        {{ $t('configuration.configuration') }}
-      </q-tooltip>
-    </q-btn>
+    <div class="column">
+      <q-btn
+        clas="text-h5 text-center"
+        :label="$t('configuration.configuration')"
+        @click="dialog = true"
+        icon="settings"
+        >
+        <q-tooltip
+          content-class="bg-white text-primary">
+          {{ $t('configuration.configuration') }}
+        </q-tooltip>
+      </q-btn>
+    </div>
 
     <q-dialog
       v-model="dialog"
@@ -28,13 +30,13 @@
           <q-space />
 
           <q-btn dense flat icon="minimize" @click="maximizedToggle = false" :disable="!maximizedToggle">
-            <q-tooltip v-if="maximizedToggle" content-class="bg-white text-primary">Minimize</q-tooltip>
+            <q-tooltip v-if="maximizedToggle" content-class="bg-white text-primary">{{ $t('minimize')}}</q-tooltip>
           </q-btn>
           <q-btn dense flat icon="crop_square" @click="maximizedToggle = true" :disable="maximizedToggle">
-            <q-tooltip v-if="!maximizedToggle" content-class="bg-white text-primary">Maximize</q-tooltip>
+            <q-tooltip v-if="!maximizedToggle" content-class="bg-white text-primary">{{ $t('maximize') }}</q-tooltip>
           </q-btn>
           <q-btn dense flat icon="close" v-close-popup>
-            <q-tooltip content-class="bg-white text-primary">Close</q-tooltip>
+            <q-tooltip content-class="bg-white text-primary">{{ $t('close') }}</q-tooltip>
           </q-btn>
         </q-bar>
 

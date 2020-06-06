@@ -43,8 +43,9 @@
           </template>
         </q-input>
 
-        <div>
+        <div class="row">
           <q-btn
+            class="col"
             :label="$t('login.submit_login')"
             type="submit"
             color="primary"/>
@@ -52,7 +53,8 @@
             :label="$t('login.reset')"
             type="reset"
             color="primary"
-            flat class="q-ml-sm" />
+            flat
+            class="col q-ml-sm" />
         </div>
       </q-form>
 

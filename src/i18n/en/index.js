@@ -4,6 +4,9 @@
 export default {
   failed: 'Action failed',
   success: 'Action was successful',
+  close: 'Close',
+  maximize: 'Maximize',
+  minimize: 'Minimize',
   mainsearch: {
     barcode: 'Barcode',
     capture: 'Capture Barcode'
