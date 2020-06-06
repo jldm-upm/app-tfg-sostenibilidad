@@ -1,9 +1,11 @@
 <template>
-  <div
+  <q-btn
+    rounded
+    dense
     class="recuadro_label"
     >
     {{ traducir(label, "labels") }}
-  </div>
+  </q-btn>
 </template>
 
 <script>

@@ -8,19 +8,16 @@
     <product-header
       :producto=producto>
     </product-header>
+    <div class="column">
     <analisis-ingredientes
-      v-for="analisis in producto.ingredients_analysis_tags"
-      :key="analisis"
-      :ai=analisis
-      >
+      :producto=producto>
     </analisis-ingredientes>
-    <label-tag
-      v-for="label in producto.labels_tags"
-      :key="label"
-
-      :label=label
-      >
-    </label-tag>
+    </div>
+    <div class="column">
+    <labels
+      :producto=producto>
+    </labels>
+    </div>
   </div>
 </template>
 
@@ -37,7 +34,7 @@ export default {
   components: {
     'product-header': require('src/components/Product/ProductHeader.vue').default,
     'analisis-ingredientes': require('src/components/Product/AnalisisIngredientes.vue').default,
-    'label-tag': require('src/components/Product/LabelTag.vue').default
+    labels: require('src/components/Product/Labels.vue').default
   },
 
   props: ['producto']

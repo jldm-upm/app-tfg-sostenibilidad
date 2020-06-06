@@ -10,3 +10,7 @@ export function getTaxIngredientsAnalysis (state) {
 export function getTaxLabels (state) {
   return state.taxonomies.labels
 }
+
+export function getTaxCategories (state) {
+  return state.taxonomies.categories
+}

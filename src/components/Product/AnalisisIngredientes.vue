@@ -1,77 +1,23 @@
 <template>
-  <div
-    :class="{ clsDesconocido: desconocido, clsRojo: noEs, clsVerde: !(desconocido || noEs) }"
-    >
-    {{ traducir(ai, "ingredientsAnalysis") }}
+  <div>
+    <a-ingrediente
+      v-for="analisis in producto.ingredients_analysis_tags"
+      :key="analisis"
+
+      disabled
+      :ai=analisis>
+    </a-ingrediente>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import { traducirTax } from './traducir_tax.js'
-
 export default {
   name: 'AnalisisIngredientes',
 
-  computed: {
-    desconocido () {
-      return this.ai.includes('unknow')
-    },
-    noEs () {
-      return this.ai.includes('non')
-    },
-    lang () {
-      return this.$i18n.locale
-    }
+  components: {
+    'a-ingrediente': require('src/components/Product/AIngrediente.vue').default
   },
 
-  data () {
-    return {
-
-    }
-  },
-
-  methods: {
-    ...mapGetters('taxonomias', ['getTaxIngredientsAnalysis']),
-
-    traducir (valor, taxomomia) {
-      // // console.log(`traducir(${valor},${taxonomia})`)
-      // let taxs = null
-      // let res = valor
-      // switch (taxomomia) {
-      //   case 'ingredientsAnalysis':
-      //     taxs = this.getTaxIngredientsAnalysis()
-      //     res = taxs[valor].name[this.lang] || taxs[valor].name.en
-      //     break
-      // }
-      // console.log(`traducir.res=${res}`)
-      // return res
-      const tax = this.getTaxIngredientsAnalysis()
-      return traducirTax(valor, tax, this.$i18n.locale)
-    }
-  },
-
-  props: ['ai']
+  props: ['producto']
 }
 </script>
-
-<style>
-.clsVerde {
-    padding-left: 10px;
-    padding-right: 10px;
-    color: white;
-    background-color: green;
-}
-.clsDesconocido {
-    padding-left: 10px;
-    padding-right: 10px;
-    color: white;
-    background-color: gray;
-}
-.clsRojo {
-    padding-left: 10px;
-    padding-right: 10px;
-    color: white;
-    background-color: red;
-}
-</style>

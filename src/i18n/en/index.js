@@ -83,11 +83,7 @@ export default {
     },
     add_sustainability: 'Add Sustainability',
     get_info: 'More info',
-    ratings: {
-      lvl1: 'Not At All',
-      lvl2: 'Possible',
-      lvl3: 'Good'
-    }
+    sustainability: 'Sustainability'
   },
   toolbar: {
     main: 'Main',

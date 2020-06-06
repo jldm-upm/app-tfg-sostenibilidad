@@ -2,8 +2,10 @@
   <q-page>
     <q-tabs
       v-model="tab"
+      class="text-grey"
+      active-color="primary"
+      indicator-color="primary"
       align="justify"
-      class="text-teal"
       >
       <q-tab name="login"
              icon="person"

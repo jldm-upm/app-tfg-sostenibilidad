@@ -23,6 +23,8 @@
 
 <script>
 export default {
+  name: 'ProductHeader',
+
   props: ['producto']
 }
 </script>

@@ -13,6 +13,8 @@
 
 <script>
 export default {
+  name: 'ProductOrigins',
+
   props: ['producto']
 }
 </script>
