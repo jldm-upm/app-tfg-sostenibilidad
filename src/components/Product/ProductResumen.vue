@@ -14,6 +14,13 @@
         :producto=producto>
       </analisis-ingredientes>
     </div>
+    <div
+      v-if="producto.nutriments['carbon-footprint-from-known-ingredients_100g']">
+      <analisis-carbono
+        class="q-pa-sm"
+        :producto=producto>
+      </analisis-carbono>
+    </div>
     <div class="column">
       <labels
         class="q-pa-sm"
@@ -36,7 +43,8 @@ export default {
   components: {
     'product-header': require('src/components/Product/ProductHeader.vue').default,
     'analisis-ingredientes': require('src/components/Product/AnalisisIngredientes.vue').default,
-    labels: require('src/components/Product/Labels.vue').default
+    labels: require('src/components/Product/Labels.vue').default,
+    'analisis-carbono': require('src/components/Product/AnalisisCarbono.vue').default
   },
 
   props: ['producto']

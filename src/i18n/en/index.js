@@ -86,6 +86,15 @@ export default {
     add_sustainability: 'Add Sustainability',
     get_info: 'More info',
     sustainability: 'Sustainability',
+    ingredients_cols: {
+      rowsperpage: 'Ingrediens shown',
+      ingredient: 'Ingredient',
+      min: '%Min',
+      max: '%Max'
+    },
+    allergens: 'Allergens',
+    additives: 'Additives',
+    carbono100g: 'Carbon 100g',
     nutriments_cols: {
       rowsperpage: 'Nutriments shown',
       nutriment: 'Nutriment',

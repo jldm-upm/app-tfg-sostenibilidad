@@ -7,8 +7,6 @@
       </product-resumen>
     </q-card-section>
 
-    <product-ingredients></product-ingredients>
-
     <q-tabs
       v-model="tab"
       dense
@@ -34,7 +32,6 @@
 
       <q-tab-panel name="ingredients">
         <product-ingredients><div class="text-h6">{{ $t('product.ingredients') }}</div></product-ingredients>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </q-tab-panel>
 
       <q-tab-panel name="nutriments">

@@ -17,6 +17,7 @@ export function productoVacio () {
       calcium_serving: 0.0198,
       calcium_unit: 'mg',
       calcium_value: 38,
+      'carbon-footprint-from-known-ingredients_100g': 11.4,
       carbohydrates: 71.15,
       carbohydrates_100g: 71.15,
       carbohydrates_serving: 37,
@@ -99,6 +100,95 @@ export function productoVacio () {
       'vitamin-c_unit': 'mg',
       'vitamin-c_value': 0
     },
+    ingredients: [
+      {
+        id: 'en:wheat-flour',
+        percent_max: 51,
+        percent_min: '49',
+        rank: 1,
+        text: 'Farine de _blé_',
+        vegan: 'yes',
+        vegetarian: 'yes'
+      },
+      {
+        id: 'en:whole-wheat-flour',
+        percent: '49',
+        percent_max: '49',
+        percent_min: '49',
+        rank: 2,
+        text: 'farine de _blé_ complet',
+        vegan: 'yes',
+        vegetarian: 'yes'
+      },
+      {
+        id: 'en:yeast',
+        percent_max: 2,
+        percent_min: 0,
+        rank: 3,
+        text: 'levure',
+        vegan: 'yes',
+        vegetarian: 'yes'
+      },
+      {
+        from_palm_oil: 'no',
+        id: 'en:sunflower-oil',
+        percent_max: 1,
+        percent_min: 0,
+        rank: 4,
+        text: 'huile de tournesol',
+        vegan: 'yes',
+        vegetarian: 'yes'
+      },
+      {
+        id: 'en:wheat-gluten',
+        percent_max: 0.666666666666667,
+        percent_min: 0,
+        rank: 5,
+        text: '_gluten_ de _blé_',
+        vegan: 'yes',
+        vegetarian: 'yes'
+      },
+      {
+        id: 'en:sugar',
+        percent_max: 0.5,
+        percent_min: 0,
+        rank: 6,
+        text: 'sucre',
+        vegan: 'yes',
+        vegetarian: 'yes'
+      },
+      {
+        id: 'en:salt',
+        percent_max: 0.4,
+        percent_min: 0,
+        rank: 7,
+        text: 'sel',
+        vegan: 'yes',
+        vegetarian: 'yes'
+      },
+      {
+        has_sub_ingredients: 'yes',
+        id: 'en:flour-treatment-agent',
+        percent_max: 0.333333333333333,
+        percent_min: 0,
+        rank: 8,
+        text: 'agent de traitement de la farine'
+      },
+      {
+        id: 'en:e300',
+        percent_max: 0.333333333333333,
+        percent_min: 0,
+        text: 'acide ascorbique',
+        vegan: 'yes',
+        vegetarian: 'yes'
+      }
+    ],
+    allergens_tags: [
+      'en:gluten'
+    ],
+    additives_tags: [
+      'en:e300'
+    ],
     sustainability: {
       sustainability_level: 2.5
     }

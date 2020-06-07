@@ -1,7 +1,7 @@
 const additiveClasses = require('./tax/additives_classes.js').val
 const ingredientsAnalysis = require('./tax/ingredients_analysis.js').val
 const labelstags = require('./tax/labels.js').val
-// const categories = require('./tax/categories.js').val
+const ingredients = require('./tax/ingredients.js').val
 
 export default function () {
   return {
@@ -16,7 +16,7 @@ export default function () {
       brands: null,
       countries: null,
       ingredientsAnalysis: ingredientsAnalysis,
-      ingredients: null,
+      ingredients: ingredients,
       labels: labelstags,
       languages: null,
       nova_groups: null,

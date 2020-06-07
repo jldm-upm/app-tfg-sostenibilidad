@@ -5,7 +5,6 @@
       v-for="analisis in producto.ingredients_analysis_tags"
       :key="analisis"
 
-      disabled
       :ai=analisis>
     </a-ingrediente>
   </div>
