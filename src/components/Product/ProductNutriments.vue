@@ -7,7 +7,9 @@
       :columns="columns"
       row-key="name"
       :no-data-label="$t('nodata')"
+      :rows-per-page-label="$t('product.nutriments_cols.rowsperpage')"
       :pagination="{ rowsPerPage: 0 }"
+      :hide-bottom="true"
       />
   </div>
 </template>
@@ -28,12 +30,12 @@ export default {
           label: this.$t('product.nutriments_cols.nutriment'),
           align: 'left',
           field: row => row.name,
-          format: val => `${val}`,
-          sortable: true
+          format: val => { return (this.$t('product.nutriments_cols.vals.' + val) || val) },
+          sortable: false
         },
-        { name: 'value', align: 'center', label: this.$t('product.nutriments_cols.value'), field: 'value', sortable: true },
-        { name: 'unit', label: this.$t('product.nutriments_cols.unit'), field: 'unit', sortable: true },
-        { name: '100g', label: this.$t('product.nutriments_cols.100g'), field: '100g' }
+        { name: 'value', align: 'center', label: this.$t('product.nutriments_cols.value'), field: 'value', sortable: false },
+        { name: 'unit', label: this.$t('product.nutriments_cols.unit'), field: 'unit', sortable: false },
+        { name: '100g', label: this.$t('product.nutriments_cols.100g'), field: '100g', sortable: false }
       ]
     }
   },
@@ -48,7 +50,7 @@ export default {
     },
 
     data () {
-      const res = [
+      const nutrimentsFields = [
         'calcium',
         'carbohydrates',
         'cholesterol',
@@ -64,14 +66,15 @@ export default {
         'trans-fat',
         'vitamin-a',
         'vitamin-c']
-        .map((nut) => {
-          return {
-            name: nut,
-            value: this.producto.nutriments[nut + '_value'],
-            unit: this.producto.nutriments[nut + '_unit'],
-            '100g': this.producto.nutriments[nut + '_100g']
-          }
-        })
+
+      const res = nutrimentsFields.map((nut) => {
+        return {
+          name: nut,
+          value: this.producto.nutriments[nut + '_value'],
+          unit: this.producto.nutriments[nut + '_unit'],
+          '100g': this.producto.nutriments[nut + '_100g']
+        }
+      })
 
       return res
     }

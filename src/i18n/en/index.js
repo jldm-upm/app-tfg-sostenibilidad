@@ -87,10 +87,28 @@ export default {
     get_info: 'More info',
     sustainability: 'Sustainability',
     nutriments_cols: {
+      rowsperpage: 'Nutriments shown',
       nutriment: 'Nutriment',
       value: 'Value',
       unit: 'Unit',
-      '100g': '100g'
+      '100g': '100g',
+      vals: {
+        calcium: 'Calcium',
+        carbohydrates: 'Carbohydrates',
+        cholesterol: 'Cholesterol',
+        energy: 'Energy',
+        fat: 'Fat',
+        fiber: 'Fiber',
+        iron: 'Iron',
+        proteins: 'Proteins',
+        salt: 'Salt',
+        'saturated-fat': 'Satured Fat',
+        sodium: 'Sodium',
+        sugars: 'Sugar',
+        'trans-fat': 'Trans-Fat',
+        'vitamin-a': 'Vitamin-A',
+        'vitamin-c': 'Vitamin-C (ascorbic acid)'
+      }
     }
   },
   toolbar: {
