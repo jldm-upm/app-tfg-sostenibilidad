@@ -25,7 +25,6 @@ export default {
     ...mapGetters('taxonomias', ['getTaxIngredientes']),
 
     traducir (valor, taxomomia) {
-      console.log(`traducir: ${JSON.stringify(valor)}`)
       const tax = this.getTaxIngredientes()
       return traducirTax(valor, tax, this.$i18n.locale)
     }

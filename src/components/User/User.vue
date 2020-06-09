@@ -41,9 +41,6 @@ export default {
       const url = baseURL + this.resource
       const postData = this.getLoggedInUser()
 
-      console.log(JSON.stringify(baseURL))
-      console.log(JSON.stringify(postData))
-
       let type = 'positive'
       let msg = this.$t('off.loggedout')
 
@@ -65,9 +62,8 @@ export default {
           msg = this.$t('off.errors.serverProblem')
 
           this.setLastError(error)
-          console.log(error)
+
           if (error.response) {
-            console.log('error v1')
             msg = `${this.$t('off.errors.serverProblem')} Http.Status: ${error.response.status}`
           } else if (error.request) {
             msg = `${this.$t('off.errors.serverProblem')} Http: ${error.request}`
@@ -77,7 +73,7 @@ export default {
         })
         .then(() => {
           this.$q.loading.hide()
-          console.log('Al final')
+
           this.setLoggedInUser(null)
           this.$q.notify({
             type: type,

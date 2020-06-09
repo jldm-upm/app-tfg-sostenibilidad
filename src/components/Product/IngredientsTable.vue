@@ -5,7 +5,7 @@
       :dense="$q.screen.lt.md"
       :data="data"
       :columns="columns"
-      row-key="name"
+      row-key="id"
       :no-data-label="$t('nodata')"
       :rows-per-page-label="$t('product.ingredients_cols.rowsperpage')"
       :pagination="{ rowsPerPage: 0 }"
@@ -30,12 +30,12 @@ export default {
           required: true,
           label: this.$t('product.ingredients_cols.ingredient'),
           align: 'left',
-          field: row => row.name,
-          format: val => { return (this.traducir(val, 'ingredients') || val) },
+          field: row => row.id,
+          format: (val, row) => { return (this.traducir(val, 'ingredients') || row.text || val) },
           sortable: false
         },
-        { name: 'percent_min', align: 'center', label: this.$t('product.ingredients_cols.min'), field: 'percent_min', sortable: false },
-        { name: 'percent_max', label: this.$t('product.ingredients_cols.max'), field: 'percent_max', sortable: false }
+        { name: 'percent_min', align: 'center', label: this.$t('product.ingredients_cols.min'), field: 'percent_min', sortable: false, format: (val, row) => { return parseFloat(val).toFixed(3) } },
+        { name: 'percent_max', label: this.$t('product.ingredients_cols.max'), field: 'percent_max', sortable: false, format: (val, row) => { return parseFloat(val).toFixed(3) } }
       ]
     }
   },
@@ -58,7 +58,8 @@ export default {
     data () {
       const res = this.producto.ingredients.map((ing) => {
         return {
-          name: ing.id,
+          id: ing.id,
+          text: ing.text,
           percent_min: ing.percent_min,
           percent_max: ing.percent_max
         }

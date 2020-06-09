@@ -96,7 +96,6 @@ export default {
       }
       const baseURL = this.getBaseURL()
       const url = `${baseURL}/api/v0/product/${this.codigo}.json`
-      console.log(url)
 
       this.$q.loading.show()
       this.$axios.get(url)

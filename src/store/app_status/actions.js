@@ -1,26 +1,33 @@
 /*
-export function someAction (context) {
-}
+  export function someAction (context) {
+  }
 */
 export function setCodigo ({ commit }, codigo) {
   commit('setCodigo', codigo)
 }
 
-export function setActiveProduct ({ commit }, product) {
-  commit('setActiveProduct', product)
+export async function setActiveProduct ({ commit, state }, product) {
+  await commit('setActiveProduct', product)
+  await commit('setVot', state.vot)
 }
 
 export function setLastError ({ commit }, error) {
   commit('setError', error)
 }
 
-export function setLoggedInUser ({ commit, state }, serverResponse) {
-  console.log(`setLoggedInUser: ${JSON.stringify(serverResponse)}`)
+export async function setLoggedInUser ({ commit, state }, serverResponse) {
   if (serverResponse) {
-    commit('setLoggedInUser', serverResponse.session)
-    commit('updateConfiguration', serverResponse.conf)
+    if (serverResponse.status === 1) {
+      await commit('setLoggedInUser', serverResponse.session)
+      await commit('updateConfiguration', serverResponse.conf)
+      await commit('setVot', serverResponse.vot)
+    } else {
+      await commit('setLoggedInUser', null)
+      await commit('setVot', {})
+    }
   } else {
-    commit('setLoggedInUser', null)
+    await commit('setLoggedInUser', null)
+    await commit('setVot', {})
   }
 }
 
@@ -40,4 +47,12 @@ export function setHistorySize ({ commit }, value) {
 
 export function setBaseURL ({ commit }, value) {
   commit('setBaseURL', value)
+}
+
+export function votarSostenibilidad ({ commit }, { code, sus, val }) {
+  commit('setVotoSostenibilidad', { code, sus, val })
+}
+
+export function setVot ({ commit }, val) {
+  commit('setVot', val)
 }

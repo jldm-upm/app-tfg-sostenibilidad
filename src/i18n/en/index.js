@@ -28,12 +28,14 @@ export default {
     loggedout: 'Successful log out',
     usersaved: 'Successful saved',
     notcode: 'There are not code to search',
+    voted: 'Successful vote',
     errors: {
       notResponse: 'Without response!',
       serverProblem: 'Problem accessing service!',
       loggedin: 'Can\'t log in',
       loggedout: 'Can\' log out',
-      imagenotfound: 'Image not found'
+      imagenotfound: 'Image not found',
+      voted: 'Error on vote'
     },
     product: {
       product: 'product',
@@ -132,5 +134,9 @@ export default {
   capture: {
     close: 'Close',
     startScan: 'Read barcode'
+  },
+  vote: {
+    success: 'Voted!',
+    notlogged: 'Not logged in'
   }
 }

@@ -23,7 +23,7 @@ export function setError (state, error) {
 }
 
 export function setLoggedInUser (state, user) {
-  state.loggedInUser = user
+  Vue.set(state, 'loggedInUser', user)
 }
 
 // configuration
@@ -37,6 +37,10 @@ export function updateConfiguration (state, conf) {
   state.configuration = confRes
 }
 
+export function setVot (state, vots) {
+  state.vot = vots
+}
+
 export function setHistorySize (state, value) {
   state.configuration.historySize = value
 }
@@ -47,4 +51,15 @@ export function setBaseURL (state, value) {
 
 export function setLanguage (state, lang) {
   state.configuration.language = lang
+}
+
+export function setVotoSostenibilidad (state, { code, sus, val }) {
+  if (state.loggedInUser) {
+    // Vue.set(state.vot, code, state.vot[code] || { })
+    // Vue.set(state.vot[code], sus, val)
+    if (state.vot[code]) {
+      state.vot[code] = {}
+    }
+    state.vot[code][sus] = val
+  }
 }

@@ -18,3 +18,7 @@ export function getTaxCategories (state) {
 export function getTaxIngredientes (state) {
   return state.taxonomies.ingredients
 }
+
+export function getTaxSustainability (state) {
+  return state.taxonomies.sustainability
+}

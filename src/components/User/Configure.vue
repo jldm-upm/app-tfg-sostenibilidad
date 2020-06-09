@@ -174,7 +174,7 @@ export default {
           msg = this.$t('off.errors.serverProblem')
 
           this.setLastError(error)
-          console.log(error)
+
           if (error.response) {
             msg = `${this.$t('off.errors.serverProblem')} Http.Status: ${error.response.status}`
           } else if (error.request) {

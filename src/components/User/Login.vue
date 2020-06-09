@@ -89,7 +89,7 @@ export default {
       this.$axios.post(url, postData)
         .then(response => {
           this.$q.loading.hide()
-          console.log(response.data)
+
           if (response.data.status === 1) {
             this.setLoggedInUser(response.data)
 
@@ -113,9 +113,8 @@ export default {
           let msg = this.$t('off.errors.serverProblem')
 
           this.setLastError(error)
-          console.log(error)
+
           if (error.response) {
-            console.log('error v1')
             msg = `${this.$t('off.errors.serverProblem')} Http.Status: ${error.response.status}`
           } else if (error.request) {
             msg = `${this.$t('off.errors.serverProblem')} Http: ${error.request}`

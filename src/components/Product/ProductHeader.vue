@@ -12,7 +12,7 @@
       </q-item-label>
       <q-item-label lines="1" class="q-mt-xs text-body2 text-weight-bold text-primary text-uppercase">
         <span><q-rating
-                v-model="producto.sustainability.sustainability_level"
+                v-model="sustainability_lvl"
                 readonly
                 size="xs"
                 color="secondary"
@@ -24,6 +24,18 @@
 <script>
 export default {
   name: 'ProductHeader',
+
+  computed: {
+    sustainability_lvl () {
+      let res = 2.5
+      if (this.producto.sustainability) {
+        if (this.producto.sustainability.sustainability_level) {
+          res = this.producto.sustainability.sustainability_level
+        }
+      }
+      return res
+    }
+  },
 
   props: ['producto']
 }

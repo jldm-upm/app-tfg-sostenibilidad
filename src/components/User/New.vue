@@ -148,7 +148,7 @@ export default {
           this.$q.loading.hide()
           if (response.data.status === 1) {
             this.setLoggedInUser(response.data.session)
-            console.log(JSON.stringify(response.data.session))
+
             type = 'possitive'
             icon = 'cloud_done'
             message = this.$t('off.loggedin')
@@ -165,7 +165,6 @@ export default {
           this.setLastError(error)
 
           if (error.response) {
-            console.log('error v1')
             message = `${this.$t('off.errors.serverProblem')} Http.Status: ${error.response.status}`
           } else if (error.request) {
             message = `${this.$t('off.errors.serverProblem')} Http: ${JSON.stringify(error)}`
