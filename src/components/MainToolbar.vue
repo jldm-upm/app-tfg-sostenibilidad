@@ -12,14 +12,6 @@
       </q-btn>
       <q-btn
         dense
-        icon="list"
-        size="md"
-        to="/list"
-        >
-        <q-tooltip content-class="bg-white text-primary">{{ $t('toolbar.list') }}</q-tooltip>
-      </q-btn>
-      <q-btn
-        dense
         icon="history"
         size="md"
         to="/history"
