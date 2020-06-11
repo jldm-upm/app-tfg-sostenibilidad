@@ -100,7 +100,7 @@
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
-  name: 'User',
+  name: 'Configure',
 
   data () {
     return {

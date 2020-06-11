@@ -17,6 +17,12 @@
         @click="logOut">
         <q-tooltip content-class="bg-white text-primary">{{ $t('login.logout') }}</q-tooltip>
       </q-btn>
+      <q-btn
+        icon-right="close"
+        :label="$t('login.deluser')"
+        @click="delUser">
+        <q-tooltip content-class="bg-white text-primary">{{ $t('login.delUser') }}</q-tooltip>
+      </q-btn>
     </div>
   </div>
 </template>
@@ -38,6 +44,53 @@ export default {
 
     logOut () {
       const baseURL = this.getBaseURL()
+      const url = baseURL + '/delUser'
+      const postData = this.getLoggedInUser()
+
+      let type = 'positive'
+      let msg = this.$t('off.deluser')
+
+      this.$q.loading.show()
+      this.$axios.post(url, postData)
+        .then(response => {
+          if (response.data.status === 1) {
+            type = 'possitive'
+            msg = this.$t('off.deluser')
+          } else {
+            type = 'negative'
+            msg = `${this.$t('off.errors.deluser')} : ${response.data.status_verbose}`
+          }
+        })
+        .catch(error => {
+          this.$q.loading.hide()
+
+          type = 'negative'
+          msg = this.$t('off.errors.serverProblem')
+
+          this.setLastError(error)
+
+          if (error.response) {
+            msg = `${this.$t('off.errors.serverProblem')} Http.Status: ${error.response.status}`
+          } else if (error.request) {
+            msg = `${this.$t('off.errors.serverProblem')} Http: ${error.request}`
+          } else {
+            msg = `${this.$t('off.errors.serverProblem')} ${this.$t('off.errors.notResponse')}`
+          }
+        })
+        .then(() => {
+          this.$q.loading.hide()
+
+          this.setLoggedInUser(null)
+          this.$q.notify({
+            type: type,
+            icon: 'cloud_done',
+            message: msg
+          })
+        })
+    },
+
+    logOut () {
+      const baseURL = this.getBaseURL()
       const url = baseURL + this.resource
       const postData = this.getLoggedInUser()
 
@@ -52,7 +105,7 @@ export default {
             msg = this.$t('off.loggedout')
           } else {
             type = 'negative'
-            msg = `${this.$t('off.errors.loggedout')} ${response.data.status_verbose}`
+            msg = `${this.$t('off.errors.loggedout')} : ${response.data.status_verbose}`
           }
         })
         .catch(error => {
