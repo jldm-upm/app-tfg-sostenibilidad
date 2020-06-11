@@ -120,7 +120,10 @@ export default {
         'vitamin-a': 'Vitamin-A',
         'vitamin-c': 'Vitamin-C (ascorbic acid)'
       }
-    }
+    },
+    quantity: 'Quantity',
+    package_shape: 'Shape',
+    package_material: 'Material'
   },
   toolbar: {
     main: 'Main',

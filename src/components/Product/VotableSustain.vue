@@ -3,19 +3,25 @@
           v-ripple
           :disabled="!usuario || !producto">
     <q-item-section>
-      <q-badge floating outline align="top" color="green">{{ producto.sustainability[sus + "_true"] }}</q-badge>
-      <q-badge floating outline align="bottom" color="red">{{ producto.sustainability[sus + "_false"] }}</q-badge>
-      <q-item-label>
+      <div>
+
+      </div>
+      <div>
+        <q-badge align="bottom" color="red">2</q-badge>
+      </div>
+      <div class="text-h5">
         <slot/>
-      </q-item-label>
+      </div>
     </q-item-section>
     <q-item-section avatar>
       <q-toggle
         toggle-indeterminate
-        color="blue"
+        color="primary"
         size="xl"
         v-model="valor"
-        />
+        >
+        <q-badge align="top" color="green">10</q-badge>
+      </q-toggle>
     </q-item-section>
   </q-item>
 </template>
@@ -93,41 +99,51 @@ export default {
 
   computed: {
     producto () {
+      console.log(`vot: ${this.getActiveProduct()}`)
       return this.getActiveProduct() || productoVacio()
     },
+    producto_true () {
+      return this.producto.sustainability[this.sus + '_true']
+    },
+    producto_undefined () {
+      return this.producto.sustainability[this.sus + '_undefined']
+    },
+    producto_false () {
+      return this.producto.sustainability[this.sus + '_false']
+    },
     usuario () {
+      console.log(`usuario: ${this.getLoggedInUser()}`)
       return this.getLoggedInUser()
     },
-    vot: {
-      get () { return this.getVot() },
-      set (val) { this.setVot(val) }
+    vot () {
+      console.log(`vot: ${JSON.stringify(this.getVot())}`)
+      return this.getVot()
     },
-    valor: {
-      get () {
-        let res = null
-        if (this.usuario) {
-          res = this.vot[this.sus]
+    valor () {
+      let res = '-'
+      if (this.producto && this.vot) {
+        if (this.vot[this.producto.code]) {
+          res = this.vot[this.producto.code][this.sus]
         }
-        return res
-      },
-      set (val) {
-        let type = 'possitive'
-        let msg = this.$t('vote.success')
-        if (this.usuario) {
-          const newVot = { ...this.vot }
-          newVot[this.sus] = val
-          this.setVot(newVot)
-          this.actualizarEnServidor(this.producto.code, this.sus, val)
-        } else {
-          type = 'warning'
-          msg = this.$t('vote.notlogged')
-        }
-        this.$q.notify({
-          type: type,
-          message: msg
-        })
       }
+      console.log(`valor: ${res}`)
+      return res
     }
+    // let type = 'possitive'
+    // let msg = this.$t('vote.success')
+    // if (this.usuario) {
+    //   const newVot = { ...this.vot }
+    //   newVot[this.sus] = val
+    //   this.setVot(newVot)
+    //   this.actualizarEnServidor(this.producto.code, this.sus, val)
+    // } else {
+    //   type = 'warning'
+    //   msg = this.$t('vote.notlogged')
+    // }
+    // this.$q.notify({
+    //   type: type,
+    //   message: msg
+    // })
   },
 
   props: ['sus']

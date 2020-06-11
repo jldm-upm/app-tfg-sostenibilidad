@@ -41,7 +41,7 @@ export default {
   },
 
   components: {
-    'votable-sus': require('src/components/Product/VSus.vue').default
+    'votable-sus': require('src/components/Product/VotableSustain.vue').default
   }
 }
 

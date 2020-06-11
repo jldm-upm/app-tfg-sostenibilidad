@@ -189,6 +189,11 @@ export function productoVacio () {
     additives_tags: [
       'en:e300'
     ],
+    packaging_tags: [
+      'cellophane',
+      'carton'
+    ],
+    quantity: '155 g',
     sustainability: {
       sustainability_level: 2.5
     }

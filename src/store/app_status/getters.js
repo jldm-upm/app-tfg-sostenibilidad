@@ -39,18 +39,12 @@ export function getHistorySize (state) {
   return state.configuration.historySize
 }
 
-export function getVotacion (state, { code, sus }) {
-  let res = null
-
-  if (state.vot) {
-    const vp = state.vot[code]
-    if (vp) {
-      res = vp[sus]
-    }
-  }
-  return res
-}
-
 export function getVot (state) {
   return state.vot
+}
+
+export function getVotacion (state, getters) {
+  return (sus) => {
+    return getters.getVot[getters.getActiveProducto][sus]
+  }
 }
