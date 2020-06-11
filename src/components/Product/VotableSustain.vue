@@ -2,13 +2,11 @@
   <q-item tag="label"
           v-ripple
           :disabled="!usuario || !producto">
+    <q-item-section side>
+      <q-badge align="top" color="green">{{ producto_true }}</q-badge>
+      <q-badge align="bottom" color="red">{{ producto_false }}</q-badge>
+    </q-item-section>
     <q-item-section>
-      <div>
-
-      </div>
-      <div>
-        <q-badge align="bottom" color="red">2</q-badge>
-      </div>
       <div class="text-h5">
         <slot/>
       </div>
@@ -20,7 +18,6 @@
         size="xl"
         v-model="valor"
         >
-        <q-badge align="top" color="green">10</q-badge>
       </q-toggle>
     </q-item-section>
   </q-item>
@@ -70,6 +67,8 @@ export default {
             icon = 'cloud_done'
             message = `${this.$t('off.errors.voted')} ${response.data.status_verbose}`
           }
+
+          return response
         })
         .catch(error => {
           type = 'negative'
@@ -84,6 +83,8 @@ export default {
           } else {
             message = `${this.$t('off.errors.serverProblem')} ${this.$t('off.errors.notResponse')}`
           }
+
+          return null
         })
         .then(() => {
           this.$q.loading.hide()
@@ -93,6 +94,8 @@ export default {
             icon: icon,
             message: message
           })
+
+          return null
         })
     }
   },
@@ -103,13 +106,13 @@ export default {
       return this.getActiveProduct() || productoVacio()
     },
     producto_true () {
-      return this.producto.sustainability[this.sus + '_true']
+      return this.producto.sustainability[this.sus + '_true'] || 0
     },
     producto_undefined () {
-      return this.producto.sustainability[this.sus + '_undefined']
+      return this.producto.sustainability[this.sus + '_undefined'] || 0
     },
     producto_false () {
-      return this.producto.sustainability[this.sus + '_false']
+      return this.producto.sustainability[this.sus + '_false'] || 0
     },
     usuario () {
       console.log(`usuario: ${this.getLoggedInUser()}`)
@@ -119,31 +122,49 @@ export default {
       console.log(`vot: ${JSON.stringify(this.getVot())}`)
       return this.getVot()
     },
-    valor () {
-      let res = '-'
-      if (this.producto && this.vot) {
-        if (this.vot[this.producto.code]) {
-          res = this.vot[this.producto.code][this.sus]
+    valor: {
+      get () {
+        let res = '-'
+        if (this.producto && this.vot) {
+          if (this.vot[this.producto.code]) {
+            res = this.vot[this.producto.code][this.sus]
+          }
         }
+        console.log(`valor: ${res}`)
+        return res
+      },
+      async set (val) {
+        if (this.producto && this.vot) {
+          let type = 'possitive'
+          let msg = this.$t('vote.success')
+
+          // producto "vacio" (un mock)
+          if (this.producto.code.includes('xxxxxxxxx')) {
+            return null
+          }
+
+          const resVote = await this.actualizarEnServidor(this.producto.code, this.sus, val)
+          console.log(resVote)
+          if (resVote) {
+            if (resVote.data.status === 1) {
+              this.votarSostenibilidad(this.producto.code, this.sus, val)
+            } else {
+              type = 'warning'
+              msg = resVote.data.status_verbose
+            }
+          } else {
+            type = 'warning'
+            msg = this.$t('off.errors.voted')
+          }
+
+          this.$q.notify({
+            type: type,
+            message: msg
+          })
+        }
+        return null
       }
-      console.log(`valor: ${res}`)
-      return res
     }
-    // let type = 'possitive'
-    // let msg = this.$t('vote.success')
-    // if (this.usuario) {
-    //   const newVot = { ...this.vot }
-    //   newVot[this.sus] = val
-    //   this.setVot(newVot)
-    //   this.actualizarEnServidor(this.producto.code, this.sus, val)
-    // } else {
-    //   type = 'warning'
-    //   msg = this.$t('vote.notlogged')
-    // }
-    // this.$q.notify({
-    //   type: type,
-    //   message: msg
-    // })
   },
 
   props: ['sus']
