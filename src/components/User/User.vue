@@ -42,9 +42,9 @@ export default {
     ...mapActions('appStatus', ['setLastError', 'setLoggedInUser', 'updateConfiguration']),
     ...mapGetters('appStatus', ['getConfiguration', 'getLoggedInUser', 'getBaseURL']),
 
-    logOut () {
+    delUser () {
       const baseURL = this.getBaseURL()
-      const url = baseURL + '/delUser'
+      const url = baseURL + '/user/delete'
       const postData = this.getLoggedInUser()
 
       let type = 'positive'
