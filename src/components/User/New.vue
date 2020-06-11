@@ -147,7 +147,7 @@ export default {
         .then(response => {
           this.$q.loading.hide()
           if (response.data.status === 1) {
-            this.setLoggedInUser(response.data.session)
+            this.setLoggedInUser(response.data)
 
             type = 'possitive'
             icon = 'cloud_done'

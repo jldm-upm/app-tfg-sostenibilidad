@@ -25,8 +25,8 @@ export default {
   },
   off: {
     loggedin: 'Successful log in',
+    deluser: 'User deleted',
     loggedout: 'Successful log out',
-    delUser: 'User deleted',
     usersaved: 'Successful saved',
     notcode: 'There are not code to search',
     voted: 'Successful vote',
@@ -37,7 +37,7 @@ export default {
       loggedout: 'Can\' log out',
       imagenotfound: 'Image not found',
       voted: 'Error on vote',
-      deluser: 'Can\'t delete user
+      deluser: 'Can\'t delete user'
     },
     product: {
       product: 'product',
@@ -47,6 +47,7 @@ export default {
   },
   login: {
     login: 'Login as User',
+    deluser: 'Delete User',
     loginTitle: 'Login as User',
     new: 'Create User',
     newTitle: 'Create User',

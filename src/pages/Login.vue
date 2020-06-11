@@ -13,6 +13,7 @@
              >
       </q-tab>
       <q-tab
+        :disable="!!(loggedInUser)"
         name="new"
         icon="person_add"
         :label="this.$t('login.newTitle')"

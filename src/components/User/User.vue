@@ -21,7 +21,7 @@
         icon-right="close"
         :label="$t('login.deluser')"
         @click="delUser">
-        <q-tooltip content-class="bg-white text-primary">{{ $t('login.delUser') }}</q-tooltip>
+        <q-tooltip content-class="bg-white text-primary">{{ $t('login.deluser') }}</q-tooltip>
       </q-btn>
     </div>
   </div>
