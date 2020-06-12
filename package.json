@@ -10,6 +10,7 @@
   "scripts": {
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ./",
     "test": "echo \"No test specified\" && exit 0",
+    "locs": "git diff --shortstat $(git hash-object -t tree /dev/null)",
     "dev_android": "quasar dev -m android --ide",
     "build_android": "quasar build -m cordova -T android",
     "test_android": "cd src-cordova && phonegap serve"
