@@ -43,18 +43,19 @@
           </template>
         </q-input>
 
-        <div class="row">
+        <div class="row justify-center">
           <q-btn
-            class="col"
+            class="col-5 col-md-2"
             :label="$t('login.submit_login')"
             type="submit"
             color="primary"/>
           <q-btn
+            class="col-5 col-md-2"
             :label="$t('login.reset')"
             type="reset"
             color="primary"
             flat
-            class="col q-ml-sm" />
+            />
         </div>
       </q-form>
 

@@ -50,7 +50,7 @@ export function setBaseURL ({ commit }, value) {
 }
 
 export function votarSostenibilidad ({ commit }, { code, sus, val }) {
-  commit('setVotoSostenibilidad', { code, sus, val })
+  commit('setVotoSostenibilidad', { code: code, sus: sus, val: val })
 }
 
 export function setVot ({ commit }, val) {

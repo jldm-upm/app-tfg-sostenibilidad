@@ -50,25 +50,28 @@ export default {
     async actualizarEnServidor (codigo, sustainability, valor) {
       const baseURL = this.getBaseURL()
       const url = `${baseURL}/user/vote/${codigo}/${sustainability}/${valor}`
+
       let type = ''
       let icon = ''
       let message = ''
       this.$q.loading.show()
-      this.$axios.post(url, this.usuario)
+      let res = await this.$axios.post(url, this.usuario)
         .then(response => {
           this.$q.loading.hide()
           if (response.data.status === 1) {
-            this.votarSostenibilidad({ code: this.producto.code, sus: this.sus, val: valor })
+            // this.votarSostenibilidad({ code: this.producto.code, sus: this.sus, val: valor })
             type = 'possitive'
             icon = 'cloud_done'
             message = this.$t('off.voted')
+
+            res = response
           } else {
             type = 'negative'
             icon = 'cloud_done'
             message = `${this.$t('off.errors.voted')} ${response.data.status_verbose}`
-          }
 
-          return response
+            res = null
+          }
         })
         .catch(error => {
           type = 'negative'
@@ -84,7 +87,7 @@ export default {
             message = `${this.$t('off.errors.serverProblem')} ${this.$t('off.errors.notResponse')}`
           }
 
-          return null
+          res = null
         })
         .then(() => {
           this.$q.loading.hide()
@@ -95,14 +98,15 @@ export default {
             message: message
           })
 
-          return null
+          return res
         })
+
+      return res
     }
   },
 
   computed: {
     producto () {
-      console.log(`vot: ${this.getActiveProduct()}`)
       return this.getActiveProduct() || productoVacio()
     },
     producto_true () {
@@ -115,11 +119,9 @@ export default {
       return this.producto.sustainability[this.sus + '_false'] || 0
     },
     usuario () {
-      console.log(`usuario: ${this.getLoggedInUser()}`)
       return this.getLoggedInUser()
     },
     vot () {
-      console.log(`vot: ${JSON.stringify(this.getVot())}`)
       return this.getVot()
     },
     valor: {
@@ -130,39 +132,28 @@ export default {
             res = this.vot[this.producto.code][this.sus]
           }
         }
-        console.log(`valor: ${res}`)
+        console.log(`valor.res=${res}`)
         return res
       },
       async set (val) {
         if (this.producto && this.vot) {
-          let type = 'possitive'
-          let msg = this.$t('vote.success')
+          // let type = 'possitive'
+          // let msg = this.$t('vote.success')
 
-          // producto "vacio" (un mock)
           if (this.producto.code.includes('xxxxxxxxx')) {
+            // producto "vacio" (un mock)
             return null
           }
 
           const resVote = await this.actualizarEnServidor(this.producto.code, this.sus, val)
-          console.log(resVote)
           if (resVote) {
             if (resVote.data.status === 1) {
-              this.votarSostenibilidad(this.producto.code, this.sus, val)
-            } else {
-              type = 'warning'
-              msg = resVote.data.status_verbose
+              this.votarSostenibilidad({ code: this.producto.code, sus: this.sus, val: val })
+              // this.setVot(resVote.data.vot)
             }
-          } else {
-            type = 'warning'
-            msg = this.$t('off.errors.voted')
           }
-
-          this.$q.notify({
-            type: type,
-            message: msg
-          })
         }
-        return null
+        return val
       }
     }
   },

@@ -74,20 +74,21 @@
         </a>
       </q-toggle>
 
-      <div class="row">
+      <div class="row justify-center">
         <q-btn
-          class="col"
+          class="col-5 col-md-2"
           :label="$t('login.submit_new')"
           type="submit"
           color="primary">
           <q-tooltip content-class="bg-white text-primary">{{ $t('login.submit.new') }}</q-tooltip>
         </q-btn>
         <q-btn
+          class="col-5 col-md-2"
           :label="$t('login.reset')"
           type="reset"
           color="primary"
           flat
-          class="col q-ml-sm">
+          >
           <q-tooltip content-class="bg-white text-primary">{{ $t('login.reset') }}</q-tooltip>
         </q-btn>
       </div>

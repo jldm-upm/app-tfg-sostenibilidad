@@ -55,11 +55,11 @@ export function setLanguage (state, lang) {
 
 export function setVotoSostenibilidad (state, { code, sus, val }) {
   if (state.loggedInUser) {
-    // Vue.set(state.vot, code, state.vot[code] || { })
-    // Vue.set(state.vot[code], sus, val)
-    if (state.vot[code]) {
-      state.vot[code] = {}
+    if (!(state.vot[code])) {
+      Vue.set(state.vot, code, { })
+      // state.vot[code] = {}
     }
-    state.vot[code][sus] = val
+    Vue.set(state.vot[code], sus, val)
+    // state.vot[code][sus] = val
   }
 }
