@@ -1,7 +1,7 @@
 export function productoVacio () {
   return {
     code: 'xxxxxxxxxxxxxxxx',
-    complete: 1,
+    complete: 0,
     generic_name: '####### ###',
     ingredients_analysis_tags: [
       'en:palm-oil-content-unknown',

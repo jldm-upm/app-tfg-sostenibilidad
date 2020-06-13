@@ -11,12 +11,14 @@
         <q-tooltip content-class="bg-white text-primary">{{ producto.product_name }}</q-tooltip>
       </q-item-label>
       <q-item-label lines="1" class="q-mt-xs text-body2 text-weight-bold text-primary text-uppercase">
-        <span><q-rating
-                v-model="sustainability_lvl"
-                readonly
-                size="xs"
-                color="secondary"
-                ></q-rating></span>
+        <span>
+          <q-rating
+            v-model="sustainability_lvl"
+            readonly
+            size="xs"
+            color="secondary"
+            ></q-rating>
+        </span>
       </q-item-label>
     </q-item-section>
 </template>
