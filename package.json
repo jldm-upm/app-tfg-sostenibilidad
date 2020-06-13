@@ -13,7 +13,8 @@
     "locs": "git ls-files -- './*' ':(exclude)*/tax/*' ':(exclude)package-lock.json' ':(exclude)src/statics/*' | xargs wc -l",
     "dev_android": "quasar dev -m android --ide",
     "build_android": "quasar build -m cordova -T android",
-    "test_android": "cd src-cordova && phonegap serve"
+    "test_android": "cd src-cordova && phonegap serve",
+    "sign_android": "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ~/TFG/jldm_tfg.keystore ~/TFG/PROYECTO/codigo/app-tfg-sostenibilidad/dist/cordova/android/apk/release/app-release-unsigned.apk app_tfg"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
