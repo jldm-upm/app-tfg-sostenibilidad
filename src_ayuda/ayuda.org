@@ -1,0 +1,78 @@
+# Exportar con: <C-c C-e>
+# Seleccionar sólo cuerpo: <C-b>
+# Exportar como html: <h h>
+
+# No exportar tabla de contenidos
+# #+OPTIONS: toc:nil
+
+#+TITLE: App Info Sostenibilidad
+#+AUTHOR: José L. Doménech
+
+* Ayuda
+** Introducción
+App Info Sostenibilidad es una aplicación que permite a los usuarios
+contrastar información sobre la sostenibilidad de productos
+agroalimentarios.
+
+** Uso
+*** Acceso a las opciones generales
+Se pueden acceder a las distintas partes de la aplicación mediante la barra de herramientas que se encuntra en la parte superior del programa.
+
+*** Configuración
+Se pueden definir algunas opciones para ayudar a la o
+
+*** Consulta de información
+Para obtener información sobre la sostenibilidad de un producto se
+puede escanear un código de barras que se puede encontrar en el
+empaquetado de los productos o introducirlo manualmente en la barra de
+búsqueda.
+**** Escaneo
+***** Pulsar sobre el botón con el icono de la cámara.
+
+***** Se mostrará la zona de captura del código de barras.
+
+***** Centrar la zona de captura sobre el código de barras que se desea escanear.
+
+**** Introducción del código de barras
+***** Escribir con el teclado el código que se desea buscar.
+
+***** Pulsar la tecla 'Enter' o pulsar sobre el icono de la lupa.
+
+*** Información Mostrada
+La pantalla de producto muestra información del producto buscado.
+
+Información general como nombre, código de producto, país de origen.
+
+Valoración del producto por los usuarios.
+
+Información sobre si el producto esta libre de aceite de palma, si es vegetariano o si es vegano mediante un código de colores.
++ Aceite de palma: Indicado mediante la abreviatura PO. Será de color rojo si el producto NO contiene aceite de palma, verde si contiene o gris si no se tiene esta información.
++ Vegetariano: Indicado mendiante la abreviatura Vt. Será de color rojo si el producto NO es vegetariano, verde si lo es o gris si no se tiene esta información.
++ Vegano: Indicado mediante la abreviatura Vg. Será de color rojo si el producto NO es vegano, verde si lo es o gris si no se tiene esta información.
+
+Huella de carbono por 100g, indicada junto al icono de un coche.
+
+Etiquetas del producto, tales como la "EU Eco-Label".
+
+Información sobre el empaquetado: Peso total del producto, forma y material de empaquetado.
+
+En las pestañas se puede acceder a las valoraciones de sostenibilidad del producto, ingredientes y nutrientes.
+
+**** Valoraciones de Sostenibilidad
+Se encuentran en la pestaña de 'Sostenibilidad' de la información del producto.
+
+Muestra las votaciones positivas, neutras y negativas que ha recibido el producto en cada categoria.
+
+**** Ingredientes
+Se encuentran en la pestaña 'Ingredientes' del producto.
+
+Muestra los alérgenos que contiene el producto.
+
+Muestra los aditivos que contiene el producto.
+
+Muestra una tabla de los ingredientes del producto. La tabla muestra información con el nombre y el porcentaje mínimo (%Min) y máximo (%Max) del ingrediente en el producto.
+
+**** Nutrientes
+Se encuentran en la pestaña 'Nutrientes' del producto.
+
+Muestra una tabla con los nutrientes que contiene el producto. La tabla muestra información con el nutriente, la cantidad total (valor), las unidades en que se mide (unidad) y la cantidad en 100 gramos (100g).
