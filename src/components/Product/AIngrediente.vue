@@ -2,9 +2,8 @@
   <q-btn
     rounded
     dense
-    size="md"
-    :label='traducir(ai, "ingredientsAnalysis")'
-    :icon="icono"
+    size="lg"
+    :label="label"
     :class="{ clsDesconocido: desconocido, clsRojo: noEs, clsVerde: !(desconocido || noEs) }">
       <q-tooltip>{{ traducir(ai, "ingredientsAnalysis") }}</q-tooltip>
     </q-btn>
@@ -20,14 +19,23 @@ export default {
   computed: {
     icono () {
       if (this.ai.includes('palm')) {
-        return 'clear'
+        return ''
       } else if (this.ai.includes('vegan')) {
-        return 'done_all'
+        return ''
       } else {
-        return 'done'
+        return ''
       }
     },
-
+    label () {
+      // :label='traducir(ai, "ingredientsAnalysis")'
+      if (this.ai.includes('palm')) {
+        return 'PO'
+      } else if (this.ai.includes('vegan')) {
+        return 'Vg'
+      } else {
+        return 'Vt'
+      }
+    },
     desconocido () {
       return this.ai.includes('unknow')
     },
