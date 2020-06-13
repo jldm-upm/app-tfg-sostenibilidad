@@ -1,17 +1,19 @@
 <template>
-  <q-item tag="label"
-          v-ripple
-          :disabled="!usuario || !producto">
+  <q-item
+    tag="label"
+    v-ripple
+    :disabled="!usuario || !producto">
     <q-item-section side>
-      <q-badge align="top" color="green">{{ producto_true }}</q-badge>
-      <q-badge align="bottom" color="red">{{ producto_false }}</q-badge>
+      <q-badge color="green">{{ producto_true }}</q-badge>
+      <q-badge color="grey">{{ producto_true }}</q-badge>
+      <q-badge color="red">{{ producto_false }}</q-badge>
     </q-item-section>
     <q-item-section>
       <div class="text-h5">
         <slot/>
       </div>
     </q-item-section>
-    <q-item-section avatar>
+    <q-item-section>
       <q-toggle
         toggle-indeterminate
         color="primary"
