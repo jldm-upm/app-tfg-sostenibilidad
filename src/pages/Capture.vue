@@ -33,7 +33,8 @@
 </template>
 
 <script>
-import Quagga from 'quagga'
+// import Quagga from 'quagga'
+import Quagga from '@ericblade/quagga2'
 
 import { mapActions } from 'vuex'
 
@@ -48,37 +49,46 @@ export default {
   },
 
   methods: {
-    ...mapActions('appStatus', ['setCodigo']),
+    ...mapActions('appStatus', ['setCodigo', 'setLastError']),
 
     iniciarEscaneo () {
-      this.cameraStatus = 1
-      Quagga.init({
-        inputStream: {
-          name: 'Live',
-          type: 'LiveStream',
-          // constraints: {
-          //   width: 300,
-          //   height: 300
-          // },
-          target: document.querySelector('#scan')
-        },
-        frequency: 10,
-        decoder: {
-          readers: [
-            'ean_reader'
-          ],
-          multiple: false
-        },
-        numOfWorkers: navigator.hardwareConcurrency
-        // locate: false
-      }, (err) => {
-        if (err) {
-          //          console.log(err)
-          return
+      const permissions = cordova.plugins.permissions
+
+      permissions.checkPermission(permissions.CAMERA, (res) => {
+        if (!res.hasPermission) {
+          permissions.requestPermission(permissions.CAMERA, open())
+        } else {
+          this.cameraStatus = 1
+          Quagga.init({
+            inputStream: {
+              name: 'Live',
+              type: 'LiveStream',
+              // constraints: {
+              //   width: 300,
+              //   height: 300
+              // },
+              target: document.querySelector('#scan')
+            },
+            frequency: 10,
+            decoder: {
+              readers: [
+                'ean_reader'
+              ],
+              multiple: false
+            },
+            numOfWorkers: navigator.hardwareConcurrency
+            // locate: false
+          }, (err) => {
+            if (err) {
+              //          console.log(err)
+              this.setLastError(err)
+              return
+            }
+            //        console.log('Initialization finished. Ready to start')
+            Quagga.start()
+            Quagga.onDetected(this.onDetected)
+          })
         }
-        //        console.log('Initialization finished. Ready to start')
-        Quagga.start()
-        Quagga.onDetected(this.onDetected)
       })
     },
     onDetected (data) {
@@ -88,11 +98,13 @@ export default {
       this.onStop()
       this.$root.$emit('evtBuscar', data.codeResult.code)
     },
+
     onStop () {
       Quagga.stop()
       this.cameraStatus = 0
     }
   },
+
   mounted () {
     this.iniciarEscaneo()
   },

@@ -2,7 +2,7 @@
   "name": "app-tfg-sostenibilidad",
   "version": "0.0.1",
   "description": "Mostrar características de sostenibilidad de los productos",
-  "productName": "App Info Sostenibilidad",
+  "productName": "TFGSostenibilidad2020",
   "cordovaId": "edu.jldm.TFG",
   "capacitorId": "",
   "author": "José L. Domenech",
@@ -17,6 +17,7 @@
     "sign_android": "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ~/TFG/jldm_tfg.keystore ~/TFG/PROYECTO/codigo/app-tfg-sostenibilidad/dist/cordova/android/apk/release/app-release-unsigned.apk app_tfg"
   },
   "dependencies": {
+    "@ericblade/quagga2": "^1.1.0",
     "@quasar/extras": "^1.0.0",
     "axios": "^0.18.1",
     "quagga": "^0.12.1",
@@ -24,7 +25,7 @@
     "vue-i18n": "^8.0.0"
   },
   "devDependencies": {
-    "@quasar/app": "^1.0.0",
+    "@quasar/app": "^1.9.6",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
