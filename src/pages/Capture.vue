@@ -1,6 +1,7 @@
 <template>
   <div class="row items-center"
-       style="height: 100vh">
+       style="height: 100vh"
+       key="escaneo">
     <div class="col text-center q-pa-sm">
       <q-page-sticky
         position="bottom-right"
@@ -84,6 +85,7 @@ export default {
             window.hasCameraPermission = true
           }
         })
+
         if (window.hasCameraPermission) {
           cordova.plugins.barcodeScanner.scan(
             this.escaneoCordova,
@@ -97,7 +99,7 @@ export default {
               // prompt: $t('capture.startScan'), // Android
               resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
               // formats: 'QR_CODE,PDF_417', // default: all but PDF_417 and RSS_EXPANDED
-              orientation: 'landscape', // Android only (portrait|landscape), default unset so it rotates with the device
+              // orientation: 'landscape', // Android only (portrait|landscape), default unset so it rotates with the device
               disableAnimations: true, // iOS
               disableSuccessBeep: false // iOS and Android
             })
@@ -138,6 +140,13 @@ export default {
     onStop () {
       Quagga.stop()
       this.cameraStatus = 0
+
+      this.$router.push('/product')
+        .catch(error => {
+          if (error.name !== 'NavigationDuplicated') {
+            this.setLastError(error)
+          }
+        })
     }
   },
 
