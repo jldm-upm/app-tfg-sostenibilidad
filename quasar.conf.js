@@ -61,7 +61,10 @@ module.exports = function(/* ctx */) {
       ],
 
       config: {
-        notify: { }
+        notify: { },
+        cordova: {
+          backButtonExit: true // se sale con el botón Android de atrás
+        }
       }
     },
 
