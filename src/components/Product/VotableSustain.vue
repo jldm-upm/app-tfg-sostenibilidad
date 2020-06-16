@@ -134,7 +134,6 @@ export default {
             res = this.vot[this.producto.code][this.sus]
           }
         }
-        console.log(`valor.res=${res}`)
         return res
       },
       async set (val) {
