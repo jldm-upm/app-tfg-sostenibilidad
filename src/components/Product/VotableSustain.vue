@@ -8,19 +8,17 @@
       <q-badge color="grey">{{ producto_true }}</q-badge>
       <q-badge color="red">{{ producto_false }}</q-badge>
     </q-item-section>
-    <q-item-section>
-      <div class="text-h5">
-        <slot/>
+    <q-item-section
+      no-wrap>
+      <div class="row justify-between text-bold text-primary items-center">
+        <slot />
+        <q-toggle
+          toggle-indeterminate
+          color="primary"
+          size="xl"
+          v-model="valor"
+          />
       </div>
-    </q-item-section>
-    <q-item-section>
-      <q-toggle
-        toggle-indeterminate
-        color="primary"
-        size="xl"
-        v-model="valor"
-        >
-      </q-toggle>
     </q-item-section>
   </q-item>
 </template>
