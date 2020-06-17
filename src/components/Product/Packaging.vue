@@ -1,6 +1,6 @@
 <template>
   <q-btn-group rounded>
-    <q-icon rounded name="widgets" size="md" />
+    <q-icon rounded name="widgets" size="sm" />
     <q-btn rounded :label="quantity">
       <q-tooltip>{{ $t('product.quantity') }}</q-tooltip>
     </q-btn>
