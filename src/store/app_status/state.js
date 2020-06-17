@@ -10,7 +10,7 @@ export default function () {
     vot: {},
     // configuration
     configuration: {
-      baseURL: 'https://world.openfoodfacts.org',
+      baseURL: 'http://localhost:8000',
       historySize: 10,
       language: 'en'
     }
