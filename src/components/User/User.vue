@@ -39,7 +39,7 @@ export default {
   },
 
   methods: {
-    ...mapActions('appStatus', ['setLastError', 'setLoggedInUser', 'updateConfiguration']),
+    ...mapActions('appStatus', ['setLastError', 'setLoggedInUser', 'setVot', 'updateConfiguration']),
     ...mapGetters('appStatus', ['getConfiguration', 'getLoggedInUser', 'getBaseURL']),
 
     delUser () {
@@ -128,6 +128,7 @@ export default {
           this.$q.loading.hide()
 
           this.setLoggedInUser(null)
+          this.setVot({})
           this.$q.notify({
             type: type,
             icon: 'cloud_done',
