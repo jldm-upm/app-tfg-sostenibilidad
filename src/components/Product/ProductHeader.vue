@@ -25,7 +25,9 @@
           readonly
           size="xs"
           color="secondary"
-          ></q-rating>
+          >
+          <q-tooltip content-class="bg-white text-primary">{{ sustainability_lvl }}</q-tooltip>
+        </q-rating>
       </span>
     </q-item-label>
   </q-item-section>
@@ -37,7 +39,7 @@ export default {
 
   computed: {
     sustainability_lvl () {
-      let res = 3
+      let res = 3 // +/- 5div2
       if (this.producto.sustainability) {
         if (this.producto.sustainability.sustainability_level) {
           res = this.producto.sustainability.sustainability_level
