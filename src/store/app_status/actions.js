@@ -50,3 +50,8 @@ export function setBaseURL ({ commit }, value) {
 export async function setVot ({ commit, dispatch }, val) {
   commit('setVot', val)
 }
+
+export function votar ({ commit }, voto) {
+  // voto = { code, sus, val }
+  commit('votar', voto)
+}

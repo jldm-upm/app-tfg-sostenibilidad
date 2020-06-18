@@ -59,6 +59,16 @@ export function setVot (state, vots) {
   }
 }
 
+export function votar (state, { code, sus, value }) {
+  if (state.vot[code]) {
+    Vue.set(state.vot[code], sus, value)
+  } else {
+    const nuevoSus = {}
+    nuevoSus[sus] = value
+    Vue.set(state.vot, code, nuevoSus)
+  }
+}
+
 export function setHistorySize (state, value) {
   state.configuration.historySize = value
 }
