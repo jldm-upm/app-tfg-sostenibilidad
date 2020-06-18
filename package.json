@@ -14,7 +14,8 @@
     "dev_android": "quasar dev -m android --ide",
     "build_android": "quasar build -m cordova -T android",
     "test_android": "cd src-cordova && phonegap serve",
-    "sign_android": "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ~/TFG/jldm_tfg.keystore ~/TFG/PROYECTO/codigo/app-tfg-sostenibilidad/dist/cordova/android/apk/release/app-release-unsigned.apk app_tfg"
+    "sign_android": "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ~/TFG/jldm_tfg.keystore ~/TFG/PROYECTO/codigo/app-tfg-sostenibilidad/dist/cordova/android/apk/release/app-release-unsigned.apk app_tfg",
+    "generate_icons": "npx icongenie -i 'src-ayuda/AppTFGSostenibilidad2020.png' -b 'src-ayuda/background_app.png'"
   },
   "dependencies": {
     "@ericblade/quagga2": "^1.1.0",
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "@quasar/app": "^1.9.6",
+    "@quasar/icongenie": "^2.3.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
