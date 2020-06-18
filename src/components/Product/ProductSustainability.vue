@@ -111,12 +111,11 @@ export default {
     },
 
     votaciones (key) {
-      const p = this.getActiveProduct()
       const res = {}
-      if (p) {
-        res.true = p[key + '_true']
-        res.null = p[key + '_null']
-        res.false = p[key + '_false']
+      if (this.product) {
+        res.true = this.product.sustainability[key + '_true']
+        res.null = this.product.sustainability[key + '_null']
+        res.false = this.product.sustainability[key + '_false']
       }
 
       return res
