@@ -8,13 +8,9 @@
         :codigo=codigo
         :sus=k
         :val="valor(k)"
-        :nombre="traducir(k,'sustainability')">
-        <q-toggle
-          :value="valor(k)"
-          :name=k
-          @input="votar"
-          :label="traducir(k,'sustainability')"
-          />
+        :nombre="traducir(k,'sustainability')"
+        :votg="votaciones(k)"
+        >
       </votable-sus>
     </q-list>
   </div>
@@ -55,10 +51,6 @@ export default {
       } else {
         return null
       }
-    },
-
-    votar (val, event) {
-      console.log(`clicked: ${JSON.stringify(val)} ${JSON.stringify(event)}`)
     },
 
     async actualizarEnServidor (codigo, sustainability, valor) {
@@ -118,6 +110,18 @@ export default {
       return res
     },
 
+    votaciones (key) {
+      const p = this.getActiveProduct()
+      const res = {}
+      if (p) {
+        res.true = p[key + '_true']
+        res.null = p[key + '_null']
+        res.false = p[key + '_false']
+      }
+
+      return res
+    },
+
     traducir (valor, taxomomia) {
       const tax = this.getTaxSustainability()
       return traducirTax(valor, tax, this.$i18n.locale)
@@ -138,7 +142,7 @@ export default {
       return this.getVot()
     },
     votaciones_usuario_producto () {
-      console.log(`${JSON.stringify(this.votaciones_usuario)} ${this.codigo}`)
+      // console.log(`${JSON.stringify(this.votaciones_usuario)} ${this.codigo}`)
       const res = this.votaciones_usuario[this.codigo]
       if (!res) {
         return {}

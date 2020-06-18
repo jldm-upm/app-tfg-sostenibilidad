@@ -1,12 +1,21 @@
 <template>
   <q-item>
-    {{ JSON.stringify (val) }}
-    <slot/>
-    {{ nombre }}
-    <q-toggle
-      :value=val
-      @input="evtVotar"
-      />
+    <q-item-section side>
+      <q-badge color="green">{{ producto_true }}</q-badge>
+      <q-badge color="grey">{{ producto_true }}</q-badge>
+      <q-badge color="red">{{ producto_false }}</q-badge>
+      <slot />
+    </q-item-section>
+    <q-item-section>
+      {{ nombre }}
+    </q-item-section>
+    <q-item-section>
+      <q-toggle
+        :value=val
+        toggle-order="tuf"
+        @input="evtVotar"
+        />
+    </q-item-section>
   </q-item>
 </template>
 
@@ -33,7 +42,7 @@ export default {
     async actualizarEnServidor (codigo, sustainability, valor) {
       const baseURL = this.getBaseURL()
       const url = `${baseURL}/user/vote/${codigo}/${sustainability}/${valor}`
-      alert(`${url}: ${this.usuario}`)
+
       let type = ''
       let icon = ''
       let message = ''
@@ -91,12 +100,21 @@ export default {
   },
 
   computed: {
+    producto_true () {
+      return this.votg.true || 0
+    },
+    producto_null () {
+      return this.votg.null || 0
+    },
+    producto_false () {
+      return this.votg.false || 0
+    },
     usuario () {
       return this.getLoggedInUser()
     }
   },
 
-  props: ['codigo', 'sus', 'val', 'nombre']
+  props: ['codigo', 'sus', 'val', 'nombre', 'votg']
 }
 </script>
 
