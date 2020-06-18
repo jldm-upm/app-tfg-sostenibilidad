@@ -63,7 +63,7 @@ module.exports = function(/* ctx */) {
       config: {
         notify: { },
         cordova: {
-          backButtonExit: true // se sale con el botón Android de atrás
+        //   backButtonExit: true
         }
       }
     },
@@ -126,8 +126,8 @@ module.exports = function(/* ctx */) {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: 'App Info Sostenibilidad',
-        short_name: 'App Info Sostenibilidad',
+        name: 'App TFG Sostenibilidad 2020',
+        short_name: 'App TFG Sostenibilidad 2020',
         description: 'Mostrar características de sostenibilidad de los productos',
         display: 'standalone',
         orientation: 'portrait',
