@@ -15,11 +15,19 @@ export function setActiveProduct (state, product) {
     if (state.vot) {
       Vue.set(state.activeProduct, 'sustainability_user', state.vot[product.code])
     }
+
+    //  Borrar entradas anteriores del mismo producto
+    const indexProductRepe = state.history.findIndex((repe) => { return repe._id === product._id })
+    if (indexProductRepe > -1) {
+      Vue.delete(state.history, indexProductRepe)
+    }
+
     // Actualizar historial de búsqueda
     state.history.push(product)
 
+    // Ajustar el tamaño del array de historia
     if (state.history && (state.history.length === state.configuration.historySize)) {
-      Vue.delete(state.history[0])
+      Vue.delete(state.history, 0)
     } else if (!(state.history)) {
       Vue.set(state.history, [])
     }
