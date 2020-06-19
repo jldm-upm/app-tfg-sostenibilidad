@@ -5,8 +5,23 @@ import Vuex from 'vuex'
 import appStatus from './app_status'
 import taxonomias from './taxonomias'
 // TODO: usar VuexPersistent: https://alligator.io/vuejs/vuex-persist-state/
+import VuexPersist from 'vuex-persist'
 
 Vue.use(Vuex)
+
+const persistAllowedMutations = [
+  'appStatus/setHistorySize', 'appStatus/setBaseURL', 'appStatus/setLanguage'
+]
+
+const vuexLocalStorage = new VuexPersist({
+  key: 'tfgs2020', // The key to store the state on in the storage provider.
+  storage: window.localStorage, // or window.sessionStorage or localForage
+  // Function that passes the state and returns the state with only the objects you want to store.
+  // reducer: state => state,
+  // Function that passes a mutation and lets you decide if it should update the state in localStorage.
+  // filter: mutation => (true)
+  filter: mutation => (persistAllowedMutations.includes(mutation.type))
+})
 
 /*
  * If not building with SSR mode, you can
@@ -27,7 +42,9 @@ export default function (/* { ssrContext } */) {
 
     // enable strict mode (adds overhead!)
     // for dev mode only
-    strict: process.env.DEV
+    strict: process.env.DEV,
+
+    plugins: [vuexLocalStorage.plugin]
   })
 
   return Store
