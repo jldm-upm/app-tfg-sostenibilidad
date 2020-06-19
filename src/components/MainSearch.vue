@@ -33,7 +33,7 @@
         shadow
         size="lg"
         icon="photo_camera"
-        to="/capture" replace
+        to="/capture"
         v-ripple:secondary
         >
         <q-tooltip content-class="bg-white text-primary">{{ $t('mainsearch.capture') }}</q-tooltip>
@@ -119,7 +119,7 @@ export default {
 
             this.setActiveProduct(product)
 
-            this.$router.replace('/product')
+            this.$router.push('/product')
               .catch(error => {
                 if (error.name !== 'NavigationDuplicated') {
                   this.setLastError(error)

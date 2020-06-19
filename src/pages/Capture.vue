@@ -141,7 +141,7 @@ export default {
       Quagga.stop()
       this.cameraStatus = 0
 
-      this.$router.replace('/product')
+      this.$router.push('/product')
         .catch(error => {
           if (error.name !== 'NavigationDuplicated') {
             this.setLastError(error)
