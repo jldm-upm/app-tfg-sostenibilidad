@@ -4,7 +4,7 @@ import Vuex from 'vuex'
 // import example from './module-example'
 import appStatus from './app_status'
 import taxonomias from './taxonomias'
-// TODO: usar VuexPersistent: https://alligator.io/vuejs/vuex-persist-state/
+
 import VuexPersist from 'vuex-persist'
 
 Vue.use(Vuex)
