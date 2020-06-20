@@ -2,7 +2,7 @@
   <q-btn
     rounded
     dense
-    size="lg"
+    size="md"
     :label="label"
     :class="{ clsDesconocido: desconocido, clsRojo: noEs, clsVerde: !(desconocido || noEs) }">
       <q-tooltip>{{ traducir(ai, "ingredientsAnalysis") }}</q-tooltip>

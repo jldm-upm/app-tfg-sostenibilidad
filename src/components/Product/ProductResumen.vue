@@ -1,39 +1,36 @@
 <template>
-  <div>
+  <div class="column">
     <q-badge
-      class="text-weight-medium"
       floating>
       {{ producto.complete ? $t('product.complete') : $t('product.notcomplete') }}
     </q-badge>
     <product-header
       :producto=producto>
     </product-header>
-    <div class="column">
+    <div class="row items-stretch justify-evenly">
+      <analisis-carbono
+        :producto=producto >
+      </analisis-carbono>
+
       <analisis-ingredientes
-        class="q-pa-sm"
         :producto=producto>
       </analisis-ingredientes>
     </div>
 
-    <div class="row">
-      <analisis-carbono
-        v-if="producto.nutriments['carbon-footprint-from-known-ingredients_100g']"
-        class="q-pa-sm"
-        :producto=producto >
-      </analisis-carbono>
+    <div class="row items-stretch justify-evenly">
       <packaging
         v-if="producto.packaging_tags"
-        class="q-pa-sm"
+        class="row items-stretch justify-evenly"
         :producto=producto>
       </packaging>
+    </div>
+    <div class="column">
+      <labels
+        class="q-pa-sm"
+        :producto=producto>
+      </labels>
+    </div>
   </div>
-  <div class="column">
-    <labels
-      class="q-pa-sm"
-      :producto=producto>
-    </labels>
-  </div>
-</div>
 </template>
 
 <script>

@@ -46,7 +46,5 @@ export default {
 </script>
 
 <style>
-[tabindex]:focus {
-    box-shadow: 0 0 5pt 3pt orange;
-}
+
 </style>

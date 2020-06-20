@@ -3,13 +3,16 @@
     <div
       v-if="history.length > 0">
       <q-list
+        bordered separator
         v-for="(producto, index) in history"
         :key="index"
         >
+        <q-item>
         <product-resumen
           :active="activeProduct === producto"
           :producto="producto"
           />
+        </q-item>
       </q-list>
     </div>
     <div

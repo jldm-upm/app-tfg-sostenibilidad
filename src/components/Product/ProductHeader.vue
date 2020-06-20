@@ -1,10 +1,10 @@
 <template>
   <q-item-section>
-    <q-item-label lines="1" class="text-primary">
-      <span class="text-weight-medium">{{ producto.code }}<q-tooltip content-class="bg-white text-primary">{{ producto.code }}</q-tooltip></span>
+    <q-item-label lines="1" class="text-right">
+      <span class="text-weight-regular text-primary">{{ producto.code }}<q-tooltip content-class="bg-white text-primary">{{ producto.code }}</q-tooltip></span>
     </q-item-label>
     <q-item-label lines="1">
-      <span class="text-h6 text-bold">
+      <span class="text-weight-medium">
         {{ producto.generic_name }}
         <q-tooltip content-class="bg-white text-primary">{{ producto.generic_name }}</q-tooltip>
       </span>

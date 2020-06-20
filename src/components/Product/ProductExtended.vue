@@ -1,6 +1,9 @@
 <template>
   <q-card>
     <q-card-section>
+      <product-categories
+        :producto="producto">
+      </product-categories>
       <product-resumen
         :producto="producto"
         >
@@ -69,7 +72,8 @@ export default {
     // 'product-origins': require('src/components/Product/ProductOrigins.vue').default,
     'product-sustainability': require('src/components/Product/ProductSustainability.vue').default,
     'product-ingredients': require('src/components/Product/ProductIngredients.vue').default,
-    'product-nutriments': require('src/components/Product/ProductNutriments').default
+    'product-nutriments': require('src/components/Product/ProductNutriments').default,
+    'product-categories': require('src/components/Product/ProductCategories.vue').default
   },
 
   filters: {

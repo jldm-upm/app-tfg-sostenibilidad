@@ -2,7 +2,7 @@
   <q-btn
     rounded
     dense
-    size="md"
+    size="sm"
     icon="directions_car"
     >
     {{ carbono100g }}
@@ -16,7 +16,7 @@ export default {
 
   computed: {
     carbono100g () {
-      return this.producto.nutriments['carbon-footprint-from-known-ingredients_100g']
+      return (this.producto['carbon-footprint_100g'] || this.producto.nutriments.carbon_footprint_percent_of_known_ingredients)
     }
   },
 
