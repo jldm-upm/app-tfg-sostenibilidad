@@ -10,7 +10,8 @@ import VuexPersist from 'vuex-persist'
 Vue.use(Vuex)
 
 const persistAllowedMutations = [
-  'appStatus/setHistorySize', 'appStatus/setBaseURL', 'appStatus/setLanguage'
+  'appStatus/setHistorySize', 'appStatus/setBaseURL', 'appStatus/setLanguage',
+  'appStatus/setUserSustainability'
 ]
 
 const vuexLocalStorage = new VuexPersist({

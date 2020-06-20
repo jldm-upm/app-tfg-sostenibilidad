@@ -88,3 +88,6 @@ export function setBaseURL (state, value) {
 export function setLanguage (state, lang) {
   state.configuration.language = lang
 }
+export function setUserSustainability (state, { sustainability, value }) {
+  state.configuration.sustainability[sustainability] = value
+}

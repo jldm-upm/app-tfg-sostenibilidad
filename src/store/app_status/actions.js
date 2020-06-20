@@ -55,3 +55,8 @@ export function votar ({ commit }, voto) {
   // voto = { code, sus, val }
   commit('votar', voto)
 }
+
+export function setUserSustainability ({ commit }, sus) {
+  // sus = { sustainability, value }
+  commit('setUserSustainability', sus)
+}

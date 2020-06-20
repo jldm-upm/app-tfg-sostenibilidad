@@ -1,7 +1,8 @@
 <template>
   <div>
     <slot>{{ $t('product.ingredients') }}</slot>
-    <q-list>
+    <q-list
+      >
       <votable-sus
         v-for="k in Object.keys(sustain_tax)"
         :key=k
@@ -11,6 +12,7 @@
         :nombre="traducir(k,'sustainability')"
         :votg="votaciones(k)"
         >
+        <q-tooltip content-class="bg-white text-primary">{{ sustain_tax[k].description[getLanguage()] }}</q-tooltip>
       </votable-sus>
     </q-list>
   </div>
@@ -18,7 +20,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { traducirTax } from './traducir_tax.js'
+import { traducirTax } from '../traducir_tax.js'
 import { productoVacio } from '../../pages/producto_vacio.js'
 
 export default {
@@ -32,7 +34,7 @@ export default {
 
   methods: {
     ...mapGetters('taxonomias', ['getTaxSustainability']),
-    ...mapGetters('appStatus', ['getActiveProduct', 'getVot']),
+    ...mapGetters('appStatus', ['getActiveProduct', 'getVot', 'getLanguage']),
 
     valor (key) {
       if (!(this.votaciones_usuario)) {

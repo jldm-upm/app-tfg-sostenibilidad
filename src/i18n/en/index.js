@@ -18,7 +18,8 @@ export default {
     baseURL_hint: 'URL (protocol, address, port) of the server',
     historySize: 'History Size',
     historySize_hint: 'Maximun number visited elements to remember',
-    language: 'Language'
+    language: 'Language',
+    sustainability: 'Sustainability Valoration'
   },
   history: {
     empty: 'Empty'

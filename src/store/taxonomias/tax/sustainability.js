@@ -1,5 +1,6 @@
 export const val =
   {
+
     'en:packaging': {
       description: {
         en: 'The packaging uses sustainable materials and are used in apropiate quantity.',

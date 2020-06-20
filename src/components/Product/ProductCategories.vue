@@ -7,13 +7,13 @@
       :expanded.sync="expanded">
       {{ producto.categories_hierarchy }}
     </q-tree>
-    <q-tooltip content-class="bg-white text-primary">{{ $t('producto.categories') }}</q-tooltip>
+    <q-tooltip content-class="bg-white text-primary">{{ $t('product.categories') }}</q-tooltip>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import { traducirTax } from './traducir_tax.js'
+import { traducirTax } from '../traducir_tax.js'
 
 export default {
   name: 'ProductCategories',
