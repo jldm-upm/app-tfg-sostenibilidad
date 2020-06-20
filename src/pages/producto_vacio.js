@@ -122,6 +122,7 @@ export function productoVacio () {
     quantity: '0 g',
     sustainability: {
       sustainability_level: 3
-    }
+    },
+    categories_hierarchy: []
   }
 }
