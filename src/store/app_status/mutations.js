@@ -81,6 +81,10 @@ export function setHistorySize (state, value) {
   state.configuration.historySize = value
 }
 
+export function setPageSize (state, value) {
+  state.configuration.pageSize = value
+}
+
 export function setBaseURL (state, value) {
   state.configuration.baseURL = value
 }
@@ -90,4 +94,8 @@ export function setLanguage (state, lang) {
 }
 export function setUserSustainability (state, { sustainability, value }) {
   state.configuration.sustainability[sustainability] = value
+}
+
+export function setListProducts (state, val) {
+  state.listProducts = val
 }

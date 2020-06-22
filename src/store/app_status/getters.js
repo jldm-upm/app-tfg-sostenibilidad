@@ -18,6 +18,14 @@ export function getHistory (state) {
   return state.history
 }
 
+export function getPageSize (state) {
+  return state.configuration.pageSize
+}
+
+export function getListProducts (state) {
+  return state.listProducts
+}
+
 export function getTaxonomias (state) {
   return state.taxonomias
 }

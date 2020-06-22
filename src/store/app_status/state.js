@@ -12,6 +12,7 @@ export default function () {
     configuration: {
       baseURL: 'http://localhost:8000',
       historySize: 10,
+      pageSize: 10,
       language: 'en',
       sustainability: {
         'en:packaging': 3,

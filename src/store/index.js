@@ -11,7 +11,7 @@ Vue.use(Vuex)
 
 const persistAllowedMutations = [
   'appStatus/updateConfiguration', 'appStatus/setHistorySize', 'appStatus/setBaseURL',
-  'appStatus/setLanguage', 'appStatus/setUserSustainability', 'appStatus/setVot'
+  'appStatus/setPageSize', 'appStatus/setLanguage', 'appStatus/setUserSustainability', 'appStatus/setVot'
 ]
 
 const vuexLocalStorage = new VuexPersist({

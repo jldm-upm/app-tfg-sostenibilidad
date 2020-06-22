@@ -16,6 +16,8 @@ export default {
     baseURL_hint: 'URL (protocol, address, port) of the server',
     historySize: 'History Size',
     historySize_hint: 'Maximun number visited elements to remember',
+    pageSize: 'Page Size',
+    pageSize_hint: 'Maximun number of elements in search page',
     language: 'Language',
     sustainability: 'Sustainability Valoration'
   },
@@ -23,6 +25,7 @@ export default {
     empty: 'Empty'
   },
   off: {
+    search: 'Successful search',
     loggedin: 'Successful log in',
     deluser: 'User deleted',
     loggedout: 'Successful log out',
@@ -43,6 +46,9 @@ export default {
       found: 'found',
       notFound: 'not found'
     }
+  },
+  list: {
+    title: 'List of Products'
   },
   login: {
     login: 'Login as User',

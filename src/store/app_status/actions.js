@@ -43,6 +43,10 @@ export function setHistorySize ({ commit }, value) {
   commit('setHistorysize', value)
 }
 
+export function setPageSize ({ commit }, value) {
+  commit('setPageSize', value)
+}
+
 export function setBaseURL ({ commit }, value) {
   commit('setBaseURL', value)
 }
@@ -59,4 +63,8 @@ export function votar ({ commit }, voto) {
 export function setUserSustainability ({ commit }, sus) {
   // sus = { sustainability, value }
   commit('setUserSustainability', sus)
+}
+
+export function setListProducts ({ commit }, val) {
+  commit('setListProducts', val)
 }
