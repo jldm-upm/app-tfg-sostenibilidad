@@ -108,7 +108,7 @@ export default {
             this.setLastError(response)
           } else if (response.data.status !== 1) {
             type = 'warning'
-            message = `${this.$t('off.product.notfound')} ${response.data.status_verbose}`
+            message = `${this.$t('off.product.notFound')} ${response.data.status_verbose}`
             this.setLastError(response.data)
           } else {
             const product = response.data.product
