@@ -19,16 +19,9 @@
     <q-item-label
       lines="1"
       class="q-mt-xs text-body2 text-weight-bold text-primary text-uppercase">
-      <span>
-        <q-rating
-          v-model="sustainability_lvl"
-          readonly
-          size="xs"
-          color="secondary"
-          >
-          <q-tooltip content-class="bg-white text-primary">{{ sustainability_lvl }}</q-tooltip>
-        </q-rating>
-      </span>
+      <product-ratings
+        :producto=producto>
+      </product-ratings>
     </q-item-label>
   </q-item-section>
 </template>
@@ -37,16 +30,8 @@
 export default {
   name: 'ProductHeader',
 
-  computed: {
-    sustainability_lvl () {
-      let res = 3 // +/- 5div2
-      if (this.producto.sustainability) {
-        if (this.producto.sustainability.sustainability_level) {
-          res = this.producto.sustainability.sustainability_level
-        }
-      }
-      return res
-    }
+  components: {
+    'product-ratings': require('src/components/Product/ProductRatings.vue').default
   },
 
   props: ['producto']

@@ -10,8 +10,8 @@ import VuexPersist from 'vuex-persist'
 Vue.use(Vuex)
 
 const persistAllowedMutations = [
-  'appStatus/setHistorySize', 'appStatus/setBaseURL', 'appStatus/setLanguage',
-  'appStatus/setUserSustainability'
+  'appStatus/updateConfiguration', 'appStatus/setHistorySize', 'appStatus/setBaseURL',
+  'appStatus/setLanguage', 'appStatus/setUserSustainability', 'appStatus/setVot'
 ]
 
 const vuexLocalStorage = new VuexPersist({
@@ -21,7 +21,10 @@ const vuexLocalStorage = new VuexPersist({
   // reducer: state => state,
   // Function that passes a mutation and lets you decide if it should update the state in localStorage.
   // filter: mutation => (true)
-  filter: mutation => (persistAllowedMutations.includes(mutation.type))
+  filter: mutation => {
+    // console.log(mutation)
+    return persistAllowedMutations.includes(mutation.type)
+  }
 })
 
 /*

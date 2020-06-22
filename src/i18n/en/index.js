@@ -2,8 +2,6 @@
 // so you can safely delete all default props below
 
 export default {
-  failed: 'Action failed',
-  success: 'Action was successful',
   close: 'Close',
   maximize: 'Maximize',
   minimize: 'Minimize',
@@ -127,7 +125,11 @@ export default {
     },
     quantity: 'Quantity',
     package_shape: 'Shape',
-    package_material: 'Material'
+    package_material: 'Material',
+    ratings: {
+      user: 'User Rating',
+      general: 'General Rating'
+    }
   },
   toolbar: {
     main: 'Main',

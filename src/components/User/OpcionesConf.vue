@@ -16,6 +16,7 @@
     </q-item>
     <q-item>
       <q-input
+        debounce="1000"
         v-model="baseURL"
         filled
         type="url"
@@ -26,6 +27,7 @@
     </q-item>
     <q-item>
       <q-input
+        debounce="1000"
         v-model.number="historySize"
         filled
         type="number"
@@ -45,7 +47,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'OpcionesConf',
@@ -97,52 +99,7 @@ export default {
   },
 
   methods: {
-    ...mapActions('appStatus', ['setLastError']),
-    ...mapGetters('appStatus', ['getBaseURL', 'getConfiguration']),
-    ...mapGetters('taxonomias', ['getTaxSustainability']),
-
-    onSubmit () {
-      const url = this.getBaseURL() + this.resource
-      const postData = { ...this.user, conf: this.getConfiguration() }
-
-      let type = 'positive'
-      let msg = this.$t('off.loggedout')
-
-      this.$q.loading.show()
-      this.$axios.post(url, postData)
-        .then((response) => {
-          if (response.data.status === 1) {
-            type = 'possitive'
-            msg = this.$t('off.usersaved')
-          } else {
-            type = 'negative'
-            msg = `${this.$t('off.errors.loggedout')} ${response.data.status_verbose}`
-          }
-        })
-        .catch((error) => {
-          type = 'negative'
-          msg = this.$t('off.errors.serverProblem')
-
-          this.setLastError(error)
-
-          if (error.response) {
-            msg = `${this.$t('off.errors.serverProblem')} Http.Status: ${error.response.status}`
-          } else if (error.request) {
-            msg = `${this.$t('off.errors.serverProblem')} Http: ${JSON.stringify(error.request)}`
-          } else {
-            msg = `${this.$t('off.errors.serverProblem')} ${this.$t('off.errors.notResponse')}`
-          }
-        })
-        .then(() => {
-          this.$q.loading.hide()
-
-          this.$q.notify({
-            type: type,
-            icon: 'cloud_done',
-            message: msg
-          })
-        })
-    }
+    ...mapGetters('taxonomias', ['getTaxSustainability'])
   },
 
   components: {

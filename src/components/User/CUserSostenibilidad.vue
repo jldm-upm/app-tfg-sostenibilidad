@@ -1,11 +1,15 @@
 <template>
   <q-item>
     <q-input
+      debounce="1000"
       v-model.number="userSustainability"
       filled
       type="number"
+      style="width: 250px"
       :label="nombreSus"
       :hint="hintSus"
+      min="0"
+      max="10"
       />
   </q-item>
 </template>

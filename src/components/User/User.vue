@@ -1,23 +1,22 @@
 <template>
   <div
-    row
-    class="q-pa-md"
+    class="column q-pa-md items-start"
     style="max-width: 400px">
-
     <div class="text-h6 text-center">
       {{ $t('login.confTitle') }}
     </div>
 
     <div
-      row
-      class="q-pa-md">
+      class="column q-gutter-md items-center">
       <q-btn
+        style="width: 250px"
         icon-right="close"
         :label="$t('login.logout')"
         @click="logOut">
         <q-tooltip content-class="bg-white text-primary">{{ $t('login.logout') }}</q-tooltip>
       </q-btn>
       <q-btn
+        style="width: 250px"
         icon-right="close"
         :label="$t('login.deluser')"
         @click="delUser">
