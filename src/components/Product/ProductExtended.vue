@@ -1,15 +1,18 @@
 <template>
-  <q-card>
-    <q-card-section>
-      <product-categories
-        :producto="producto">
-      </product-categories>
-      <product-resumen
-        :producto="producto"
-        >
-      </product-resumen>
-    </q-card-section>
-
+  <div>
+    <q-card>
+      <q-card-section>
+        <product-categories
+          :producto="producto">
+        </product-categories>
+      </q-card-section>
+      <q-card-section>
+        <product-resumen
+          :producto="producto"
+          >
+        </product-resumen>
+      </q-card-section>
+    </q-card>
     <q-tabs
       v-model="tab"
       dense
@@ -19,6 +22,7 @@
       align="justify"
       narrow-indicator
       >
+      <q-tab name="info" :label="$t('product.info')" />
       <q-tab name="sustainability" :label="$t('product.sustainability')" />
       <q-tab name="ingredients" :label="$t('product.ingredients')" />
       <q-tab name="nutriments" :label="$t('product.nutriments')" />
@@ -27,6 +31,13 @@
     <q-separator />
 
     <q-tab-panels v-model="tab" animated>
+      <q-tab-panel name="info">
+        <more-info
+          :producto="producto"
+          >
+        </more-info>
+      </q-tab-panel>
+
       <q-tab-panel name="sustainability">
         <product-sustainability><div class="text-h6">{{ $t('product.sustainability') }}</div></product-sustainability>
       </q-tab-panel>
@@ -39,7 +50,7 @@
         <product-nutriments><div class="text-h6">{{ $t('product.nutriments') }}</div></product-nutriments>
       </q-tab-panel>
     </q-tab-panels>
-  </q-card>
+  </div>
 </template>
 
 <script>
@@ -69,6 +80,9 @@ export default {
 
   components: {
     'product-resumen': require('src/components/Product/ProductResumen.vue').default,
+
+    'more-info': require('src/components/Product/MoreInfo.vue').default,
+
     // 'product-origins': require('src/components/Product/ProductOrigins.vue').default,
     'product-sustainability': require('src/components/Product/ProductSustainability.vue').default,
     'product-ingredients': require('src/components/Product/ProductIngredients.vue').default,

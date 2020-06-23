@@ -1,35 +1,23 @@
 <template>
-  <div class="column">
-    <q-badge
-      floating>
-      {{ producto.complete ? $t('product.complete') : $t('product.notcomplete') }}
-    </q-badge>
-    <product-header
-      :producto=producto>
-    </product-header>
-    <div class="row items-stretch justify-evenly">
-      <analisis-carbono
-        :producto=producto >
-      </analisis-carbono>
-
-      <analisis-ingredientes
-        :producto=producto>
-      </analisis-ingredientes>
-    </div>
-
-    <div class="row items-stretch justify-evenly">
-      <packaging
-        v-if="producto.packaging_tags"
-        class="row items-stretch justify-evenly"
-        :producto=producto>
-      </packaging>
-    </div>
-    <div class="column">
-      <labels
-        class="q-pa-sm"
-        :producto=producto>
-      </labels>
-    </div>
+  <div>
+    <q-card-section horizontal>
+      <q-card-section>
+        <q-badge
+          floating>
+          {{ producto.complete ? $t('product.complete') : $t('product.notcomplete') }}
+        </q-badge>
+        <product-header
+          :producto=producto>
+        </product-header>
+      </q-card-section>
+      <q-card-section class="row">
+        <q-btn
+          size="lg"
+          disabled="!!producto"
+          class="justify-around items-center text-white bg-primary"
+          icon="map" />
+      </q-card-section>
+    </q-card-section>
   </div>
 </template>
 
@@ -39,16 +27,13 @@ export default {
 
   data () {
     return {
+      splitterModel: 50, // 50%
       dialogoSostenibilidad: false
     }
   },
 
   components: {
-    'product-header': require('src/components/Product/ProductHeader.vue').default,
-    'analisis-ingredientes': require('src/components/Product/AnalisisIngredientes.vue').default,
-    labels: require('src/components/Product/Labels.vue').default,
-    'analisis-carbono': require('src/components/Product/AnalisisCarbono.vue').default,
-    packaging: require('src/components/Product/Packaging.vue').default
+    'product-header': require('src/components/Product/ProductHeader.vue').default
   },
 
   props: ['producto']

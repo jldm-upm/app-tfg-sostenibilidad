@@ -1,10 +1,5 @@
 <template>
   <q-btn-group rounded>
-    <q-icon
-      dense
-      rounded
-      name="widgets"
-      size="sm" />
     <q-btn
       dense
       rounded
@@ -32,7 +27,7 @@ export default {
 
   computed: {
     packaging () {
-      return this.producto.packaging_tags
+      return this.producto.packaging_tags || []
     },
     quantity () {
       return this.producto.quantity || '-'

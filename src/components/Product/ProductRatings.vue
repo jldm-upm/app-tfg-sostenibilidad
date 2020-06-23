@@ -1,8 +1,7 @@
 <template>
   <span class="column">
     <div class="row items-center">
-      <span
-        class="col-sm-3">
+      <span>
         {{ $t('product.ratings.user') }}:
       </span>
       <q-rating
@@ -12,11 +11,9 @@
         color="secondary"
         >
       </q-rating>
-      {{ sustainability_user_lvl }}
     </div>
     <div class="row items-center">
-      <span
-        class="col-sm-3">
+      <span>
         {{ $t('product.ratings.general') }}:
       </span>
       <q-rating
@@ -26,7 +23,6 @@
         color="golden"
         >
       </q-rating>
-      {{ sustainability_lvl }}
     </div>
   </span>
 </template>

@@ -5,7 +5,8 @@
     class="recuadro_label"
     >
     {{ traducir(label, "labels") }}
-    <q-tooltip content-class="bg-white text-primary">{{ auth_name }}</q-tooltip>
+    <q-tooltip
+      content-class="bg-white text-primary">{{ auth_name }}</q-tooltip>
   </q-btn>
 </template>
 
@@ -23,12 +24,15 @@ export default {
   },
 
   computed: {
-    taxLabels () {
-      return this.getTaxLabels()
-    },
     auth_name () {
-      const tax = this.taxLabels
-      return tax[this.label].auth_name || ''
+      const tax = this.getTaxLabels()
+      let res = ''
+      if (tax) {
+        if (tax[this.label]) {
+          res = tax[this.label].auth_name || ''
+        }
+      }
+      return res
     }
   },
 
@@ -36,7 +40,7 @@ export default {
     ...mapGetters('taxonomias', ['getTaxLabels']),
 
     traducir (valor, taxomomia) {
-      const tax = this.taxLabels
+      const tax = this.getTaxLabels()
       return traducirTax(valor, tax, this.$i18n.locale)
     }
   },

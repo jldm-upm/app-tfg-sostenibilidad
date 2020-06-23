@@ -2,7 +2,7 @@
   <q-item>
     <q-item-section side>
       <q-badge color="green">{{ producto_true }}</q-badge>
-      <q-badge color="grey">{{ producto_true }}</q-badge>
+      <q-badge color="grey">{{ producto_null }}</q-badge>
       <q-badge color="red">{{ producto_false }}</q-badge>
       <slot />
     </q-item-section>
@@ -11,8 +11,9 @@
     </q-item-section>
     <q-item-section>
       <q-toggle
+        indeterminate-value=true
         :value=val
-        toggle-order="tuf"
+        toggle-order='tf'
         @input="evtVotar"
         />
     </q-item-section>

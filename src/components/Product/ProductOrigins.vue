@@ -1,14 +1,25 @@
 <template>
   <div>
     <div>
-      {{ $t('product.origins') }} {{ producto.origins }}
+      <span class="q-mt-xs text-body2 text-weight-bold text-primary text-uppercase">
+        {{ $t('product.attr.origins') }}
+      </span>
+      <span>
+        {{ producto.origins }}
+      </span>
       <q-tooltip content-class="bg-white text-primary">{{ producto.origins }}</q-tooltip>
     </div>
     <div>
-      {{ $t('product.manufactured') }} {{ producto.manufacturing_places }}
-      <q-tooltip content-class="bg-white text-primary">{{ producto.origins }}</q-tooltip>
+      <span class="q-mt-xs text-body2 text-weight-bold text-primary text-uppercase">
+        {{ $t('product.attr.manufactured') }}
+      </span>
+      <span>
+        {{ producto.manufacturing_places }}
+        <q-tooltip content-class="bg-white text-primary">{{ producto.origins }}</q-tooltip>
+      </span>
     </div>
   </div>
+
 </template>
 
 <script>

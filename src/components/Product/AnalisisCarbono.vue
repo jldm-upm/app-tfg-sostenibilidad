@@ -1,13 +1,8 @@
 <template>
-  <q-btn
-    rounded
-    dense
-    size="sm"
-    icon="directions_car"
-    >
+  <div>
     {{ carbono100g }}
     <q-tooltip>{{ $t('product.carbono100g') }}</q-tooltip>
-  </q-btn>
+  </div>
 </template>
 
 <script>
