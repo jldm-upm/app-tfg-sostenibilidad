@@ -35,6 +35,16 @@
         :hint="$t('configuration.historySize_hint')"
         />
     </q-item>
+    <q-item>
+      <q-input
+        debounce="1000"
+        v-model.number="pageSize"
+        filled
+        type="number"
+        :label="$t('configuration.pageSize')"
+        :hint="$t('configuration.pageSize_hint')"
+        />
+    </q-item>
     <fieldset>
       <legend>{{ $t('configuration.sustainability') }}</legend>
       <cuantificacion-sostenibilidad
@@ -76,6 +86,14 @@ export default {
       },
       set (val) {
         this.$store.commit('appStatus/setHistorySize', val)
+      }
+    },
+    pageSize: {
+      get () {
+        return this.$store.state.appStatus.configuration.pageSize
+      },
+      set (val) {
+        this.$store.commit('appStatus/setPageSize', val)
       }
     },
     lang: {
