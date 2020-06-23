@@ -7,11 +7,14 @@
         v-for="(producto, index) in history"
         :key="index"
         >
-        <q-item>
-        <product-resumen
-          :active="activeProduct === producto"
-          :producto="producto"
-          />
+        <q-item
+          clickable v-ripple
+          @click="setProduct(producto)"
+          to="/product">
+          <product-resumen
+            :active="activeProduct === producto"
+            :producto="producto"
+            />
         </q-item>
       </q-list>
     </div>
@@ -42,7 +45,11 @@ export default {
 
   methods: {
     ...mapActions('appStatus', ['setLastError', 'setActiveProduct']),
-    ...mapGetters('appStatus', ['getHistory', 'getActiveProduct'])
+    ...mapGetters('appStatus', ['getHistory', 'getActiveProduct']),
+
+    setProduct (producto) {
+      this.setActiveProduct(producto)
+    }
   },
 
   computed: {

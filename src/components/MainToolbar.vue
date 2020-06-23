@@ -20,6 +20,14 @@
       </q-btn>
       <q-btn
         dense
+        icon="search"
+        size="md"
+        to="/list"
+        >
+        <q-tooltip content-class="bg-white text-primary">{{ $t('toolbar.help') }}</q-tooltip>
+      </q-btn>
+      <q-btn
+        dense
         icon="emoji_food_beverage"
         size="md"
         to="/product"
@@ -47,11 +55,22 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 
 export default {
   data () {
     return {
 
+    }
+  },
+
+  methods: {
+    ...mapGetters('appStatus', ['getListProducts'])
+  },
+
+  computed: {
+    listProducts () {
+      return this.getListProducts()
     }
   }
 }

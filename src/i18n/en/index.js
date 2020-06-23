@@ -48,7 +48,8 @@ export default {
     }
   },
   list: {
-    title: 'List of Products'
+    title: 'List of Products',
+    empty: 'Empty'
   },
   login: {
     login: 'Login as User',
@@ -79,8 +80,11 @@ export default {
     reset: 'Reset'
   },
   product: {
+    code: 'Code',
+    info: 'Information',
     ingredients_analysis: 'Analysis',
     categories: 'Categories',
+    categories_empty: 'No Categories',
     complete: 'Completed',
     notcomplete: 'Not completed',
     image: 'Image',
@@ -90,6 +94,7 @@ export default {
     nutriments: 'Nutriments',
     attr: {
       generic_name: 'Generic Name',
+      product_name: 'Name',
       origins: 'Origin:',
       manufactured: 'Manufactured:'
     },
@@ -133,7 +138,7 @@ export default {
     package_shape: 'Shape',
     package_material: 'Material',
     ratings: {
-      user: 'User Rating',
+      user: 'User    Rating',
       general: 'General Rating'
     }
   },
