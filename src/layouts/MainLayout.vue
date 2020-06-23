@@ -10,16 +10,6 @@
 
     </q-header>
 
-    <q-drawer
-      elevated
-      overlay
-      v-model="leftDrawer"
-      side="left"
-      behavior="mobile"
-      >
-      <!-- drawer content -->
-    </q-drawer>
-
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -33,7 +23,7 @@ export default {
 
   data () {
     return {
-      leftDrawer: false
+
     }
   },
 
