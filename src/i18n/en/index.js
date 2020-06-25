@@ -2,6 +2,7 @@
 // so you can safely delete all default props below
 
 export default {
+  'tab-more': 'More...',
   close: 'Close',
   maximize: 'Maximize',
   minimize: 'Minimize',
@@ -87,6 +88,7 @@ export default {
     categories_empty: 'No Categories',
     complete: 'Completed',
     notcomplete: 'Not completed',
+    purchase: 'Purchase Localizations',
     image: 'Image',
     ingredients: 'Ingredients',
     labels: 'Labels',
@@ -96,7 +98,9 @@ export default {
       generic_name: 'Generic Name',
       product_name: 'Name',
       origins: 'Origin:',
-      manufactured: 'Manufactured:'
+      manufactured: 'Manufactured:',
+      purchase_places: 'Purchase Places',
+      stores: 'Stores'
     },
     add_sustainability: 'Add Sustainability',
     get_info: 'More info',

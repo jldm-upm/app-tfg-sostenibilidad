@@ -14,6 +14,9 @@
       </q-card-section>
     </q-card>
     <q-tabs
+      shrink
+      stretch
+      inline-label
       v-model="tab"
       dense
       class="text-grey"
@@ -24,8 +27,20 @@
       >
       <q-tab name="info" :label="$t('product.info')" />
       <q-tab name="sustainability" :label="$t('product.sustainability')" />
-      <q-tab name="ingredients" :label="$t('product.ingredients')" />
-      <q-tab name="nutriments" :label="$t('product.nutriments')" />
+      <q-tab name="ingredients" v-if="$q.screen.gt.sm" :label="$t('product.ingredients')" />
+      <q-tab name="nutriments" v-if="$q.screen.gt.sm" :label="$t('product.nutriments')" />
+
+      <q-btn-dropdown v-if="$q.screen.lt.md" auto-close stretch flat :label="$t('tab-more')">
+          <q-list>
+            <q-item clickable @click="tab = 'ingredients'">
+              <q-item-section>{{ $t('product.ingredients') }}</q-item-section>
+            </q-item>
+
+            <q-item clickable @click="tab = 'nutriments'">
+              <q-item-section>{{ $t('product.nutriments') }}</q-item-section>
+            </q-item>
+          </q-list>
+        </q-btn-dropdown>
     </q-tabs>
 
     <q-separator />

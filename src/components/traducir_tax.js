@@ -6,5 +6,7 @@ export function traducirTax (valor, taxonomiaJSON, lang) {
     res = obj.name[lang] || obj.name.en
   }
 
+  res = res || valor
+
   return res
 }

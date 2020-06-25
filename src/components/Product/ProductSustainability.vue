@@ -2,6 +2,7 @@
   <div>
     <slot>{{ $t('product.ingredients') }}</slot>
     <q-list
+      v-if="producto.sustainability"
       >
       <votable-sus
         v-for="k in Object.keys(sustain_tax)"
@@ -114,10 +115,10 @@ export default {
 
     votaciones (key) {
       const res = {}
-      if (this.product) {
-        res.true = this.product.sustainability[key + '_true']
-        res.null = this.product.sustainability[key + '_null']
-        res.false = this.product.sustainability[key + '_false']
+      if (this.producto) {
+        res.true = this.producto.sustainability[key + '_true']
+        res.null = this.producto.sustainability[key + '_null']
+        res.false = this.producto.sustainability[key + '_false']
       }
 
       return res
@@ -133,11 +134,11 @@ export default {
     sustain_tax () {
       return this.getTaxSustainability()
     },
-    product () {
+    producto () {
       return this.getActiveProduct() || productoVacio()
     },
     codigo () {
-      return this.product.code
+      return this.producto.code
     },
     votaciones_usuario () {
       return this.getVot()

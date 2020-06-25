@@ -11,6 +11,7 @@
     </q-item-section>
     <q-item-section>
       <q-toggle
+        :disabled="!getLoggedInUser()"
         indeterminate-value=true
         :value=val
         toggle-order='tf'

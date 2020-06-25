@@ -52,6 +52,7 @@ export default {
     async obtenerProductosCategoria (categoria) {
       // console.log(`obtenerProductosCategoria(${categoria})`)
       let res = null
+      let errorLocal = null
       let type = 'possitive'
       let message = `${this.$t('off.search')}`
 
@@ -63,14 +64,13 @@ export default {
       if (!respuesta) {
         type = 'negative'
         message = `${this.$t('off.errors.serverProblem')}`
-        this.setLastError(`- ${this.$t('off.errors.serverProblem')} -`)
+        this.setLastError(`${this.$t('off.errors.serverProblem')} -`)
 
         res = null
       } else if (respuesta.error) {
         type = 'negative'
         message = `${this.$t('off.errors.serverProblem')} ${respuesta.error}`
-
-        this.setLastError(respuesta.error)
+        errorLocal = respuesta.error
         if (respuesta.error.response) {
           message = `${this.$t('off.errors.serverProblem')} Http.Status: ${respuesta.error.response.status}`
         } else if (respuesta.error.request) {
@@ -85,13 +85,16 @@ export default {
       } else {
         type = 'negative'
         message = `${this.$t('off.errors.serverProblem')}`
-        this.setLastError(respuesta.error)
+
         res = null
       }
+
       this.$q.notify({
         type: type,
         message: message
       })
+
+      this.setLastError(errorLocal)
       return res
     },
 

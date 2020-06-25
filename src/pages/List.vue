@@ -10,9 +10,9 @@
         <q-item
           clickable v-ripple
           @click="setProduct(producto)"
+          :active="activeProduct === producto"
           >
-          <product-resumen
-            :active="activeProduct === producto"
+          <product-header
             :producto="producto"
             />
         </q-item>
@@ -66,7 +66,7 @@ export default {
   },
 
   components: {
-    'product-resumen': require('src/components/Product/ProductResumen.vue').default
+    'product-header': require('src/components/Product/ProductHeader.vue').default
   }
 
 }

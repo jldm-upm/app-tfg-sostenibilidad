@@ -56,15 +56,17 @@ export default {
     },
 
     data () {
-      const res = this.producto.ingredients.map((ing) => {
-        return {
-          id: ing.id,
-          text: ing.text,
-          percent_min: ing.percent_min,
-          percent_max: ing.percent_max
-        }
-      })
-
+      let res = []
+      if (this.producto.ingredients) {
+        res = this.producto.ingredients.map((ing) => {
+          return {
+            id: ing.id,
+            text: ing.text,
+            percent_min: ing.percent_min,
+            percent_max: ing.percent_max
+          }
+        })
+      }
       return res
     }
   }
