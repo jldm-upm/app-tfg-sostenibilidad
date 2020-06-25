@@ -1,32 +1,86 @@
 # Exportar con: <C-c C-e>
 # Seleccionar sólo cuerpo: <C-b>
-# Exportar como html: <h h>
+# Exportar como fichero html: <h h>
+
+#+LANGUAGE: es
 
 # No exportar tabla de contenidos
-# #+OPTIONS: toc:nil
+#+OPTIONS: toc:nil
+
+# Exportar hasta nivel 4 como 'cabecera'
+#+OPTIONS: H:4
 
 #+TITLE: App Info Sostenibilidad
 #+AUTHOR: José L. Doménech
 
-* Ayuda
-** Introducción
-App Info Sostenibilidad es una aplicación que permite a los usuarios
-contrastar información sobre la sostenibilidad de productos
-agroalimentarios.
+* Presentación
+  Esta es la aplicación "Info Sostenibilidad 2020."
 
-** Uso
-*** Acceso a las opciones generales
-Se pueden acceder a las distintas partes de la aplicación mediante la barra de herramientas que se encuntra en la parte superior del programa.
+  La aplicación "Info Sostenibilidad 2020" es una aplicación que
+  permite a sus usuarios consultar información relevante sobre la
+  sostenibilidad de productos agroalimentarios.
 
-*** Configuración
-Se pueden definir algunas opciones para ayudar a la o
+  La información presentada se complementa con la introducida por los
+  usuarios a través de la votación positiva o negativa de la
+  sostenibilidad relacionada con un producto.
 
-*** Consulta de información
-Para obtener información sobre la sostenibilidad de un producto se
-puede escanear un código de barras que se puede encontrar en el
-empaquetado de los productos o introducirlo manualmente en la barra de
-búsqueda.
+** ¿Qué es la sostenibilidad?
+
+   #+BEGIN_quote
+Desarrollo que satisfaga las necesidades del presente sin comprometer
+la capacidad de las generaciones futuras para satisfacer sus propias necesidades [fn:1].
+   #+END_quote
+
+   Los usuarios pueden valorar de manera subjetiva, con la guía de los
+   datos presentados, las características que pueden hacer un producto
+   sostenible o no.
+
+   Por ejemplo, se muestra información sobre el tamaño, forma y
+   materiales que componen el empaquetado del producto. Los usuarios
+   pueden votar positiva o negativamente los aspecto: 'Empaquetado',
+   pero también la 'producción' o 'almacenamiento' están
+   relacionados con él.
+
+[fn:1] De "Our common future" el informe de la Comisión Mundial sobre el Medio Ambiente y el Desarrollo, 1987.
+
+* Uso
+
+  La aplicación presenta una pantalla principal con una barra con
+  botones para acceder a las funcionalidades principales de la
+  aplicación en su parte superior y debajo de esta una entrada de
+  búsqueda de producto en la que se puede introducir un código de
+  barras o escanearlo.
+
+  El resto de la pantalla se utiliza para mostrar las distintas
+  funcionalidades de la aplicación.
+
+  El usuario puede utilizar una pantalla táctil/teclado virtual para
+  introducir los datos requeridos. La aplicación está diseñada para
+  que sea totalmente funcional usando un teclado y un ratón.
+
+** Funcionalidades
+
+#+CAPTION: Barra de herramientas y búsqueda de producto
+#+ATTR_HTML: :alt imagen toolbar :title Toolbar :align center
+[[file:img/toolbar.png][file:./img/toolbar.png]]
+
+*** Búsqueda de un producto
+
+    En la entrada de búsqueda se puede introducir un código de barras,
+    una vez que se cuenta con un código introducido se puede pulsar
+    sobre el icono de la lupa para realizar la búsqueda o se puede
+    pulsar 'INTRO'.
+
+    Tambíen se puede pulsar sobre botón con el icono de una cámara. Se
+    abrirá una pantalla que permite la captura de códigos de barras.
+
+    Se debe pulsar un nuevo botón para iniciar una nueva captura.
+
+    Una vez capturado se iniciará la búsqueda de producto, y se
+    mostrará la pantalla de información del producto.
+
 **** Escaneo
+
 ***** Pulsar sobre el botón con el icono de la cámara.
 
 ***** Se mostrará la zona de captura del código de barras.
@@ -34,45 +88,89 @@ búsqueda.
 ***** Centrar la zona de captura sobre el código de barras que se desea escanear.
 
 **** Introducción del código de barras
+
 ***** Escribir con el teclado el código que se desea buscar.
 
 ***** Pulsar la tecla 'Enter' o pulsar sobre el icono de la lupa.
 
-*** Información Mostrada
-La pantalla de producto muestra información del producto buscado.
+*** Acceso a la funcionalidad
+    Se pueden acceder a las distintas partes de la aplicación mediante
+    la barra de herramientas que se encuntra en la parte superior del
+    programa.
 
-Información general como nombre, código de producto, país de origen.
+**** @@html:<q-icon name="person" size="md"/>@@ Configuración y Cuenta de Usuario
+  Se pueden definir algunas opciones para ayudar a la o
 
-Valoración del producto por los usuarios.
+**** @@html:<q-icon name="emoji_food_beverage" size="md"/>@@ Información de un producto
 
-Información sobre si el producto esta libre de aceite de palma, si es vegetariano o si es vegano mediante un código de colores.
-+ Aceite de palma: Indicado mediante la abreviatura PO. Será de color rojo si el producto NO contiene aceite de palma, verde si contiene o gris si no se tiene esta información.
-+ Vegetariano: Indicado mendiante la abreviatura Vt. Será de color rojo si el producto NO es vegetariano, verde si lo es o gris si no se tiene esta información.
-+ Vegano: Indicado mediante la abreviatura Vg. Será de color rojo si el producto NO es vegano, verde si lo es o gris si no se tiene esta información.
+  Para obtener información sobre la sostenibilidad de un producto se
+  puede escanear un código de barras que se puede encontrar en el
+  empaquetado de los productos o introducirlo manualmente en la barra de
+  búsqueda.
 
-Huella de carbono por 100g, indicada junto al icono de un coche.
+***** Información Mostrada
 
-Etiquetas del producto, tales como la "EU Eco-Label".
+#+CAPTION: Información general del producto
+#+ATTR_HTML: :alt  :title Producto :align center
+[[file:img/producto_general.png][file:./img/producto_general.png]]
 
-Información sobre el empaquetado: Peso total del producto, forma y material de empaquetado.
+   La pantalla de producto muestra información del producto buscado.
 
-En las pestañas se puede acceder a las valoraciones de sostenibilidad del producto, ingredientes y nutrientes.
+   Un desplegable con las categorías en las que se puede incluir el producto.
 
-**** Valoraciones de Sostenibilidad
-Se encuentran en la pestaña de 'Sostenibilidad' de la información del producto.
+   Información general como nombre, código de producto, país de origen.
 
-Muestra las votaciones positivas, neutras y negativas que ha recibido el producto en cada categoria.
+   Valoración general del producto por los usuarios.
 
-**** Ingredientes
-Se encuentran en la pestaña 'Ingredientes' del producto.
+   Valoración del producto por los usuarios cuantificada con las preferencias del usuario.
 
-Muestra los alérgenos que contiene el producto.
+   En las pestañas se puede acceder a las valoraciones de
+   sostenibilidad del producto, información, ingredientes y
+   nutrientes.
 
-Muestra los aditivos que contiene el producto.
+****** Lugares de adquisición del producto
 
-Muestra una tabla de los ingredientes del producto. La tabla muestra información con el nombre y el porcentaje mínimo (%Min) y máximo (%Max) del ingrediente en el producto.
+   Pulsando sobre el mapa se muestra una lista donde se puede adquirir el producto.
 
-**** Nutrientes
-Se encuentran en la pestaña 'Nutrientes' del producto.
+***** Información del producto
+  Se encuentra en la pestaña 'Información'.
 
-Muestra una tabla con los nutrientes que contiene el producto. La tabla muestra información con el nutriente, la cantidad total (valor), las unidades en que se mide (unidad) y la cantidad en 100 gramos (100g).
+  Se muestra información sobre si el producto esta libre de aceite de
+  palma, si es vegetariano o si es vegano mediante un código de
+  colores.
+  + _Aceite de palma_: Indicado mediante la abreviatura *PO*. Será de
+    color rojo si el producto NO contiene aceite de palma, verde si
+    contiene o gris si no se tiene esta información.
+  + _Vegetariano_: Indicado mendiante la abreviatura *Vt*. Será de
+    color rojo si el producto NO es vegetariano, verde si lo es o
+    gris si no se tiene esta información.
+  + _Vegano_: Indicado mediante la abreviatura *Vg*. Será de color
+    rojo si el producto NO es vegano, verde si lo es o gris si no se
+    tiene esta información.
+
+  El origen del producto, de donde se importa y donde se produce. Junto al icono de un avión.
+
+  Huella de carbono por 100g, indicada junto al icono de un coche.
+
+  Información sobre el empaquetado: Peso total del producto, forma y material de empaquetado.
+
+  Etiquetas del producto, tales como la "EU Eco-Label".
+
+***** Valoraciones de Sostenibilidad
+  Se encuentran en la pestaña de 'Sostenibilidad' de la información del producto.
+
+  Muestra las votaciones positivas, neutras y negativas que ha recibido el producto en cada categoria.
+
+***** Ingredientes
+  Se encuentran en la pestaña 'Ingredientes' del producto.
+
+  Muestra los alérgenos que contiene el producto.
+
+  Muestra los aditivos que contiene el producto.
+
+  Muestra una tabla de los ingredientes del producto. La tabla muestra información con el nombre y el porcentaje mínimo (%Min) y máximo (%Max) del ingrediente en el producto.
+
+***** Nutrientes
+  Se encuentran en la pestaña 'Nutrientes' del producto.
+
+  Muestra una tabla con los nutrientes que contiene el producto. La tabla muestra información con el nutriente, la cantidad total (valor), las unidades en que se mide (unidad) y la cantidad en 100 gramos (100g).
