@@ -1,125 +1,122 @@
-// This is just an example,
-// so you can safely delete all default props below
-
 export default {
-  'tab-more': 'More...',
-  close: 'Close',
-  maximize: 'Maximize',
-  minimize: 'Minimize',
-  nodata: 'No data',
-  mainsearch: {
-    barcode: 'Barcode',
-    capture: 'Capture Barcode'
+  capture: {
+    close: 'Close',
+    startScan: 'Read barcode'
   },
+  close: 'Close',
   configuration: {
-    configuration: 'Configuration',
     baseURL: 'URL Server',
     baseURL_hint: 'URL (protocol, address, port) of the server',
+    configuration: 'Configuration',
     historySize: 'History Size',
     historySize_hint: 'Maximun number visited elements to remember',
+    language: 'Language',
     pageSize: 'Page Size',
     pageSize_hint: 'Maximun number of elements in search page',
-    language: 'Language',
     sustainability: 'Sustainability Valoration'
   },
   history: {
     empty: 'Empty'
   },
-  off: {
-    search: 'Successful search',
-    loggedin: 'Successful log in',
-    deluser: 'User deleted',
-    loggedout: 'Successful log out',
-    usersaved: 'Successful saved',
-    notcode: 'There are not code to search',
-    voted: 'Successful vote',
-    errors: {
-      notResponse: 'Without response!',
-      serverProblem: 'Problem accessing service!',
-      loggedin: 'Can\'t log in',
-      loggedout: 'Can\' log out',
-      imagenotfound: 'Image not found',
-      voted: 'Error on vote',
-      deluser: 'Can\'t delete user'
-    },
-    product: {
-      product: 'product',
-      found: 'found',
-      notFound: 'not found'
-    }
-  },
   list: {
-    title: 'List of Products',
-    empty: 'Empty'
+    empty: 'Empty',
+    title: 'List of Products'
   },
   login: {
-    login: 'Login as User',
-    deluser: 'Delete User',
-    loginTitle: 'Login as User',
-    new: 'Create User',
-    newTitle: 'Create User',
-    userTitle: 'User Data',
+    accept: 'Accept the terms of service',
     confTitle: 'User Configuration',
-    user: 'User',
+    deluser: 'Delete User',
+    diffpwd: 'Password confirmation must be equal to password',
+    login: 'Login as User',
+    loginTitle: 'Login as User',
     logout: 'Log Out',
-    upload: 'Upload to Server',
     name: 'User name',
     name_hint: 'Enter your user name',
     name_val: 'User name can\'t be empty',
+    new: 'Create User',
+    newTitle: 'Create User',
+    notaccepted: 'You must accept the terms of service.',
     pwd: 'Password',
     pwd2: 'Password confirmation',
     pwd_hint: 'Enter your secret password',
     pwd_hint2: 'Re-enter the password',
     pwd_val: 'The password can\'t be empty',
     pwd_val2: 'The password must have a minimum length of 8 characters',
-    accept: 'Accept the terms of service',
     readterms: 'Read the terms',
-    diffpwd: 'Password confirmation must be equal to password',
-    notaccepted: 'You must accept the terms of service. Still you can use the app without login',
+    reset: 'Reset',
     submit_login: 'Login',
     submit_new: 'Submit',
-    reset: 'Reset'
+    upload: 'Upload to Server',
+    user: 'User',
+    userTitle: 'User Data'
+  },
+  mainsearch: {
+    barcode: 'Barcode',
+    capture: 'Capture Barcode'
+  },
+  maximize: 'Maximize',
+  minimize: 'Minimize',
+  nodata: 'No data',
+  off: {
+    deluser: 'User deleted',
+    errors: {
+      deluser: 'Can\'t delete user',
+      imagenotfound: 'Image not found',
+      loggedin: 'Can\'t log in',
+      loggedout: 'Can\' log out',
+      notResponse: 'Without Response from Server!',
+      serverProblem: 'Problem accessing service!',
+      voted: 'Error on vote'
+    },
+    loggedin: 'Successful log in',
+    loggedout: 'Successful log out',
+    notcode: 'There are not code to search',
+    product: {
+      found: 'found',
+      notFound: 'not found',
+      product: 'product'
+    },
+    search: 'Successful search',
+    usersaved: 'Successful saved',
+    voted: 'Successful vote'
   },
   product: {
-    code: 'Code',
-    info: 'Information',
-    ingredients_analysis: 'Analysis',
-    categories: 'Categories',
-    categories_empty: 'No Categories',
-    complete: 'Completed',
-    notcomplete: 'Not completed',
-    purchase: 'Purchase Localizations',
-    image: 'Image',
-    ingredients: 'Ingredients',
-    labels: 'Labels',
-    name: 'Info of the product',
-    nutriments: 'Nutriments',
+    add_sustainability: 'Add Sustainability',
+    additives: 'Additives',
+    allergens: 'Allergens',
     attr: {
       generic_name: 'Generic Name',
-      product_name: 'Name',
-      origins: 'Origin:',
       manufactured: 'Manufactured:',
+      origins: 'Origin:',
+      product_name: 'Name',
       purchase_places: 'Purchase Places',
       stores: 'Stores'
     },
-    add_sustainability: 'Add Sustainability',
-    get_info: 'More info',
-    sustainability: 'Sustainability',
-    ingredients_cols: {
-      rowsperpage: 'Ingrediens shown',
-      ingredient: 'Ingredient',
-      min: '%Min',
-      max: '%Max'
-    },
-    allergens: 'Allergens',
-    additives: 'Additives',
     carbono100g: 'Carbon 100g',
+    categories: 'Categories',
+    categories_empty: 'No Categories',
+    code: 'Code',
+    complete: 'Completed',
+    get_info: 'More info',
+    image: 'Image',
+    info: 'Information',
+    ingredients: 'Ingredients',
+    ingredients_analysis: 'Analysis',
+    ingredients_cols: {
+      ingredient: 'Ingredient',
+      max: '%Max',
+      min: '%Min',
+      rowsperpage: 'Ingredients shown'
+    },
+    labels: 'Labels',
+    name: 'Info of the product',
+    notcomplete: 'Not completed',
+    nutriments: 'Nutriments',
     nutriments_cols: {
-      rowsperpage: 'Nutriments shown',
-      nutriment: 'Nutriment',
-      value: 'Value',
-      unit: 'Unit',
       '100g': '100g',
+      nutriment: 'Nutriment',
+      rowsperpage: 'Nutriments shown',
+      unit: 'Unit',
       vals: {
         calcium: 'Calcium',
         carbohydrates: 'Carbohydrates',
@@ -136,31 +133,31 @@ export default {
         'trans-fat': 'Trans-Fat',
         'vitamin-a': 'Vitamin-A',
         'vitamin-c': 'Vitamin-C (ascorbic acid)'
-      }
+      },
+      value: 'Value'
     },
-    quantity: 'Quantity',
-    package_shape: 'Shape',
     package_material: 'Material',
+    package_shape: 'Shape',
+    purchase: 'Purchase Localizations',
+    quantity: 'Quantity',
     ratings: {
-      user: 'User    Rating',
-      general: 'General Rating'
-    }
+      general: 'General Rating',
+      user: 'User    Rating'
+    },
+    sustainability: 'Sustainability'
   },
+  'tab-more': 'More...',
   toolbar: {
-    main: 'Main',
     conf: 'Configure',
-    list: 'Search result',
+    help: 'Help`',
     history: 'History',
+    list: 'Search result',
+    main: 'Main',
     product: 'Product',
-    user: 'User Account',
-    help: 'Help`'
-  },
-  capture: {
-    close: 'Close',
-    startScan: 'Read barcode'
+    user: 'User Account'
   },
   vote: {
-    success: 'Voted!',
-    notlogged: 'Not logged in'
+    notlogged: 'Not logged in',
+    success: 'Voted!'
   }
 }
