@@ -7,7 +7,8 @@
       <slot />
     </q-item-section>
     <q-item-section>
-      {{ nombre }}
+      <q-item-label>{{ nombre }}</q-item-label>
+      <q-item-label caption lines="3">{{ description }}</q-item-label>
     </q-item-section>
     <q-item-section>
       <q-toggle
@@ -116,7 +117,7 @@ export default {
     }
   },
 
-  props: ['codigo', 'sus', 'val', 'nombre', 'votg']
+  props: ['codigo', 'sus', 'val', 'nombre', 'description', 'votg']
 }
 </script>
 

@@ -1,21 +1,26 @@
 <template>
   <div>
-    <slot>{{ $t('product.ingredients') }}</slot>
-    <q-list
-      v-if="producto.sustainability"
-      >
-      <votable-sus
-        v-for="k in Object.keys(sustain_tax)"
-        :key=k
-        :codigo=codigo
-        :sus=k
-        :val="valor(k)"
-        :nombre="traducir(k,'sustainability')"
-        :votg="votaciones(k)"
+    <div>
+      <slot>{{ $t('product.ingredients') }}</slot>
+    </div>
+    <div style="min-width:400px; max-width:400px">
+      <q-list
+        v-if="producto.sustainability"
         >
-        <q-tooltip content-class="bg-white text-primary">{{ sustain_tax[k].description[getLanguage()] }}</q-tooltip>
-      </votable-sus>
-    </q-list>
+        <votable-sus
+          v-for="k in Object.keys(sustain_tax)"
+          :key=k
+          :codigo=codigo
+          :sus=k
+          :val="valor(k)"
+          :nombre="traducir(k,'sustainability')"
+          :description="sustain_tax[k].description[getLanguage()]"
+          :votg="votaciones(k)"
+          >
+          <q-tooltip content-class="bg-white text-primary">{{ sustain_tax[k].description[getLanguage()] }}</q-tooltip>
+        </votable-sus>
+      </q-list>
+    </div>
   </div>
 </template>
 

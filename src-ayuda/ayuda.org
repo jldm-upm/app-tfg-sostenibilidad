@@ -8,7 +8,7 @@
 #+OPTIONS: toc:nil
 
 # Exportar hasta nivel 4 como 'cabecera'
-#+OPTIONS: H:4
+#+OPTIONS: H:2
 
 #+TITLE: App Info Sostenibilidad
 #+AUTHOR: José L. Doménech
@@ -61,18 +61,18 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
 ** Funcionalidades
 
 #+CAPTION: Barra de herramientas y búsqueda de producto
-#+ATTR_HTML: :alt imagen toolbar :title Toolbar :align center
+#+ATTR_HTML: :alt imagen toolbar :title Toolbar :align center :class center
 [[file:img/toolbar.png][file:./img/toolbar.png]]
 
 *** Búsqueda de un producto
 
     En la entrada de búsqueda se puede introducir un código de barras,
-    una vez que se cuenta con un código introducido se puede pulsar
+    una vez que se cuenta con un *código* introducido se puede pulsar
     sobre el icono de la lupa para realizar la búsqueda o se puede
     pulsar 'INTRO'.
 
     Tambíen se puede pulsar sobre botón con el icono de una cámara. Se
-    abrirá una pantalla que permite la captura de códigos de barras.
+    abrirá una pantalla que permite la *captura* de códigos de barras.
 
     Se debe pulsar un nuevo botón para iniciar una nueva captura.
 
@@ -81,25 +81,113 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
 
 **** Escaneo
 
-***** Pulsar sobre el botón con el icono de la cámara.
++ Pulsar sobre el botón con el icono de la cámara.
 
-***** Se mostrará la zona de captura del código de barras.
++ Se mostrará la zona de captura del código de barras.
 
-***** Centrar la zona de captura sobre el código de barras que se desea escanear.
++ Centrar la zona de captura sobre el código de barras que se desea escanear.
 
 **** Introducción del código de barras
 
-***** Escribir con el teclado el código que se desea buscar.
++ Escribir con el teclado el código que se desea buscar.
 
-***** Pulsar la tecla 'Enter' o pulsar sobre el icono de la lupa.
++ Pulsar la tecla 'Enter' o pulsar sobre el icono de la lupa.
 
 *** Acceso a la funcionalidad
+
     Se pueden acceder a las distintas partes de la aplicación mediante
-    la barra de herramientas que se encuntra en la parte superior del
+    la *barra de herramientas* que se encuntra en la parte superior del
     programa.
 
+**** / Página de Inicio
+
+#+CAPTION: Inicio
+#+ATTR_HTML: :alt imagen inicio :title Inicio :align center :class center
+[[file:img/inicio.png][file:./img/inicio.png]]
+
+     Se muestra información sobre la aplicación. Por ejemplo el número de versión.
+
+**** @@html:<q-icon name="history" size="md"/>@@Historial
+
+     Muestra una lista de los productos consultados. Al pulsar sobre
+     uno de ellos se carga como producto activo y se puede volver a
+     consultar su información en la pantalla de información del
+     producto.
+
+#+CAPTION: Historial
+#+ATTR_HTML: :alt imagen historial :title Historial :align center :class center
+[[file:img/historial.png][file:./img/historial.png]]
+
+**** @@html:<q-icon name="search" size="md"/>@@Resultado
+
+     Muestra una lista de los productos que corresponde a una búsqueda por categoría.
+
+#+CAPTION: Resultado de búsqueda
+#+ATTR_HTML: :alt imagen resultado :title Resultado :align center :class center
+[[file:img/listado.png][file:./img/listado.png]]
+
 **** @@html:<q-icon name="person" size="md"/>@@ Configuración y Cuenta de Usuario
-  Se pueden definir algunas opciones para ayudar a la o
+
+     Las dos pestañas acceden a manejar la sesión actual y crear una nueva cuenta.
+
+***** @@html:<q-icon name="person" size="md"/>@@Cuenta de Usuario
+
+#+CAPTION: Inicio de sesión
+#+ATTR_HTML: :alt imagen inicio sesión :title Inicio Sesión :align center :class center
+[[file:img/iniciar_sesion.png][file:./img/iniciar_sesion.png]]
+
+      Se puede iniciar sesión con una cuenta de usuario previamente creada.
+
+      + Introducir el nombre de usuario.
+      + Introducir la contraseña
+      + Pulsar 'Acceder'
+
+      Al iniciar sesión se restablecerán los datos de configuración
+      que se hayan guardado en el servidor.
+
+      Con una sesión iniciada se puede:
+      - Cerrar Sesión
+      - Borrar cuenta de usuario
+
+      También se pueden almacenar la configuración del usuario en el
+      servidor desde la configuración.
+
+#+CAPTION: Manejo de sesión
+#+ATTR_HTML: :alt imagen manejo sesión :title Manejo Sesión :align center :class center
+[[file:img/manejar_sesion.png][file:./img/manejar_sesion.png]]
+
+
+***** @@html:<q-icon name="person_add" size="md"/>@@ Crear usuario
+
+#+CAPTION: Crear Usuario
+#+ATTR_HTML: :alt imagen crear usuario :title Crear Usuario :align center :class center
+[[file:img/crear_usuario_1.png][file:./img/crear_usuario_1.png]]
+
+
+      Desde esta pestaña se puede crear un nuevo usuario para la aplicación:
+      + Introducir un nombre de usuario
+      + Introducir una contraseña de al menos ocho carácteres.
+      + Confirmar la contraseña reintroduciendola.
+      + Aceptar los términos de uso.
+
+#+CAPTION: Crear Usuario. Reintroducir contraseña
+#+ATTR_HTML: :alt imagen reintroducit contraseña :title Reintroducir Contraseña :align center :class center
+[[file:img/crear_usuario_2.png][file:./img/crear_usuario_2.png]]
+
+
+***** @@html:<q-icon name="configuration" size="md"/>@@ Configuración
+
+      Desde este botón se puede acceder a la configuración del
+      comportamiento de la aplicación y las preferencias de usuario.
+
+      Si hay una sesión de usuario iniciada se indica el nombre de
+      usuario y se da la posibilidad de guardar la configuración en el
+      servidor.
+
+#+CAPTION: Configuración
+#+ATTR_HTML: :alt imagen configuración :title Configuración :align center :class center
+[[file:img/configurar.png][file:./img/configurar.png]]
+
 
 **** @@html:<q-icon name="emoji_food_beverage" size="md"/>@@ Información de un producto
 
@@ -111,7 +199,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
 ***** Información Mostrada
 
 #+CAPTION: Información general del producto
-#+ATTR_HTML: :alt  :title Producto :align center
+#+ATTR_HTML: :alt  :title Producto :align center :class center
 [[file:img/producto_general.png][file:./img/producto_general.png]]
 
    La pantalla de producto muestra información del producto buscado.
@@ -128,11 +216,16 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
    sostenibilidad del producto, información, ingredientes y
    nutrientes.
 
-****** Lugares de adquisición del producto
+****** @@html:<q-icon name="map" size="md"/>@@ Lugares de adquisición del producto
 
-   Pulsando sobre el mapa se muestra una lista donde se puede adquirir el producto.
+   Pulsando sobre el mapa se muestra una lista con los sitios donde se
+   puede adquirir el producto.
 
 ***** Información del producto
+#+CAPTION: Información adicional
+#+ATTR_HTML: :alt imagen información :title Toolbar :align center :class center
+[[file:img/p_informacion.png][file:./img/p_informacion.png]]
+
   Se encuentra en la pestaña 'Información'.
 
   Se muestra información sobre si el producto esta libre de aceite de
@@ -157,20 +250,47 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
   Etiquetas del producto, tales como la "EU Eco-Label".
 
 ***** Valoraciones de Sostenibilidad
+#+CAPTION: Información adicional
+#+ATTR_HTML: :alt imagen información :title Toolbar :align center :class center
+[[file:img/p_sostenibilidad.png][file:./img/p_sostenibilidad.png]]
+
   Se encuentran en la pestaña de 'Sostenibilidad' de la información del producto.
 
-  Muestra las votaciones positivas, neutras y negativas que ha recibido el producto en cada categoria.
+  Muestra las votaciones positivas, neutras y negativas que ha
+  recibido el producto en cada *aspecto* y la *votación* del usuario
+  para ese producto.
+
+  El usuario puede valorar un aspecto de la sostenibilidad del
+  producto pulsando el conmutador de control que hay para cada
+  aspecto.
 
 ***** Ingredientes
+
+#+CAPTION: Ingredientes
+#+ATTR_HTML: :alt imagen ingredientes :title Ingredientes :align center :class center
+[[file:img/ingredientes.png][file:./img/ingredientes.png]]
+
   Se encuentran en la pestaña 'Ingredientes' del producto.
 
-  Muestra los alérgenos que contiene el producto.
+  Muestra los *ALÉRGENOS* que contiene el producto.
 
-  Muestra los aditivos que contiene el producto.
+  Muestra los *ADITIVOS* que contiene el producto.
 
-  Muestra una tabla de los ingredientes del producto. La tabla muestra información con el nombre y el porcentaje mínimo (%Min) y máximo (%Max) del ingrediente en el producto.
+  Muestra una tabla de los *ingredientes* del producto. La tabla muestra
+  información con el nombre y el porcentaje mínimo (%Min) y máximo
+  (%Max) del ingrediente que contiene el producto.
 
 ***** Nutrientes
+
+#+CAPTION: Nutrientes
+#+ATTR_HTML: :alt imagen nutrientes :title Nutrientes :align center :class center
+[[file:img/nutrientes.png][file:./img/nutrientes.png]]
+
   Se encuentran en la pestaña 'Nutrientes' del producto.
 
-  Muestra una tabla con los nutrientes que contiene el producto. La tabla muestra información con el nutriente, la cantidad total (valor), las unidades en que se mide (unidad) y la cantidad en 100 gramos (100g).
+  Muestra una tabla con los nutrientes que contiene el producto. La
+  tabla muestra información con:
+  + el nombre del nutriente
+  + la cantidad total (valor)
+  + las unidades en que se mide (unidad)
+  + la cantidad por 100 gramos (100g)

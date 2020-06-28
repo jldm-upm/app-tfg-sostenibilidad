@@ -1,315 +1,508 @@
 <template>
   <q-page>
+    <div id="content">
+      <h1 class="title">App Info Sostenibilidad</h1>
 
-<div id="outline-container-orgfe47965" class="outline-2">
-<h2 id="orgfe47965"><span class="section-number-2">1</span> Presentación</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-Esta es la aplicación "Info Sostenibilidad 2020."
-</p>
+      <div id="outline-container-orge7b9d99" class="outline-2">
+        <h2 id="orge7b9d99"><span class="section-number-2">1</span> Presentación</h2>
+        <div class="outline-text-2" id="text-1">
+          <p>
+            Esta es la aplicación "Info Sostenibilidad 2020."
+          </p>
 
-<p>
-La aplicación "Info Sostenibilidad 2020" es una aplicación que
-permite a sus usuarios consultar información relevante sobre la
-sostenibilidad de productos agroalimentarios.
-</p>
+          <p>
+            La aplicación "Info Sostenibilidad 2020" es una aplicación que
+            permite a sus usuarios consultar información relevante sobre la
+            sostenibilidad de productos agroalimentarios.
+          </p>
 
-<p>
-La información presentada se complementa con la introducida por los
-usuarios a través de la votación positiva o negativa de la
-sostenibilidad relacionada con un producto.
-</p>
-</div>
+          <p>
+            La información presentada se complementa con la introducida por los
+            usuarios a través de la votación positiva o negativa de la
+            sostenibilidad relacionada con un producto.
+          </p>
+        </div>
 
-<div id="outline-container-org67bee01" class="outline-3">
-<h3 id="org67bee01"><span class="section-number-3">1.1</span> ¿Qué es la sostenibilidad?</h3>
-<div class="outline-text-3" id="text-1-1">
-<blockquote>
-<p>
-Desarrollo que satisfaga las necesidades del presente sin comprometer
-la capacidad de las generaciones futuras para satisfacer sus propias necesidades <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.
-</p>
-</blockquote>
+        <div id="outline-container-orgc5ffafa" class="outline-3">
+          <h3 id="orgc5ffafa"><span class="section-number-3">1.1</span> ¿Qué es la sostenibilidad?</h3>
+          <div class="outline-text-3" id="text-1-1">
+            <blockquote>
+              <p>
+                Desarrollo que satisfaga las necesidades del presente sin comprometer
+                la capacidad de las generaciones futuras para satisfacer sus propias necesidades <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.
+              </p>
+            </blockquote>
 
-<p>
-Los usuarios pueden valorar de manera subjetiva, con la guía de los
-datos presentados, las características que pueden hacer un producto
-sostenible o no.
-</p>
+            <p>
+              Los usuarios pueden valorar de manera subjetiva, con la guía de los
+              datos presentados, las características que pueden hacer un producto
+              sostenible o no.
+            </p>
 
-<p>
-Por ejemplo, se muestra información sobre el tamaño, forma y
-materiales que componen el empaquetado del producto. Los usuarios
-pueden votar positiva o negativamente los aspecto: 'Empaquetado',
-pero también la 'producción' o 'almacenamiento' están
-relacionados con él.
-</p>
-</div>
-</div>
-</div>
+            <p>
+              Por ejemplo, se muestra información sobre el tamaño, forma y
+              materiales que componen el empaquetado del producto. Los usuarios
+              pueden votar positiva o negativamente los aspecto: 'Empaquetado',
+              pero también la 'producción' o 'almacenamiento' están
+              relacionados con él.
+            </p>
+          </div>
+        </div>
+      </div>
 
-<div id="outline-container-org2de7502" class="outline-2">
-<h2 id="org2de7502"><span class="section-number-2">2</span> Uso</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-La aplicación presenta una pantalla principal con una barra con
-botones para acceder a las funcionalidades principales de la
-aplicación en su parte superior y debajo de esta una entrada de
-búsqueda de producto en la que se puede introducir un código de
-barras o escanearlo.
-</p>
+      <div id="outline-container-org3c9343e" class="outline-2">
+        <h2 id="org3c9343e"><span class="section-number-2">2</span> Uso</h2>
+        <div class="outline-text-2" id="text-2">
+          <p>
+            La aplicación presenta una pantalla principal con una barra con
+            botones para acceder a las funcionalidades principales de la
+            aplicación en su parte superior y debajo de esta una entrada de
+            búsqueda de producto en la que se puede introducir un código de
+            barras o escanearlo.
+          </p>
 
-<p>
-El resto de la pantalla se utiliza para mostrar las distintas
-funcionalidades de la aplicación.
-</p>
+          <p>
+            El resto de la pantalla se utiliza para mostrar las distintas
+            funcionalidades de la aplicación.
+          </p>
 
-<p>
-El usuario puede utilizar una pantalla táctil/teclado virtual para
-introducir los datos requeridos. La aplicación está diseñada para
-que sea totalmente funcional usando un teclado y un ratón.
-</p>
-</div>
+          <p>
+            El usuario puede utilizar una pantalla táctil/teclado virtual para
+            introducir los datos requeridos. La aplicación está diseñada para
+            que sea totalmente funcional usando un teclado y un ratón.
+          </p>
+        </div>
 
-<div id="outline-container-org56dd776" class="outline-3">
-<h3 id="org56dd776"><span class="section-number-3">2.1</span> Funcionalidades</h3>
-<div class="outline-text-3" id="text-2-1">
+        <div id="outline-container-org7d844c5" class="outline-3">
+          <h3 id="org7d844c5"><span class="section-number-3">2.1</span> Funcionalidades</h3>
+          <div class="outline-text-3" id="text-2-1">
 
-<div class="figure">
-<p><a href="img/toolbar.png" alt="imagen toolbar" title="Toolbar" align="center"><img src="./img/toolbar.png" alt="imagen toolbar" title="Toolbar" align="center" /></a>
-</p>
-<p><span class="figure-number">Figura 1: </span>Barra de herramientas y búsqueda de producto</p>
-</div>
-</div>
+            <div class="figure">
+              <p><a href="img/toolbar.png" alt="imagen toolbar" title="Toolbar" align="center" class="center"><img src="./img/toolbar.png" alt="imagen toolbar" title="Toolbar" align="center" class="center" /></a>
+              </p>
+              <p><span class="figure-number">Figura 1: </span>Barra de herramientas y búsqueda de producto</p>
+            </div>
+          </div>
 
-<div id="outline-container-org6d4595e" class="outline-4">
-<h4 id="org6d4595e"><span class="section-number-4">2.1.1</span> Búsqueda de un producto</h4>
-<div class="outline-text-4" id="text-2-1-1">
-<p>
-En la entrada de búsqueda se puede introducir un código de barras,
-una vez que se cuenta con un código introducido se puede pulsar
-sobre el icono de la lupa para realizar la búsqueda o se puede
-pulsar 'INTRO'.
-</p>
+          <ol class="org-ol">
+            <li><a id="org62f3418"></a>Búsqueda de un producto<br />
+              <div class="outline-text-4" id="text-2-1-1">
+                <p>
+                  En la entrada de búsqueda se puede introducir un código de barras,
+                  una vez que se cuenta con un <b>código</b> introducido se puede pulsar
+                  sobre el icono de la lupa para realizar la búsqueda o se puede
+                  pulsar 'INTRO'.
+                </p>
 
-<p>
-Tambíen se puede pulsar sobre botón con el icono de una cámara. Se
-abrirá una pantalla que permite la captura de códigos de barras.
-</p>
+                <p>
+                  Tambíen se puede pulsar sobre botón con el icono de una cámara. Se
+                  abrirá una pantalla que permite la <b>captura</b> de códigos de barras.
+                </p>
 
-<p>
-Se debe pulsar un nuevo botón para iniciar una nueva captura.
-</p>
+                <p>
+                  Se debe pulsar un nuevo botón para iniciar una nueva captura.
+                </p>
 
-<p>
-Una vez capturado se iniciará la búsqueda de producto, y se
-mostrará la pantalla de información del producto.
-</p>
-</div>
+                <p>
+                  Una vez capturado se iniciará la búsqueda de producto, y se
+                  mostrará la pantalla de información del producto.
+                </p>
+              </div>
 
-<div id="outline-container-orge8a3d2e" class="outline-5">
-<h5 id="orge8a3d2e"><span class="section-number-5">2.1.1.1</span> Escaneo</h5>
-<div class="outline-text-5" id="text-2-1-1-1">
-</div>
-<ol class="org-ol">
-<li><a id="org1588b73"></a>Pulsar sobre el botón con el icono de la cámara.<br /></li>
+              <ol class="org-ol">
+                <li><a id="org48dec98"></a>Escaneo<br />
+                  <div class="outline-text-5" id="text-2-1-1-1">
+                    <ul class="org-ul">
+                      <li>Pulsar sobre el botón con el icono de la cámara.</li>
 
-<li><a id="org3bda891"></a>Se mostrará la zona de captura del código de barras.<br /></li>
+                      <li>Se mostrará la zona de captura del código de barras.</li>
 
-<li><a id="org4f99615"></a>Centrar la zona de captura sobre el código de barras que se desea escanear.<br /></li>
-</ol>
-</div>
+                      <li>Centrar la zona de captura sobre el código de barras que se desea escanear.</li>
+                    </ul>
+                  </div>
+                </li>
 
-<div id="outline-container-orgae0325a" class="outline-5">
-<h5 id="orgae0325a"><span class="section-number-5">2.1.1.2</span> Introducción del código de barras</h5>
-<div class="outline-text-5" id="text-2-1-1-2">
-</div>
-<ol class="org-ol">
-<li><a id="org1f59e7f"></a>Escribir con el teclado el código que se desea buscar.<br /></li>
+                <li><a id="org2c265c9"></a>Introducción del código de barras<br />
+                  <div class="outline-text-5" id="text-2-1-1-2">
+                    <ul class="org-ul">
+                      <li>Escribir con el teclado el código que se desea buscar.</li>
 
-<li><a id="org52f587d"></a>Pulsar la tecla 'Enter' o pulsar sobre el icono de la lupa.<br /></li>
-</ol>
-</div>
-</div>
+                      <li>Pulsar la tecla 'Enter' o pulsar sobre el icono de la lupa.</li>
+                    </ul>
+                  </div>
+                </li>
+              </ol>
+            </li>
 
-<div id="outline-container-orgaf7f779" class="outline-4">
-<h4 id="orgaf7f779"><span class="section-number-4">2.1.2</span> Acceso a la funcionalidad</h4>
-<div class="outline-text-4" id="text-2-1-2">
-<p>
-Se pueden acceder a las distintas partes de la aplicación mediante
-la barra de herramientas que se encuntra en la parte superior del
-programa.
-</p>
-</div>
+            <li><a id="org6f262df"></a>Acceso a la funcionalidad<br />
+              <div class="outline-text-4" id="text-2-1-2">
+                <p>
+                  Se pueden acceder a las distintas partes de la aplicación mediante
+                  la <b>barra de herramientas</b> que se encuntra en la parte superior del
+                  programa.
+                </p>
+              </div>
 
-<div id="outline-container-org212bad2" class="outline-5">
-<h5 id="org212bad2"><span class="section-number-5">2.1.2.1</span> <q-icon name="person" size="md"/> Configuración y Cuenta de Usuario</h5>
-<div class="outline-text-5" id="text-2-1-2-1">
-<p>
-Se pueden definir algunas opciones para ayudar a la o
-</p>
-</div>
-</div>
+              <ol class="org-ol">
+                <li><a id="org072eabe"></a>/ Página de Inicio<br />
+                  <div class="outline-text-5" id="text-2-1-2-1">
 
-<div id="outline-container-org7ca7e34" class="outline-5">
-<h5 id="org7ca7e34"><span class="section-number-5">2.1.2.2</span> <q-icon name="emoji_food_beverage" size="md"/> Información de un producto</h5>
-<div class="outline-text-5" id="text-2-1-2-2">
-<p>
-Para obtener información sobre la sostenibilidad de un producto se
-puede escanear un código de barras que se puede encontrar en el
-empaquetado de los productos o introducirlo manualmente en la barra de
-búsqueda.
-</p>
-</div>
+                    <div class="figure">
+                      <p><a href="img/inicio.png" alt="imagen inicio" title="Inicio" align="center" class="center"><img src="./img/inicio.png" alt="imagen inicio" title="Inicio" align="center" class="center" /></a>
+                      </p>
+                      <p><span class="figure-number">Figura 2: </span>Inicio</p>
+                    </div>
 
-<ol class="org-ol">
-<li><a id="org278511a"></a>Información Mostrada<br />
-<div class="outline-text-6" id="text-2-1-2-2-1">
+                    <p>
+                      Se muestra información sobre la aplicación. Por ejemplo el número de versión.
+                    </p>
+                  </div>
+                </li>
 
-<div class="figure">
-<p><a href="img/producto_general.png" title="Producto" align="center"><img src="./img/producto_general.png" title="Producto" align="center" /></a>
-</p>
-<p><span class="figure-number">Figura 2: </span>Información general del producto</p>
-</div>
+                <li><a id="orgb690295"></a><q-icon name="history" size="md"/>Historial<br />
+                  <div class="outline-text-5" id="text-2-1-2-2">
+                    <p>
+                      Muestra una lista de los productos consultados. Al pulsar sobre
+                      uno de ellos se carga como producto activo y se puede volver a
+                      consultar su información en la pantalla de información del
+                      producto.
+                    </p>
 
-<p>
-La pantalla de producto muestra información del producto buscado.
-</p>
+                    <div class="figure">
+                      <p><a href="img/historial.png" alt="imagen historial" title="Historial" align="center" class="center"><img src="./img/historial.png" alt="imagen historial" title="Historial" align="center" class="center" /></a>
+                      </p>
+                      <p><span class="figure-number">Figura 3: </span>Historial</p>
+                    </div>
+                  </div>
+                </li>
 
-<p>
-Un desplegable con las categorías en las que se puede incluir el producto.
-</p>
+                <li><a id="orgbead33f"></a><q-icon name="search" size="md"/>Resultado<br />
+                  <div class="outline-text-5" id="text-2-1-2-3">
+                    <p>
+                      Muestra una lista de los productos que corresponde a una búsqueda por categoría.
+                    </p>
 
-<p>
-Información general como nombre, código de producto, país de origen.
-</p>
+                    <div class="figure">
+                      <p><a href="img/listado.png" alt="imagen resultado" title="Resultado" align="center" class="center"><img src="./img/listado.png" alt="imagen resultado" title="Resultado" align="center" class="center" /></a>
+                      </p>
+                      <p><span class="figure-number">Figura 4: </span>Resultado de búsqueda</p>
+                    </div>
+                  </div>
+                </li>
 
-<p>
-Valoración general del producto por los usuarios.
-</p>
+                <li><a id="orga675e28"></a><q-icon name="person" size="md"/> Configuración y Cuenta de Usuario<br />
+                  <div class="outline-text-5" id="text-2-1-2-4">
+                    <p>
+                      Las dos pestañas acceden a manejar la sesión actual y crear una nueva cuenta.
+                    </p>
+                  </div>
 
-<p>
-Valoración del producto por los usuarios cuantificada con las preferencias del usuario.
-</p>
+                  <ol class="org-ol">
+                    <li><a id="org76165f5"></a><q-icon name="person" size="md"/>Cuenta de Usuario<br />
+                      <div class="outline-text-6" id="text-2-1-2-4-1">
 
-<p>
-En las pestañas se puede acceder a las valoraciones de
-sostenibilidad del producto, información, ingredientes y
-nutrientes.
-</p>
-</div>
+                        <div class="figure">
+                          <p><a href="img/iniciar_sesion.png" alt="imagen inicio sesión" title="Inicio Sesión" align="center" class="center"><img src="./img/iniciar_sesion.png" alt="imagen inicio sesión" title="Inicio Sesión" align="center" class="center" /></a>
+                          </p>
+                          <p><span class="figure-number">Figura 5: </span>Inicio de sesión</p>
+                        </div>
 
-<ol class="org-ol">
-<li><a id="org6a4200b"></a>Lugares de adquisición del producto<br />
-<div class="outline-text-7" id="text-2-1-2-2-1-1">
-<p>
-Pulsando sobre el mapa se muestra una lista donde se puede adquirir el producto.
-</p>
-</div>
-</li>
+                        <p>
+                          Se puede iniciar sesión con una cuenta de usuario previamente creada.
+                        </p>
 
-<li><a id="org7569b31"></a>Información del producto<br />
-<div class="outline-text-7" id="text-2-1-2-2-1-2">
-<p>
-Se encuentra en la pestaña 'Información'.
-</p>
+                        <ul class="org-ul">
+                          <li>Introducir el nombre de usuario.</li>
+                          <li>Introducir la contraseña</li>
+                          <li>Pulsar 'Acceder'</li>
+                        </ul>
 
-<p>
-Se muestra información sobre si el producto esta libre de aceite de
-palma, si es vegetariano o si es vegano mediante un código de
-colores.
-</p>
-<ul class="org-ul">
-<li><span class="underline">Aceite de palma</span>: Indicado mediante la abreviatura <b>PO</b>. Será de
-color rojo si el producto NO contiene aceite de palma, verde si
-contiene o gris si no se tiene esta información.</li>
-<li><span class="underline">Vegetariano</span>: Indicado mendiante la abreviatura <b>Vt</b>. Será de
-color rojo si el producto NO es vegetariano, verde si lo es o
-gris si no se tiene esta información.</li>
-<li><span class="underline">Vegano</span>: Indicado mediante la abreviatura <b>Vg</b>. Será de color
-rojo si el producto NO es vegano, verde si lo es o gris si no se
-tiene esta información.</li>
-</ul>
+                        <p>
+                          Al iniciar sesión se restablecerán los datos de configuración
+                          que se hayan guardado en el servidor.
+                        </p>
 
-<p>
-El origen del producto, de donde se importa y donde se produce. Junto al icono de un avión.
-</p>
+                        <p>
+                          Con una sesión iniciada se puede:
+                        </p>
+                        <ul class="org-ul">
+                          <li>Cerrar Sesión</li>
+                          <li>Borrar cuenta de usuario</li>
+                        </ul>
 
-<p>
-Huella de carbono por 100g, indicada junto al icono de un coche.
-</p>
+                        <p>
+                          También se pueden almacenar la configuración del usuario en el
+                          servidor desde la configuración.
+                        </p>
 
-<p>
-Información sobre el empaquetado: Peso total del producto, forma y material de empaquetado.
-</p>
+                        <div class="figure">
+                          <p><a href="img/manejar_sesion.png" alt="imagen manejo sesión" title="Manejo Sesión" align="center" class="center"><img src="./img/manejar_sesion.png" alt="imagen manejo sesión" title="Manejo Sesión" align="center" class="center" /></a>
+                          </p>
+                          <p><span class="figure-number">Figura 6: </span>Manejo de sesión</p>
+                        </div>
+                      </div>
+                    </li>
 
-<p>
-Etiquetas del producto, tales como la "EU Eco-Label".
-</p>
-</div>
-</li>
+                    <li><a id="org282f0c8"></a><q-icon name="person_add" size="md"/> Crear usuario<br />
+                      <div class="outline-text-6" id="text-2-1-2-4-2">
 
-<li><a id="org297ade7"></a>Valoraciones de Sostenibilidad<br />
-<div class="outline-text-7" id="text-2-1-2-2-1-3">
-<p>
-Se encuentran en la pestaña de 'Sostenibilidad' de la información del producto.
-</p>
+                        <div class="figure">
+                          <p><a href="img/crear_usuario_1.png" alt="imagen crear usuario" title="Crear Usuario" align="center" class="center"><img src="./img/crear_usuario_1.png" alt="imagen crear usuario" title="Crear Usuario" align="center" class="center" /></a>
+                          </p>
+                          <p><span class="figure-number">Figura 7: </span>Crear Usuario</p>
+                        </div>
 
-<p>
-Muestra las votaciones positivas, neutras y negativas que ha recibido el producto en cada categoria.
-</p>
-</div>
-</li>
+                        <p>
+                          Desde esta pestaña se puede crear un nuevo usuario para la aplicación:
+                        </p>
+                        <ul class="org-ul">
+                          <li>Introducir un nombre de usuario</li>
+                          <li>Introducir una contraseña de al menos ocho carácteres.</li>
+                          <li>Confirmar la contraseña reintroduciendola.</li>
+                          <li>Aceptar los términos de uso.</li>
+                        </ul>
 
-<li><a id="org1393d7b"></a>Ingredientes<br />
-<div class="outline-text-7" id="text-2-1-2-2-1-4">
-<p>
-Se encuentran en la pestaña 'Ingredientes' del producto.
-</p>
+                        <div class="figure">
+                          <p><a href="img/crear_usuario_2.png" alt="imagen reintroducit contraseña" title="Reintroducir Contraseña" align="center" class="center"><img src="./img/crear_usuario_2.png" alt="imagen reintroducit contraseña" title="Reintroducir Contraseña" align="center" class="center" /></a>
+                          </p>
+                          <p><span class="figure-number">Figura 8: </span>Crear Usuario. Reintroducir contraseña</p>
+                        </div>
+                      </div>
+                    </li>
 
-<p>
-Muestra los alérgenos que contiene el producto.
-</p>
+                    <li><a id="org3faa065"></a><q-icon name="configuration" size="md"/> Configuración<br />
+                      <div class="outline-text-6" id="text-2-1-2-4-3">
+                        <p>
+                          Desde este botón se puede acceder a la configuración del
+                          comportamiento de la aplicación y las preferencias de usuario.
+                        </p>
 
-<p>
-Muestra los aditivos que contiene el producto.
-</p>
+                        <p>
+                          Si hay una sesión de usuario iniciada se indica el nombre de
+                          usuario y se da la posibilidad de guardar la configuración en el
+                          servidor.
+                        </p>
 
-<p>
-Muestra una tabla de los ingredientes del producto. La tabla muestra información con el nombre y el porcentaje mínimo (%Min) y máximo (%Max) del ingrediente en el producto.
-</p>
-</div>
-</li>
+                        <div class="figure">
+                          <p><a href="img/configurar.png" alt="imagen configuración" title="Configuración" align="center" class="center"><img src="./img/configurar.png" alt="imagen configuración" title="Configuración" align="center" class="center" /></a>
+                          </p>
+                          <p><span class="figure-number">Figura 9: </span>Configuración</p>
+                        </div>
+                      </div>
+                    </li>
+                  </ol>
+                </li>
 
-<li><a id="org0ab83e1"></a>Nutrientes<br />
-<div class="outline-text-7" id="text-2-1-2-2-1-5">
-<p>
-Se encuentran en la pestaña 'Nutrientes' del producto.
-</p>
+                <li><a id="orge84de6a"></a><q-icon name="emoji_food_beverage" size="md"/> Información de un producto<br />
+                  <div class="outline-text-5" id="text-2-1-2-5">
+                    <p>
+                      Para obtener información sobre la sostenibilidad de un producto se
+                      puede escanear un código de barras que se puede encontrar en el
+                      empaquetado de los productos o introducirlo manualmente en la barra de
+                      búsqueda.
+                    </p>
+                  </div>
 
-<p>
-Muestra una tabla con los nutrientes que contiene el producto. La tabla muestra información con el nutriente, la cantidad total (valor), las unidades en que se mide (unidad) y la cantidad en 100 gramos (100g).
-</p>
-</div>
-</li>
-</ol>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<div id="footnotes">
-<h2 class="footnotes">Nota al pie de p&aacute;gina: </h2>
-<div id="text-footnotes">
+                  <ol class="org-ol">
+                    <li><a id="orgf6de24b"></a>Información Mostrada<br />
+                      <div class="outline-text-6" id="text-2-1-2-5-1">
 
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-De "Our common future" el informe de la Comisión Mundial sobre el Medio Ambiente y el Desarrollo, 1987.
-</p></div></div>
+                        <div class="figure">
+                          <p><a href="img/producto_general.png" title="Producto" align="center" class="center"><img src="./img/producto_general.png" title="Producto" align="center" class="center" /></a>
+                          </p>
+                          <p><span class="figure-number">Figura 10: </span>Información general del producto</p>
+                        </div>
 
-</div>
-</div>
+                        <p>
+                          La pantalla de producto muestra información del producto buscado.
+                        </p>
 
+                        <p>
+                          Un desplegable con las categorías en las que se puede incluir el producto.
+                        </p>
+
+                        <p>
+                          Información general como nombre, código de producto, país de origen.
+                        </p>
+
+                        <p>
+                          Valoración general del producto por los usuarios.
+                        </p>
+
+                        <p>
+                          Valoración del producto por los usuarios cuantificada con las preferencias del usuario.
+                        </p>
+
+                        <p>
+                          En las pestañas se puede acceder a las valoraciones de
+                          sostenibilidad del producto, información, ingredientes y
+                          nutrientes.
+                        </p>
+                      </div>
+
+                      <ol class="org-ol">
+                        <li><a id="org2672b1a"></a><q-icon name="map" size="md"/> Lugares de adquisición del producto<br />
+                          <div class="outline-text-7" id="text-2-1-2-5-1-1">
+                            <p>
+                              Pulsando sobre el mapa se muestra una lista con los sitios donde se
+                              puede adquirir el producto.
+                            </p>
+                          </div>
+                        </li>
+                      </ol>
+                    </li>
+
+                    <li><a id="org0724321"></a>Información del producto<br />
+                      <div class="outline-text-6" id="text-2-1-2-5-2">
+
+                        <div class="figure">
+                          <p><a href="img/p_informacion.png" alt="imagen información" title="Toolbar" align="center" class="center"><img src="./img/p_informacion.png" alt="imagen información" title="Toolbar" align="center" class="center" /></a>
+                          </p>
+                          <p><span class="figure-number">Figura 11: </span>Información adicional</p>
+                        </div>
+
+                        <p>
+                          Se encuentra en la pestaña 'Información'.
+                        </p>
+
+                        <p>
+                          Se muestra información sobre si el producto esta libre de aceite de
+                          palma, si es vegetariano o si es vegano mediante un código de
+                          colores.
+                        </p>
+                        <ul class="org-ul">
+                          <li><span class="underline">Aceite de palma</span>: Indicado mediante la abreviatura <b>PO</b>. Será de
+                            color rojo si el producto NO contiene aceite de palma, verde si
+                            contiene o gris si no se tiene esta información.</li>
+                          <li><span class="underline">Vegetariano</span>: Indicado mendiante la abreviatura <b>Vt</b>. Será de
+                            color rojo si el producto NO es vegetariano, verde si lo es o
+                            gris si no se tiene esta información.</li>
+                          <li><span class="underline">Vegano</span>: Indicado mediante la abreviatura <b>Vg</b>. Será de color
+                            rojo si el producto NO es vegano, verde si lo es o gris si no se
+                            tiene esta información.</li>
+                        </ul>
+
+                        <p>
+                          El origen del producto, de donde se importa y donde se produce. Junto al icono de un avión.
+                        </p>
+
+                        <p>
+                          Huella de carbono por 100g, indicada junto al icono de un coche.
+                        </p>
+
+                        <p>
+                          Información sobre el empaquetado: Peso total del producto, forma y material de empaquetado.
+                        </p>
+
+                        <p>
+                          Etiquetas del producto, tales como la "EU Eco-Label".
+                        </p>
+                      </div>
+                    </li>
+
+                    <li><a id="org4831dbe"></a>Valoraciones de Sostenibilidad<br />
+                      <div class="outline-text-6" id="text-2-1-2-5-3">
+
+                        <div class="figure">
+                          <p><a href="img/p_sostenibilidad.png" alt="imagen información" title="Toolbar" align="center" class="center"><img src="./img/p_sostenibilidad.png" alt="imagen información" title="Toolbar" align="center" class="center" /></a>
+                          </p>
+                          <p><span class="figure-number">Figura 12: </span>Información adicional</p>
+                        </div>
+
+                        <p>
+                          Se encuentran en la pestaña de 'Sostenibilidad' de la información del producto.
+                        </p>
+
+                        <p>
+                          Muestra las votaciones positivas, neutras y negativas que ha
+                          recibido el producto en cada <b>aspecto</b> y la <b>votación</b> del usuario
+                          para ese producto.
+                        </p>
+
+                        <p>
+                          El usuario puede valorar un aspecto de la sostenibilidad del
+                          producto pulsando el conmutador de control que hay para cada
+                          aspecto.
+                        </p>
+                      </div>
+                    </li>
+
+                    <li><a id="org57590fb"></a>Ingredientes<br />
+                      <div class="outline-text-6" id="text-2-1-2-5-4">
+
+                        <div class="figure">
+                          <p><a href="img/ingredientes.png" alt="imagen ingredientes" title="Ingredientes" align="center" class="center"><img src="./img/ingredientes.png" alt="imagen ingredientes" title="Ingredientes" align="center" class="center" /></a>
+                          </p>
+                          <p><span class="figure-number">Figura 13: </span>Ingredientes</p>
+                        </div>
+
+                        <p>
+                          Se encuentran en la pestaña 'Ingredientes' del producto.
+                        </p>
+
+                        <p>
+                          Muestra los <b>ALÉRGENOS</b> que contiene el producto.
+                        </p>
+
+                        <p>
+                          Muestra los <b>ADITIVOS</b> que contiene el producto.
+                        </p>
+
+                        <p>
+                          Muestra una tabla de los <b>ingredientes</b> del producto. La tabla muestra
+                          información con el nombre y el porcentaje mínimo (%Min) y máximo
+                          (%Max) del ingrediente que contiene el producto.
+                        </p>
+                      </div>
+                    </li>
+
+                    <li><a id="org18a7726"></a>Nutrientes<br />
+                      <div class="outline-text-6" id="text-2-1-2-5-5">
+
+                        <div class="figure">
+                          <p><a href="img/nutrientes.png" alt="imagen nutrientes" title="Nutrientes" align="center" class="center"><img src="./img/nutrientes.png" alt="imagen nutrientes" title="Nutrientes" align="center" class="center" /></a>
+                          </p>
+                          <p><span class="figure-number">Figura 14: </span>Nutrientes</p>
+                        </div>
+
+                        <p>
+                          Se encuentran en la pestaña 'Nutrientes' del producto.
+                        </p>
+
+                        <p>
+                          Muestra una tabla con los nutrientes que contiene el producto. La
+                          tabla muestra información con:
+                        </p>
+                        <ul class="org-ul">
+                          <li>el nombre del nutriente</li>
+                          <li>la cantidad total (valor)</li>
+                          <li>las unidades en que se mide (unidad)</li>
+                          <li>la cantidad por 100 gramos (100g)</li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ol>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div id="footnotes">
+        <h2 class="footnotes">Nota al pie de p&aacute;gina: </h2>
+        <div id="text-footnotes">
+
+          <div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+                De "Our common future" el informe de la Comisión Mundial sobre el Medio Ambiente y el Desarrollo, 1987.
+          </p></div></div>
+
+        </div>
+    </div></div>
+    <div id="postamble" class="status">
+      <p class="author">Autor: José L. Doménech</p>
+      <p class="date">Created: 2020-06-28 dom 10:49</p>
+      <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+    </div>
   </q-page>
 </template>
 
@@ -324,3 +517,186 @@ export default {
   }
 }
 </script>
+
+<style type="text/css">
+  .title  { text-align: center;
+            margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
