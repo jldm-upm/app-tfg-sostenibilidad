@@ -61,7 +61,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
 ** Funcionalidades
 
 #+CAPTION: Barra de herramientas y búsqueda de producto
-#+ATTR_HTML: :alt imagen toolbar :title Toolbar :align center :class center
+#+ATTR_HTML: :alt imagen toolbar :title Toolbar :align center :class center :width 60%
 [[file:img/toolbar.png][file:./img/toolbar.png]]
 
 *** Búsqueda de un producto
@@ -102,7 +102,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
 **** / Página de Inicio
 
 #+CAPTION: Inicio
-#+ATTR_HTML: :alt imagen inicio :title Inicio :align center :class center
+#+ATTR_HTML: :alt imagen inicio :title Inicio :align center :class center :width 60%
 [[file:img/inicio.png][file:./img/inicio.png]]
 
      Se muestra información sobre la aplicación. Por ejemplo el número de versión.
@@ -115,7 +115,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
      producto.
 
 #+CAPTION: Historial
-#+ATTR_HTML: :alt imagen historial :title Historial :align center :class center
+#+ATTR_HTML: :alt imagen historial :title Historial :align center :class center :width 60%
 [[file:img/historial.png][file:./img/historial.png]]
 
 **** @@html:<q-icon name="search" size="md"/>@@Resultado
@@ -123,7 +123,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
      Muestra una lista de los productos que corresponde a una búsqueda por categoría.
 
 #+CAPTION: Resultado de búsqueda
-#+ATTR_HTML: :alt imagen resultado :title Resultado :align center :class center
+#+ATTR_HTML: :alt imagen resultado :title Resultado :align center :class center :width 60%
 [[file:img/listado.png][file:./img/listado.png]]
 
 **** @@html:<q-icon name="person" size="md"/>@@ Configuración y Cuenta de Usuario
@@ -133,7 +133,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
 ***** @@html:<q-icon name="person" size="md"/>@@Cuenta de Usuario
 
 #+CAPTION: Inicio de sesión
-#+ATTR_HTML: :alt imagen inicio sesión :title Inicio Sesión :align center :class center
+#+ATTR_HTML: :alt imagen inicio sesión :title Inicio Sesión :align center :class center :width 60%
 [[file:img/iniciar_sesion.png][file:./img/iniciar_sesion.png]]
 
       Se puede iniciar sesión con una cuenta de usuario previamente creada.
@@ -153,14 +153,14 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
       servidor desde la configuración.
 
 #+CAPTION: Manejo de sesión
-#+ATTR_HTML: :alt imagen manejo sesión :title Manejo Sesión :align center :class center
+#+ATTR_HTML: :alt imagen manejo sesión :title Manejo Sesión :align center :class center :width 60%
 [[file:img/manejar_sesion.png][file:./img/manejar_sesion.png]]
 
 
 ***** @@html:<q-icon name="person_add" size="md"/>@@ Crear usuario
 
 #+CAPTION: Crear Usuario
-#+ATTR_HTML: :alt imagen crear usuario :title Crear Usuario :align center :class center
+#+ATTR_HTML: :alt imagen crear usuario :title Crear Usuario :align center :class center :width 60%
 [[file:img/crear_usuario_1.png][file:./img/crear_usuario_1.png]]
 
 
@@ -171,7 +171,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
       + Aceptar los términos de uso.
 
 #+CAPTION: Crear Usuario. Reintroducir contraseña
-#+ATTR_HTML: :alt imagen reintroducit contraseña :title Reintroducir Contraseña :align center :class center
+#+ATTR_HTML: :alt imagen reintroducit contraseña :title Reintroducir Contraseña :align center :class center :width 60%
 [[file:img/crear_usuario_2.png][file:./img/crear_usuario_2.png]]
 
 
@@ -185,7 +185,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
       servidor.
 
 #+CAPTION: Configuración
-#+ATTR_HTML: :alt imagen configuración :title Configuración :align center :class center
+#+ATTR_HTML: :alt imagen configuración :title Configuración :align center :class center :width 60%
 [[file:img/configurar.png][file:./img/configurar.png]]
 
 
@@ -199,7 +199,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
 ***** Información Mostrada
 
 #+CAPTION: Información general del producto
-#+ATTR_HTML: :alt  :title Producto :align center :class center
+#+ATTR_HTML: :alt  :title Producto :align center :class center :width 60%
 [[file:img/producto_general.png][file:./img/producto_general.png]]
 
    La pantalla de producto muestra información del producto buscado.
@@ -223,7 +223,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
 
 ***** Información del producto
 #+CAPTION: Información adicional
-#+ATTR_HTML: :alt imagen información :title Toolbar :align center :class center
+#+ATTR_HTML: :alt imagen información :title Toolbar :align center :class center :width 60%
 [[file:img/p_informacion.png][file:./img/p_informacion.png]]
 
   Se encuentra en la pestaña 'Información'.
@@ -251,7 +251,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
 
 ***** Valoraciones de Sostenibilidad
 #+CAPTION: Información adicional
-#+ATTR_HTML: :alt imagen información :title Toolbar :align center :class center
+#+ATTR_HTML: :alt imagen información :title Toolbar :align center :class center :width 60%
 [[file:img/p_sostenibilidad.png][file:./img/p_sostenibilidad.png]]
 
   Se encuentran en la pestaña de 'Sostenibilidad' de la información del producto.
@@ -267,7 +267,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
 ***** Ingredientes
 
 #+CAPTION: Ingredientes
-#+ATTR_HTML: :alt imagen ingredientes :title Ingredientes :align center :class center
+#+ATTR_HTML: :alt imagen ingredientes :title Ingredientes :align center :class center :width 60%
 [[file:img/ingredientes.png][file:./img/ingredientes.png]]
 
   Se encuentran en la pestaña 'Ingredientes' del producto.
@@ -283,7 +283,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
 ***** Nutrientes
 
 #+CAPTION: Nutrientes
-#+ATTR_HTML: :alt imagen nutrientes :title Nutrientes :align center :class center
+#+ATTR_HTML: :alt imagen nutrientes :title Nutrientes :align center :class center :width 60%
 [[file:img/nutrientes.png][file:./img/nutrientes.png]]
 
   Se encuentran en la pestaña 'Nutrientes' del producto.

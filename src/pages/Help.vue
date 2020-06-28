@@ -78,7 +78,7 @@
           <div class="outline-text-3" id="text-2-1">
 
             <div class="figure">
-              <p><a href="img/toolbar.png" alt="imagen toolbar" title="Toolbar" align="center" class="center"><img src="./img/toolbar.png" alt="imagen toolbar" title="Toolbar" align="center" class="center" /></a>
+              <p><a href="img/toolbar.png" alt="imagen toolbar" title="Toolbar" align="center" class="center"><img src="./img/toolbar.png" alt="imagen toolbar" title="Toolbar" align="center" class="center" width="60%" /></a>
               </p>
               <p><span class="figure-number">Figura 1: </span>Barra de herramientas y búsqueda de producto</p>
             </div>
@@ -148,7 +148,7 @@
                   <div class="outline-text-5" id="text-2-1-2-1">
 
                     <div class="figure">
-                      <p><a href="img/inicio.png" alt="imagen inicio" title="Inicio" align="center" class="center"><img src="./img/inicio.png" alt="imagen inicio" title="Inicio" align="center" class="center" /></a>
+                      <p><a href="img/inicio.png" alt="imagen inicio" title="Inicio" align="center" class="center"><img src="./img/inicio.png" alt="imagen inicio" title="Inicio" align="center" class="center" width="60%" /></a>
                       </p>
                       <p><span class="figure-number">Figura 2: </span>Inicio</p>
                     </div>
@@ -169,7 +169,7 @@
                     </p>
 
                     <div class="figure">
-                      <p><a href="img/historial.png" alt="imagen historial" title="Historial" align="center" class="center"><img src="./img/historial.png" alt="imagen historial" title="Historial" align="center" class="center" /></a>
+                      <p><a href="img/historial.png" alt="imagen historial" title="Historial" align="center" class="center"><img src="./img/historial.png" alt="imagen historial" title="Historial" align="center" class="center" width="60%" /></a>
                       </p>
                       <p><span class="figure-number">Figura 3: </span>Historial</p>
                     </div>
@@ -183,7 +183,7 @@
                     </p>
 
                     <div class="figure">
-                      <p><a href="img/listado.png" alt="imagen resultado" title="Resultado" align="center" class="center"><img src="./img/listado.png" alt="imagen resultado" title="Resultado" align="center" class="center" /></a>
+                      <p><a href="img/listado.png" alt="imagen resultado" title="Resultado" align="center" class="center"><img src="./img/listado.png" alt="imagen resultado" title="Resultado" align="center" class="center" width="60%" /></a>
                       </p>
                       <p><span class="figure-number">Figura 4: </span>Resultado de búsqueda</p>
                     </div>
@@ -202,7 +202,7 @@
                       <div class="outline-text-6" id="text-2-1-2-4-1">
 
                         <div class="figure">
-                          <p><a href="img/iniciar_sesion.png" alt="imagen inicio sesión" title="Inicio Sesión" align="center" class="center"><img src="./img/iniciar_sesion.png" alt="imagen inicio sesión" title="Inicio Sesión" align="center" class="center" /></a>
+                          <p><a href="img/iniciar_sesion.png" alt="imagen inicio sesión" title="Inicio Sesión" align="center" class="center"><img src="./img/iniciar_sesion.png" alt="imagen inicio sesión" title="Inicio Sesión" align="center" class="center" width="60%" /></a>
                           </p>
                           <p><span class="figure-number">Figura 5: </span>Inicio de sesión</p>
                         </div>
@@ -236,7 +236,7 @@
                         </p>
 
                         <div class="figure">
-                          <p><a href="img/manejar_sesion.png" alt="imagen manejo sesión" title="Manejo Sesión" align="center" class="center"><img src="./img/manejar_sesion.png" alt="imagen manejo sesión" title="Manejo Sesión" align="center" class="center" /></a>
+                          <p><a href="img/manejar_sesion.png" alt="imagen manejo sesión" title="Manejo Sesión" align="center" class="center"><img src="./img/manejar_sesion.png" alt="imagen manejo sesión" title="Manejo Sesión" align="center" class="center" width="60%" /></a>
                           </p>
                           <p><span class="figure-number">Figura 6: </span>Manejo de sesión</p>
                         </div>
@@ -247,7 +247,7 @@
                       <div class="outline-text-6" id="text-2-1-2-4-2">
 
                         <div class="figure">
-                          <p><a href="img/crear_usuario_1.png" alt="imagen crear usuario" title="Crear Usuario" align="center" class="center"><img src="./img/crear_usuario_1.png" alt="imagen crear usuario" title="Crear Usuario" align="center" class="center" /></a>
+                          <p><a href="img/crear_usuario_1.png" alt="imagen crear usuario" title="Crear Usuario" align="center" class="center"><img src="./img/crear_usuario_1.png" alt="imagen crear usuario" title="Crear Usuario" align="center" class="center" width="60%" /></a>
                           </p>
                           <p><span class="figure-number">Figura 7: </span>Crear Usuario</p>
                         </div>
@@ -263,7 +263,7 @@
                         </ul>
 
                         <div class="figure">
-                          <p><a href="img/crear_usuario_2.png" alt="imagen reintroducit contraseña" title="Reintroducir Contraseña" align="center" class="center"><img src="./img/crear_usuario_2.png" alt="imagen reintroducit contraseña" title="Reintroducir Contraseña" align="center" class="center" /></a>
+                          <p><a href="img/crear_usuario_2.png" alt="imagen reintroducit contraseña" title="Reintroducir Contraseña" align="center" class="center"><img src="./img/crear_usuario_2.png" alt="imagen reintroducit contraseña" title="Reintroducir Contraseña" align="center" class="center" width="60%" /></a>
                           </p>
                           <p><span class="figure-number">Figura 8: </span>Crear Usuario. Reintroducir contraseña</p>
                         </div>
@@ -284,7 +284,7 @@
                         </p>
 
                         <div class="figure">
-                          <p><a href="img/configurar.png" alt="imagen configuración" title="Configuración" align="center" class="center"><img src="./img/configurar.png" alt="imagen configuración" title="Configuración" align="center" class="center" /></a>
+                          <p><a href="img/configurar.png" alt="imagen configuración" title="Configuración" align="center" class="center"><img src="./img/configurar.png" alt="imagen configuración" title="Configuración" align="center" class="center" width="60%" /></a>
                           </p>
                           <p><span class="figure-number">Figura 9: </span>Configuración</p>
                         </div>
@@ -308,7 +308,7 @@
                       <div class="outline-text-6" id="text-2-1-2-5-1">
 
                         <div class="figure">
-                          <p><a href="img/producto_general.png" title="Producto" align="center" class="center"><img src="./img/producto_general.png" title="Producto" align="center" class="center" /></a>
+                          <p><a href="img/producto_general.png" title="Producto" align="center" class="center"><img src="./img/producto_general.png" title="Producto" align="center" class="center" width="60%" /></a>
                           </p>
                           <p><span class="figure-number">Figura 10: </span>Información general del producto</p>
                         </div>
@@ -356,7 +356,7 @@
                       <div class="outline-text-6" id="text-2-1-2-5-2">
 
                         <div class="figure">
-                          <p><a href="img/p_informacion.png" alt="imagen información" title="Toolbar" align="center" class="center"><img src="./img/p_informacion.png" alt="imagen información" title="Toolbar" align="center" class="center" /></a>
+                          <p><a href="img/p_informacion.png" alt="imagen información" title="Toolbar" align="center" class="center"><img src="./img/p_informacion.png" alt="imagen información" title="Toolbar" align="center" class="center"  width="60%" /></a>
                           </p>
                           <p><span class="figure-number">Figura 11: </span>Información adicional</p>
                         </div>
@@ -404,7 +404,7 @@
                       <div class="outline-text-6" id="text-2-1-2-5-3">
 
                         <div class="figure">
-                          <p><a href="img/p_sostenibilidad.png" alt="imagen información" title="Toolbar" align="center" class="center"><img src="./img/p_sostenibilidad.png" alt="imagen información" title="Toolbar" align="center" class="center" /></a>
+                          <p><a href="img/p_sostenibilidad.png" alt="imagen información" title="Toolbar" align="center" class="center"><img src="./img/p_sostenibilidad.png" alt="imagen información" title="Toolbar" align="center" class="center" width="60%" /></a>
                           </p>
                           <p><span class="figure-number">Figura 12: </span>Información adicional</p>
                         </div>
@@ -431,7 +431,7 @@
                       <div class="outline-text-6" id="text-2-1-2-5-4">
 
                         <div class="figure">
-                          <p><a href="img/ingredientes.png" alt="imagen ingredientes" title="Ingredientes" align="center" class="center"><img src="./img/ingredientes.png" alt="imagen ingredientes" title="Ingredientes" align="center" class="center" /></a>
+                          <p><a href="img/ingredientes.png" alt="imagen ingredientes" title="Ingredientes" align="center" class="center"><img src="./img/ingredientes.png" alt="imagen ingredientes" title="Ingredientes" align="center" class="center" width="60%" /></a>
                           </p>
                           <p><span class="figure-number">Figura 13: </span>Ingredientes</p>
                         </div>
@@ -460,7 +460,7 @@
                       <div class="outline-text-6" id="text-2-1-2-5-5">
 
                         <div class="figure">
-                          <p><a href="img/nutrientes.png" alt="imagen nutrientes" title="Nutrientes" align="center" class="center"><img src="./img/nutrientes.png" alt="imagen nutrientes" title="Nutrientes" align="center" class="center" /></a>
+                          <p><a href="img/nutrientes.png" alt="imagen nutrientes" title="Nutrientes" align="center" class="center"><img src="./img/nutrientes.png" alt="imagen nutrientes" title="Nutrientes" align="center" class="center" width="60%" /></a>
                           </p>
                           <p><span class="figure-number">Figura 14: </span>Nutrientes</p>
                         </div>
@@ -498,11 +498,6 @@
 
         </div>
     </div></div>
-    <div id="postamble" class="status">
-      <p class="author">Autor: José L. Doménech</p>
-      <p class="date">Created: 2020-06-28 dom 10:49</p>
-      <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
-    </div>
   </q-page>
 </template>
 
@@ -519,39 +514,46 @@ export default {
 </script>
 
 <style type="text/css">
-  .title  { text-align: center;
-            margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
+.footnotes { font-size: medium;
+             font-weight: bold; }
+
+h2, h3, h4 { font-size: large;
+             font-weight: bold; }
+
+body { width: auto; }
+
+h1 {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.title  { text-align: center;
+          margin-bottom: .2em; }
+
+.subtitle { text-align: center;
+            font-size: medium;
+            font-weight: bold;
+            margin-top:0; }
+org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+.org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+.org-center { margin-left: auto; margin-right: auto; text-align: center; }
+.underline { text-decoration: underline; }
+#postamble p, #preamble p { font-size: 90%; margin: .2em; }
+p.verse { margin-left: 3%; }
+pre {
     border: 1px solid #ccc;
     box-shadow: 3px 3px 3px #eee;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
     margin: 1.2em;
-  }
-  pre.src {
+}
+pre.src {
     position: relative;
     overflow: visible;
     padding-top: 1.2em;
-  }
-  pre.src:before {
+}
+pre.src:before {
     display: none;
     position: absolute;
     background-color: white;
@@ -559,144 +561,144 @@ export default {
     right: 10px;
     padding: 3px;
     border: 1px solid black;
-  }
-  pre.src:hover:before { display: inline;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
+}
+pre.src:hover:before { display: inline;}
+/* Languages per Org manual */
+pre.src-asymptote:before { content: 'Asymptote'; }
+pre.src-awk:before { content: 'Awk'; }
+pre.src-C:before { content: 'C'; }
+/* pre.src-C++ doesn't work in CSS */
+pre.src-clojure:before { content: 'Clojure'; }
+pre.src-css:before { content: 'CSS'; }
+pre.src-D:before { content: 'D'; }
+pre.src-ditaa:before { content: 'ditaa'; }
+pre.src-dot:before { content: 'Graphviz'; }
+pre.src-calc:before { content: 'Emacs Calc'; }
+pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+pre.src-fortran:before { content: 'Fortran'; }
+pre.src-gnuplot:before { content: 'gnuplot'; }
+pre.src-haskell:before { content: 'Haskell'; }
+pre.src-hledger:before { content: 'hledger'; }
+pre.src-java:before { content: 'Java'; }
+pre.src-js:before { content: 'Javascript'; }
+pre.src-latex:before { content: 'LaTeX'; }
+pre.src-ledger:before { content: 'Ledger'; }
+pre.src-lisp:before { content: 'Lisp'; }
+pre.src-lilypond:before { content: 'Lilypond'; }
+pre.src-lua:before { content: 'Lua'; }
+pre.src-matlab:before { content: 'MATLAB'; }
+pre.src-mscgen:before { content: 'Mscgen'; }
+pre.src-ocaml:before { content: 'Objective Caml'; }
+pre.src-octave:before { content: 'Octave'; }
+pre.src-org:before { content: 'Org mode'; }
+pre.src-oz:before { content: 'OZ'; }
+pre.src-plantuml:before { content: 'Plantuml'; }
+pre.src-processing:before { content: 'Processing.js'; }
+pre.src-python:before { content: 'Python'; }
+pre.src-R:before { content: 'R'; }
+pre.src-ruby:before { content: 'Ruby'; }
+pre.src-sass:before { content: 'Sass'; }
+pre.src-scheme:before { content: 'Scheme'; }
+pre.src-screen:before { content: 'Gnu Screen'; }
+pre.src-sed:before { content: 'Sed'; }
+pre.src-sh:before { content: 'shell'; }
+pre.src-sql:before { content: 'SQL'; }
+pre.src-sqlite:before { content: 'SQLite'; }
+/* additional languages in org.el's org-babel-load-languages alist */
+pre.src-forth:before { content: 'Forth'; }
+pre.src-io:before { content: 'IO'; }
+pre.src-J:before { content: 'J'; }
+pre.src-makefile:before { content: 'Makefile'; }
+pre.src-maxima:before { content: 'Maxima'; }
+pre.src-perl:before { content: 'Perl'; }
+pre.src-picolisp:before { content: 'Pico Lisp'; }
+pre.src-scala:before { content: 'Scala'; }
+pre.src-shell:before { content: 'Shell Script'; }
+pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+/* additional language identifiers per "defun org-babel-execute"
        in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
+pre.src-cpp:before  { content: 'C++'; }
+pre.src-abc:before  { content: 'ABC'; }
+pre.src-coq:before  { content: 'Coq'; }
+pre.src-groovy:before  { content: 'Groovy'; }
+/* additional language identifiers from org-babel-shell-names in
      ob-shell.el: ob-shell is the only babel language using a lambda to put
      the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
+pre.src-bash:before  { content: 'bash'; }
+pre.src-csh:before  { content: 'csh'; }
+pre.src-ash:before  { content: 'ash'; }
+pre.src-dash:before  { content: 'dash'; }
+pre.src-ksh:before  { content: 'ksh'; }
+pre.src-mksh:before  { content: 'mksh'; }
+pre.src-posh:before  { content: 'posh'; }
+/* Additional Emacs modes also supported by the LaTeX listings package */
+pre.src-ada:before { content: 'Ada'; }
+pre.src-asm:before { content: 'Assembler'; }
+pre.src-caml:before { content: 'Caml'; }
+pre.src-delphi:before { content: 'Delphi'; }
+pre.src-html:before { content: 'HTML'; }
+pre.src-idl:before { content: 'IDL'; }
+pre.src-mercury:before { content: 'Mercury'; }
+pre.src-metapost:before { content: 'MetaPost'; }
+pre.src-modula-2:before { content: 'Modula-2'; }
+pre.src-pascal:before { content: 'Pascal'; }
+pre.src-ps:before { content: 'PostScript'; }
+pre.src-prolog:before { content: 'Prolog'; }
+pre.src-simula:before { content: 'Simula'; }
+pre.src-tcl:before { content: 'tcl'; }
+pre.src-tex:before { content: 'TeX'; }
+pre.src-plain-tex:before { content: 'Plain TeX'; }
+pre.src-verilog:before { content: 'Verilog'; }
+pre.src-vhdl:before { content: 'VHDL'; }
+pre.src-xml:before { content: 'XML'; }
+pre.src-nxml:before { content: 'XML'; }
+/* add a generic configuration mode; LaTeX export needs an additional
      (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
+pre.src-conf:before { content: 'Configuration File'; }
 
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .equation-container {
+table { border-collapse:collapse; }
+caption.t-above { caption-side: top; }
+caption.t-bottom { caption-side: bottom; }
+td, th { vertical-align:top;  }
+th.org-right  { text-align: center;  }
+th.org-left   { text-align: center;   }
+th.org-center { text-align: center; }
+td.org-right  { text-align: right;  }
+td.org-left   { text-align: left;   }
+td.org-center { text-align: center; }
+dt { font-weight: bold; }
+.footpara { display: inline; }
+.footdef  { margin-bottom: 1em; }
+.figure { padding: 1em; }
+.figure p { text-align: center; }
+.equation-container {
     display: table;
     text-align: center;
     width: 100%;
-  }
-  .equation {
+}
+.equation {
     vertical-align: middle;
-  }
-  .equation-label {
+}
+.equation-label {
     display: table-cell;
     text-align: right;
     vertical-align: middle;
-  }
-  .inlinetask {
+}
+.inlinetask {
     padding: 10px;
     border: 2px solid gray;
     margin: 10px;
     background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
+}
+#org-div-home-and-up
+{ text-align: right; font-size: 70%; white-space: nowrap; }
+textarea { overflow-x: auto; }
+.linenr { font-size: smaller }
+.code-highlighted { background-color: #ffff00; }
+.org-info-js_info-navigation { border-style: none; }
+#org-info-js_console-label
+{ font-size: 10px; font-weight: bold; white-space: nowrap; }
+.org-info-js_search-highlight
+{ background-color: #ffff00; color: #000000; font-weight: bold; }
+.org-svg { width: 90%; }
 </style>
