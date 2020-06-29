@@ -2,25 +2,41 @@
 
 Mostrar características de sostenibilidad de los productos
 
-## Install the dependencies
+## Instalar las dependencias
 ```bash
 npm install
 ```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+### Iniciar la app modo desarrollo (hot-code reloading, mostrar errores, etc.)
 ```bash
 quasar dev
 ```
 
-### Lint the files
+### Construir para android
+```bash
+npm run build_android
+```
+
+### Firmar para android
+Utiliza el keystore en "~/TFG/jldm_tfg.keystore"
+```bash
+npm run sign_android
+```
+
+### Contar líneas de código
+```bash
+npm run locs
+```
+
+### Lint de los ficheros
 ```bash
 npm run lint
 ```
 
-### Build the app for production
+### Construir la app para producción
 ```bash
 quasar build
 ```
 
-### Customize the configuration
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+### Personalizar la configuración
+Ver [Configurando quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
