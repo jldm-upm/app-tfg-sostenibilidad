@@ -16,6 +16,7 @@
         class="self-center"
         >
         <q-btn
+          :disabled="!((producto.purchase_places_tags && producto.purchase_places_tags.length > 0) || (producto.stores_tags && producto.stores_tags.length > 0))"
           size="lg"
           class="justify-around items-center text-white bg-primary"
           @click="showDialogLocalizations = !showDialogLocalizations"
