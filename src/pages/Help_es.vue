@@ -11,15 +11,15 @@
           </p>
 
           <p>
-            La aplicación "Info Sostenibilidad 2020" es una aplicación que
-            permite a sus usuarios consultar información relevante sobre la
+            "Info Sostenibilidad 2020" es una aplicación que permite a
+            sus usuarios consultar información relevante sobre la
             sostenibilidad de productos agroalimentarios.
           </p>
 
           <p>
-            La información presentada se complementa con la introducida por los
-            usuarios a través de la votación positiva o negativa de la
-            sostenibilidad relacionada con un producto.
+            La información presentada se complementa con la
+            introducida por los usuarios a través de la votación
+            positiva o negativa de la sostenibilidad de un producto.
           </p>
         </div>
 
@@ -34,17 +34,17 @@
             </blockquote>
 
             <p>
-              Los usuarios pueden valorar de manera subjetiva, con la guía de los
-              datos presentados, las características que pueden hacer un producto
-              sostenible o no.
+              Los usuarios pueden valorar de manera subjetiva, con la
+              guía de los datos presentados, los puntos que pueden
+              hacer a un producto sostenible.
             </p>
 
             <p>
               Por ejemplo, se muestra información sobre el tamaño, forma y
               materiales que componen el empaquetado del producto. Los usuarios
-              pueden votar positiva o negativamente los aspecto: 'Empaquetado',
-              pero también la 'producción' o 'almacenamiento' están
-              relacionados con él.
+              pueden votar de forma positiva o negativa el punto 'Empaquetado',
+              pero también los puntos 'Producción' o 'Almacenamiento' están
+              relacionados con esta información.
             </p>
           </div>
         </div>
@@ -54,11 +54,11 @@
         <h2 id="org3c9343e"><span class="section-number-2">2</span> Uso</h2>
         <div class="outline-text-2" id="text-2">
           <p>
-            La aplicación presenta una pantalla principal con una barra con
-            botones para acceder a las funcionalidades principales de la
-            aplicación en su parte superior y debajo de esta una entrada de
-            búsqueda de producto en la que se puede introducir un código de
-            barras o escanearlo.
+            En la parte superior la aplicación presenta una pantalla
+            principal con una barra con botones para acceder a las
+            funcionalidades principales de la aplicación y debajo de
+            esta una barra de búsqueda de producto en la que se puede
+            introducir un código de barras o escanearlo.
           </p>
 
           <p>
@@ -67,9 +67,10 @@
           </p>
 
           <p>
-            El usuario puede utilizar una pantalla táctil/teclado virtual para
-            introducir los datos requeridos. La aplicación está diseñada para
-            que sea totalmente funcional usando un teclado y un ratón.
+            El usuario puede utilizar una pantalla táctil propia de
+            los dispositivos móviles. La aplicación está diseñada para
+            que pueda ser usada con un teclado o un ratón conectados
+            al dispositivo.
           </p>
         </div>
 
@@ -78,9 +79,9 @@
           <div class="outline-text-3" id="text-2-1">
 
             <div class="figure">
-              <p><a href="img/toolbar.png" alt="imagen toolbar" title="Toolbar" align="center" class="center"><img src="./img/toolbar.png" alt="imagen toolbar" title="Toolbar" align="center" class="center" width="60%" /></a>
+              <p><a href="img/toolbar.png" alt="imagen toolbar" title="Barra de herramientas" align="center" class="center"><img src="./img/toolbar.png" alt="imagen toolbar" title="Barra de herramientas" align="center" class="center" width="60%" /></a>
               </p>
-              <p><span class="figure-number">Figura 1: </span>Barra de herramientas y búsqueda de producto</p>
+              <p><span class="figure-number">Figura 1: </span>Barras de herramientas y búsqueda de producto</p>
             </div>
           </div>
 
@@ -88,23 +89,21 @@
             <li><a id="org62f3418"></a>Búsqueda de un producto<br />
               <div class="outline-text-4" id="text-2-1-1">
                 <p>
-                  En la entrada de búsqueda se puede introducir un código de barras,
-                  una vez que se cuenta con un <b>código</b> introducido se puede pulsar
-                  sobre el icono de la lupa para realizar la búsqueda o se puede
-                  pulsar 'INTRO'.
+                  En la barra de búsqueda se puede introducir un
+                  código de barras, una vez que se cuenta con
+                  un <b>código</b> se puede pulsar sobre el botón con
+                  el icono de la lupa o pulsar la tecla 'INTRO' para
+                  realizar la búsqueda.
                 </p>
 
                 <p>
-                  Tambíen se puede pulsar sobre botón con el icono de una cámara. Se
-                  abrirá una pantalla que permite la <b>captura</b> de códigos de barras.
+                  También se puede pulsar sobre botón con el icono de
+                  una cámara. Se mostrará una pantalla que permite
+                  la <b>captura</b> de códigos de barras.
                 </p>
 
                 <p>
-                  Se debe pulsar un nuevo botón para iniciar una nueva captura.
-                </p>
-
-                <p>
-                  Una vez capturado se iniciará la búsqueda de producto, y se
+                  Una vez finalizada la búsqueda de producto se
                   mostrará la pantalla de información del producto.
                 </p>
               </div>
@@ -125,9 +124,9 @@
                 <li><a id="org2c265c9"></a>Introducción del código de barras<br />
                   <div class="outline-text-5" id="text-2-1-1-2">
                     <ul class="org-ul">
-                      <li>Escribir con el teclado el código que se desea buscar.</li>
+                      <li>Escribir el código que se desea buscar.</li>
 
-                      <li>Pulsar la tecla 'Enter' o pulsar sobre el icono de la lupa.</li>
+                      <li>Pulsar la tecla 'INTRO' o pulsar sobre el icono de la lupa.</li>
                     </ul>
                   </div>
                 </li>
@@ -162,10 +161,11 @@
                 <li><a id="orgb690295"></a><q-icon name="history" size="md"/>Historial<br />
                   <div class="outline-text-5" id="text-2-1-2-2">
                     <p>
-                      Muestra una lista de los productos consultados. Al pulsar sobre
-                      uno de ellos se carga como producto activo y se puede volver a
-                      consultar su información en la pantalla de información del
-                      producto.
+                      Muestra una lista de los productos
+                      consultados. Al pulsar sobre uno de ellos se
+                      carga como producto activo y su información
+                      puede volver a ser consultada en la página de
+                      información del producto.
                     </p>
 
                     <div class="figure">
@@ -193,7 +193,9 @@
                 <li><a id="orga675e28"></a><q-icon name="person" size="md"/> Configuración y Cuenta de Usuario<br />
                   <div class="outline-text-5" id="text-2-1-2-4">
                     <p>
-                      Las dos pestañas acceden a manejar la sesión actual y crear una nueva cuenta.
+                      Las dos pestañas sirven para manejar la sesión
+                      actual y crear una nueva cuenta en el servicio
+                      respectivamente.
                     </p>
                   </div>
 
@@ -218,8 +220,9 @@
                         </ul>
 
                         <p>
-                          Al iniciar sesión se restablecerán los datos de configuración
-                          que se hayan guardado en el servidor.
+                          Al iniciar sesión se restablecerán los datos
+                          de configuración que se hayan guardado en
+                          el servicio.
                         </p>
 
                         <p>
@@ -227,7 +230,7 @@
                         </p>
                         <ul class="org-ul">
                           <li>Cerrar Sesión</li>
-                          <li>Borrar cuenta de usuario</li>
+                          <li>Borrar la cuenta de usuario actual del servicio</li>
                         </ul>
 
                         <p>
@@ -243,7 +246,7 @@
                       </div>
                     </li>
 
-                    <li><a id="org282f0c8"></a><q-icon name="person_add" size="md"/> Crear usuario<br />
+                    <li><a id="org282f0c8"></a><q-icon name="person_add" size="md"/> Crear cuenta de usuario<br />
                       <div class="outline-text-6" id="text-2-1-2-4-2">
 
                         <div class="figure">
@@ -253,19 +256,19 @@
                         </div>
 
                         <p>
-                          Desde esta pestaña se puede crear un nuevo usuario para la aplicación:
+                          Desde esta pestaña se puede crear una nueva cuenta de usuario en el servicio:
                         </p>
                         <ul class="org-ul">
                           <li>Introducir un nombre de usuario</li>
                           <li>Introducir una contraseña de al menos ocho carácteres.</li>
                           <li>Confirmar la contraseña reintroduciendola.</li>
-                          <li>Aceptar los términos de uso.</li>
+                          <li>Aceptar los  <a href="#terminos">términos de uso</a>.</li>
                         </ul>
 
                         <div class="figure">
-                          <p><a href="img/crear_usuario_2.png" alt="imagen reintroducit contraseña" title="Reintroducir Contraseña" align="center" class="center"><img src="./img/crear_usuario_2.png" alt="imagen reintroducit contraseña" title="Reintroducir Contraseña" align="center" class="center" width="60%" /></a>
+                          <p><a href="img/crear_usuario_2.png" alt="imagen confirmar contraseña" title="Confirmar Contraseña" align="center" class="center"><img src="./img/crear_usuario_2.png" alt="imagen confirmar contraseña" title="Confirmar Contraseña" align="center" class="center" width="60%" /></a>
                           </p>
-                          <p><span class="figure-number">Figura 8: </span>Crear Usuario. Reintroducir contraseña</p>
+                          <p><span class="figure-number">Figura 8: </span>Crear Cuenta de Usuario. Confirmar contraseña</p>
                         </div>
                       </div>
                     </li>
@@ -280,7 +283,7 @@
                         <p>
                           Si hay una sesión de usuario iniciada se indica el nombre de
                           usuario y se da la posibilidad de guardar la configuración en el
-                          servidor.
+                          servicio.
                         </p>
 
                         <div class="figure">
@@ -296,9 +299,10 @@
                 <li><a id="orge84de6a"></a><q-icon name="emoji_food_beverage" size="md"/> Información de un producto<br />
                   <div class="outline-text-5" id="text-2-1-2-5">
                     <p>
-                      Para obtener información sobre la sostenibilidad de un producto se
-                      puede escanear un código de barras que se puede encontrar en el
-                      empaquetado de los productos o introducirlo manualmente en la barra de
+                      Para obtener información sobre la sostenibilidad
+                      de un producto se puede escanear un código de
+                      barras que se puede encontrar en su empaquetado
+                      o introducirlo manualmente en la barra de
                       búsqueda.
                     </p>
                   </div>
@@ -318,25 +322,25 @@
                         </p>
 
                         <p>
-                          Un desplegable con las categorías en las que se puede incluir el producto.
+                          Un desplegable con las categorías a las que pertenece el producto.
                         </p>
 
                         <p>
-                          Información general como nombre, código de producto, país de origen.
+                          Información general como nombre, código o país de origen.
                         </p>
 
                         <p>
-                          Valoración general del producto por los usuarios.
+                          Valoración general de sostenibilidad del producto dado por los usuarios.
                         </p>
 
                         <p>
-                          Valoración del producto por los usuarios cuantificada con las preferencias del usuario.
+                          Valoración de sostenibilidad del producto cuantificada con las preferencias del usuario.
                         </p>
 
                         <p>
-                          En las pestañas se puede acceder a las valoraciones de
-                          sostenibilidad del producto, información, ingredientes y
-                          nutrientes.
+                          Con las pestañas se puede acceder a la
+                          votación de sostenibilidad del producto,
+                          información, ingredientes y nutrientes.
                         </p>
                       </div>
 
@@ -356,7 +360,7 @@
                       <div class="outline-text-6" id="text-2-1-2-5-2">
 
                         <div class="figure">
-                          <p><a href="img/p_informacion.png" alt="imagen información" title="Toolbar" align="center" class="center"><img src="./img/p_informacion.png" alt="imagen información" title="Toolbar" align="center" class="center"  width="60%" /></a>
+                          <p><a href="img/p_informacion.png" alt="imagen información" title="Información" align="center" class="center"><img src="./img/p_informacion.png" alt="imagen información" title="Información" align="center" class="center"  width="60%" /></a>
                           </p>
                           <p><span class="figure-number">Figura 11: </span>Información adicional</p>
                         </div>
@@ -383,15 +387,15 @@
                         </ul>
 
                         <p>
-                          El origen del producto, de donde se importa y donde se produce. Junto al icono de un avión.
+                          <q-icon name="flight" size="sm"/>El origen del producto, de donde se importa y donde se produce. Junto al icono de un avión.
                         </p>
 
                         <p>
-                          Huella de carbono por 100g, indicada junto al icono de un coche.
+                          <q-icon name="directions_car" size="sm"/>Huella de carbono por 100g (junto al icono del coche), indicada junto al icono de un coche.
                         </p>
 
                         <p>
-                          Información sobre el empaquetado: Peso total del producto, forma y material de empaquetado.
+                          <q-icon name="widgets" size="sm"/>Información sobre el empaquetado (junto al icono del paquete): Peso total del producto, forma y material de empaquetado.
                         </p>
 
                         <p>
@@ -414,9 +418,11 @@
                         </p>
 
                         <p>
-                          Muestra las votaciones positivas, neutras y negativas que ha
-                          recibido el producto en cada <b>aspecto</b> y la <b>votación</b> del usuario
-                          para ese producto.
+                          Muestra las votaciones positivas, neutras y
+                          negativas que ha recibido el producto en
+                          cada <b>aspecto</b> sostenible y
+                          la <b>votación</b> que el usuario ha dado
+                          a ese producto.
                         </p>
 
                         <p>
@@ -493,9 +499,9 @@
         <div id="text-footnotes">
 
           <div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-                De "Our common future" el informe de la Comisión Mundial sobre el Medio Ambiente y el Desarrollo, 1987.
+              <p>`De <a href="https://sustainabledevelopment.un.org/content/documents/5987our-common-future.pdf">"Our common future"</a> el informe de la Comisión Mundial sobre el Medio Ambiente y el Desarrollo, 1987.
+              </p>
           </p></div></div>
-
         </div>
     </div></div>
   </q-page>
