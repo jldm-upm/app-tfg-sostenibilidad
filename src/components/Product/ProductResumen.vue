@@ -1,6 +1,7 @@
 <template>
   <div>
-    <q-card-section horizontal>
+    <q-card-section
+      horizontal>
       <q-card-section>
         <q-badge
           floating
@@ -11,7 +12,9 @@
           :producto=producto>
         </product-header>
       </q-card-section>
-      <q-card-section class="row">
+      <q-card-section
+        class="self-center"
+        >
         <q-btn
           size="lg"
           class="justify-around items-center text-white bg-primary"
