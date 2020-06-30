@@ -10,7 +10,7 @@ const routes = [
       { path: '/history', component: () => import('pages/History.vue') },
       { path: '/product', component: () => import('pages/Product.vue') },
       { path: '/login', component: () => import('pages/Login.vue') },
-      { path: '/help', component: () => import('pages/Help_es.vue') },
+      { path: '/help', component: () => import('pages/Help.vue') },
 
       { path: '/capture', component: () => import('pages/Capture.vue') },
       { path: '/search', component: () => import('pages/Search.vue') }
