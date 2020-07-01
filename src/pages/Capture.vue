@@ -68,15 +68,15 @@ export default {
     },
 
     escaneoCordovaError (error) {
+      alert(JSON.stringify(error))
       this.setLastError(error)
     },
 
-    capturarCordova () {
-      console.log('Capturar con Cordova')
+    async capturarCordova () {
       // capturar con cordova
       const permissions = cordova.plugins.permissions
 
-      permissions.checkPermission(permissions.CAMERA, (res) => {
+      await permissions.checkPermission(permissions.CAMERA, (res) => {
         if (!res.hasPermission) {
           permissions.requestPermission(
             permissions.CAMERA,
@@ -88,7 +88,7 @@ export default {
       })
 
       if (window.hasCameraPermission) {
-        cordova.plugins.barcodeScanner.scan(
+        await cordova.plugins.barcodeScanner.scan(
           this.escaneoCordova,
           this.escaneoCordovaError,
           {
@@ -108,7 +108,6 @@ export default {
     },
 
     configurarQuagga () {
-      console.log('configurarQuagga')
       Quagga.init({
         inputStream: {
           name: 'Live',
@@ -145,11 +144,10 @@ export default {
     },
 
     iniciarEscaneo () {
-      this.cameraStatus = 1
-
       if (this.enCordova) {
         this.capturarCordova()
       } else {
+        this.cameraStatus = 1
         this.capturarQuagga()
       }
     },
@@ -175,7 +173,6 @@ export default {
   },
 
   mounted () {
-    console.log('mounted')
     if (!(this.enCordova)) {
       console.log('mounted (quagga)')
       this.configurarQuagga()
@@ -185,7 +182,6 @@ export default {
   },
 
   beforeDestroy () {
-    console.log('beforeDestroy')
     this.onStop()
     window.scannedCode = null
     window.hasCameraPermission = null
