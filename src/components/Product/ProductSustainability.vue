@@ -3,8 +3,9 @@
     <div>
       <slot>{{ $t('product.ingredients') }}</slot>
     </div>
-    <div style="min-width:400px; max-width:400px">
+    <div class="column">
       <q-list
+        bordered separator
         v-if="producto.sustainability"
         >
         <votable-sus

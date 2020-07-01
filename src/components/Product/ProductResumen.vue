@@ -114,6 +114,9 @@ export default {
 .bg_green {
     background-color: green;
 }
+.bg_grey {
+    background-color: gray;
+}
 .empty-list {
     z-index: -1;
     opacity: 0.2;

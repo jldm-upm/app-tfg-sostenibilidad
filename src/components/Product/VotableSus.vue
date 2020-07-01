@@ -1,5 +1,7 @@
 <template>
-  <q-item>
+  <q-item clickable ripple
+          :class="{ bg_grey: val === null || val === undefined, bg_green : val, bg_red : !val }"
+          @click="evtVotar(!val)">
     <q-item-section side>
       <q-badge color="green">{{ producto_true }}</q-badge>
       <q-badge color="grey">{{ producto_null }}</q-badge>
@@ -10,7 +12,7 @@
       <q-item-label>{{ nombre }}</q-item-label>
       <q-item-label caption lines="3">{{ description }}</q-item-label>
     </q-item-section>
-    <q-item-section>
+    <q-item-section side>
       <q-toggle
         :disabled="!getLoggedInUser()"
         indeterminate-value=true
