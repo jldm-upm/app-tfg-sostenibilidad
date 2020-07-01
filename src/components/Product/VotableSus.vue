@@ -1,6 +1,6 @@
 <template>
   <q-item clickable ripple
-          :class="{ bg_grey: val === null || val === undefined, bg_green : val, bg_red : !val }"
+          :class="{ bg_voto_neutro: val === null || val === undefined, bg_voto_positivo : val, bg_voto_negativo : !val }"
           @click="evtVotar(!val)">
     <q-item-section side>
       <q-badge color="green">{{ producto_true }}</q-badge>
@@ -124,5 +124,13 @@ export default {
 </script>
 
 <style>
-
+.bg_voto_positivo {
+    background-color: #9ced6a;
+}
+.bg_voto_negativo {
+    background-color: #fc9583;
+}
+.bg_voto_neutro {
+    background-color: #bcb7b7;
+}
 </style>
