@@ -13,7 +13,9 @@ export default {
     language: 'Lenguaje',
     pageSize: 'Tamaño Página',
     pageSize_hint: 'Número máximo de elementos en la página de búsqueda',
-    sustainability: 'Valoración de sostenibilidad'
+    sustainability: 'Valoración de sostenibilidad',
+    useOtherServices: 'Acceder a otros servicios',
+    useOtherServices_hint: 'Acceder otros servicios para obtener images o mapas'
   },
   history: {
     empty: 'Vacío'

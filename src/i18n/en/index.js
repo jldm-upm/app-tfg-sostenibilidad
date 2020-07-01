@@ -13,7 +13,9 @@ export default {
     language: 'Language',
     pageSize: 'Page Size',
     pageSize_hint: 'Maximun number of elements in search page',
-    sustainability: 'Sustainability Valoration'
+    sustainability: 'Sustainability Valoration',
+    useOtherServices: 'Use other services',
+    useOtherServices_hint: 'Use other services to retrieve images, or maps'
   },
   history: {
     empty: 'Empty'

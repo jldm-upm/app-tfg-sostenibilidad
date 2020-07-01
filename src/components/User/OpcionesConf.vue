@@ -45,6 +45,15 @@
         :hint="$t('configuration.pageSize_hint')"
         />
     </q-item>
+    <q-item>
+      <q-item-section>
+        <q-checkbox
+          :value="getUseOtherServices()"
+          @input="inputChange"
+          :label="$t('configuration.useOtherServices')" />
+        <q-item-label caption lines="3">{{ $t('configuration.useOtherServices_hint') }}</q-item-label>
+      </q-item-section>
+    </q-item>
     <fieldset>
       <legend>{{ $t('configuration.sustainability') }}</legend>
       <cuantificacion-sostenibilidad
@@ -57,7 +66,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'OpcionesConf',
@@ -117,7 +126,13 @@ export default {
   },
 
   methods: {
-    ...mapGetters('taxonomias', ['getTaxSustainability'])
+    ...mapGetters('appStatus', ['getUseOtherServices']),
+    ...mapActions('appStatus', ['setUseOtherServices']),
+    ...mapGetters('taxonomias', ['getTaxSustainability']),
+
+    inputChange (val, evt) {
+      this.setUseOtherServices(val)
+    }
   },
 
   components: {
