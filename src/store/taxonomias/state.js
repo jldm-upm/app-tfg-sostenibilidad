@@ -4,6 +4,7 @@ const labelstags = require('./tax/labels.js').val
 const ingredients = require('./tax/ingredients.js').val
 const sustainability = require('./tax/sustainability.js').val
 const categories = require('./tax/categories.js').val
+const brands = require('./tax/brands.js').val
 
 export default function () {
   return {
@@ -15,7 +16,7 @@ export default function () {
       additives: null,
       allergens: null,
       categories: categories,
-      brands: null,
+      brands: brands,
       countries: null,
       ingredientsAnalysis: ingredientsAnalysis,
       ingredients: ingredients,
