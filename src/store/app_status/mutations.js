@@ -99,3 +99,7 @@ export function setUserSustainability (state, { sustainability, value }) {
 export function setListProducts (state, val) {
   state.listProducts = val
 }
+
+export function setUseOtherServices (state, val) {
+  state.useOtherServices = val
+}

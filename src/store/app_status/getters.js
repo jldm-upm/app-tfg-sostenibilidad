@@ -56,3 +56,7 @@ export function getVotacion (state, getters) {
     return getters.getVot[getters.getActiveProducto][sus]
   }
 }
+
+export function getUseOtherServices (state) {
+  return state.useOtherServices
+}

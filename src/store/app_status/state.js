@@ -14,6 +14,7 @@ export default function () {
       historySize: 10,
       pageSize: 10,
       language: 'en',
+      useOtherServices: false,
       sustainability: {
         'en:packaging': 3,
         'en:size': 3,

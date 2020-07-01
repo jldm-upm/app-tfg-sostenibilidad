@@ -68,3 +68,7 @@ export function setUserSustainability ({ commit }, sus) {
 export function setListProducts ({ commit }, val) {
   commit('setListProducts', val)
 }
+
+export function setUseOtherServices ({ commit }, val) {
+  commit('setUseOtherServices', val)
+}
