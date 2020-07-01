@@ -1,41 +1,42 @@
 <template>
-  <div class="row items-center"
-       style="height: 100vh"
-       key="escaneo">
-    <div class="col text-center q-pa-sm">
-      <q-page-sticky
-        position="bottom-right"
-        :offset="[18, 18]">
+    <div class="row items-center"
+         style="height: 100vh"
+         key="escaneo">
+      <div class="col text-center q-pa-sm">
+        <q-page-sticky
+          position="bottom-right"
+          :offset="[18, 18]">
 
-        <q-btn color="primary"
-               icon="camera_alt"
-               :label="$t('capture.startScan')"
-               class="full-width"
-               size="lg"
-               @click="iniciarEscaneo()"
-               v-show="cameraStatus === 0"/>
-      </q-page-sticky>
-      <div id="scan"
-           v-show="cameraStatus === 1">
+          <q-btn color="primary"
+                 icon="camera_alt"
+                 :label="$t('capture.startScan')"
+                 class="full-width"
+                 size="lg"
+                 @click="iniciarEscaneo()"
+                 v-show="cameraStatus === 0"/>
+        </q-page-sticky>
+        <div id="scan"
+             v-show="cameraStatus === 1">
+        </div>
+        <q-page-sticky
+          position="bottom-right"
+          :offset="[18, 18]">
+          <q-btn
+            icon="cancel"
+            color="negative"
+            label="Cancelar"
+            v-show="cameraStatus === 1"
+            @click="onStop" />
+        </q-page-sticky>
       </div>
-      <q-page-sticky
-        position="bottom-right"
-        :offset="[18, 18]">
-        <q-btn
-          icon="cancel"
-          color="negative"
-          label="Cancelar"
-          v-show="cameraStatus === 1"
-          @click="onStop" />
-      </q-page-sticky>
     </div>
-  </div>
 
 </template>
 
 <script>
 // import Quagga from 'quagga'
-import Quagga from '@ericblade/quagga2'
+// import Quagga from '@ericblade/quagga2'
+const Quagga = require('@ericblade/quagga2').default
 
 import { mapActions } from 'vuex'
 
@@ -70,63 +71,86 @@ export default {
       this.setLastError(error)
     },
 
-    iniciarEscaneo () {
-      if (this.enCordova) {
-        // capturar con cordova
-        const permissions = cordova.plugins.permissions
+    capturarCordova () {
+      console.log('Capturar con Cordova')
+      // capturar con cordova
+      const permissions = cordova.plugins.permissions
 
-        permissions.checkPermission(permissions.CAMERA, (res) => {
-          if (!res.hasPermission) {
-            permissions.requestPermission(
-              permissions.CAMERA,
-              p => { window.hasCameraPermission = true },
-              e => { window.hasCameraPermission = false })
-          } else {
-            window.hasCameraPermission = true
-          }
-        })
-
-        if (window.hasCameraPermission) {
-          cordova.plugins.barcodeScanner.scan(
-            this.escaneoCordova,
-            this.escaneoCordovaError,
-            {
-              preferFrontCamera: false, // iOS and Android
-              showFlipCameraButton: true, // iOS and Android
-              showTorchButton: true, // iOS and Android
-              torchOn: false, // Android, launch with the torch switched on (if available)
-              saveHistory: false, // Android, save scan history (default false)
-              // prompt: $t('capture.startScan'), // Android
-              resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
-              // formats: 'QR_CODE,PDF_417', // default: all but PDF_417 and RSS_EXPANDED
-              // orientation: 'landscape', // Android only (portrait|landscape), default unset so it rotates with the device
-              disableAnimations: true, // iOS
-              disableSuccessBeep: false // iOS and Android
-            })
+      permissions.checkPermission(permissions.CAMERA, (res) => {
+        if (!res.hasPermission) {
+          permissions.requestPermission(
+            permissions.CAMERA,
+            p => { window.hasCameraPermission = true },
+            e => { window.hasCameraPermission = false })
+        } else {
+          window.hasCameraPermission = true
         }
+      })
+
+      if (window.hasCameraPermission) {
+        cordova.plugins.barcodeScanner.scan(
+          this.escaneoCordova,
+          this.escaneoCordovaError,
+          {
+            preferFrontCamera: false, // iOS and Android
+            showFlipCameraButton: true, // iOS and Android
+            showTorchButton: true, // iOS and Android
+            torchOn: false, // Android, launch with the torch switched on (if available)
+            saveHistory: false, // Android, save scan history (default false)
+            // prompt: $t('capture.startScan'), // Android
+            resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+            // formats: 'QR_CODE,PDF_417', // default: all but PDF_417 and RSS_EXPANDED
+            // orientation: 'landscape', // Android only (portrait|landscape), default unset so it rotates with the device
+            disableAnimations: true, // iOS
+            disableSuccessBeep: false // iOS and Android
+          })
+      }
+    },
+
+    configurarQuagga () {
+      console.log('configurarQuagga')
+      Quagga.init({
+        inputStream: {
+          name: 'Live',
+          type: 'LiveStream',
+          target: document.querySelector('#scan')
+        },
+        frequency: 10,
+        decoder: {
+          readers: [
+            'ean_reader',
+            'code_128_reader',
+            'ean_8_reader',
+            'code_39_reader',
+            'code_39_vin_reader',
+            'codabar_reader',
+            'upc_reader',
+            'upc_e_reader',
+            'i2of5_reader',
+            '2of5_reader',
+            'code_93_reader'
+          ],
+          multiple: false
+        }
+      }, (err) => {
+        if (err) {
+          this.setLastError(err)
+        }
+      })
+      Quagga.onDetected(this.onDetected)
+    },
+
+    capturarQuagga () {
+      Quagga.start()
+    },
+
+    iniciarEscaneo () {
+      this.cameraStatus = 1
+
+      if (this.enCordova) {
+        this.capturarCordova()
       } else {
-        // capturar con Quagga
-        this.cameraStatus = 1
-        Quagga.init({
-          inputStream: {
-            name: 'Live',
-            type: 'LiveStream',
-            target: document.querySelector('#scan')
-          },
-          frequency: 10,
-          decoder: {
-            readers: [
-              'ean_reader'
-            ],
-            multiple: false
-          }
-        }, (err) => {
-          if (err) {
-            this.setLastError(err)
-          }
-        })
-        Quagga.onDetected(this.onDetected)
-        Quagga.start()
+        this.capturarQuagga()
       }
     },
 
@@ -151,10 +175,17 @@ export default {
   },
 
   mounted () {
-    this.iniciarEscaneo()
+    console.log('mounted')
+    if (!(this.enCordova)) {
+      console.log('mounted (quagga)')
+      this.configurarQuagga()
+    }
+
+    // this.iniciarEscaneo()
   },
 
   beforeDestroy () {
+    console.log('beforeDestroy')
     this.onStop()
     window.scannedCode = null
     window.hasCameraPermission = null
