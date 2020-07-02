@@ -1,5 +1,5 @@
 <template>
-  <q-item clickable ripple
+  <q-item clickable v-ripple
           :class="{ bg_voto_neutro: val === null || val === undefined, bg_voto_positivo : val, bg_voto_negativo : !val }"
           @click="evtVotar(!val)">
     <q-item-section side>
@@ -41,7 +41,15 @@ export default {
     ...mapActions('appStatus', ['setLastError', 'votar']),
 
     evtVotar (newVal, evt) {
-      this.actualizarEnServidor(this.codigo, this.sus, newVal)
+      if (this.getLoggedInUser()) {
+        this.actualizarEnServidor(this.codigo, this.sus, newVal)
+      } else {
+        this.$q.notify({
+          type: 'warning',
+          icon: 'warning',
+          message: this.$t('vote.notlogged')
+        })
+      }
     },
 
     async actualizarEnServidor (codigo, sustainability, valor) {
