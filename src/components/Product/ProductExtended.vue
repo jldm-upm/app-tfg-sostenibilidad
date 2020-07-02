@@ -70,7 +70,7 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import { getTraduccion } from './tax.js'
+import { traducirTax } from '../traducir_tax.js'
 
 export default {
   data () {
@@ -110,7 +110,7 @@ export default {
       const tax = this.getAndUpdateTaxonomia(taxonomia)
       let res = value
       if (value) {
-        res = getTraduccion(tax, value, this.lang)
+        res = traducirTax(value, tax, this.lang)
       }
       return res
     }
