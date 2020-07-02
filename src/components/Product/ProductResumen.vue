@@ -1,30 +1,25 @@
 <template>
   <div>
-    <q-card-section
-      horizontal>
-      <q-card-section>
-        <q-badge
-          floating
-          :class="{ bg_red : !isComplete, bg_green : isComplete }">
-          {{ producto.complete ? $t('product.complete') : $t('product.notcomplete') }}
-        </q-badge>
-        <product-header
-          :producto=producto>
-        </product-header>
-      </q-card-section>
-      <q-card-section
-        class="self-center"
-        >
-        <q-btn
-          :disabled="!((producto.purchase_places_tags && producto.purchase_places_tags.length > 0) || (producto.stores_tags && producto.stores_tags.length > 0))"
-          size="lg"
-          class="justify-around items-center text-white bg-primary"
-          @click="showDialogLocalizations = !showDialogLocalizations"
-          icon="map">
-          <q-tooltip v-if="maximizedToggle" content-class="bg-white text-primary">{{ $t('product.purchase') }}</q-tooltip>
-        </q-btn>
-      </q-card-section>
+    <q-card-section>
+      <q-badge
+        floating
+        :class="{ bg_red : !isComplete, bg_green : isComplete }">
+        {{ producto.complete ? $t('product.complete') : $t('product.notcomplete') }}
+      </q-badge>
+      <product-header
+        :producto=producto>
+      </product-header>
     </q-card-section>
+    <q-card-actions horizontal class="justify-around q-px-md">
+      <q-btn
+        :disabled="!((producto.purchase_places_tags && producto.purchase_places_tags.length > 0) || (producto.stores_tags && producto.stores_tags.length > 0))"
+        size="md"
+        class="justify-around items-center text-white bg-primary"
+        @click="showDialogLocalizations = !showDialogLocalizations"
+        icon="map">
+        <q-tooltip v-if="maximizedToggle" content-class="bg-white text-primary">{{ $t('product.purchase') }}</q-tooltip>
+      </q-btn>
+    </q-card-actions>
 
     <q-dialog
       v-model="showDialogLocalizations"
