@@ -133,12 +133,12 @@ export default {
 
 <style>
 .bg_voto_positivo {
-    background-color: #9ced6a;
+    background-image: linear-gradient(to right, #9ced6a, rgba(0,255,0,0));
 }
 .bg_voto_negativo {
-    background-color: #fc9583;
+    background-image: linear-gradient(to right, #fc9583, rgba(255,0,0,0));
 }
 .bg_voto_neutro {
-    background-color: #bcb7b7;
+    background-image: linear-gradient(to right, #bcb7b7, rgba(0,0,255,0));
 }
 </style>
