@@ -101,5 +101,5 @@ export function setListProducts (state, val) {
 }
 
 export function setUseOtherServices (state, val) {
-  state.useOtherServices = val
+  state.configuration.useOtherServices = val
 }

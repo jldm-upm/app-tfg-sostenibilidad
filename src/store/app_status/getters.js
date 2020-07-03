@@ -58,5 +58,5 @@ export function getVotacion (state, getters) {
 }
 
 export function getUseOtherServices (state) {
-  return state.useOtherServices
+  return state.configuration.useOtherServices
 }

@@ -47,9 +47,8 @@
     </q-item>
     <q-item>
       <q-item-section>
-        <q-checkbox
-          :value="getUseOtherServices()"
-          @input="inputChange"
+        <q-toggle
+          v-model="serviciosExternos"
           :label="$t('configuration.useOtherServices')" />
         <q-item-label caption lines="3">{{ $t('configuration.useOtherServices_hint') }}</q-item-label>
       </q-item-section>
@@ -111,6 +110,16 @@ export default {
       },
       set (val) {
         this.$i18n.locale = val
+      }
+    },
+    serviciosExternos: {
+      get () {
+        // return this.$store.state.appStatus.configuration.useOtherServices
+        return this.getUseOtherServices()
+      },
+      set (val) {
+        // this.$store.commit('appStatus/setUseOtherServices', val)
+        this.setUseOtherServices(val)
       }
     },
     sustainTax () {
