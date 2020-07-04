@@ -196,7 +196,7 @@
                 Se pueden acceder a las distintas partes de la aplicación mediante
                 la <b>
                   barra de herramientas
-                </b> que se encuntra en la parte superior del
+                </b> que se encuentra en la parte superior del
                 programa.
               </p>
             </div>
@@ -397,7 +397,7 @@
                           Introducir un nombre de usuario
                         </li>
                         <li>
-                          Introducir una contraseña de al menos ocho carácteres.
+                          Introducir una contraseña de al menos ocho caracteres.
                         </li>
                         <li>
                           Confirmar la contraseña reintroduciendola.
@@ -574,7 +574,7 @@
                           contiene o gris si no se tiene esta información.</li>
                         <li>
                           <span class="underline">
-                            Vegetariano</span>: Indicado mendiante la abreviatura <b>Vt
+                            Vegetariano</span>: Indicado mediante la abreviatura <b>Vt
                           </b>. Será de
                           color rojo si el producto NO es vegetariano, verde si lo es o
                           gris si no se tiene esta información.</li>

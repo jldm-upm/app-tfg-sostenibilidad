@@ -5,7 +5,7 @@
 
     <div id="outline-container-orge7b9d99" class="outline-2">
       <h2 id="orge7b9d99">
-        <span class="section-number-2">1</span> Presentación</h2>
+        <span class="section-number-2">1</span> Presentation</h2>
       <div class="outline-text-2" id="text-1">
         <p>
           This is the "Info Sostenibilidad 2020" app.
@@ -13,7 +13,7 @@
 
         <p>
           "Info Sostenibilidad 2020" is an app that allows users to
-          query relavant information about sustainability of food
+          query relevant information about sustainability of food
           products
         </p>
 
@@ -36,7 +36,7 @@
           </blockquote>
 
           <p>
-            Users can subjetively assess, guided by the shown data,
+            Users can subjectively assess, guided by the shown data,
             product characteristics that could make it sustainable.
           </p>
 
@@ -55,7 +55,7 @@
         <span class="section-number-2">2</span> Use</h2>
       <div class="outline-text-2" id="text-2">
         <p>
-          In the main screen top a button bar used to acces the main
+          In the main screen top a button bar used to access the main
           functionality is located. Under this bar there is the
           search bar where users can enter manually or scan a
           barcode.
@@ -74,7 +74,7 @@
 
       <div id="outline-container-org7d844c5" class="outline-3">
         <h3 id="org7d844c5">
-          <span class="section-number-3">2.1</span> Funcionalities</h3>
+          <span class="section-number-3">2.1</span> Functionalities</h3>
         <div class="outline-text-3" id="text-2-1">
 
           <div class="figure">
@@ -96,7 +96,7 @@
               <p>
                 A barcode can be input in the search bar. As
                 a <b>barcode</b> is available users can click/touch
-                on the button with the magnificiying glass icon or
+                on the button with the magnifying glass icon or
                 press 'ENTER' to search for the product.
               </p>
 
@@ -190,7 +190,7 @@
                       </a>
                     </p>
                     <p>
-                      <span class="figure-number">Figurr 3: </span>History</p>
+                      <span class="figure-number">Figure 3: </span>History</p>
                   </div>
                 </div>
               </li>
@@ -232,7 +232,7 @@
                   <li>
                     <a id="org76165f5">
                     </a>
-                    <q-icon name="person" size="md"/>Cuenta de Usuario<br />
+                    <q-icon name="person" size="md"/>User Account<br />
                     <div class="outline-text-6" id="text-2-1-2-4-1">
 
                       <div class="figure">
@@ -343,7 +343,7 @@
                           </a>
                         </p>
                         <p>
-                          <span class="figure-number">Figura 9: </span>Configuration</p>
+                          <span class="figure-number">Figure 9: </span>Configuration</p>
                       </div>
                     </div>
                   </li>
@@ -357,7 +357,7 @@
                 <div class="outline-text-5" id="text-2-1-2-5">
                   <p>
                     Sustainability information of a product can be
-                    obtained scaning the barcode on the packaging or
+                    obtained scanning the barcode on the packaging or
                     input the barcode in the search bar.
                   </p>
                 </div>
@@ -441,19 +441,19 @@
                       <ul class="org-ul">
                         <li>
                           <span class="underline">Palm oil</span>:
-                          Using the abbreviature <b>PO</b>. Red if the
+                          Using the abbreviation <b>PO</b>. Red if the
                           product has palm oil, green if it has NOT or
                           gray if this information is not
                           available.</li>
                         <li>
                           <span class="underline">Vegetarian</span>:
-                          Using the abbreviature <b>Vt</b>. Red if the
+                          Using the abbreviation <b>Vt</b>. Red if the
                           product is NOT vegetarian, green if it is or
                           gray if this information is not
                           available.</li>
                         <li>
                           <span class="underline">Vegan</span>:
-                          Using the abbreviature <b>Vg</b>. Red if the
+                          Using the abbreviation <b>Vg</b>. Red if the
                           product is NOT vegan, green if it is or gray
                           if this information is not available.</li>
                       </ul>
@@ -464,7 +464,7 @@
 
                       <p>
                         <q-icon name="directions_car" size="sm"/>Carbon print per 100g,
-                        the amount of carbono released to get this
+                        the amount of carbon released to get this
                         product.
                       </p>
 
@@ -498,11 +498,10 @@
                       </p>
 
                       <p>
-                        Shows the possitive, neutral and negative
-                        votes recived by the product for each
+                        Shows the positive, neutral and negative
+                        votes received by the product for each
                         sustainability <b>point</b> and
-                        the <b>votes</b> given by the user.  para
-                        ese producto.
+                        the <b>votes</b> given by the user.
                       </p>
 
                       <p>
@@ -531,17 +530,19 @@
                       </p>
 
                       <p>
-                        Muestra los <b>ALÉRGENOS</b> que contiene el producto.
+                       Displays <b>ALÉRGENOS</b> containing the product.
                       </p>
 
                       <p>
-                        Muestra los <b>ADITIVOS</b> que contiene el producto.
+                        Displays <b>ADDITIVES</b> containing the product.
                       </p>
 
                       <p>
-                        Muestra una tabla de los <b>ingredientes</b> del producto. La tabla muestra
-                        información con el nombre y el porcentaje mínimo (%Min) y máximo
-                        (%Max) del ingrediente que contiene el producto.
+                        Displays a table of the <b>Ingredients</b> of
+                        the product. The table shows name information
+                        maximum and minimum percentage (% Min) and (%
+                        Max) of the ingredient in the product.
+
                       </p>
                     </div>
                   </li>
@@ -558,7 +559,7 @@
                           </a>
                         </p>
                         <p>
-                          <span class="figure-number">Figura 14: </span>Nutrients</p>
+                          <span class="figure-number">Figure 14: </span>Nutrients</p>
                       </div>
 
                       <p>
@@ -592,7 +593,7 @@
             <a id="fn.1" class="footnum" href="#fnr.1">1</a>
           </sup> <div class="footpara">
             <p class="footpara">
-            From <a href="https://sustainabledevelopment.un.org/content/documents/5987our-common-future.pdf">"Our common future"</a> the World Commission on Environment and Developmentel Report, 1987.
+            From <a href="https://sustainabledevelopment.un.org/content/documents/5987our-common-future.pdf">"Our common future"</a> the World Commission on Environment and Development Report, 1987.
             </p>
           </div>
         </div>
