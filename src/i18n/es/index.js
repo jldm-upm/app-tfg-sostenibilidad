@@ -15,7 +15,7 @@ export default {
     pageSize_hint: 'Número máximo de elementos en la página de búsqueda',
     sustainability: 'Valoración de sostenibilidad',
     useOtherServices: 'Acceder a otros servicios',
-    useOtherServices_hint: 'Acceder otros servicios para obtener images o mapas'
+    useOtherServices_hint: 'Acceder otros servicios para obtener imágenes o mapas'
   },
   history: {
     empty: 'Vacío'
@@ -95,8 +95,8 @@ export default {
       stores: 'Tiendas'
     },
     carbono100g: 'Carbón 100g',
-    categories: 'Categorias',
-    categories_empty: 'Sin Categorias',
+    categories: 'Categorías',
+    categories_empty: 'Sin Categorías',
     code: 'Código',
     complete: 'Completado',
     get_info: 'Más Información',
