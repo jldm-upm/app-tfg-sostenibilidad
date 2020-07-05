@@ -6,7 +6,7 @@
 import Mapbox from 'mapbox-gl'
 import { MglMap } from 'vue-mapbox'
 
-const ACCESS_TOKEN = 'pk.eyJ1IjoiamxkbS11cG0iLCJhIjoiY2tjOHZpNDh3MHlvZjJ5cDhtMmVuem1oZSJ9.8TZhbsAxQ2qXihPb0VwKhA'
+const ACCESS_TOKEN = ''
 const MAP_STYLE = ''
 
 export default {
