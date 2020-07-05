@@ -13,7 +13,8 @@ const routes = [
       { path: '/help', component: () => import('pages/Help.vue') },
 
       { path: '/capture', component: () => import('pages/Capture.vue') },
-      { path: '/search', component: () => import('pages/Search.vue') }
+      { path: '/search', component: () => import('pages/Search.vue') },
+      { path: '/map', component: () => import('pages/Map.vue') }
     ]
   }
 ]
