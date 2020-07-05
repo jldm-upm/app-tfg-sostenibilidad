@@ -90,3 +90,5 @@ flycheck_*.el
 
 # Local History for Visual Studio Code
 .history/
+
+src/statics/PRIVATE.js
