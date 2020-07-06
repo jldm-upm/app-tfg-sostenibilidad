@@ -107,3 +107,7 @@ export function setUseOtherServices (state, val) {
 export function setCountry (state, val) {
   state.configuration.country = val
 }
+
+export function setCoordenadas (state, val) {
+  state.coordenadas = val
+}

@@ -76,3 +76,7 @@ export function setUseOtherServices ({ commit }, val) {
 export function setCountry ({ commit }, val) {
   commit('setCountry', val)
 }
+
+export function setCoordenadas ({ commit }, val) {
+  commit('setCoordenadas', val)
+}

@@ -64,3 +64,7 @@ export function getUseOtherServices (state) {
 export function getCountry (state) {
   return state.configuration.country
 }
+
+export function getCoordenadas (state) {
+  return state.coordenadas
+}
