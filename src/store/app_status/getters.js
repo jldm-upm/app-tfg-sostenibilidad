@@ -68,3 +68,7 @@ export function getCountry (state) {
 export function getCoordenadas (state) {
   return state.coordenadas
 }
+
+export function getLocalizaciones (state) {
+  return state.localizaciones
+}

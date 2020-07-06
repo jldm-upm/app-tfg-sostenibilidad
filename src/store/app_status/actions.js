@@ -80,3 +80,7 @@ export function setCountry ({ commit }, val) {
 export function setCoordenadas ({ commit }, val) {
   commit('setCoordenadas', val)
 }
+
+export function setLocalizaciones ({ commit }, val) {
+  commit('setLocalizaciones', val)
+}

@@ -111,3 +111,7 @@ export function setCountry (state, val) {
 export function setCoordenadas (state, val) {
   state.coordenadas = val
 }
+
+export function setLocalizaciones (state, val) {
+  state.localizaciones = val
+}

@@ -3,6 +3,7 @@ export default function () {
     // state
     codigo: '',
     coordenadas: [0,0],
+    localizaciones: [],
     loggedInUser: null,
     lastError: null,
     history: [],
