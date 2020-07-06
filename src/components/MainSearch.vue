@@ -77,7 +77,7 @@ export default {
 
   methods: {
     ...mapActions('appStatus', ['setLastError', 'setActiveProduct', 'setCodigo']),
-    ...mapGetters('appStatus', ['getBaseURL', 'getCodigo']),
+    ...mapGetters('appStatus', ['getBaseURL', 'getCodigo', 'getCountry']),
 
     evtBuscar (code) {
       this.setCodigo(code)
@@ -95,7 +95,7 @@ export default {
         return null
       }
       const baseURL = this.getBaseURL()
-      const url = `${baseURL}/api/v0/product/${this.codigo}.json`
+      const url = `${baseURL}/api/v0/product/${this.codigo}.json?countries=${this.getCountry}`
 
       this.$q.loading.show()
       this.$axios.get(url)
