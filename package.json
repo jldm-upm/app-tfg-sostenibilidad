@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@ericblade/quagga2": "^1.1.0",
+    "@mapbox/mapbox-gl-geocoder": "^4.5.1",
     "@quasar/extras": "^1.0.0",
     "axios": "^0.18.1",
     "mapbox-gl": "^1.11.0",
@@ -29,6 +30,7 @@
     "quasar": "^1.0.0",
     "vue-i18n": "^8.0.0",
     "vue-mapbox": "^0.4.1",
+    "vue-mapbox-geocoder": "^0.2.0",
     "vuex-persist": "^2.2.0"
   },
   "devDependencies": {
