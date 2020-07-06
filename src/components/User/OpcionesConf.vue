@@ -47,6 +47,12 @@
     </q-item>
     <q-item>
       <q-item-section>
+        <country-select></country-select>
+        <q-item-label caption lines="3">{{ $t('configuration.country_hint') }}</q-item-label>
+      </q-item-section>
+    </q-item>
+    <q-item>
+      <q-item-section>
         <q-toggle
           v-model="serviciosExternos"
           :label="$t('configuration.useOtherServices')" />
@@ -145,7 +151,8 @@ export default {
   },
 
   components: {
-    'cuantificacion-sostenibilidad': require('src/components/User/CUserSostenibilidad.vue').default
+    'cuantificacion-sostenibilidad': require('src/components/User/CUserSostenibilidad.vue').default,
+    'country-select': require('src/components/User/CountrySelect.vue').default
   },
 
   props: ['resource', 'user']

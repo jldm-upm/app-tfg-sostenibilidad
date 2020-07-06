@@ -7,6 +7,8 @@ export default {
   configuration: {
     baseURL: 'URL Server',
     baseURL_hint: 'URL (protocol, address, port) of the server',
+    country: 'Country',
+    country_hint: 'Country to localize searches',
     configuration: 'Configuration',
     historySize: 'History Size',
     historySize_hint: 'Maximum number visited elements to remember',

@@ -72,3 +72,7 @@ export function setListProducts ({ commit }, val) {
 export function setUseOtherServices ({ commit }, val) {
   commit('setUseOtherServices', val)
 }
+
+export function setCountry ({ commit }, val) {
+  commit('setCountry', val)
+}

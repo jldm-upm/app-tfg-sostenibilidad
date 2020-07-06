@@ -1,4 +1,4 @@
-export const countries =
+export const val =
 {
   'en:maldives': {
     country_code_2: {

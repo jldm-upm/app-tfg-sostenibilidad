@@ -11,6 +11,7 @@ export default function () {
     // configuration
     configuration: {
       baseURL: 'http://localhost:8000',
+      country: 'en:spain',
       historySize: 10,
       pageSize: 10,
       language: 'en',

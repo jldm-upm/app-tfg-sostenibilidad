@@ -1,3 +1,4 @@
+
 export default {
   capture: {
     close: 'Cerrar',
@@ -7,6 +8,8 @@ export default {
   configuration: {
     baseURL: 'URL Servidor',
     baseURL_hint: 'URL (protocolo, dirección, puerto) del servidor',
+    country: 'País',
+    country_hint: 'País al que limitar las búsquedas',
     configuration: 'Configuración',
     historySize: 'Tamaño del Historial',
     historySize_hint: 'Número de elementos consultados a recordar',

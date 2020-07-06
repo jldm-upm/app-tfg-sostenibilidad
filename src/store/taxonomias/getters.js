@@ -22,3 +22,7 @@ export function getTaxIngredientes (state) {
 export function getTaxSustainability (state) {
   return state.taxonomies.sustainability
 }
+
+export function getCountries (state) {
+  return state.taxonomies.countries
+}

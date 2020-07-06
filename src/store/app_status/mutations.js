@@ -103,3 +103,7 @@ export function setListProducts (state, val) {
 export function setUseOtherServices (state, val) {
   state.configuration.useOtherServices = val
 }
+
+export function setCountry (state, val) {
+  state.configuration.country = val
+}

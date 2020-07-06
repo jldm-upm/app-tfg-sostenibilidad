@@ -60,3 +60,7 @@ export function getVotacion (state, getters) {
 export function getUseOtherServices (state) {
   return state.configuration.useOtherServices
 }
+
+export function getCountry (state) {
+  return state.configuration.country
+}
