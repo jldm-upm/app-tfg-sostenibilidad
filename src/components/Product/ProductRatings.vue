@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { calcularSostenibilidadUsuario } from '../sostenibilidad.js'
+import { calcularSostenibilidadUsuario } from '../../assets/js/sostenibilidad.js'
 import { mapGetters } from 'vuex'
 
 export default {

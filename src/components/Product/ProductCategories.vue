@@ -23,8 +23,8 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import { traducirTax } from '../traducir_tax.js'
-import { buscarCategoriaSostenible } from '../sostenibilidad.js'
+import { traducirTax } from '../../assets/js/traducir_tax.js'
+import { buscarCategoriaSostenible } from '../../assets/js/sostenibilidad.js'
 
 export default {
   name: 'ProductCategories',

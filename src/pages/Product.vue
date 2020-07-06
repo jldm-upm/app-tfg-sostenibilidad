@@ -8,7 +8,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { productoVacio } from './producto_vacio.js'
+import { productoVacio } from '../assets/js/producto_vacio.js'
 
 export default {
   name: 'PageProduct',

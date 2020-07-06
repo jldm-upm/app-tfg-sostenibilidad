@@ -70,7 +70,7 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import { traducirTax } from '../traducir_tax.js'
+import { traducirTax } from '../../assets/js/traducir_tax.js'
 
 export default {
   data () {

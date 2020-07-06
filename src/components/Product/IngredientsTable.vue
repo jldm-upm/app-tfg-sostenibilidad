@@ -16,8 +16,8 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { productoVacio } from '../../pages/producto_vacio.js'
-import { traducirTax } from '../traducir_tax.js'
+import { productoVacio } from '../../assets/js/producto_vacio.js'
+import { traducirTax } from '../../assets/js/traducir_tax.js'
 
 export default {
   name: 'ProductIngredients',
