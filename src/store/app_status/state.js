@@ -2,7 +2,7 @@ export default function () {
   return {
     // state
     codigo: '',
-    coordenadas: [0,0],
+    coordenadas: [0, 0],
     localizaciones: [],
     loggedInUser: null,
     lastError: null,

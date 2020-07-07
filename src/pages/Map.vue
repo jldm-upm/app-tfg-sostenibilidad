@@ -1,58 +1,125 @@
 <template>
-  <MglMap
-    :accessToken='accessToken'
-    :mapStyle.sync='mapStyle'
-    :center='coordinates'
-    :minZoom='1.3'
-    :zoom='10'
-    >
-    <MglGeocoderControl
-      mapboxgl: Mapbox
-      :accessToken="accessToken"
-      :input.sync="defaultInput"
-      @results="handleSearch"
-      />
-    <MglAttributionControl />
-    <MglScaleControl />
+  <div>
+    <div>
+      <MglMap
+        :accessToken='accessToken'
+        :mapStyle.sync='mapStyle'
+        :center='coordinates'
+        :minZoom='1.3'
+        :zoom="zoomDst"
+        @load="onMapLoad"
+        >
+        <!-- <MglGeocoderControl -->
+        <!--   :mapboxgl="mapboxgl" -->
+        <!--   :accessToken="accessToken" -->
+        <!--   :input.sync="defaultInput" -->
+        <!--   @results="handleSearch" -->
+        <!--   ></MglGeocoderControl> -->
+        <MglAttributionControl ></MglAttributionControl>
+        <MglScaleControl ></MglScaleControl>
 
-    <MglMarker :coordinates="coordinates" color="blue"></MglMarker>
-
-  </MglMap>
+        <!-- <MglMarker :coordinates="coordinates" color="blue"></MglMarker> -->
+      </MglMap>
+    </div>
+    <q-btn
+      :label="$t('map.center')"
+      @click="setCentrarPosicionEnMapa()">
+    </q-btn>
+  </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
+
 import Mapbox from 'mapbox-gl'
-import { MglMap, MglAttributionControl, MglScaleControl, MglMarker } from 'vue-mapbox'
-import MglGeocoderControl from 'vue-mapbox-geocoder'
-import { MAPBOX_TOKEN } from '../statics/PRIVATE.js'
+import { MglMap, MglAttributionControl, MglScaleControl } from 'vue-mapbox'
+// import MglGeocoderControl from 'vue-mapbox-geocoder'
+import { MAPBOX_TOKEN } from '../assets/js/PRIVATE.js'
+import { buscarMapbox, getPosition } from '../assets/js/mapas.js'
 
 export default {
   created () {
     // We need to set mapbox-gl library here in order to use it in template
-    this.mapbox = Mapbox
+    this.mapboxgl = Mapbox
   },
 
   components: {
     MglMap,
 
     MglAttributionControl,
-    MglScaleControl,
+    MglScaleControl
 
-    MglMarker,
+    // MglMarker
 
-    MglGeocoderControl
+    // MglGeocoderControl
   },
 
   data () {
     return {
       accessToken: MAPBOX_TOKEN,
       mapStyle: 'mapbox://styles/mapbox/streets-v11',
-      coordinates: [-74.0073, 40.7124],
-      defaultInput: 'Madrid'
+      defaultInput: 'Madrid',
+      zoomDst: 1
+    }
+  },
+
+  computed: {
+    coordinates: {
+      get () {
+        return this.getCoordenadas()
+      },
+      set (val) {
+        this.setCoordenadas(val)
+      }
     }
   },
 
   methods: {
+    onMapLoad ({ map }) {
+      this.mapboxMap = map
+    },
+
+    ...mapGetters('appStatus', ['getCoordenadas', 'getCountry', 'getLanguage']),
+    ...mapActions('appStatus', ['setCoordenadas']),
+    ...mapGetters('taxonomias', ['getCountries']),
+
+    async setCentrarPosicionEnMapa () {
+      let res = null
+
+      const options = {
+        enableHighAccuracy: true,
+        timeout: 15000,
+        maximumAge: 'infinity'
+      }
+
+      if (navigator.geolocation) {
+        try {
+          const resServidor = await getPosition(options)
+          res = [resServidor.coors.latitude, resServidor.coors.longitude]
+          this.zoomDst = 13
+        } catch (error) {
+          console.log(error)
+        }
+      }
+
+      if (res === null) {
+        this.zoomDst = 5
+        const countries = this.getCountries()
+        const locCountry = countries[this.getCountry()].name[this.getLanguage()]
+        const resServidor = await buscarMapbox('country: ' + locCountry)
+        if (resServidor) {
+          res = resServidor.features[0].center
+        }
+      }
+
+      if (res) {
+        this.setCoordenadas(res)
+        const optionsFlyTo = { center: res, zoom: this.zoomDst, bearing: 0 }
+        console.log(JSON.stringify(optionsFlyTo))
+        await this.mapboxMap.flyTo(optionsFlyTo)
+      }
+    },
+
     handleSearch (event) {
       console.log(event)
     }
@@ -61,6 +128,7 @@ export default {
 </script>
 
 <style>
+// He tenido que editar el css original por algún problema:
 .mapboxgl-map {
     font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     position: relative;
