@@ -59,6 +59,9 @@ export default {
     barcode: 'Código de Barras',
     capture: 'Capturar Código de Barras'
   },
+  map: {
+    center: 'Centrar'
+  },
   maximize: 'Maximizar',
   minimize: 'Minimizar',
   nodata: 'Sin datos',
