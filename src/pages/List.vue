@@ -8,7 +8,9 @@
         :key="index"
         >
         <q-item
-          clickable v-ripple
+          clickable
+          v-ripple
+          to="/product"
           @click="setProduct(producto)"
           :active="activeProduct === producto"
           >
