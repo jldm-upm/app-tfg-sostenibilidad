@@ -3,7 +3,12 @@ import axios from 'axios'
 import { MAPBOX_TOKEN } from './PRIVATE.js'
 
 /*
-  Función auxiliar que compone una búsqueda
+  Función auxiliar que compone una búsqueda en el servicio Mapbox
+
+  Parámetros:
+  - termino: string con el término a buscar en el mapa
+  Devuelve:
+  Un string que representa una URL indicando el servicio y los parámetros necesarios para buscar el término
 */
 function componerBusquedaMapbox (termino) {
   const MAPBOX_SEARCH_URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/{busqueda}.json?access_token={accesstoken}'
@@ -16,6 +21,14 @@ function componerBusquedaMapbox (termino) {
   return res
 }
 
+/*
+  Función para buscar en el servicio de MapBox un término
+
+  Parámetros:
+  - termino: string con el término a buscar en el servicio MapBox
+  Devuelve:
+  Un objeto que representa el JSON devuelto por el servicio
+*/
 export async function buscarMapbox (termino) {
   const queryString = componerBusquedaMapbox(termino)
   let res = null
@@ -31,8 +44,24 @@ export async function buscarMapbox (termino) {
   return res.data
 }
 
+/*
+  Función que devuelve la geolocalización del usuario (si es posible).
+
+  Usa la API de navegador
+
+  Parámetros:
+  - opciones: opciones para obtener la localización: https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions
+  Devuelve:
+  Una Promesa que devolverá la posición actual
+*/
 export function getPosition (options) {
   return new Promise(function (resolve, reject) {
-    navigator.geolocation.getCurrentPosition(resolve, reject, options)
+    navigator.geolocation.getCurrentPosition(function (posicion) {
+      return resolve(posicion)
+    },
+    function (error) {
+      return reject(error)
+    },
+    options)
   })
 }
