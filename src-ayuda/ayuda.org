@@ -41,8 +41,6 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
    pero también la 'producción' o 'almacenamiento' están
    relacionados con él.
 
-[fn:1] De "Our common future" el informe de la Comisión Mundial sobre el Medio Ambiente y el Desarrollo, 1987.
-
 * Uso
 
   La aplicación presenta una pantalla principal con una barra con
@@ -126,7 +124,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
 #+ATTR_HTML: :alt imagen resultado :title Resultado :align center :class center :width 60%
 [[file:img/listado.png][file:./img/listado.png]]
 
-**** @@html:<q-icon name="person" size="md"/>@@ Configuración y Cuenta de Usuario
+**** @@html:<q-icon name="person" size="md"/>@@Configuración y Cuenta de Usuario
 
      Las dos pestañas acceden a manejar la sesión actual y crear una nueva cuenta.
 
@@ -189,7 +187,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
 [[file:img/configurar.png][file:./img/configurar.png]]
 
 
-**** @@html:<q-icon name="emoji_food_beverage" size="md"/>@@ Información de un producto
+**** @@html:<q-icon name="emoji_food_beverage" size="md"/>@@Información de un producto
 
   Para obtener información sobre la sostenibilidad de un producto se
   puede escanear un código de barras que se puede encontrar en el
@@ -199,7 +197,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
 ***** Información Mostrada
 
 #+CAPTION: Información general del producto
-#+ATTR_HTML: :alt  :title Producto :align center :class center :width 60%
+#+ATTR_HTML: :alt imágen producto :title Producto :align center :class center :width 60%
 [[file:img/producto_general.png][file:./img/producto_general.png]]
 
    La pantalla de producto muestra información del producto buscado.
@@ -219,11 +217,13 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
 ****** @@html:<q-icon name="map" size="md"/>@@ Lugares de adquisición del producto
 
    Pulsando sobre el mapa se muestra una lista con los sitios donde se
-   puede adquirir el producto.
+   puede adquirir el producto. Cada sitio puede ser pulsado de nuevo y
+   aparecerá un mapa con las localizaciones cercanas donde adquirir el
+   producto.
 
 ***** Información del producto
 #+CAPTION: Información adicional
-#+ATTR_HTML: :alt imagen información :title Toolbar :align center :class center :width 60%
+#+ATTR_HTML: :alt imagen información del producto :title Información del producto :align center :class center :width 60%
 [[file:img/p_informacion.png][file:./img/p_informacion.png]]
 
   Se encuentra en la pestaña 'Información'.
@@ -241,17 +241,17 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
     rojo si el producto NO es vegano, verde si lo es o gris si no se
     tiene esta información.
 
-  El origen del producto, de donde se importa y donde se produce. Junto al icono de un avión.
+  @@html:<q-icon name="flight" size="sm" />@@El origen del producto, de donde se importa y donde se produce. Junto al icono de un avión.
 
-  Huella de carbono por 100g, indicada junto al icono de un coche.
+  @@html:<q-icon name="directions_car" size="sm" />@@Huella de carbono por 100g, indicada junto al icono de un coche.
 
-  Información sobre el empaquetado: Peso total del producto, forma y material de empaquetado.
+  @@html:<q-icon name="widgets" size="sm" />@@Información sobre el empaquetado: Peso total del producto, forma y material de empaquetado.
 
   Etiquetas del producto, tales como la "EU Eco-Label".
 
 ***** Valoraciones de Sostenibilidad
-#+CAPTION: Información adicional
-#+ATTR_HTML: :alt imagen información :title Toolbar :align center :class center :width 60%
+#+CAPTION: Valoraciones Sostenibilidad
+#+ATTR_HTML: :alt imágen valoraciones Sostenibilidad :title Valoraciones Sostenibilidad :align center :class center :width 60%
 [[file:img/p_sostenibilidad.png][file:./img/p_sostenibilidad.png]]
 
   Se encuentran en la pestaña de 'Sostenibilidad' de la información del producto.
@@ -261,8 +261,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
   para ese producto.
 
   El usuario puede valorar un aspecto de la sostenibilidad del
-  producto pulsando el conmutador de control que hay para cada
-  aspecto.
+  producto pulsando sobre él.
 
 ***** Ingredientes
 
@@ -294,3 +293,12 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
   + la cantidad total (valor)
   + las unidades en que se mide (unidad)
   + la cantidad por 100 gramos (100g)
+* Términos
+** Licencia de la base de datos y contenidos de Open Food Facts
+  La base de datos Open Food Facts está disponible con la [[https:https://opendatacommons.org/licenses/odbl/1.0/][Open Database License]].
+
+  Los contenidos individuales de la base de datos se encuentran bajo la  [[https:https://opendatacommons.org/licenses/dbcl/1.0/][Database Contents License]].
+
+  Imágenes de los productos se distribuyen con la [[https:https://creativecommons.org/licenses/by-sa/3.0/deed.en][Creative Commons Attribution ShareAlike license]]. Pueden contener elementos gráficos sujetos a copyright u otros derechos, que pueden en algunos casos ser reproducidos (derecho de cita o uso justo).
+
+[fn:1] De "Our common future" el informe de la Comisión Mundial sobre el Medio Ambiente y el Desarrollo, 1987.
