@@ -50,9 +50,19 @@
             <fieldset>
               <legend>{{ $t('product.attr.stores') }}</legend>
               <q-item v-for="store in producto.stores_tags"
-                      :key="store"
-                      @click="buscarTienda(store)">
-                <q-item-label overline>{{ traducirStore(store) }}</q-item-label>
+                      :key="store">
+                <q-item-section>
+                  <q-item-label overline>{{ traducirStore(store) }}</q-item-label>
+                </q-item-section>
+                <q-item-section side top>
+                  <q-btn
+                    dense
+                    icon="map"
+                    class="text-lg text-bold"
+                    @click="buscarTienda(store)"
+                    to="/map"
+                    ></q-btn>
+                </q-item-section>
               </q-item>
             </fieldset>
           </q-list>
@@ -73,7 +83,7 @@
 </template>
 
 <script>
-import { getGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import { traducirTax } from '../../assets/js/traducir_tax.js'
 export default {
   name: 'ProductResumen',
@@ -86,16 +96,21 @@ export default {
   },
 
   methods: {
-    ...getGetters('appStatus', ['getLanguage']),
-    ...getGetters('taxonomias', ['getStores'])
+    ...mapGetters('appStatus', ['getLanguage']),
+    ...mapActions('appStatus', ['setLocalizaciones']),
+    ...mapGetters('taxonomias', ['getStores']),
+
+    buscarTienda (tienda) {
+      this.setLocalizaciones([this.traducirStore(tienda)])
+    },
+    traducirStore (store) {
+      return traducirTax(store, this.getStores(), this.getLanguage())
+    }
   },
 
   computed: {
     isComplete () {
       return this.producto.complete
-    },
-    traducirStore (store) {
-      return traducirTax(store, this.getStores(), this.getLanguage())
     }
   },
 

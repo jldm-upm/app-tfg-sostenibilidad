@@ -1,41 +1,32 @@
 {
-  "name": "app-tfg-sostenibilidad",
+  "name": "app-tfg-2020",
   "version": "0.0.1",
-  "description": "Mostrar características de sostenibilidad de los productos",
-  "productName": "TFGSostenibilidad2020",
-  "cordovaId": "edu.jldm.TFG",
-  "capacitorId": "",
-  "author": "José L. Domenech",
+  "description": "Acceso a servicio de información de sostenibilidad de productos",
+  "productName": "TFG2020",
+  "author": "José Luis Domenech",
   "private": true,
   "scripts": {
-    "fun": "gource --seconds-per-day 0.5",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ./",
     "test": "echo \"No test specified\" && exit 0",
     "locs": "git ls-files -- './*' ':(exclude)*/tax/*' ':(exclude)package-lock.json' ':(exclude)src/statics/*' ':(exclude)src-cordova' ':(exclude)*.png' 'src-cordova/config.xml' | xargs wc -l",
-    "dev_android": "quasar dev -m android --ide",
+    "fun": "gource --seconds-per-day 0.5",
     "build_android": "quasar build -m cordova -T android",
     "test_android": "cd src-cordova && phonegap serve",
-    "sign_android": "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ~/TFG/jldm_tfg.keystore ~/TFG/PROYECTO/codigo/app-tfg-sostenibilidad/dist/cordova/android/apk/release/app-release-unsigned.apk app_tfg",
+    "sign_android": "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ~/TFG/jldm_tfg.keystore ./dist/cordova/android/apk/release/app-release-unsigned.apk app_tfg",
     "generate_icons": "npx icongenie -i 'src-ayuda/AppTFGSostenibilidad2020.png' -b 'src-ayuda/background_app.png'"
   },
   "dependencies": {
-    "@ericblade/quagga2": "^1.1.0",
-    "@mapbox/mapbox-gl-geocoder": "^4.5.1",
+    "@ericblade/quagga2": "^1.2.0",
     "@quasar/extras": "^1.0.0",
     "axios": "^0.18.1",
-    "mapbox-gl": "^1.11.0",
-    "mapbox-gl-vue": "^2.0.4",
-    "ol": "^6.3.1",
-    "quagga": "^0.12.1",
+    "core-js": "^3.6.5",
+    "mapbox-gl": "^1.11.1",
     "quasar": "^1.0.0",
     "vue-i18n": "^8.0.0",
-    "vue-mapbox": "^0.4.1",
-    "vue-mapbox-geocoder": "^0.2.0",
     "vuex-persist": "^2.2.0"
   },
   "devDependencies": {
-    "@quasar/app": "^1.9.6",
-    "@quasar/icongenie": "^2.3.0",
+    "@quasar/app": "^2.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
@@ -44,18 +35,22 @@
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^6.1.2",
-    "parcel-bundler": "^1.12.4"
+    "eslint-plugin-vue": "^6.1.2"
   },
+  "browserslist": [
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
   "engines": {
     "node": ">= 10.18.1",
     "npm": ">= 6.13.4",
     "yarn": ">= 1.21.1"
-  },
-  "browserslist": [
-    "last 1 version, not dead, ie >= 11"
-  ],
-  "resolutions": {
-    "@babel/parser": "7.7.5"
   }
 }

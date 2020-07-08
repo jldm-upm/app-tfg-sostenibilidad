@@ -60,7 +60,8 @@ export default {
       let icon = ''
       let message = ''
       this.$q.loading.show()
-      let res = await this.$axios.post(url, this.usuario)
+      const session = { un: this.usuario.un, id: this.usuario.id, ts: this.usuario.ts, old_value: this.val }
+      let res = await this.$axios.post(url, session)
         .then(response => {
           this.$q.loading.hide()
           if (response.data.status === 1) {

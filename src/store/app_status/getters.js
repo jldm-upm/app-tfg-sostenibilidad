@@ -66,6 +66,7 @@ export function getCountry (state) {
 }
 
 export function getCoordenadas (state) {
+  console.log(`getCoordenadas = ${state.coordenadas}`)
   return state.coordenadas
 }
 
