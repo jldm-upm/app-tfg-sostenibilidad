@@ -140,7 +140,7 @@ export default {
         sugars: 'Azucares',
         'trans-fat': 'Grasa trans',
         'vitamin-a': 'Vitamina A',
-        'vitamin-c': 'Vitamina C (ácido ascórbico)'
+        'vitamin-c': 'Vitamina C'
       },
       value: 'Valor'
     },
