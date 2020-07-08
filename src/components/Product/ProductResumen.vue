@@ -46,18 +46,13 @@
         </q-bar>
 
         <q-card-section class="q-pt-none">
-          <q-list v-if="(producto.purchase_places_tags && producto.purchase_places_tags.length > 0) || (producto.stores_tags && producto.stores_tags.length > 0)">
-            <fieldset>
-              <legend>{{ $t('product.attr.purchase_places') }}</legend>
-              <q-item v-for="loc in producto.purchase_places_tags"
-                      :key="loc">
-                {{ loc }}
-              </q-item>
-            </fieldset>
+          <q-list v-if="(producto.stores_tags && producto.stores_tags.length > 0)">
             <fieldset>
               <legend>{{ $t('product.attr.stores') }}</legend>
               <q-item v-for="store in producto.stores_tags"
-                      :key="store">
+                      :key="store"
+                      @click="buscarTienda(store)">
+                <q-item-label overline>{{ traducirStore(store) }}</q-item-label>
               </q-item>
             </fieldset>
           </q-list>
@@ -78,6 +73,8 @@
 </template>
 
 <script>
+import { getGetters } from 'vuex'
+import { traducirTax } from '../../assets/js/traducir_tax.js'
 export default {
   name: 'ProductResumen',
 
@@ -88,9 +85,17 @@ export default {
     }
   },
 
+  methods: {
+    ...getGetters('appStatus', ['getLanguage']),
+    ...getGetters('taxonomias', ['getStores'])
+  },
+
   computed: {
     isComplete () {
       return this.producto.complete
+    },
+    traducirStore (store) {
+      return traducirTax(store, this.getStores(), this.getLanguage())
     }
   },
 
