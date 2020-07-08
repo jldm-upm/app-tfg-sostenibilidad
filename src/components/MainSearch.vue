@@ -95,7 +95,7 @@ export default {
         return null
       }
       const baseURL = this.getBaseURL()
-      const url = `${baseURL}/api/v0/product/${this.codigo}.json?countries=${this.getCountry}`
+      const url = `${baseURL}/api/v0/product/${this.codigo}.json`
 
       this.$q.loading.show()
       this.$axios.get(url)
