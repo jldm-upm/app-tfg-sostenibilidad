@@ -3,7 +3,7 @@
     <q-item>
       <q-item-section avatar>
         <q-img
-          v-if="useExternalService"
+          v-if="useExternalService && imagenProducto"
           spinner-color="white"
           :src="imagenProducto"
           style="max-height: 140px; width: 60px"/>
@@ -43,6 +43,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import { obtenerImagenes } from '../../assets/js/imagenes.js'
 
 export default {
   name: 'ProductHeader',
@@ -54,7 +55,8 @@ export default {
   computed: {
     imagenProducto () {
       if (this.useExternalService) {
-        return this.producto.image_url || this.producto.image_thumb_url || this.producto.image_small_url || this.producto.image_front_url || this.producto.image_front_thumb_url || this.producto.image_front_small_url
+        const imgs = obtenerImagenes(this.producto)
+        return imgs.image_front_thumb_url || imgs.image_front_small_url || imgs.image_front_url || imgs.image_thumb_url || imgs.image_small_url || imgs.image_url
       } else {
         return ''
       }
