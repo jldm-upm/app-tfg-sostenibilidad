@@ -39,7 +39,7 @@ export default {
 
   methods: {
     ...mapActions('appStatus', ['setListProducts', 'setLastError']),
-    ...mapGetters('appStatus', ['getBaseURL', 'getPageSize']),
+    ...mapGetters('appStatus', ['getBaseURL', 'getPageSize', 'getCountry']),
     ...mapGetters('taxonomias', ['getTaxCategories']),
 
     async buscarCategoria (categoria) {
@@ -57,7 +57,7 @@ export default {
       let message = `${this.$t('off.search')}`
 
       this.$q.loading.show()
-      const respuesta = await buscarCategoriaSostenible(this.getBaseURL(), categoria, this.getPageSize(), 0)
+      const respuesta = await buscarCategoriaSostenible(this.getBaseURL(), categoria, this.getPageSize(), 0, [this.getCountry()])
       this.$q.loading.hide()
 
       // problema con la respuesta

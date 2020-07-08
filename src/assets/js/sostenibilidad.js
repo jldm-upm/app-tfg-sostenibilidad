@@ -40,13 +40,13 @@ export function calcularSostenibilidadUsuario (producto, confUsuario, taxonomia)
 /*
    Devuelve una lista ordenada de productos, ordenada por su sostenibilidad
 */
-export async function buscarCategoriaSostenible (baseURL, categoria, pageSize = 10, skip = 0) {
+export async function buscarCategoriaSostenible (baseURL, categoria, pageSize = 10, skip = 0, countries) {
   console.log(`buscarCategoriaSostenible(${baseURL}, ${categoria},${pageSize},${skip})`)
   const resBase = { category: categoria, pageSize: pageSize, skip: skip }
   if (!(categoria) || (categoria === 0)) {
     return { ...resBase, error: null }
   }
-  const url = `${baseURL}/category/${categoria}.json?page_size=${pageSize}&skip=${skip}&sort_by=sustainability.sustainability_level&sort=-1`
+  const url = `${baseURL}/category/${categoria}.json?page_size=${pageSize}&skip=${skip}&sort_by=sustainability.sustainability_level&sort=-1&?countries=${countries}`
 
   console.log(url)
 
