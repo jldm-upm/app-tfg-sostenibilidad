@@ -51,7 +51,11 @@ export default {
         return res
       })
 
-      return opciones
+      const opcionesOrdenadas = opciones.sort(function (a, b) {
+        return a.label < b.label
+      })
+
+      return opcionesOrdenadas
     }
   }
 }
