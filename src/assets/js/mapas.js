@@ -8,7 +8,7 @@ import { MAPBOX_TOKEN } from './PRIVATE.js'
   Parámetros:
   - termino: string con el término a buscar en el mapa
   Devuelve:
-  Un string que representa una URL indicando el servicio y los parámetros necesarios para buscar el término
+   Un string que representa una URL indicando el servicio y los parámetros necesarios para buscar el término
 */
 function componerBusquedaMapbox (termino) {
   const MAPBOX_SEARCH_URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/{busqueda}.json?access_token={accesstoken}'
@@ -27,7 +27,7 @@ function componerBusquedaMapbox (termino) {
   Parámetros:
   - termino: string con el término a buscar en el servicio MapBox
   Devuelve:
-  Un array de posiciones en las que se encuentran los términos
+   Un array de posiciones en las que se encuentran los términos
 */
 export async function buscarMapbox (termino) {
   const queryString = componerBusquedaMapbox(termino)
@@ -40,7 +40,7 @@ export async function buscarMapbox (termino) {
     return null
   }
 
-  // console.log(JSON.stringify(res.data))
+  console.log(`buscarMapbox: ${JSON.stringify(res.data)}`)
   return res.data.features.map((f) => f.center)
 }
 
@@ -52,16 +52,32 @@ export async function buscarMapbox (termino) {
   Parámetros:
   - opciones: opciones para obtener la localización: https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions
   Devuelve:
-  Una Promesa que devolverá la posición actual
+   Una Promesa que devolverá la posición actual
 */
-export function getPosition (options) {
+export function obtenerPosicion (pais) {
   return new Promise(function (resolve, reject) {
-    navigator.geolocation.getCurrentPosition(function (posicion) {
-      return resolve(posicion)
-    },
-    function (error) {
-      return reject(error)
-    },
-    options)
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        function (posicion) {
+          resolve(posicion)
+        },
+        function () {
+          buscarMapbox('country: ' + pais)
+            .then(function (arrayPos) {
+              reject(arrayPos[0])
+            })
+            .catch(function () {
+              reject([0, 0])
+            })
+        })
+    } else {
+      buscarMapbox('country: ' + pais)
+        .then(function (arrayPos) {
+          reject(arrayPos[0])
+        })
+        .catch(function () {
+          reject([0, 0])
+        })
+    }
   })
 }
