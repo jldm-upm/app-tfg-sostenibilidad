@@ -7,17 +7,23 @@ import { MAPBOX_TOKEN } from './PRIVATE.js'
 
   Parámetros:
   - termino: string con el término a buscar en el mapa
+  - [centro]: el punto geográfico (como un array) en el que centrar la búsqueda
   Devuelve:
    Un string que representa una URL indicando el servicio y los parámetros necesarios para buscar el término
 */
-function componerBusquedaMapbox (termino) {
-  const MAPBOX_SEARCH_URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/{busqueda}.json?access_token={accesstoken}'
+function componerBusquedaMapbox (termino, centro = null) {
+  const MAPBOX_SEARCH_URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/{busqueda}.json?{proximity}limit=6&access_token={accesstoken}'
 
   let res = MAPBOX_SEARCH_URL
   res = res.replace('{busqueda}', termino)
   res = res.replace('{accesstoken}', MAPBOX_TOKEN)
+  if (centro !== null) {
+    const centroString = Object.keys(centro).map(e => centro[e]).join(',')
+    res = res.replace('{proximity}', `proximity=${centroString}&`)
+  } else {
+    res = res.replace('{proximity}', '')
+  }
 
-  // console.log(`componerbusquedamapbox(${termino})`)
   return res
 }
 
@@ -29,18 +35,16 @@ function componerBusquedaMapbox (termino) {
   Devuelve:
    Un array de posiciones en las que se encuentran los términos
 */
-export async function buscarMapbox (termino) {
-  const queryString = componerBusquedaMapbox(termino)
+export async function buscarMapbox (termino, centro) {
+  const queryString = componerBusquedaMapbox(termino, centro)
   let res = null
 
   try {
     res = await axios.get(queryString)
   } catch (error) {
-    console.log(Object.keys(error))
     return null
   }
 
-  console.log(`buscarMapbox: ${JSON.stringify(res.data)}`)
   return res.data.features.map((f) => f.center)
 }
 

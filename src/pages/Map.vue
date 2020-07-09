@@ -26,21 +26,30 @@ export default {
     this.createMap()
     let zoom = 5
     try {
-      this.posicionUsuario = await obtenerPosicion('spain')
+      this.posicionUsuario = await obtenerPosicion(this.getPais())
       zoom = 14
     } catch (posErr) {
       this.posicionUsuario = posErr
       zoom = 5
     }
-    this.map.setZoom(zoom)
-    this.map.flyTo({
-      center: this.posicionUsuario,
-      essential: true // this animation is considered essential with respect to prefers-reduced-motion
-    })
+
+    await this.map.setZoom(zoom)
+    // this.map.flyTo({
+    //   center: this.posicionUsuario,
+    //   essential: true // this animation is considered essential with respect to prefers-reduced-motion
+    // })
+    await this.map.setCenter(this.posicionUsuario)
+
+    // añadir los puntos de interés
+    const puntosInteres = await buscarMapbox('POI: ' + (this.getMapInterest()).join(','), this.map.getCenter())
+    for (const punto in puntosInteres) {
+      const marker = new mapboxgl.Marker().setLngLat(puntosInteres[punto])
+      marker.addTo(this.map)
+    }
   },
 
   methods: {
-    ...mapGetters('appStatus', ['getCountry', 'getLanguage']),
+    ...mapGetters('appStatus', ['getCountry', 'getLanguage', 'getMapInterest']),
     ...mapGetters('taxonomias', ['getCountries']),
 
     getPais () {
@@ -50,16 +59,8 @@ export default {
     },
 
     onMapLoaded (event) {
+      // ocupar toda el espacio disponible
       this.map.resize()
-
-      buscarMapbox('country: ' + this.getPais())
-        .then(function (arrayPos) {
-          alert('buscarThen ' + JSON.stringify(arrayPos))
-          this.posicionUsuario = arrayPos[0]
-        })
-        .catch(function (error) {
-          alert('buscarCatch ' + JSON.stringify(error))
-        })
     },
 
     createMap: function () {
@@ -77,8 +78,8 @@ export default {
       this.map.on('load', this.onMaploaded)
 
       this.map.addControl(new mapboxgl.NavigationControl())
-      const marker = new mapboxgl.Marker().setLngLat([-74.0073, 40.7124])
-      marker.addTo(this.map)
+      // const marker = new mapboxgl.Marker().setLngLat([-74.0073, 40.7124])
+      // marker.addTo(this.map)
     }
   }
 }

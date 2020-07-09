@@ -60,7 +60,8 @@ export default {
     capture: 'Capturar Código de Barras'
   },
   map: {
-    center: 'Centrar'
+    center: 'Centrar',
+    noInterest: 'Sin puntos'
   },
   maximize: 'Maximizar',
   minimize: 'Minimizar',

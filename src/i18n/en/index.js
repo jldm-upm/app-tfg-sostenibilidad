@@ -59,7 +59,8 @@ export default {
     capture: 'Capture Barcode'
   },
   map: {
-    center: 'Center'
+    center: 'Center',
+    noInterest: 'No Points'
   },
   maximize: 'Maximize',
   minimize: 'Minimize',
