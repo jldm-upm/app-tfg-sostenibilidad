@@ -1,6 +1,6 @@
 {
-  "name": "edu.jldm.tfg",
-  "displayName": "TFGSostenibilidad2020",
+  "name": "org.jldm.tfg2020",
+  "displayName": "TFG2020",
   "version": "1.0.0",
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "main": "index.js",
@@ -23,8 +23,10 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
-      "cordova-plugin-android-permissions": {},
-      "phonegap-plugin-barcodescanner": {}
+      "phonegap-plugin-barcodescanner": {
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      },
+      "cordova-plugin-android-permissions": {}
     },
     "platforms": [
       "android"

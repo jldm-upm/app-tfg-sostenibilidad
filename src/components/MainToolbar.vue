@@ -5,8 +5,14 @@
       outlined>
       <q-btn
         dense
+        icon="map"
         class="text-lg text-bold"
-        to="/" replace>
+        to="/map">
+      </q-btn>
+      <q-btn
+        dense
+        class="text-lg text-bold"
+        to="/">
         <q-tooltip content-class="bg-white text-primary">{{ $t('toolbar.main') }}</q-tooltip>
         /
       </q-btn>

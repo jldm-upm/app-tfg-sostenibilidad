@@ -27,7 +27,7 @@ function componerBusquedaMapbox (termino) {
   Parámetros:
   - termino: string con el término a buscar en el servicio MapBox
   Devuelve:
-  Un objeto que representa el JSON devuelto por el servicio
+  Un array de posiciones en las que se encuentran los términos
 */
 export async function buscarMapbox (termino) {
   const queryString = componerBusquedaMapbox(termino)
@@ -37,11 +37,11 @@ export async function buscarMapbox (termino) {
     res = await axios.get(queryString)
   } catch (error) {
     console.log(Object.keys(error))
-    return error
+    return null
   }
 
   // console.log(JSON.stringify(res.data))
-  return res.data
+  return res.data.features.map((f) => f.center)
 }
 
 /*
