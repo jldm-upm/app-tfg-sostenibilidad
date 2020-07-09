@@ -2,8 +2,7 @@ export default function () {
   return {
     // state
     codigo: '',
-    coordenadas: [0, 0],
-    localizaciones: [],
+    mapInterest: ['Condis'],
     loggedInUser: null,
     lastError: null,
     history: [],

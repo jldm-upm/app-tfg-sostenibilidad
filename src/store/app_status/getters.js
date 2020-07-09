@@ -65,11 +65,6 @@ export function getCountry (state) {
   return state.configuration.country
 }
 
-export function getCoordenadas (state) {
-  console.log(`getCoordenadas = ${state.coordenadas}`)
-  return state.coordenadas
-}
-
-export function getLocalizaciones (state) {
-  return state.localizaciones
+export function getMapInterest (state) {
+  return state.mapInterest
 }

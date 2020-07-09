@@ -108,10 +108,6 @@ export function setCountry (state, val) {
   state.configuration.country = val
 }
 
-export function setCoordenadas (state, val) {
-  state.coordenadas = val
-}
-
-export function setLocalizaciones (state, val) {
-  state.localizaciones = val
+export function setMapInterest (state, val) {
+  state.mapInterest = val
 }

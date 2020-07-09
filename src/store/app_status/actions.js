@@ -77,10 +77,6 @@ export function setCountry ({ commit }, val) {
   commit('setCountry', val)
 }
 
-export function setCoordenadas ({ commit }, val) {
-  commit('setCoordenadas', val)
-}
-
-export function setLocalizaciones ({ commit }, val) {
-  commit('setLocalizaciones', val)
+export function setMapInterest ({ commit }, val) {
+  commit('setMapInterest', val)
 }
