@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <div class="full">
     <div id='map'></div>
   </div>
 </template>
 
 <script>
 import mapboxgl from 'mapbox-gl'
+require('../../node_modules/mapbox-gl/dist/mapbox-gl.css')
 import { MAPBOX_TOKEN, MAPBOX_STYLE } from '../assets/js/PRIVATE.js'
-console.dir(mapboxgl)
 
 export default {
   data () {
@@ -17,6 +17,10 @@ export default {
     this.createMap()
   },
   methods: {
+    onMapLoaded (event) {
+      this.map.resize()
+    },
+
     createMap: function () {
       mapboxgl.accessToken = MAPBOX_TOKEN
 
@@ -29,6 +33,8 @@ export default {
         zoom: 16
       })
 
+      this.map.on('load', this.onMaploaded)
+
       this.map.addControl(new mapboxgl.NavigationControl())
       const marker = new mapboxgl.Marker().setLngLat([-74.0073, 40.7124])
       marker.addTo(this.map)
@@ -36,3 +42,11 @@ export default {
   }
 }
 </script>
+
+<style>
+.mapboxgl-canvas-container {
+
+    height: 100vh;
+
+}
+</style>
