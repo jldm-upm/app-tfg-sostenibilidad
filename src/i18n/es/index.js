@@ -61,7 +61,8 @@ export default {
   },
   map: {
     center: 'Centrar',
-    noInterest: 'Sin puntos'
+    noInterest: 'Sin puntos',
+    noLocationService: 'Sin servicio de geolocalización'
   },
   maximize: 'Maximizar',
   minimize: 'Minimizar',
