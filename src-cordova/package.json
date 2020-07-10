@@ -15,6 +15,7 @@
   "dependencies": {
     "cordova-android": "^8.1.0",
     "cordova-plugin-android-permissions": "^1.0.2",
+    "cordova-plugin-geolocation": "^4.0.2",
     "phonegap-plugin-barcodescanner": "^8.1.0"
   },
   "devDependencies": {
@@ -26,7 +27,8 @@
       "phonegap-plugin-barcodescanner": {
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
       },
-      "cordova-plugin-android-permissions": {}
+      "cordova-plugin-android-permissions": {},
+      "cordova-plugin-geolocation": {}
     },
     "platforms": [
       "android"
