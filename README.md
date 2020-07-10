@@ -13,11 +13,29 @@ quasar dev
 ```
 
 ### Construir para android
+
+#### Añadir soporte android
+```bash
+cd src-cordova
+
+npm install
+
+cordova platform add android
+
+cordova plugin add cordova-plugin-android-permissions
+
+cordova plugin add cordova-plugin-geolocation
+
+cordova plugin add phonegap-plugin-barcodescanner
+```
+
+#### Generar APK
+
 ```bash
 npm run build_android
 ```
 
-### Firmar para android
+#### Firmar APK
 Utiliza el keystore en "~/TFG/jldm_tfg.keystore"
 ```bash
 npm run sign_android
