@@ -12,7 +12,7 @@
     </q-card-section>
     <q-card-actions horizontal class="justify-around q-px-md">
       <q-btn
-        :disabled="!((producto.purchase_places_tags && producto.purchase_places_tags.length > 0) || (producto.stores_tags && producto.stores_tags.length > 0))"
+        :disabled="!(localizacionesProducto && (localizacionesProducto.length > 0))"
         size="md"
         class="justify-around items-center text-white bg-primary"
         @click="showDialogLocalizations = !showDialogLocalizations"
@@ -46,10 +46,10 @@
         </q-bar>
 
         <q-card-section class="q-pt-none">
-          <q-list v-if="(producto.stores_tags && producto.stores_tags.length > 0)">
+          <q-list v-if="(localizacionesProducto && (localizacionesProducto.length > 0))">
             <fieldset>
               <legend>{{ $t('product.attr.stores') }}</legend>
-              <q-item v-for="store in producto.stores_tags"
+              <q-item v-for="store in localizacionesProducto"
                       :key="store">
                 <q-item-section>
                   <q-item-label overline>{{ traducirStore(store) }}</q-item-label>
@@ -96,12 +96,12 @@ export default {
   },
 
   methods: {
-    ...mapGetters('appStatus', ['getLanguage']),
-    ...mapActions('appStatus', ['setLocalizaciones']),
+    ...mapGetters('appStatus', ['getLanguage', 'getMapInterest']),
+    ...mapActions('appStatus', ['setMapInterest']),
     ...mapGetters('taxonomias', ['getStores']),
 
     buscarTienda (tienda) {
-      this.setLocalizaciones([this.traducirStore(tienda)])
+      this.setMapInterest([this.traducirStore(tienda)])
     },
     traducirStore (store) {
       return traducirTax(store, this.getStores(), this.getLanguage())
@@ -111,6 +111,9 @@ export default {
   computed: {
     isComplete () {
       return this.producto.complete
+    },
+    localizacionesProducto () {
+      return this.getMapInterest()
     }
   },
 
