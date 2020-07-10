@@ -5,12 +5,6 @@
       outlined>
       <q-btn
         dense
-        icon="map"
-        class="text-lg text-bold"
-        to="/map">
-      </q-btn>
-      <q-btn
-        dense
         class="text-lg text-bold"
         to="/">
         <q-tooltip content-class="bg-white text-primary">{{ $t('toolbar.main') }}</q-tooltip>
@@ -27,10 +21,11 @@
       <q-btn
         dense
         icon="search"
+        v-if="(listProducts && (listProducts.length > 0))"
         size="md"
         to="/list"
         >
-        <q-tooltip content-class="bg-white text-primary">{{ $t('toolbar.help') }}</q-tooltip>
+        <q-tooltip content-class="bg-white text-primary">{{ $t('toolbar.list') }}</q-tooltip>
       </q-btn>
       <q-btn
         dense
