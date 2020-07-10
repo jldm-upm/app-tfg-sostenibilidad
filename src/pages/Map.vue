@@ -24,6 +24,7 @@ export default {
 
   async mounted () {
     this.createMap()
+    this.$q.loading.show()
     let zoom = 5
     try {
       this.posicionUsuario = await obtenerPosicion(this.getPais())
@@ -31,6 +32,9 @@ export default {
     } catch (posErr) {
       this.posicionUsuario = posErr
       zoom = 5
+      this.$q.notify({ type: 'warning', message: this.$t('map.noLocationService') })
+    } finally {
+      this.$q.loading.hide()
     }
 
     await this.map.setZoom(zoom)
