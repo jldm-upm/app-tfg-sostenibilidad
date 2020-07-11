@@ -103,6 +103,7 @@ export default {
       purchase_places: 'Lugares de compra',
       stores: 'Tiendas'
     },
+    brands: 'Marcas',
     carbono100g: 'Carbón 100g',
     categories: 'Categorías',
     categories_empty: 'Sin Categorías',

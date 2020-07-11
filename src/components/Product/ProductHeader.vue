@@ -3,7 +3,7 @@
     <q-item>
       <q-item-section avatar>
         <q-img
-          v-if="useExternalService && imagenProducto"
+          v-if="imagenProducto"
           spinner-color="white"
           :src="imagenProducto"
           style="max-height: 140px; width: 60px"/>
@@ -18,6 +18,12 @@
       <q-item-section>
         <q-item-label lines="1">
           <span class="text-weight-regular text-secondary">{{ producto.code }}<q-tooltip content-class="bg-white text-primary">{{ producto.code }}</q-tooltip></span>
+        </q-item-label>
+        <q-item-label caption lines="3">
+          <span class="text-weight-medium text-primary">
+            {{ producto.brands }}
+          </span>
+          <q-tooltip content-class="bg-white text-primary">{{ producto.brands }}</q-tooltip>
         </q-item-label>
         <q-item-label caption lines="3">
           <span class="text-weight-medium text-primary">
@@ -67,7 +73,8 @@ export default {
   },
 
   methods: {
-    ...mapGetters('appStatus', ['getUseOtherServices'])
+    ...mapGetters('appStatus', ['getUseOtherServices']),
+    ...mapGetters('taxonomias', ['getBrands'])
   },
 
   props: ['producto']
