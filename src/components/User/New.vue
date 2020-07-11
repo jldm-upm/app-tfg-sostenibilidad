@@ -69,10 +69,8 @@
         name="accepted"
         :label="$t('login.accept')"
         >
-        <a href="/help#terms">
-          {{ $t('login.readterms') }}
-        </a>
       </q-toggle>
+      <q-btn dense to="/help#terms" :label="$t('login.readterms')"></q-btn>
 
       <div class="row justify-center">
         <q-btn
@@ -80,7 +78,7 @@
           :label="$t('login.submit_new')"
           type="submit"
           color="primary">
-          <q-tooltip content-class="bg-white text-primary">{{ $t('login.submit.new') }}</q-tooltip>
+          <q-tooltip content-class="bg-white text-primary">{{ $t('login.submit_new') }}</q-tooltip>
         </q-btn>
         <q-btn
           class="col-5 col-md-2"
