@@ -57,6 +57,7 @@
                 <q-item-section side top>
                   <q-btn
                     dense
+                    :disabled="!useOtherServices"
                     icon="map"
                     class="text-lg text-bold"
                     @click="buscarTienda(store)"
@@ -96,13 +97,14 @@ export default {
   },
 
   methods: {
-    ...mapGetters('appStatus', ['getLanguage', 'getMapInterest']),
+    ...mapGetters('appStatus', ['getLanguage', 'getMapInterest', 'useOtherServices']),
     ...mapActions('appStatus', ['setMapInterest']),
     ...mapGetters('taxonomias', ['getStores']),
 
     buscarTienda (tienda) {
       this.setMapInterest([this.traducirStore(tienda)])
     },
+
     traducirStore (store) {
       return traducirTax(store, this.getStores(), this.getLanguage())
     }
