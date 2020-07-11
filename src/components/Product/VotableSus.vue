@@ -61,7 +61,8 @@ export default {
       let message = ''
       this.$q.loading.show()
       const session = { un: this.usuario.un, id: this.usuario.id, ts: this.usuario.ts, old_value: this.val }
-      let res = await this.$axios.post(url, session)
+      let res = null
+      res = await this.$axios.post(url, session)
         .then(response => {
           this.$q.loading.hide()
           if (response.data.status === 1) {
@@ -84,7 +85,7 @@ export default {
         .catch(error => {
           type = 'negative'
           message = this.$t('off.errors.serverProblem')
-
+          console.log(JSON.stringify(error))
           this.setLastError(error)
 
           if (error.response) {
