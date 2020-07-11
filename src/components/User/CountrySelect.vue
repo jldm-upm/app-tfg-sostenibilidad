@@ -1,14 +1,14 @@
 <template>
   <q-select
+    square outlined
+    style="min-width: 150px; max-width: 200px"
     v-model="country"
     :options="countryOptions"
     :label="this.$t('configuration.country')"
-    dense
     borderless
     emit-value
     map-options
     options-dense
-    style="min-width: 150px"
     >
   </q-select>
 </template>

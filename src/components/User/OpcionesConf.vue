@@ -2,17 +2,20 @@
   <q-list
     class=column>
     <q-item>
-      <q-select
-        v-model="lang"
-        :options="langOptions"
-        :label="this.$t('configuration.language')"
-        dense
-        borderless
-        emit-value
-        map-options
-        options-dense
-        style="min-width: 150px"
-        />
+      <q-item-section>
+        <q-select
+          style="min-width: 150px; max-width: 200px"
+          square
+          outlined
+          v-model="lang"
+          :options="langOptions"
+          :label="this.$t('configuration.language')"
+          emit-value
+          map-options
+          options-dense
+          />
+        <q-item-label caption lines="3">{{ $t('configuration.lang_hint') }}</q-item-label>
+      </q-item-section>
     </q-item>
     <q-item>
       <q-input
@@ -47,7 +50,8 @@
     </q-item>
     <q-item>
       <q-item-section>
-        <country-select></country-select>
+        <country-select>
+        </country-select>
         <q-item-label caption lines="3">{{ $t('configuration.country_hint') }}</q-item-label>
       </q-item-section>
     </q-item>
@@ -59,14 +63,18 @@
         <q-item-label caption lines="3">{{ $t('configuration.useOtherServices_hint') }}</q-item-label>
       </q-item-section>
     </q-item>
-    <fieldset>
-      <legend>{{ $t('configuration.sustainability') }}</legend>
-      <cuantificacion-sostenibilidad
-        v-for="k in Object.keys(sustainTax)"
-        :key=k
-        :sus=k
-        />
-    </fieldset>
+    <q-item>
+      <fieldset>
+        <q-list>
+          <legend>{{ $t('configuration.sustainability') }}</legend>
+          <cuantificacion-sostenibilidad
+            v-for="k in Object.keys(sustainTax)"
+            :key=k
+            :sus=k
+            />
+        </q-list>
+      </fieldset>
+    </q-item>
   </q-list>
 </template>
 
@@ -158,3 +166,10 @@ export default {
   props: ['resource', 'user']
 }
 </script>
+
+<style>
+.q-input {
+min-width: 150px;
+max-width: 200px;
+}
+</style>
