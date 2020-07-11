@@ -1,4 +1,4 @@
-# Exportar con: <C-c C-e>
+# Iniciar exportar con: <C-c C-e>
 # Seleccionar sólo cuerpo: <C-b>
 # Exportar como fichero html: <h h>
 
@@ -23,7 +23,7 @@
   information by its users, that is through voting the
   sustainability of a product.
 
-** ¿Qué es la sostenibilidad?
+** What is sustainability?
 
    #+BEGIN_quote
 Development that meets the needs of the present without compromising the ability of future generations to meet their own needs [fn:1].
@@ -50,10 +50,10 @@ Development that meets the needs of the present without compromising the ability
   the app is designed so it can be used with a
   mouse/keyboard attached to the device.
 
-** Funcionalidades
+** Functionality
 
 #+CAPTION: Tool and Search bars
-#+ATTR_HTML: :alt toolbar imager :title Toolbar :align center :class center :width 60%
+#+ATTR_HTML: :alt toolbar image :title Toolbar :align center :class center :width 60%
 [[file:img/toolbar.png][file:./img/toolbar.png]]
 
 *** Product Search
@@ -186,7 +186,7 @@ This tab provides user account create in the service:
 [[file:img/producto_general.png][file:./img/producto_general.png]]
 
 Product screen shows product information.
-                      
+
 A collapsible shows the categories of the product.
 
 General Info as name, code and origin.
@@ -198,7 +198,7 @@ Sustainability rating quantified by the user preferences.
 The tabs gives access to the sustainability vote, information, ingredients and nutriments.
 
 ****** @@html:<q-icon name="map" size="md"/>@@Purchase places
-       
+
 Pressing the map a list of purchasing places appears. Each place is clickable. A map of nearest places to purchase the product will appear.
 
 ***** Product Information
@@ -213,7 +213,7 @@ Pressing the map a list of purchasing places appears. Each place is clickable. A
   + _Palm Oil_: Using the abbreviation *PO*. Red if the product has
     palm oil, green if it has NOT or gray if this information is not
     available.
-  + _Vegetarian_: Using the abbreviation *Vt*. Red if theroduct
+  + _Vegetarian_: Using the abbreviation *Vt*. Red if the product
     is NOT vegetarian, green if it is or gray if this information is
     not available.
   + _Vegan_: Using the abbreviation *Vg*. Red if the
@@ -246,13 +246,13 @@ The user can vote each sustainability point by pressing on it.
 
 In the 'Ingredients' tab of the product.
 
-Displays food *ALERGENS*.
+Displays food *ALLERGENS*.
 
 Displays food *ADDITIVES*.
 
 Displays a table of *Ingredients*. The table shows the name and
 information about the maximum and minimum percentage (% Min) and (%
-Max) that is cotained in the product.
+Max) that is contained in the product.
 
 ***** Nutrients
 

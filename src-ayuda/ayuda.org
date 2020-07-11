@@ -1,4 +1,4 @@
-# Exportar con: <C-c C-e>
+# Iniciar exportar con: <C-c C-e>
 # Seleccionar sólo cuerpo: <C-b>
 # Exportar como fichero html: <h h>
 
@@ -59,7 +59,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
 ** Funcionalidades
 
 #+CAPTION: Barra de herramientas y búsqueda de producto
-#+ATTR_HTML: :alt imagen toolbar :title Toolbar :align center :class center :width 60%
+#+ATTR_HTML: :alt imágen barra de herramientas :title Barra de herramientas :align center :class center :width 60%
 [[file:img/toolbar.png][file:./img/toolbar.png]]
 
 *** Búsqueda de un producto
@@ -69,7 +69,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
     sobre el icono de la lupa para realizar la búsqueda o se puede
     pulsar 'INTRO'.
 
-    Tambíen se puede pulsar sobre botón con el icono de una cámara. Se
+    También se puede pulsar sobre botón con el icono de una cámara. Se
     abrirá una pantalla que permite la *captura* de códigos de barras.
 
     Se debe pulsar un nuevo botón para iniciar una nueva captura.
@@ -89,18 +89,18 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
 
 + Escribir con el teclado el código que se desea buscar.
 
-+ Pulsar la tecla 'Enter' o pulsar sobre el icono de la lupa.
++ Pulsar la tecla 'INTRO' o pulsar sobre el icono de la lupa.
 
 *** Acceso a la funcionalidad
 
     Se pueden acceder a las distintas partes de la aplicación mediante
-    la *barra de herramientas* que se encuntra en la parte superior del
+    la *barra de herramientas* que se encuentra en la parte superior del
     programa.
 
 **** / Página de Inicio
 
 #+CAPTION: Inicio
-#+ATTR_HTML: :alt imagen inicio :title Inicio :align center :class center :width 60%
+#+ATTR_HTML: :alt imágen inicio :title Inicio :align center :class center :width 60%
 [[file:img/inicio.png][file:./img/inicio.png]]
 
      Se muestra información sobre la aplicación. Por ejemplo el número de versión.
@@ -113,7 +113,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
      producto.
 
 #+CAPTION: Historial
-#+ATTR_HTML: :alt imagen historial :title Historial :align center :class center :width 60%
+#+ATTR_HTML: :alt imágen historial :title Historial :align center :class center :width 60%
 [[file:img/historial.png][file:./img/historial.png]]
 
 **** @@html:<q-icon name="search" size="md"/>@@Resultado
@@ -121,7 +121,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
      Muestra una lista de los productos que corresponde a una búsqueda por categoría.
 
 #+CAPTION: Resultado de búsqueda
-#+ATTR_HTML: :alt imagen resultado :title Resultado :align center :class center :width 60%
+#+ATTR_HTML: :alt imágen resultado :title Resultado :align center :class center :width 60%
 [[file:img/listado.png][file:./img/listado.png]]
 
 **** @@html:<q-icon name="person" size="md"/>@@Configuración y Cuenta de Usuario
@@ -131,7 +131,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
 ***** @@html:<q-icon name="person" size="md"/>@@Cuenta de Usuario
 
 #+CAPTION: Inicio de sesión
-#+ATTR_HTML: :alt imagen inicio sesión :title Inicio Sesión :align center :class center :width 60%
+#+ATTR_HTML: :alt imágen inicio sesión :title Inicio Sesión :align center :class center :width 60%
 [[file:img/iniciar_sesion.png][file:./img/iniciar_sesion.png]]
 
       Se puede iniciar sesión con una cuenta de usuario previamente creada.
@@ -151,25 +151,25 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
       servidor desde la configuración.
 
 #+CAPTION: Manejo de sesión
-#+ATTR_HTML: :alt imagen manejo sesión :title Manejo Sesión :align center :class center :width 60%
+#+ATTR_HTML: :alt imágen manejo sesión :title Manejo Sesión :align center :class center :width 60%
 [[file:img/manejar_sesion.png][file:./img/manejar_sesion.png]]
 
 
 ***** @@html:<q-icon name="person_add" size="md"/>@@ Crear usuario
 
 #+CAPTION: Crear Usuario
-#+ATTR_HTML: :alt imagen crear usuario :title Crear Usuario :align center :class center :width 60%
+#+ATTR_HTML: :alt imágen crear usuario :title Crear Usuario :align center :class center :width 60%
 [[file:img/crear_usuario_1.png][file:./img/crear_usuario_1.png]]
 
 
       Desde esta pestaña se puede crear un nuevo usuario para la aplicación:
       + Introducir un nombre de usuario
-      + Introducir una contraseña de al menos ocho carácteres.
+      + Introducir una contraseña de al menos ocho caracteres.
       + Confirmar la contraseña reintroduciendola.
       + Aceptar los términos de uso.
 
 #+CAPTION: Crear Usuario. Reintroducir contraseña
-#+ATTR_HTML: :alt imagen reintroducit contraseña :title Reintroducir Contraseña :align center :class center :width 60%
+#+ATTR_HTML: :alt imágen reintroducir contraseña :title Reintroducir Contraseña :align center :class center :width 60%
 [[file:img/crear_usuario_2.png][file:./img/crear_usuario_2.png]]
 
 
@@ -183,7 +183,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
       servidor.
 
 #+CAPTION: Configuración
-#+ATTR_HTML: :alt imagen configuración :title Configuración :align center :class center :width 60%
+#+ATTR_HTML: :alt imágen configuración :title Configuración :align center :class center :width 60%
 [[file:img/configurar.png][file:./img/configurar.png]]
 
 
@@ -223,7 +223,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
 
 ***** Información del producto
 #+CAPTION: Información adicional
-#+ATTR_HTML: :alt imagen información del producto :title Información del producto :align center :class center :width 60%
+#+ATTR_HTML: :alt imágen información del producto :title Información del producto :align center :class center :width 60%
 [[file:img/p_informacion.png][file:./img/p_informacion.png]]
 
   Se encuentra en la pestaña 'Información'.
@@ -234,7 +234,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
   + _Aceite de palma_: Indicado mediante la abreviatura *PO*. Será de
     color rojo si el producto NO contiene aceite de palma, verde si
     contiene o gris si no se tiene esta información.
-  + _Vegetariano_: Indicado mendiante la abreviatura *Vt*. Será de
+  + _Vegetariano_: Indicado mediante la abreviatura *Vt*. Será de
     color rojo si el producto NO es vegetariano, verde si lo es o
     gris si no se tiene esta información.
   + _Vegano_: Indicado mediante la abreviatura *Vg*. Será de color
@@ -266,7 +266,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
 ***** Ingredientes
 
 #+CAPTION: Ingredientes
-#+ATTR_HTML: :alt imagen ingredientes :title Ingredientes :align center :class center :width 60%
+#+ATTR_HTML: :alt imágen ingredientes :title Ingredientes :align center :class center :width 60%
 [[file:img/ingredientes.png][file:./img/ingredientes.png]]
 
   Se encuentran en la pestaña 'Ingredientes' del producto.
@@ -282,7 +282,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
 ***** Nutrientes
 
 #+CAPTION: Nutrientes
-#+ATTR_HTML: :alt imagen nutrientes :title Nutrientes :align center :class center :width 60%
+#+ATTR_HTML: :alt imágen nutrientes :title Nutrientes :align center :class center :width 60%
 [[file:img/nutrientes.png][file:./img/nutrientes.png]]
 
   Se encuentran en la pestaña 'Nutrientes' del producto.
