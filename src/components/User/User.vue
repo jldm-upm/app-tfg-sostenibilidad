@@ -1,13 +1,12 @@
 <template>
-  <div
-    class="column q-pa-md items-start"
-    style="max-width: 400px">
-    <div class="text-h6 text-center">
-      {{ $t('login.confTitle') }}
-    </div>
-
+  <div>
     <div
-      class="column q-gutter-md items-center">
+      class="column q-pa-md items-center"
+      style="max-width: 400px">
+      <div class="text-h6 text-center">
+        {{ $t('login.confTitle') }}
+      </div>
+
       <q-btn
         style="width: 250px"
         icon-right="close"
@@ -27,7 +26,7 @@
     <q-dialog v-model="dialogClose" persistent>
       <q-card>
         <q-card-section class="row items-center">
-          <q-avatar icon="signal_wifi_off" color="primary" text-color="white" />
+          <q-avatar icon="warning" color="primary" text-color="white" />
           <span class="q-ml-sm">{{ $t('login.wantClose') }}</span>
         </q-card-section>
 
@@ -41,7 +40,7 @@
     <q-dialog v-model="dialogDelete" persistent>
       <q-card>
         <q-card-section class="row items-center">
-          <q-avatar icon="signal_wifi_off" color="primary" text-color="white" />
+          <q-avatar icon="warning" color="primary" text-color="white" />
           <span class="q-ml-sm">{{ $t('login.wantDelete') }}</span>
         </q-card-section>
 
