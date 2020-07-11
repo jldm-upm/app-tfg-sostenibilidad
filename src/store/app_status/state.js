@@ -15,7 +15,7 @@ export default function () {
       country: 'en:spain',
       historySize: 10,
       pageSize: 10,
-      language: 'en',
+      language: 'es',
       useOtherServices: false,
       sustainability: {
         'en:packaging': 3,
