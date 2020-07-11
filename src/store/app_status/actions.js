@@ -18,15 +18,13 @@ export async function setLoggedInUser ({ commit, state, dispatch }, serverRespon
   if (serverResponse) {
     if (serverResponse.status === 1) {
       commit('setLoggedInUser', serverResponse.session)
+      commit('setVot', { ...serverResponse.vot, ...state.vot })
       await dispatch('updateConfiguration', serverResponse.conf)
-      await dispatch('setVot', serverResponse.vot)
     } else {
       commit('setLoggedInUser', null)
-      await dispatch('setVot', {})
     }
   } else {
     commit('setLoggedInUser', null)
-    await dispatch('setVot', {})
   }
 }
 

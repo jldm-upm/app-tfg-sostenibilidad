@@ -38,7 +38,7 @@ export default {
 
   methods: {
     ...mapGetters('appStatus', ['getBaseURL', 'getLoggedInUser']),
-    ...mapActions('appStatus', ['setLastError', 'votar']),
+    ...mapActions('appStatus', ['setLastError', 'votar', 'setActiveProduct']),
 
     evtVotar (newVal, evt) {
       if (this.getLoggedInUser()) {
@@ -61,56 +61,49 @@ export default {
       let message = ''
       this.$q.loading.show()
       const session = { un: this.usuario.un, id: this.usuario.id, ts: this.usuario.ts, old_value: this.val }
-      let res = null
-      res = await this.$axios.post(url, session)
-        .then(response => {
-          this.$q.loading.hide()
-          if (response.data.status === 1) {
-            // this.votarSostenibilidad({ code: this.producto.code, sus: this.sus, val: valor })
-            type = 'possitive'
-            icon = 'cloud_done'
-            message = this.$t('off.voted')
 
-            this.votar({ code: this.codigo, sus: this.sus, value: valor })
+      try {
+        const response = await this.$axios.post(url, session)
+        console.log(`RESPONSE: ${JSON.stringify(response.data)}`)
 
-            res = response
-          } else {
-            type = 'negative'
-            icon = 'cloud_done'
-            message = `${this.$t('off.errors.voted')} ${response.data.status_verbose}`
+        this.$q.loading.hide()
+        if (response.data.status === 1) {
+          // this.votarSostenibilidad({ code: this.producto.code, sus: this.sus, val: valor })
+          type = 'possitive'
+          icon = 'cloud_done'
+          message = this.$t('off.voted')
 
-            res = null
-          }
-        })
-        .catch(error => {
+          this.votar({ code: this.codigo, sus: this.sus, value: valor })
+
+          this.setActiveProduct(response.data.prod)
+        } else {
           type = 'negative'
-          message = this.$t('off.errors.serverProblem')
-          console.log(JSON.stringify(error))
-          this.setLastError(error)
+          icon = 'cloud_done'
+          message = `${this.$t('off.errors.voted')} ${response.data.status_verbose}`
+        }
+      } catch (error) {
+        console.log(`ERROR: ${JSON.stringify(error)}`)
+        type = 'negative'
+        message = this.$t('off.errors.serverProblem')
+        console.log(JSON.stringify(error))
+        this.setLastError(error)
 
-          if (error.response) {
-            message = `${this.$t('off.errors.serverProblem')} Http.Status: ${error.response.status}`
-          } else if (error.request) {
-            message = `${this.$t('off.errors.serverProblem')} Http: ${JSON.stringify(error)}`
-          } else {
-            message = `${this.$t('off.errors.serverProblem')} ${this.$t('off.errors.notResponse')}`
-          }
+        if (error.response) {
+          message = `${this.$t('off.errors.serverProblem')} Http.Status: ${error.response.status}`
+        } else if (error.request) {
+          message = `${this.$t('off.errors.serverProblem')} Http: ${JSON.stringify(error)}`
+        } else {
+          message = `${this.$t('off.errors.serverProblem')} ${this.$t('off.errors.notResponse')}`
+        }
+      } finally {
+        this.$q.loading.hide()
 
-          res = null
+        this.$q.notify({
+          type: type,
+          icon: icon,
+          message: message
         })
-        .then(() => {
-          this.$q.loading.hide()
-
-          this.$q.notify({
-            type: type,
-            icon: icon,
-            message: message
-          })
-
-          return res
-        })
-
-      return res
+      }
     }
   },
 
