@@ -12,17 +12,45 @@
         style="width: 250px"
         icon-right="close"
         :label="$t('login.logout')"
-        @click="logOut">
+        @click="dialogClose = true">
         <q-tooltip content-class="bg-white text-primary">{{ $t('login.logout') }}</q-tooltip>
       </q-btn>
       <q-btn
         style="width: 250px"
         icon-right="close"
         :label="$t('login.deluser')"
-        @click="delUser">
+        @click="dialogDelete = true">
         <q-tooltip content-class="bg-white text-primary">{{ $t('login.deluser') }}</q-tooltip>
       </q-btn>
     </div>
+
+    <q-dialog v-model="dialogClose" persistent>
+      <q-card>
+        <q-card-section class="row items-center">
+          <q-avatar icon="signal_wifi_off" color="primary" text-color="white" />
+          <span class="q-ml-sm">{{ $t('login.wantClose') }}</span>
+        </q-card-section>
+
+        <q-card-actions align="right">
+          <q-btn flat :label="this.$t('cancel')" color="primary" v-close-popup />
+          <q-btn @click="logOut" flat :label="this.$t('ok')" color="primary" v-close-popup />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
+
+    <q-dialog v-model="dialogDelete" persistent>
+      <q-card>
+        <q-card-section class="row items-center">
+          <q-avatar icon="signal_wifi_off" color="primary" text-color="white" />
+          <span class="q-ml-sm">{{ $t('login.wantDelete') }}</span>
+        </q-card-section>
+
+        <q-card-actions align="right">
+          <q-btn flat :label="this.$t('cancel')" color="primary" v-close-popup />
+          <q-btn @click="delUser" flat :label="this.$t('ok')" color="primary" v-close-popup />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
   </div>
 </template>
 
@@ -34,6 +62,8 @@ export default {
 
   data () {
     return {
+      dialogClose: false,
+      dialogDelete: false
     }
   },
 
@@ -127,7 +157,7 @@ export default {
           this.$q.loading.hide()
 
           this.setLoggedInUser(null)
-          this.setVot({})
+
           this.$q.notify({
             type: type,
             icon: 'cloud_done',

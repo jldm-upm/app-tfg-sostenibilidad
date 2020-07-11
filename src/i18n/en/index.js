@@ -1,4 +1,6 @@
 export default {
+  cancel: 'Cancel',
+  ok: 'OK',
   capture: {
     close: 'Close',
     startScan: 'Read barcode'
@@ -53,7 +55,9 @@ export default {
     submit_new: 'Submit',
     upload: 'Upload to Server',
     user: 'User',
-    userTitle: 'User Data'
+    userTitle: 'User Data',
+    wantClose: 'Do you want to close the session? Beware: If you have not saved your data you can lose it when the app is reset.',
+    wantDelete: 'Do you want to delete this user account? Beware: The session will be close and you can lose your data when reseting the app.'
   },
   mainsearch: {
     barcode: 'Barcode',

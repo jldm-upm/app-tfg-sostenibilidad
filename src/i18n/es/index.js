@@ -1,5 +1,7 @@
 
 export default {
+  cancel: 'Cancelar',
+  ok: 'OK',
   capture: {
     close: 'Cerrar',
     startScan: 'Leer Código'
@@ -54,7 +56,9 @@ export default {
     submit_new: 'Crear',
     upload: 'Almacenar en Servidor',
     user: 'Usuario',
-    userTitle: 'Datos de Usuario'
+    userTitle: 'Datos de Usuario',
+    wantClose: '¿Quiere cerrar la sesión? ¡Atención!: Si no has salvado tus datos estos se pueden perder si se resetea la app.',
+    wantDelete: '¿Quiere borrar esta cuenta de usuario? ¡Atención! La sesión se cerrará. Puedes perder los datos si se resetea la app.'
   },
   mainsearch: {
     barcode: 'Código de Barras',
