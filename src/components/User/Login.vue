@@ -4,16 +4,13 @@
       {{ $t('login.loginTitle') }}
     </div>
 
-    <div
-      class="q-pa-md"
+    <q-form
+      autofocus
+      @submit="onSubmit"
+      @reset="onReset"
+      class="q-gutter-md"
       >
-
-      <q-form
-        autofocus
-        @submit="onSubmit"
-        @reset="onReset"
-        class="q-gutter-md"
-        >
+      <div id="inputsL" class="column items-center">
         <q-input
           filled
           name="username"
@@ -22,7 +19,7 @@
           :hint="$t('login.name_hint')"
           lazy-rules
           :rules="[ val => val && val.length > 0 || $t('login.name_val') ]"
-          />
+          ></q-input>
 
         <q-input
           filled
@@ -42,24 +39,23 @@
               />
           </template>
         </q-input>
+      </div>
 
-        <div class="row justify-center">
-          <q-btn
-            class="col-5 col-md-2"
-            :label="$t('login.submit_login')"
-            type="submit"
-            color="primary"/>
-          <q-btn
-            class="col-5 col-md-2"
-            :label="$t('login.reset')"
-            type="reset"
-            color="primary"
-            flat
-            />
-        </div>
-      </q-form>
+      <div class="row justify-center">
+        <q-btn
+          class="col-5 col-md-2"
+          :label="$t('login.submit_login')"
+          type="submit"
+          color="primary"></q-btn>
+        <q-btn
+          class="col-5 col-md-2"
+          :label="$t('login.reset')"
+          type="reset"
+          color="primary"
+          flat></q-btn>
+      </div>
+    </q-form>
 
-    </div>
   </div>
 </template>
 

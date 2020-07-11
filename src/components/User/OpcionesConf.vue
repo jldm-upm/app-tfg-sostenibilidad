@@ -1,6 +1,6 @@
 <template>
   <q-list
-    class=column>
+    class="column items-center">
     <q-item>
       <q-item-section>
         <q-select

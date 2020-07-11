@@ -9,60 +9,62 @@
       @reset="onReset"
       class="q-gutter-md"
       >
-      <q-input
-        filled
-        name="username"
-        v-model="name"
-        :label="$t('login.name')"
-        :hint="$t('login.name_hint')"
-        lazy-rules
-        :rules="[ val => val && val.length > 0 || $t('login.name_val') ]"
-        />
-
-      <q-input
-        filled
-        name="password"
-        :type="isPwd ? 'password' : 'text'"
-        v-model="pwd"
-        :label="$t('login.pwd')"
-        :hint="$t('login.pwd_hint')"
-        lazy-rules
-        :rules="[
-                val => val !== null && val !== '' ||  $t('login.pwd_val'),
-                val => val.length >= 8 || $t('login.pwd_val2')
-                ]"
-        >
-        <template v-slot:append>
-          <q-icon
-            :name="isPwd ? 'visibility_off' : 'visibility'"
-            class="cursor-pointer"
-            @click="isPwd = !isPwd"
+      <div id="inputsN" class="column items-center">
+        <q-input
+          filled
+          name="username"
+          v-model="name"
+          :label="$t('login.name')"
+          :hint="$t('login.name_hint')"
+          lazy-rules
+          :rules="[ val => val && val.length > 0 || $t('login.name_val') ]"
           />
-        </template>
-      </q-input>
 
-      <q-input
-        v-if="pwd"
-        filled
-        name="password2"
-        :type="isPwd ? 'password' : 'text'"
-        v-model="pwd2"
-        :label="$t('login.pwd2')"
-        :hint="$t('login.pwd_hint2')"
-        lazy-rules
-        :rules="[
-                val => val !== null && val !== '' ||  $t('login.pwd_val'),
-                val => val.length >= 8 || $t('login.pwd_val2')
-                ]"
-        >
-        <template v-slot:append>
-          <q-icon
-            :name="isPwd ? 'visibility_off' : 'visibility'"
-            class="cursor-pointer"
-            @click="isPwd = !isPwd"
-          />
-        </template>
-      </q-input>
+        <q-input
+          filled
+          name="password"
+          :type="isPwd ? 'password' : 'text'"
+          v-model="pwd"
+          :label="$t('login.pwd')"
+          :hint="$t('login.pwd_hint')"
+          lazy-rules
+          :rules="[
+                  val => val !== null && val !== '' ||  $t('login.pwd_val'),
+                  val => val.length >= 8 || $t('login.pwd_val2')
+                  ]"
+          >
+          <template v-slot:append>
+            <q-icon
+              :name="isPwd ? 'visibility_off' : 'visibility'"
+              class="cursor-pointer"
+              @click="isPwd = !isPwd"
+              />
+          </template>
+        </q-input>
+
+        <q-input
+          v-if="pwd"
+          filled
+          name="password2"
+          :type="isPwd ? 'password' : 'text'"
+          v-model="pwd2"
+          :label="$t('login.pwd2')"
+          :hint="$t('login.pwd_hint2')"
+          lazy-rules
+          :rules="[
+                  val => val !== null && val !== '' ||  $t('login.pwd_val'),
+                  val => val.length >= 8 || $t('login.pwd_val2')
+                  ]"
+          >
+          <template v-slot:append>
+            <q-icon
+              :name="isPwd ? 'visibility_off' : 'visibility'"
+              class="cursor-pointer"
+              @click="isPwd = !isPwd"
+              />
+          </template>
+        </q-input>
+      </div>
 
       <q-toggle
         v-model="accept"
@@ -70,6 +72,7 @@
         :label="$t('login.accept')"
         >
       </q-toggle>
+
       <q-btn dense to="/help#terms" :label="$t('login.readterms')"></q-btn>
 
       <div class="row justify-center">

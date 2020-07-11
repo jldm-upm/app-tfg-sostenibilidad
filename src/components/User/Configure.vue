@@ -18,11 +18,11 @@
 
     <q-dialog
       v-model="dialog"
-      persistent
       :maximized="maximizedToggle"
       transition-show="slide-up"
       transition-hide="slide-down"
       @keyup.esc="dialog = false"
+      persistent
       >
       <q-card>
         <q-bar>
@@ -74,7 +74,7 @@ export default {
   data () {
     return {
       dialog: false,
-      maximizedToggle: false
+      maximizedToggle: true
     }
   },
 
