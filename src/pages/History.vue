@@ -10,7 +10,6 @@
         <q-item
           clickable v-ripple
           @click="setProduct(producto)"
-          to="/product"
           :active="activeProduct === producto">
           <product-header
             :producto="producto"
@@ -48,7 +47,18 @@ export default {
     ...mapGetters('appStatus', ['getHistory', 'getActiveProduct']),
 
     setProduct (producto) {
+      this.$q.loading.show()
+
       this.setActiveProduct(producto)
+
+      this.$router.push('/product')
+        .catch(error => {
+          if (error.name !== 'NavigationDuplicated') {
+            this.setLastError(error)
+          }
+        })
+
+      this.$q.loading.hide()
     }
   },
 
