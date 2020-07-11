@@ -1,6 +1,6 @@
 <template>
   <q-item clickable v-ripple
-          :class="{ bg_voto_neutro: val === null || val === undefined, bg_voto_positivo : val, bg_voto_negativo : !val }"
+          :class="{ bg_voto_neutro: val === null || val === undefined, bg_voto_positivo : val, bg_voto_negativo : !val && val !== null && val !== undefined }"
           @click="evtVotar(!val)">
     <q-item-section side>
       <q-badge color="green">{{ producto_true }}</q-badge>
@@ -140,6 +140,6 @@ export default {
     background-image: linear-gradient(to right, #fc9583, rgba(252,149,131,0.7));
 }
 .bg_voto_neutro {
-    background-image: linear-gradient(to right, #b7b7b7, rgba(183,183,193,0.7));
+
 }
 </style>
