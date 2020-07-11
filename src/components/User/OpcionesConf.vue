@@ -68,6 +68,7 @@
         <q-list>
           <legend>{{ $t('configuration.sustainability') }}</legend>
           <cuantificacion-sostenibilidad
+            class="q-py-lg"
             v-for="k in Object.keys(sustainTax)"
             :key=k
             :sus=k
