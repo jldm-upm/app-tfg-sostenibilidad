@@ -2,7 +2,7 @@ export default function () {
   return {
     // state
     codigo: '',
-    mapInterest: ['Condis'],
+    mapInterest: [],
     loggedInUser: null,
     lastError: null,
     history: [],

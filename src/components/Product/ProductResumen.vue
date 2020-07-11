@@ -91,7 +91,7 @@ export default {
   data () {
     return {
       showDialogLocalizations: false,
-      maximizedToggle: true
+      maximizedToggle: false
     }
   },
 
@@ -113,7 +113,7 @@ export default {
       return this.producto.complete
     },
     localizacionesProducto () {
-      return this.getMapInterest()
+      return this.producto.stores_tags
     }
   },
 

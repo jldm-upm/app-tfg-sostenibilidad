@@ -123,6 +123,7 @@ export function productoVacio () {
     sustainability: {
       sustainability_level: 3
     },
-    categories_hierarchy: []
+    categories_hierarchy: [],
+    stores_tags: []
   }
 }
