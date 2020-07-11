@@ -46,7 +46,7 @@ export async function buscarCategoriaSostenible (baseURL, categoria, pageSize = 
   if (!(categoria) || (categoria === 0)) {
     return { ...resBase, error: null }
   }
-  const url = `${baseURL}/category/${categoria}.json?page_size=${pageSize}&skip=${skip}&sort_by=sustainability.sustainability_level&sort=-1&?countries=${countries}`
+  const url = `${baseURL}/category/${categoria}.json?page_size=${pageSize}&skip=${skip}&sort_by=sustainability.sustainability_level&order=-1&?countries=${countries}`
 
   console.log(url)
 
