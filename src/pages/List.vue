@@ -10,7 +10,6 @@
         <q-item
           clickable
           v-ripple
-          to="/product"
           @click="setProduct(producto)"
           :active="activeProduct === producto"
           >
@@ -51,8 +50,15 @@ export default {
 
     setProduct (p) {
       this.$q.loading.show()
-      console.log(JSON.stringify(p))
       this.setActiveProduct(p)
+
+      this.$router.push('/product')
+        .catch(error => {
+          if (error.name !== 'NavigationDuplicated') {
+            this.setLastError(error)
+          }
+        })
+
       this.$q.loading.hide()
     }
   },
