@@ -17,7 +17,7 @@
         class="justify-around items-center text-white bg-primary"
         @click="showDialogLocalizations = !showDialogLocalizations"
         icon="map">
-        <q-tooltip v-if="maximizedToggle" content-class="bg-white text-primary">{{ $t('product.purchase') }}</q-tooltip>
+        <q-tooltip content-class="bg-white text-primary">{{ $t('product.purchase') }}</q-tooltip>
       </q-btn>
     </q-card-actions>
 
@@ -57,7 +57,7 @@
                 <q-item-section side top>
                   <q-btn
                     dense
-                    :disabled="!useOtherServices"
+                    v-if="usarExternos"
                     icon="map"
                     class="text-lg text-bold"
                     @click="buscarTienda(store)"
@@ -97,7 +97,7 @@ export default {
   },
 
   methods: {
-    ...mapGetters('appStatus', ['getLanguage', 'getMapInterest', 'useOtherServices']),
+    ...mapGetters('appStatus', ['getLanguage', 'getMapInterest', 'getUseOtherServices']),
     ...mapActions('appStatus', ['setMapInterest']),
     ...mapGetters('taxonomias', ['getStores']),
 
@@ -113,6 +113,9 @@ export default {
   computed: {
     isComplete () {
       return this.producto.complete
+    },
+    usarExternos () {
+      return this.getUseOtherServices()
     },
     localizacionesProducto () {
       return this.producto.stores_tags
