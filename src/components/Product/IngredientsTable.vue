@@ -58,9 +58,9 @@ export default {
     data () {
       let res = []
       if (this.producto.ingredients) {
-        res = this.producto.ingredients.map((ing) => {
+        res = this.producto.ingredients.map((ing, index) => {
           return {
-            id: ing.id,
+            id: ing.id + index,
             text: ing.text,
             percent_min: ing.percent_min,
             percent_max: ing.percent_max
