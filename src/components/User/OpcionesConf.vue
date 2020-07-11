@@ -14,7 +14,7 @@
           map-options
           options-dense
           />
-        <q-item-label caption lines="3">{{ $t('configuration.lang_hint') }}</q-item-label>
+        <q-item-label caption lines="3">{{ $t('configuration.language_hint') }}</q-item-label>
       </q-item-section>
     </q-item>
     <q-item>
@@ -169,7 +169,7 @@ export default {
 
 <style>
 .q-input {
-min-width: 150px;
-max-width: 200px;
+    min-width: 150px;
+    max-width: 200px;
 }
 </style>

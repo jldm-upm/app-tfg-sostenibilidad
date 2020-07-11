@@ -14,6 +14,7 @@ export default {
     historySize: 'Tamaño del Historial',
     historySize_hint: 'Número de elementos consultados a recordar',
     language: 'Lenguaje',
+    language_hint: 'Cambia el lenguaje',
     pageSize: 'Tamaño Página',
     pageSize_hint: 'Número máximo de elementos en la página de búsqueda',
     sustainability: 'Valoración de sostenibilidad',

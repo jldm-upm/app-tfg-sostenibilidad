@@ -13,6 +13,7 @@ export default {
     historySize: 'History Size',
     historySize_hint: 'Maximum number visited elements to remember',
     language: 'Language',
+    language_hint: 'Sets the language',
     pageSize: 'Page Size',
     pageSize_hint: 'Maximum number of elements in search page',
     sustainability: 'Sustainability Votes',
