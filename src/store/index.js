@@ -21,13 +21,21 @@ const vuexLocalStorage = new VuexPersist({
   // Function that passes the state and returns the state with only the objects you want to store.
   // reducer: state => state,
   reducer: state => {
-    return { appStatus: state.appStatus }
+    // eliminar taxonomias: ocupan mucho y son (por ahora estáticas)
+    const save = { appStatus: state.appStatus }
+    // eliminar productos: ocupan bastante
+    delete save.appStatus.activeProduct
+    delete save.appStatus.listProducts
+    delete save.appStatus.history
+
+    return save
   },
   // Function that passes a mutation and lets you decide if it should update the state in localStorage.
   // filter: mutation => (true)
   filter: mutation => {
     // console.log(mutation)
-    return persistAllowedMutations.includes(mutation.type)
+    const allow = persistAllowedMutations.includes(mutation.type)
+    return allow
   }
 })
 

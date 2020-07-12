@@ -1,7 +1,7 @@
 <template>
   <q-page>
     <div
-      v-if="listProducts.length > 0">
+      v-if="listProducts && listProducts.length > 0">
       <q-list
         bordered separator
         v-for="(producto, index) in listProducts"
