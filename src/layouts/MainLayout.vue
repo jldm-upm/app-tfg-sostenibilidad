@@ -30,6 +30,11 @@ export default {
   components: {
     'main-search': require('src/components/MainSearch.vue').default,
     'main-toolbar': require('src/components/MainToolbar.vue').default
+  },
+
+  created () {
+    // al iniciar el MainLayout poner el local del lenguage almacenado
+    this.$i18n.locale = this.$store.state.appStatus.configuration.language
   }
 
 }
