@@ -182,10 +182,43 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
       usuario y se da la posibilidad de guardar la configuración en el
       servidor.
 
+      Las opciones disponibles son:
+      - *Almacenar en servidor*: Sólo estará disponible cuando este
+        iniciada una sesión, almacena los datos de usuario:
+        configuración y valoraciones. Estos datos se cargarán en la
+        aplicación cada vez que el usuario inicie una sesión.
+      - *Lenguaje*: El idioma de la interfaz de usuario.
+      - *URL del Servicio*: La aplicación puede usarse con otros
+        servicios compatibles.
+      - *Tamaño del Historial*: Máximo número de productos previamente
+        consultados que se almacenarán para poder volver a ser
+        consultados.
+      - *Tamaño de Página*: Máximo número de productos que se
+        devolverá en una consulta.
+      - *Parámetros de Sostenibilidad*: Para cada punto de
+        sostenibilidad se le puede asignar un peso que será utilizado
+        para calcular un valor de sostenibilidad personalizado para los
+        productos.
+****** NOTA SOBRE SEGURIDAD
+       Ningún dato de usuario es almacenado en los servidores de la aplicación.
+
+       Si el usuario ha creado una cuenta unicamente se almacenará su nombre de usuario.
+
+       Si el usuario decide almacenar sus datos en el servicio, debe de hacerlo manualmente cada vez.
+
+       Cada acceso al servicio es notificado con el mensaje correspondiente, indicando un error si hubiera algún problema.
+
+       Los permisos de acceso a la cámara y de geolocalización son opcionales.
+
+       Al habilitar el uso de servicios externos el usuario envía
+       información personal a servicios de terceros, está información
+       habilita:
+       - La descarga de imágenes del producto de los servidores de OpenFacts.
+
+       - La descarga de mapas correspondientes a la geolocalización enviada al servicio Mapbox.
 #+CAPTION: Configuración
 #+ATTR_HTML: :alt imágen configuración :title Configuración :align center :class center :width 60%
 [[file:img/configurar.png][file:./img/configurar.png]]
-
 
 **** @@html:<q-icon name="emoji_food_beverage" size="md"/>@@Información de un producto
 
@@ -294,9 +327,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
   + las unidades en que se mide (unidad)
   + la cantidad por 100 gramos (100g)
 @@html:<a id="terms"></a>@@
-* Términos
-** Política de Privacidad
-
+* Condiciones
 ** Licencia de la base de datos y contenidos de Open Food Facts
 
   La base de datos Open Food Facts está disponible con la [[https:https://opendatacommons.org/licenses/odbl/1.0/][Open Database License]].

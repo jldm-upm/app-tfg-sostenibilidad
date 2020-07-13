@@ -168,6 +168,34 @@ This tab provides user account create in the service:
       If user has logged in the user name is shown and the
       configuration can be saved in the service.
 
+      The options are:
+      - *Store in server*: Only available when there is an active
+        session, stores the user data in the server: both the configuration and the votes.
+        This data are loaded when the user logs in.
+      - *Lenguage*: The UI language.
+      - *Service URL*: The app can be used with other compatible services.
+      - *History Size*: Max size of queried products that will be store in case the user desires to consult them again.
+      - *Page Size*: Max number of products retrieved in a query.
+      - *Sustainability Parameters*: Each sustainability point can be
+        weighted that will be used when calculating a custom
+        sustainability value.
+****** SECURITY NOTE
+       No user data is stored in the service.
+
+       If the user has created an account only the username is stored.
+
+       If the user wants to store the data in the service it must be done manually.
+
+       Each remote service access is notified with a message, signaling an error if a problem happens.
+
+       Grant access to the camera or geolocation is optional.
+
+       Enabling the use of external services the user is sending
+       personal information to third-party services, this information
+       is used:
+       - Get product from OpenFacts service.
+
+       - Get maps based in the user geolocation from the Mapbox service.
 #+CAPTION: Configuration
 #+ATTR_HTML: :alt configuration image :title Configuration :align center :class center :width 60%
 [[file:img/configurar.png][file:./img/configurar.png]]
@@ -271,8 +299,6 @@ The information showed by the table is:
 
 @@html:<a id="terms"></a>@@
 * Terms
-** Privacy Policy
-
 ** Open Food Facts database and content licenses
 
 The Open Food Facts database is available under the [[https:https://opendatacommons.org/licenses/odbl/1.0/][Open Database License]].
