@@ -175,5 +175,6 @@ export default {
   vote: {
     notlogged: 'Sin sesión iniciada',
     success: '¡Votado!'
-  }
+  },
+  welcome: 'Bienvenido a la Aplicación Sostenibilidad 2020'
 }

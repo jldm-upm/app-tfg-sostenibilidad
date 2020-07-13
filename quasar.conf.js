@@ -78,8 +78,8 @@ module.exports = function (/* ctx */) {
     devServer: {
       https: false,
       port: 8080,
-      open: true // opens browser window automatically
-      // open: 'chromium-browser'
+      // open: true // opens browser window automatically
+      open: 'chromium-browser'
     },
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
