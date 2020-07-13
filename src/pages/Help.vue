@@ -1,6 +1,7 @@
 <template>
   <q-page>
     <h3><b>language:</b> {{ language }}</h3>
+    <q-btn to="privacity">{{ $t('login.readterms') }}</q-btn>
     <help-es v-if="language==='es'" />
     <help-en v-else-if="language==='en'" />
     <help-en v-else />

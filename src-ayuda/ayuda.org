@@ -10,11 +10,11 @@
 # Exportar hasta nivel 4 como 'cabecera'
 #+OPTIONS: H:2
 
-#+TITLE: App Info Sostenibilidad
+#+TITLE: App Sostenibilidad 2020
 #+AUTHOR: José L. Doménech
 
 * Presentación
-  Esta es la aplicación "Info Sostenibilidad 2020."
+  Esta es la aplicación "Sostenibilidad 2020."
 
   La aplicación "Info Sostenibilidad 2020" es una aplicación que
   permite a sus usuarios consultar información relevante sobre la
@@ -293,8 +293,12 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
   + la cantidad total (valor)
   + las unidades en que se mide (unidad)
   + la cantidad por 100 gramos (100g)
+@@html:<a id="terms"></a>@@
 * Términos
+** Política de Privacidad
+
 ** Licencia de la base de datos y contenidos de Open Food Facts
+
   La base de datos Open Food Facts está disponible con la [[https:https://opendatacommons.org/licenses/odbl/1.0/][Open Database License]].
 
   Los contenidos individuales de la base de datos se encuentran bajo la  [[https:https://opendatacommons.org/licenses/dbcl/1.0/][Database Contents License]].

@@ -73,7 +73,7 @@
         >
       </q-toggle>
 
-      <q-btn dense to="/help#terms" :label="$t('login.readterms')"></q-btn>
+      <q-btn dense to="/privacity" :label="$t('login.readterms')"></q-btn>
 
       <div class="row justify-center">
         <q-btn

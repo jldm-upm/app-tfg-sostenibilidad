@@ -11,6 +11,7 @@ const routes = [
       { path: '/product', component: () => import('pages/Product.vue') },
       { path: '/login', component: () => import('pages/Login.vue') },
       { path: '/help', component: () => import('pages/Help.vue') },
+      { path: '/privacity', component: () => import('pages/Privacity.vue') },
 
       { path: '/capture', component: () => import('pages/Capture.vue') },
       { path: '/search', component: () => import('pages/Search.vue') },

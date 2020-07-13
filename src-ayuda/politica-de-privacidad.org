@@ -1,0 +1,84 @@
+# Iniciar exportar con: <C-c C-e>
+# Seleccionar sólo cuerpo: <C-b>
+# Exportar como fichero html: <h h>
+#+LANGUAGE: es
+#+TOC: nil
+# Exportar hasta nivel 4 como 'cabecera'
+#+OPTIONS: H:2
+
+* Política de Privacidad
+** La entidad responsable del tratamiento de los datos es 'X'.
+
+Se informa al Usuario de que, producida la descarga e instalación de
+la aplicación y, una vez aceptadas los términos y condiciones, estos
+serán tratados por 'X' con la finalidad de gestionar el alta del
+usuario y la participación de estos en los servicios que se ofrecen la
+aplicación.
+
+** Acceso por la aplicación a recursos del teléfono móvil
+Para el correcto funcionamiento de determinadas funcionalidades de la
+app se solicitan permisos para acceder a ciertos recursos propios del
+dispositivo. La activación de los permisos se llevará a cabo a través
+de ventanas emergentes en las que el usuario podrá consentir el acceso
+a los recursos del dispositivo. La desactivación de estos permisos se
+podrá realizar a través de la sección de ajustes del teléfono móvil.
+
+Estos permisos podrán variar según la versión de la que disponga el
+sistema operativo, la librería y la personalización de la app
+(funcionalidades activadas). Algunos de los permisos solicitados
+podrán ser:
+
+- Acceso a la ubicación o localización del dispositivo, que se pedirá
+  para mostrar y poder utilizar la funcionalidad de mapas.
+
+- Acceso a la cámara  para poder escanear códigos de productos.
+
+La información manejada a raíz de la activación de los servicios
+mencionados anteriormente en ningún caso se almacena o trata por parte
+de 'X'.
+
+** Derechos de los usuarios
+Los Usuarios tienen reconocidos y podrán ejercitar los derechos que la
+normativa aplicable en materia de protección de datos les reconoce
+contactando 'X', por correo electrónico dirigido a la dirección 'direccion(X)'
+indicando su nombre, apellidos y número de Documento Nacional de
+Identidad. También podrán ejercitar tales derechos si lo desean
+mediante carta firmada acompañada de fotocopia de su Documento
+Nacional de Identidad e indicación de su domicilio, remitida por
+correo postal ordinario a la Universidad dirigida a la siguiente
+dirección: direccion('X').
+
+Los Usuarios tienen derecho a acceder a sus datos personales, así como
+a solicitar la rectificación de los datos inexactos, la limitación en
+su tratamiento o, en su caso, solicitar su supresión cuando, entre
+otros motivos, los datos ya no sean necesarios para los fines que
+fueron recogidos. En determinadas circunstancias y por motivos
+relacionados con su situación particular, los interesados podrán
+oponerse al tratamiento de sus datos. El Responsable dejará de tratar
+los datos, salvo por motivos legítimos imperiosos, o el ejercicio o la
+defensa de posibles reclamaciones.
+
+Asimismo, los usuarios tendrán derecho a solicitar la portabilidad de
+sus datos en los casos en los que sea técnicamente posible.
+
+Trataremos sus datos personales mientras sean necesarios para la
+finalidad para la cual fueron recabados.
+
+Los titulares de los datos tienen derecho a dirigirse a la Agencia
+Española de Protección de Datos con dirección calle Jorge Juan 6,
+28001, Madrid o a su sede electrónica www.agpd.es, especialmente
+cuando no hayan visto satisfecho el ejercicio de sus derechos por
+parte del responsable de tratamiento.
+
+** Medidas de seguridad adoptadas por 'X'
+'X' declara que ha adoptado los niveles de seguridad de
+protección de los Datos Personales legalmente requeridos, y procura
+instalar aquellos otros medios y medidas técnicas adicionales a su
+alcance para evitar la pérdida, mal uso, alteración, acceso no
+autorizado y robo de los datos personales facilitados a la
+Universidad.
+
+No obstante, el Usuario debe ser consciente de que las medidas de
+seguridad en Internet no son inexpugnables y que podrían producirse
+incidentes de seguridad que la Universidad tratará de resolver de la
+mejor forma posible.
