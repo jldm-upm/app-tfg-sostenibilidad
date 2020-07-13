@@ -13,7 +13,7 @@
     "build_android": "quasar build -m cordova -T android",
     "test_android": "cd src-cordova && phonegap serve",
     "sign_android": "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ~/TFG/jldm_tfg.keystore ./dist/cordova/android/apk/release/app-release-unsigned.apk app_tfg",
-    "generate_icons": "npx icongenie -i 'src-ayuda/AppTFGSostenibilidad2020.png' -b 'src-ayuda/background_app.png'"
+    "generate_icons": "npx icongenie g -i 'JLDM2020.png' -b 'JLDM2020.png'"
   },
   "dependencies": {
     "@ericblade/quagga2": "^1.2.0",
