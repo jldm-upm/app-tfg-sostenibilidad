@@ -80,11 +80,11 @@ export default {
 
   methods: {
     ...mapActions('appStatus', ['setLastError']),
-    ...mapGetters('appStatus', ['getBaseURL', 'getConfiguration']),
+    ...mapGetters('appStatus', ['getBaseURL', 'getConfiguration', 'getVot']),
 
     onSubmit () {
       const url = this.getBaseURL() + this.resource
-      const postData = { ...this.user, conf: this.getConfiguration() }
+      const postData = { ...this.user, conf: this.getConfiguration(), vot: this.getVot() }
 
       let type = 'positive'
       let msg = this.$t('off.loggedout')
