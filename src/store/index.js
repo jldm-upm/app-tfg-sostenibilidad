@@ -24,9 +24,9 @@ const vuexLocalStorage = new VuexPersist({
     // eliminar taxonomias: ocupan mucho y son (por ahora estáticas)
     const save = { appStatus: state.appStatus }
     // eliminar productos: ocupan bastante
-    delete save.appStatus.activeProduct
-    delete save.appStatus.listProducts
-    delete save.appStatus.history
+    // delete save.appStatus.activeProduct
+    // delete save.appStatus.listProducts
+    // delete save.appStatus.history
 
     return save
   },

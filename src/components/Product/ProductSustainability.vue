@@ -65,9 +65,9 @@ export default {
     votaciones (key) {
       const res = {}
       if (this.producto) {
-        res.true = this.producto.sustainability[key + '_true']
-        res.null = this.producto.sustainability[key + '_null']
-        res.false = this.producto.sustainability[key + '_false']
+        res.true = this.producto.sustainability[key + '_true'] || 0
+        res.null = this.producto.sustainability[key + '_null'] || 0
+        res.false = this.producto.sustainability[key + '_false'] || 0
       }
 
       return res
