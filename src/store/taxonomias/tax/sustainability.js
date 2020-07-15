@@ -24,7 +24,7 @@ export const val =
     'en:palm-oil': {
       description: {
         en: 'Contains palm-oil',
-        es: 'Contiene aceite de palma'
+        es: 'Contenido de aceite de palma'
       },
       name: {
         en: 'Palm-Oil',

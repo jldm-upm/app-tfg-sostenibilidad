@@ -220,6 +220,11 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
 #+ATTR_HTML: :alt imágen configuración :title Configuración :align center :class center :width 60%
 [[file:img/configurar.png][file:./img/configurar.png]]
 
+
+#+CAPTION: Personalización Sostenibilidad
+#+ATTR_HTML: :alt imágen personalización :title Personalización Sostenibilidad :align center :class center :width 60%
+[[file:img/configurar2.png][file:./img/configurar2.png]]
+
 **** @@html:<q-icon name="emoji_food_beverage" size="md"/>@@Información de un producto
 
   Para obtener información sobre la sostenibilidad de un producto se
@@ -247,12 +252,21 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
    sostenibilidad del producto, información, ingredientes y
    nutrientes.
 
+   Si el usuario ha activado la opción de acceso a recursos externos
+   se mostrará una imágen del producto.
+
 ****** @@html:<q-icon name="map" size="md"/>@@ Lugares de adquisición del producto
 
    Pulsando sobre el mapa se muestra una lista con los sitios donde se
-   puede adquirir el producto. Cada sitio puede ser pulsado de nuevo y
-   aparecerá un mapa con las localizaciones cercanas donde adquirir el
-   producto.
+   puede adquirir el producto.
+
+   Si el usuario ha activado la opción de acceso a recursos externo se
+   puede pulsar sobre un sitio de adquisición y aparecerá un mapa con
+   las localizaciones cercanas donde adquirir el producto.
+
+#+CAPTION: Mapa
+#+ATTR_HTML: :alt imágen mapa :title Mapa :align center :class center :width 60%
+[[file:img/mapa.png][file:./img/mapa.png]]
 
 ***** Información del producto
 #+CAPTION: Información adicional
@@ -327,6 +341,7 @@ la capacidad de las generaciones futuras para satisfacer sus propias necesidades
   + las unidades en que se mide (unidad)
   + la cantidad por 100 gramos (100g)
 @@html:<a id="terms"></a>@@
+
 * Condiciones
 ** Licencia de la base de datos y contenidos de Open Food Facts
 

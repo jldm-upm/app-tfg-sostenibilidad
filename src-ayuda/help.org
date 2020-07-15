@@ -200,6 +200,9 @@ This tab provides user account create in the service:
 #+ATTR_HTML: :alt configuration image :title Configuration :align center :class center :width 60%
 [[file:img/configurar.png][file:./img/configurar.png]]
 
+#+CAPTION: Sustainability Customization
+#+ATTR_HTML: :alt customization image :title Sustainability Customization :align center :class center :width 60%
+[[file:img/configurar2.png][file:./img/configurar2.png]]
 
 **** @@html:<q-icon name="emoji_food_beverage" size="md"/>@@Product Information
 
@@ -225,10 +228,17 @@ Sustainability rating quantified by the user preferences.
 
 The tabs gives access to the sustainability vote, information, ingredients and nutriments.
 
+Is the use of external resources is enabled a image of the product will be showed.
+
 ****** @@html:<q-icon name="map" size="md"/>@@Purchase places
 
-Pressing the map a list of purchasing places appears. Each place is clickable. A map of nearest places to purchase the product will appear.
+Pressing the map a list of purchasing places appears. Each place is
+clickable if the use of external resources is enabled. A map of
+nearest places to purchase the product will appear.
 
+#+CAPTION: Map
+#+ATTR_HTML: :alt map image :title Map :align center :class center :width 60%
+[[file:img/mapa.png][file:./img/mapa.png]]
 ***** Product Information
 #+CAPTION: Information
 #+ATTR_HTML: :alt product information image :title Product Information :align center :class center :width 60%
