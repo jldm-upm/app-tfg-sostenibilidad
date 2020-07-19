@@ -55,7 +55,7 @@ export default {
     sustainability_user_lvl () {
       let res = Math.round(Object.keys(this.getTaxSustainability()).length / 2)
       if (this.producto) {
-        res = calcularSostenibilidadUsuario(this.producto, this.getConfiguration(), this.getTaxSustainability())
+        res = calcularSostenibilidadUsuario(this.producto, this.getConfiguration().sustainability, this.getTaxSustainability())
       }
       return res
     }
