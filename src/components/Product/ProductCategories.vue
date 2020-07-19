@@ -30,6 +30,7 @@ export default {
   name: 'ProductCategories',
 
   computed: {
+    // devuelve la estructura de árbol de las categorías del producto
     categories_tree () {
       const aux = [...this.producto.categories_hierarchy]
       aux.reverse()
@@ -42,6 +43,7 @@ export default {
     ...mapGetters('appStatus', ['getBaseURL', 'getPageSize', 'getCountry']),
     ...mapGetters('taxonomias', ['getTaxCategories']),
 
+    // Devuelve un array de productos pertenecientes a la categoría indicada.
     async buscarCategoria (categoria) {
       // console.log(`buscarCategoria(${JSON.stringify(categoria)})`)
       const listaProductos = await this.obtenerProductosCategoria(categoria.category)
@@ -49,6 +51,13 @@ export default {
       this.setListProducts(listaProductos)
     },
 
+    // Realiza la petición al servicio para obtener un array de productos que pertenecen a una categoría.
+    // Se encarga de notificar el resultado, actualizando listaProductos con los productos obtenidos del servicio o lastError con el error
+    //
+    // Parámetros:
+    //  - categoria: símbolo de la categoría a requerir
+    // Devuelve:
+    //  array de productos
     async obtenerProductosCategoria (categoria) {
       // console.log(`obtenerProductosCategoria(${categoria})`)
       let res = null
@@ -98,13 +107,21 @@ export default {
       return res
     },
 
+    // Crea una estructura de árbol (para ser usado por un componente Quasar q-tree)
+    // con las categorías a las que pertenece el producto.
+    //
+    // Parámetros:
+    //  - categorias: array de símbolos de categorias
+    // Devuelve:
+    //  una estructura de árbol (para ser usado en q-tree) como un array de objetos
+    //  que contienen {label:...,category:...,children:[...] }
     crearArbolCategorias (categorias) {
       const res = []
       if (categorias.length > 0) {
         const categoriasNew = [...categorias]
         categoriasNew.splice(0, 1)
         const aux = {
-          label: this.traducir(categorias[0], 'categories'),
+          label: this.traducirCategoria(categorias[0]),
           category: categorias[0],
           children: this.crearArbolCategorias(categoriasNew)
         }
@@ -113,7 +130,8 @@ export default {
       return res
     },
 
-    traducir (valor, taxomomia) {
+    // Traduce la categoría
+    traducirCategoria (valor) {
       const tax = this.getTaxCategories()
       return traducirTax(valor, tax, this.$i18n.local)
     }
@@ -125,6 +143,7 @@ export default {
     }
   },
 
+  // - producto: Producto del que mostrar el árbol de categorías
   props: ['producto']
 }
 </script>

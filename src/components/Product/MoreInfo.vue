@@ -54,6 +54,7 @@ export default {
     packaging: require('src/components/Product/Packaging.vue').default
   },
 
+  // - producto: Producto del que se mostrará la información
   props: ['producto']
 }
 </script>

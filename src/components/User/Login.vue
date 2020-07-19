@@ -77,6 +77,10 @@ export default {
     ...mapActions('appStatus', ['setLastError', 'setLoggedInUser']),
     ...mapGetters('appStatus', ['getBaseURL']),
 
+    // 1. Envía una petición de inicio de sesión al servicio indicado por 'baseURL',
+    // notifica del resultado de la operación y actualiza 'lastError' si fuera necesario.
+    //
+    // 2. Carga la configuración de usuario devuelta, priorizando la que se almacena en local.
     onSubmit () {
       const baseURL = this.getBaseURL()
       const url = baseURL + this.resource
@@ -125,12 +129,14 @@ export default {
         })
     },
 
+    // Limpia el contenido introducido en los campos de datos usados para el inicio de sesión
     onReset () {
       this.name = null
       this.pwd = null
     }
   },
 
+  // - resource: PATH de la URI en la que realizar el inicio de sesión
   props: ['resource']
 }
 </script>

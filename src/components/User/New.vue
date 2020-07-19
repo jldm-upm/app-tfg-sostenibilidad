@@ -118,6 +118,10 @@ export default {
     ...mapActions('appStatus', ['setLastError', 'setLoggedInUser']),
     ...mapGetters('appStatus', ['getBaseURL']),
 
+    // Envía la petición para la creación de un usuario nuevo al servicion con url
+    // 'baseURL'.
+    // Notifica al usuario del resultado de la operación, almacenando la información de
+    // sesión o actualizando el valor de 'lastError'.
     onSubmit () {
       const baseURL = this.getBaseURL()
       const url = baseURL + this.resource
@@ -185,6 +189,7 @@ export default {
         })
     },
 
+    // reinicia los valores de los campos de entrada
     onReset () {
       this.name = null
       this.pwd = null
@@ -193,6 +198,7 @@ export default {
     }
   },
 
+  // - PATH de la URL para la creación de usuarios en el servicio
   props: ['resource']
 }
 </script>

@@ -70,6 +70,7 @@ export default {
   },
 
   computed: {
+    // devolver el valor de listProducts almacenado
     listProducts () {
       return this.getListProducts()
     }

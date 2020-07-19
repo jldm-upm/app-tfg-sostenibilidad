@@ -97,43 +97,51 @@ export default {
   computed: {
     baseURL: {
       get () {
+        // devolver el valor de baseURL almacenado
         return this.$store.state.appStatus.configuration.baseURL
       },
       set (val) {
+        // almacenar el nuevo valor para baseURL
         this.$store.commit('appStatus/setBaseURL', val)
       }
     },
     historySize: {
       get () {
+        // devolver el valor de historySize almacenado
         return this.$store.state.appStatus.configuration.historySize
       },
-      set (val) {
+        set (val) {
+        // almacenar el nuevo valor para historySize
         this.$store.commit('appStatus/setHistorySize', val)
       }
     },
     pageSize: {
       get () {
+        // devolver el valor de pageSize almacenado
         return this.$store.state.appStatus.configuration.pageSize
       },
       set (val) {
+        // almacenar el nuevo valor para pageSize
         this.$store.commit('appStatus/setPageSize', val)
       }
     },
     lang: {
       get () {
+        // devolver el valor de lang almacenado
         return this.$i18n.locale
       },
       set (val) {
+        // almacenar el nuevo valor para lang
         this.$i18n.locale = val
       }
     },
     serviciosExternos: {
       get () {
-        // return this.$store.state.appStatus.configuration.useOtherServices
+        // devolver el valor de useOtherServices almacenado
         return this.getUseOtherServices()
       },
       set (val) {
-        // this.$store.commit('appStatus/setUseOtherServices', val)
+        // almacenar el nuevo valor para useOtherServices
         this.setUseOtherServices(val)
       }
     },
@@ -144,6 +152,8 @@ export default {
 
   watch: {
     lang: function (lang) {
+     // al cambiar el valor de lang, se cambia el locale del entorno y
+     // se almacena el nuevo valor
       this.$i18n.locale = lang
       this.$store.commit('appStatus/setLanguage', lang)
     }
@@ -154,6 +164,7 @@ export default {
     ...mapActions('appStatus', ['setUseOtherServices']),
     ...mapGetters('taxonomias', ['getTaxSustainability']),
 
+    // Al cambiar el valor en el componente actualizar el almacenado
     inputChange (val, evt) {
       this.setUseOtherServices(val)
     }
@@ -164,6 +175,8 @@ export default {
     'country-select': require('src/components/User/CountrySelect.vue').default
   },
 
+  // - resource:
+  // - user: Configuración de usuario
   props: ['resource', 'user']
 }
 </script>

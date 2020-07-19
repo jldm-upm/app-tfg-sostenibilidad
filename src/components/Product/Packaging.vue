@@ -26,9 +26,11 @@ export default {
   name: 'Packaging',
 
   computed: {
+    // devolver el valor de 'packaging_tags' del producto
     packaging () {
       return this.producto.packaging_tags || []
     },
+    // devolver el valor de 'quantity' del producto
     quantity () {
       return this.producto.quantity || '-'
     }
@@ -40,6 +42,7 @@ export default {
     }
   },
 
+  // - producto: Producto del que se mostrará la información de empaquetado
   props: ['producto']
 }
 </script>

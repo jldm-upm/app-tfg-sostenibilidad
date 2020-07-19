@@ -40,6 +40,8 @@ export default {
   },
 
   computed: {
+    // devuelve la valoración de sostenibilidad del producto (valor almacenado en el campo:
+    // 'sustainability.sustainability_level')
     sustainability_lvl () {
       let res = Math.round(Object.keys(this.getTaxSustainability()).length / 2)
       if (this.producto) {
@@ -52,6 +54,8 @@ export default {
       return res
     },
 
+    // devuelve la valoración de sostenibilidad del producto (calculado de forma ponderada con
+    // las votaciones que tiene el producto y que se almacenan en el campo 'sustainability')
     sustainability_user_lvl () {
       let res = Math.round(Object.keys(this.getTaxSustainability()).length / 2)
       if (this.producto) {
@@ -61,6 +65,7 @@ export default {
     }
   },
 
+  // - producto: Producto del que se mostrará la valoración
   props: ['producto']
 }
 </script>

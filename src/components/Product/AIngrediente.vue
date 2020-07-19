@@ -5,7 +5,7 @@
     size="md"
     :label="label"
     :class="{ clsDesconocido: desconocido, clsRojo: noEs, clsVerde: !(desconocido || noEs) }">
-      <q-tooltip>{{ traducir(ai, "ingredientsAnalysis") }}</q-tooltip>
+      <q-tooltip>{{ traducir(ai) }}</q-tooltip>
     </q-btn>
 </template>
 
@@ -17,6 +17,7 @@ export default {
   name: 'AnalisisIngredientes',
 
   computed: {
+    // Devuelve el icono correspondiente a la categoría de análisis
     icono () {
       if (this.ai.includes('palm')) {
         return ''
@@ -26,6 +27,7 @@ export default {
         return ''
       }
     },
+    // Devuelve la etiqueta correspondiente a la categoría de análisis
     label () {
       // :label='traducir(ai, "ingredientsAnalysis")'
       if (this.ai.includes('palm')) {
@@ -36,12 +38,15 @@ export default {
         return 'Vt'
       }
     },
+    // Devuelve el valor booleano que indica si el valor de la categoría de análisis es desconocido
     desconocido () {
       return this.ai.includes('unknow')
     },
+    // Devuelve el valor booleano que indica si el valor de la categoría de análisis es cierta
     noEs () {
       return this.ai.includes('non')
     },
+    // devolver el valor de lang almacenado
     lang () {
       return this.$i18n.locale
     }
@@ -56,7 +61,8 @@ export default {
   methods: {
     ...mapGetters('taxonomias', ['getTaxIngredientsAnalysis']),
 
-    traducir (valor, taxomomia) {
+    // traduce el valor de la categoría del análisis
+    traducir (valor) {
       const tax = this.getTaxIngredientsAnalysis()
       return traducirTax(valor, tax, this.$i18n.locale)
     }

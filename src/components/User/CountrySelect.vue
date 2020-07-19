@@ -32,16 +32,23 @@ export default {
   computed: {
     country: {
       get () {
+        // devolver el valor de country almacenado
         return this.getCountry()
       },
       set (val) {
+        // almacenar el nuevo valor para country
         this.setCountry(val)
       }
     },
+
+    // Devuelve un array con las opciones a cargar en el control de países,
+    // cada opción es un objeto de {label:..., value:...}
     countryOptions () {
       const lang = this.getLanguage()
       const allCountriesData = this.getCountries()
       const allCountries = Object.keys(allCountriesData)
+
+      // generar el array de países
       const opciones = allCountries.map(function (cy) {
         const res = {}
         res.value = cy
@@ -51,6 +58,7 @@ export default {
         return res
       })
 
+      // ordenar el array de países por label (nombre)
       const opcionesOrdenadas = opciones.sort(function (a, b) {
         return a.label < b.label
       })

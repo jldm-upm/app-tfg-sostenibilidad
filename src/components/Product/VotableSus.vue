@@ -40,6 +40,7 @@ export default {
     ...mapGetters('appStatus', ['getBaseURL', 'getLoggedInUser']),
     ...mapActions('appStatus', ['setLastError', 'votar', 'setActiveProduct']),
 
+    // Cambia el valor de votación de un producto, llama al servicio para actualizar la votación.
     evtVotar (newVal, evt) {
       if (this.getLoggedInUser()) {
         this.actualizarEnServidor(this.codigo, this.sus, newVal)
@@ -52,6 +53,13 @@ export default {
       }
     },
 
+    // Actualiza la información de votaciones del producto en el servicio indicado por 'baseURL'
+    // Notifica del resultado de la operación en el servidor y actualiza 'lastError' si fuese necesario.
+    //
+    // Parámetros:
+    //  - codigo: codigo del producto a votar
+    //  - sustainability: símbolo de la sostenibilidad a votar
+    //  - valor: nuevo valor para el producto y la categoría de sostenibilidad
     async actualizarEnServidor (codigo, sustainability, valor) {
       const baseURL = this.getBaseURL()
       const url = `${baseURL}/user/vote/${codigo}/${sustainability}/${valor}`
@@ -108,20 +116,29 @@ export default {
   },
 
   computed: {
+    // devuelve el númer de votaciones positivas que ha recibido el producto
     producto_true () {
       return this.votg.true || 0
     },
+    // devuelve el númer de votaciones neutras que ha recibido el producto
     producto_null () {
       return this.votg.null || 0
     },
+    // devuelve el númer de votaciones negativas que ha recibido el producto
     producto_false () {
       return this.votg.false || 0
     },
+    // Devuelve el objeto con la información de usuario de sesión almacenada
     usuario () {
       return this.getLoggedInUser()
     }
   },
 
+  // - codigo: código del producto del que mostrar/actualizar la información de sostenibilidad
+  // - sus: símbolo de la categoría de sostenibilidad a mostrar/actualizar
+  // - nombre: nombre internacionalizado de la categoría de sostenibilidad a mostar/actualizar
+  // - description: descripción internacionalizada de la categoría de sostenibilidad a mostar/actualizar
+  // - votg: objecto con las votaciones recibidas por el producto: {true:..., false:...,null:...}
   props: ['codigo', 'sus', 'val', 'nombre', 'description', 'votg']
 }
 </script>

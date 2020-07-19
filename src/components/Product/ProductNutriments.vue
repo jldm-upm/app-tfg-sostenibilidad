@@ -45,6 +45,7 @@ export default {
   },
 
   computed: {
+    // devolver el valor de activeProduct almacenado
     producto () {
       return this.getActiveProduct() || productoVacio()
     },

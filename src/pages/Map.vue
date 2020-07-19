@@ -22,6 +22,8 @@ export default {
     }
   },
 
+  // al montarse:
+  //  inicia el mapa de Mapbox
   async mounted () {
     this.createMap()
     this.$q.loading.show()
@@ -56,17 +58,20 @@ export default {
     ...mapGetters('appStatus', ['getCountry', 'getLanguage', 'getMapInterest']),
     ...mapGetters('taxonomias', ['getCountries']),
 
+    // devolver la internacionalización del valor de country almacenado
     getPais () {
       const pais = this.getCountry()
       const paises = this.getCountries()
       return traducirTax(pais, paises, this.getLanguage())
     },
 
+    // truco: al cargar el mapa llamar a re-dimensionar para que ocupe el espacio
     onMapLoaded (event) {
       // ocupar toda el espacio disponible
       this.map.resize()
     },
 
+    // Crear mapa
     createMap: function () {
       mapboxgl.accessToken = MAPBOX_TOKEN
 

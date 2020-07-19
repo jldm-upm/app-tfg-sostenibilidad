@@ -101,22 +101,29 @@ export default {
     ...mapActions('appStatus', ['setMapInterest']),
     ...mapGetters('taxonomias', ['getStores']),
 
+    // almacenar el nuevo valor para mapInterest con la tienda que se quiere buscar
     buscarTienda (tienda) {
       this.setMapInterest([this.traducirStore(tienda)])
     },
 
+    // traduce la tienda
     traducirStore (store) {
       return traducirTax(store, this.getStores(), this.getLanguage())
     }
   },
 
   computed: {
+    // devuelve el valor de campo 'complete' del producto
+    // (indica si la información del producto se ha completado)
     isComplete () {
       return this.producto.complete
     },
+    // devolver el valor de useOtherServices almacenado
     usarExternos () {
       return this.getUseOtherServices()
     },
+    // devuelve un array con los símbolos de las tiendas
+    // en las que se puede comprar el producto
     localizacionesProducto () {
       return this.producto.stores_tags
     }
@@ -126,6 +133,7 @@ export default {
     'product-header': require('src/components/Product/ProductHeader.vue').default
   },
 
+  // - producto: Producto del que mostrar la información
   props: ['producto']
 }
 </script>

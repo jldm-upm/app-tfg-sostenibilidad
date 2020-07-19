@@ -69,6 +69,8 @@ export default {
   },
 
   computed: {
+    // devolver un título para la página de login.
+    // Si el usuario ha iniciado sesión, devuelve su nombre.
     loginTitle () {
       const user = this.getLoggedInUser()
       let title = this.$t('login.loginTitle')
@@ -80,6 +82,7 @@ export default {
       return title
     },
 
+    // devuelve la información de sesión del usuario
     loggedInUser () {
       return this.getLoggedInUser()
     }

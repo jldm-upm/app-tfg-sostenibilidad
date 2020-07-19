@@ -9,7 +9,7 @@ import { MAPBOX_TOKEN } from './PRIVATE.js'
   - termino: string con el término a buscar en el mapa
   - [centro]: el punto geográfico (como un array) en el que centrar la búsqueda
   Devuelve:
-  Un string que representa una URL indicando el servicio y los parámetros necesarios para buscar el término
+    Un string que representa una URL indicando el servicio y los parámetros necesarios para buscar el término
 */
 function componerBusquedaMapbox (termino, centro = null) {
   const MAPBOX_SEARCH_URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/{busqueda}.json?{proximity}limit=10&access_token={accesstoken}'
@@ -33,7 +33,7 @@ function componerBusquedaMapbox (termino, centro = null) {
   Parámetros:
   - termino: string con el término a buscar en el servicio MapBox
   Devuelve:
-  Un array de posiciones en las que se encuentran los términos
+    Un array de posiciones en las que se encuentran los términos
 */
 export async function buscarMapbox (termino, centro) {
   const queryString = componerBusquedaMapbox(termino, centro)
@@ -58,7 +58,7 @@ export async function buscarMapbox (termino, centro) {
   Parámetros:
   - opciones: opciones para obtener la localización: https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions
   Devuelve:
-  Una Promesa que devolverá la posición actual
+    Una Promesa que devolverá la posición actual
 */
 export function obtenerPosicion (pais, cordovaPermissions = null) {
   return new Promise(function (resolve, reject) {

@@ -121,6 +121,7 @@ export default {
     ...mapActions('appStatus', ['getAndUpdateTaxonomia'])
   },
 
+  // - producto: Producto a mostrar
   props: ['producto']
 }
 </script>

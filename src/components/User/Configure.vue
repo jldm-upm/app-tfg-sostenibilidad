@@ -82,6 +82,8 @@ export default {
     ...mapActions('appStatus', ['setLastError']),
     ...mapGetters('appStatus', ['getBaseURL', 'getConfiguration', 'getVot']),
 
+    // Envía la petición de almacenamiento en el servidor con los datos
+    // de configuración del usuario y sus votaciones de productos.
     onSubmit () {
       const url = this.getBaseURL() + this.resource
       const postData = { ...this.user, conf: this.getConfiguration(), vot: this.getVot() }
@@ -130,6 +132,8 @@ export default {
     'opciones-configuracion': require('src/components/User/OpcionesConf.vue').default
   },
 
+  // - resource: PATH de la URI del recurso a acceder para la actualización de la configuración
+  // - user: objeto con la configuración de usuario
   props: ['resource', 'user']
 }
 </script>

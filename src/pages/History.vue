@@ -46,6 +46,7 @@ export default {
     ...mapActions('appStatus', ['setLastError', 'setActiveProduct']),
     ...mapGetters('appStatus', ['getHistory', 'getActiveProduct']),
 
+    // almacenar el nuevo valor para activeProduct
     setProduct (producto) {
       this.$q.loading.show()
 
@@ -63,10 +64,12 @@ export default {
   },
 
   computed: {
+    // devolver el valor de history almacenado
     history () {
       const hist = this.getHistory()
       return hist
     },
+    // devolver el valor de activeProduct almacenado
     activeProduct () {
       return this.getActiveProduct()
     }

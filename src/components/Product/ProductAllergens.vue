@@ -8,7 +8,7 @@
         disabled
         v-for="al in alergenos"
         :key="al"
-        :label="traducir(al, 'ingredients')"
+        :label="traducirIngrediente(al)"
         />
     </q-card-section>
   </q-card>
@@ -24,12 +24,14 @@ export default {
   methods: {
     ...mapGetters('taxonomias', ['getTaxIngredientes']),
 
-    traducir (valor, taxomomia) {
+    // traducir ingrediente
+    traducirIngrediente (valor) {
       const tax = this.getTaxIngredientes()
       return traducirTax(valor, tax, this.$i18n.locale)
     }
   },
 
+  // - alergenos: array de alergenos a mostrar
   props: ['alergenos']
 }
 </script>

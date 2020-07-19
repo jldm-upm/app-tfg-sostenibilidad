@@ -31,7 +31,7 @@ export default {
           label: this.$t('product.ingredients_cols.ingredient'),
           align: 'left',
           field: row => row.id,
-          format: (val, row) => { return (this.traducir(val, 'ingredients') || row.text || val) },
+          format: (val, row) => { return (this.traducirIngrediente(val) || row.text || val) },
           sortable: false
         },
         { name: 'percent_min', align: 'center', label: this.$t('product.ingredients_cols.min'), field: 'percent_min', sortable: false, format: (val, row) => { return parseFloat(val).toFixed(3) } },
@@ -44,17 +44,22 @@ export default {
     ...mapGetters('appStatus', ['getActiveProduct']),
     ...mapGetters('taxonomias', ['getTaxIngredientes']),
 
-    traducir (valor, taxomomia) {
+    // traduce el Ingrediente
+    traducirIngrediente (valor) {
       const tax = this.getTaxIngredientes()
       return traducirTax(valor, tax, this.$i18n.locale)
     }
   },
 
+
   computed: {
+    // devolver el valor de activeProduct almacenado, si no hay ninguno devuelve el producto vacio
     producto () {
       return (this.getActiveProduct() || productoVacio())
     },
 
+    // Devuelve un array con objetos que representan las filas de ingredientes a mostrar.
+    // Cada objeto contiene {id:...,text:...,percent_min:...,percent_max:...}
     data () {
       let res = []
       if (this.producto.ingredients) {

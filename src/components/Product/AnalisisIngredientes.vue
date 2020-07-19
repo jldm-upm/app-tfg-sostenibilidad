@@ -18,6 +18,7 @@ export default {
     'a-ingrediente': require('src/components/Product/AIngrediente.vue').default
   },
 
+  // - producto: Producto del que mostrar el análisis de ingredientes
   props: ['producto']
 }
 </script>

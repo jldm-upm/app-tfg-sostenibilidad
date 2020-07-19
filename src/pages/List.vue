@@ -48,6 +48,8 @@ export default {
     ...mapActions('appStatus', ['setLastError', 'setActiveProduct']),
     ...mapGetters('appStatus', ['getListProducts', 'getActiveProduct']),
 
+    // almacenar el nuevo valor para activeProduct
+    // navegar a la página que muestra la información del producto
     setProduct (p) {
       this.$q.loading.show()
       this.setActiveProduct(p)
@@ -64,10 +66,12 @@ export default {
   },
 
   computed: {
+    // devolver el valor de listProducts almacenado
     listProducts () {
       const lp = this.getListProducts() || []
       return lp
     },
+    // devolver el valor de activeProduct almacenado
     activeProduct () {
       return this.getActiveProduct()
     }

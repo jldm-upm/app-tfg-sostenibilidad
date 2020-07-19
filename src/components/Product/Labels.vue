@@ -17,6 +17,7 @@ export default {
     'label-tag': require('src/components/Product/LabelTag.vue').default
   },
 
+  // - producto: Producto del que se mostrarán las etiquetas
   props: ['producto']
 }
 </script>

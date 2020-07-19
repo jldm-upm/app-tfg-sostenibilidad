@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+// Valor máximo a devolver (número de estrellas, p.e.)
 const CTE_ESCALADO = 5
 
 // devuelve un valor [0-5) con la valoriación del producto escalada

@@ -6,7 +6,9 @@ const TIPOS_IMAGENES = ['ingredients', 'ingredients_en', 'nutrition', 'nutrition
 // Convierte un tamaño (100,200,400) en su nombre descriptivo: (_small,_thumb,'') respectivamente.
 //
 // Parámetros:
-// - s: tamaño
+// - s: tamaño (100, 200, 400)
+// Devuelve:
+//   Un string con el tamaño descriptivo (_small,_thumb,'' o null)
 function nameSize (s) {
   if (s === '100') {
     return '_small'

@@ -70,6 +70,13 @@ export default {
     ...mapActions('appStatus', ['setLastError', 'setLoggedInUser', 'setVot', 'updateConfiguration']),
     ...mapGetters('appStatus', ['getConfiguration', 'getLoggedInUser', 'getBaseURL']),
 
+    // Envía la petición para el borrado del usuario de la sesión actual al servicio
+    // indicado en 'baseURL'.
+    // Notifica al usuario del resultado de la operación, actualizando el valor de
+    // 'lastError' si fuese necesario.
+    //
+    // Cualquiera que sea el resultado de la operació en el servicio elimina los datos
+    // de sesión en el cliente.
     delUser () {
       const baseURL = this.getBaseURL()
       const url = baseURL + '/user/delete'
@@ -117,6 +124,13 @@ export default {
         })
     },
 
+    // Envía la petición para cerrar la sesión de usuario actual al servicio
+    // indicado en 'baseURL'.
+    // Notifica al usuario del resultado de la operación, actualizando el valor de
+    // 'lastError' si fuese necesario.
+    //
+    // Cualquiera que sea el resultado de la operació en el servicio elimina los datos
+    // de sesión en el cliente.
     logOut () {
       const baseURL = this.getBaseURL()
       const url = baseURL + this.resource
@@ -166,6 +180,8 @@ export default {
     }
   },
 
+  // - resource:
+  // - user: objeto con la configuración de usuario (incluidos datos de sesión)
   props: ['resource', 'user']
 }
 </script>

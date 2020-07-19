@@ -58,20 +58,24 @@ export default {
 
   computed: {
     codigo: {
+      // devolver el valor de codigo almacenado
       get: function () {
         return this.getCodigo()
       },
       set: function (code) {
+        // almacenar el nuevo valor para codigo
         this.setCodigo(code)
       }
     }
   },
 
   created () {
+    // registrar en espera del evento 'evtBuscar' que iniciará la búsqueda del producto
     this.$root.$on('evtBuscar', this.evtBuscar)
   },
 
   beforeDestroy () {
+    // de-registrar la espera del evento 'evtBuscar'
     this.$root.$off('evtBuscar', this.evtBuscar)
   },
 
@@ -79,11 +83,15 @@ export default {
     ...mapActions('appStatus', ['setLastError', 'setActiveProduct', 'setCodigo']),
     ...mapGetters('appStatus', ['getBaseURL', 'getCodigo', 'getCountry']),
 
+    // Inicia la búsqueda de un código: almacenar el código y buscar
     evtBuscar (code) {
       this.setCodigo(code)
       this.buscar()
     },
 
+    // Busca un código en el servicio configurado en baseURL.
+    // Realiza la petición y notifica del resultado,
+    // almacenando el producto como activeProduct o el error como lastError
     buscar () {
       let type = 'positive'
       let message = `${this.$t('off.product.found')}`

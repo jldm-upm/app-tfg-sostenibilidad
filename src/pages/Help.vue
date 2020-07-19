@@ -25,6 +25,7 @@ export default {
   },
 
   computed: {
+    // devolver el valor de language almacenado
     language () {
       return this.getLanguage()
     }

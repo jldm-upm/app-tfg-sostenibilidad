@@ -1,3 +1,4 @@
+// Devuelve un objeto que representa un producto con sus campos correspondientes, pero sus valores 'de ejemplo'
 export function productoVacio () {
   return {
     code: 'xxxxxxxxxxxxxxxx',

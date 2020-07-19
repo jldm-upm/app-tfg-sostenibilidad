@@ -54,6 +54,8 @@ export default {
   },
 
   computed: {
+    // devuelve un booleno indicando si el cliente se ejecuta como
+    // una aplicación cordova
     enCordova () {
       return this.$q.platform.is.cordova
     }
@@ -62,16 +64,26 @@ export default {
   methods: {
     ...mapActions('appStatus', ['setCodigo', 'setLastError']),
 
+    // comunica el resultado de escaneo usando el plugin para cordova.
+    // 1. almacena el código detectado en 'codigo'
+    // 2. emite el evento global 'evtBuscar'
     escaneoCordova (result) {
       this.setCodigo(result.text)
       this.$root.$emit('evtBuscar', result.text)
     },
 
+    // comunica un error en el escaneo usando el plugin para cordova
+    // 1. muestra una alerta
+    // 2. almacena el error en 'lastError'
     escaneoCordovaError (error) {
       alert(JSON.stringify(error))
       this.setLastError(error)
     },
 
+    // inicia la captura de código de barras usando el plugin para cordova
+    //
+    // 1. comprueba los permisos de cámara para Android
+    // 2. inicia la captura
     async capturarCordova () {
       // capturar con cordova
       const permissions = cordova.plugins.permissions
@@ -107,6 +119,7 @@ export default {
       }
     },
 
+    // configura la captura de código de barras usando la librería Quagga
     configurarQuagga () {
       Quagga.init({
         inputStream: {
@@ -139,10 +152,14 @@ export default {
       Quagga.onDetected(this.onDetected)
     },
 
+    // inicia la captura de código de barras usando el plugin para cordova
     capturarQuagga () {
       Quagga.start()
     },
 
+    // inicia el escaneo de un código de barras.
+    // - Si la plataforma es cordova utilizará el plugin: phonegap-plugin-barcodescanner
+    // - Si no es cordova utilizará la librería Quagga
     iniciarEscaneo () {
       if (this.enCordova) {
         this.capturarCordova()
@@ -152,6 +169,10 @@ export default {
       }
     },
 
+    // comunica el resultado de escaneo usando la librería Quagga
+    // 1. almacena el código detectado en 'codigo'
+    // 2. Detiene la captura
+    // 3. emite el evento global 'evtBuscar'
     onDetected (data) {
       this.setCodigo(data.codeResult.code)
       this.cameraStatus = 0
@@ -159,6 +180,8 @@ export default {
       this.$root.$emit('evtBuscar', data.codeResult.code)
     },
 
+    // Detiene la captura con la librería Quagga.
+    // Navega a la página que muestra la información del producto
     onStop () {
       Quagga.stop()
       this.cameraStatus = 0
@@ -172,6 +195,8 @@ export default {
     }
   },
 
+  // al montarse:
+  // configura Quagga
   mounted () {
     if (!(this.enCordova)) {
       console.log('mounted (quagga)')
@@ -181,6 +206,8 @@ export default {
     // this.iniciarEscaneo()
   },
 
+  // al destruirse:
+  // limpiar
   beforeDestroy () {
     this.onStop()
     window.scannedCode = null

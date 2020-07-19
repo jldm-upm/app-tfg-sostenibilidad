@@ -4,7 +4,7 @@
     dense
     class="recuadro_label"
     >
-    {{ traducir(label, "labels") }}
+    {{ traducirTaxLabel(label) }}
     <q-tooltip
       content-class="bg-white text-primary">{{ auth_name }}</q-tooltip>
   </q-btn>
@@ -24,6 +24,7 @@ export default {
   },
 
   computed: {
+    // devuelve la entidad autorizadora de la etiqueda
     auth_name () {
       const tax = this.getTaxLabels()
       let res = ''
@@ -39,12 +40,14 @@ export default {
   methods: {
     ...mapGetters('taxonomias', ['getTaxLabels']),
 
-    traducir (valor, taxomomia) {
+    // traduce la etiqueta
+    traducirTaxLabel (valor) {
       const tax = this.getTaxLabels()
       return traducirTax(valor, tax, this.$i18n.locale)
     }
   },
 
+  // - label: símbolo de la etiqueta a mostrar
   props: ['label']
 }
 </script>

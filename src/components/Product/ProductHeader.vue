@@ -59,6 +59,7 @@ export default {
   },
 
   computed: {
+    // devuelve una imágen de producto
     imagenProducto () {
       if (this.useExternalService) {
         const imgs = obtenerImagenes(this.producto)
@@ -67,6 +68,7 @@ export default {
         return ''
       }
     },
+    // devolver el valor de useExternalService almacenado
     useExternalService () {
       return this.getUseOtherServices()
     }
@@ -77,6 +79,7 @@ export default {
     ...mapGetters('taxonomias', ['getBrands'])
   },
 
+  // - producto: Producto del que mostrar la información
   props: ['producto']
 }
 </script>

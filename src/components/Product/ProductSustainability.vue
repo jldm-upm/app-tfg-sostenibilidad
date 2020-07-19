@@ -14,7 +14,7 @@
           :codigo=codigo
           :sus=k
           :val="valor(k)"
-          :nombre="traducir(k,'sustainability')"
+          :nombre="traducirSostenibilidad(k)"
           :description="sustain_tax[k].description[getLanguage()]"
           :votg="votaciones(k)"
           >
@@ -43,6 +43,12 @@ export default {
     ...mapGetters('taxonomias', ['getTaxSustainability']),
     ...mapGetters('appStatus', ['getActiveProduct', 'getVot', 'getLanguage']),
 
+    // devuelve el valor booleano de la votación del usuario para una categoría de sostenibilidad
+    //
+    // Parámetros:
+    //  - key: símbolo de la categoría de sostenibilidad
+    // Devuelve:
+    //   El valor booleano que correspinde con la votación del usuario
     valor (key) {
       if (!(this.votaciones_usuario)) {
         return null
@@ -62,7 +68,15 @@ export default {
       }
     },
 
+    // Devuelve las votaciones recibidas por el producto para la categoría de sostenibilidad
+    //
+    // Parámetros:
+    //  - key: símbolo de la categoría de sostenibilidad
+    // Devuelve:
+    //  Un objeto con las votaciones (positivas, negativas y neutras) recibidas por el producto.
+    //  El objeto tiene los campos: {true:..., null:...,false:...}
     votaciones (key) {
+
       const res = {}
       if (this.producto) {
         res.true = this.producto.sustainability[key + '_true'] || 0
@@ -73,25 +87,31 @@ export default {
       return res
     },
 
-    traducir (valor, taxomomia) {
+    // Devuelve la traducción de la sostenibilidad
+    traducirSostenibilidad (valor) {
       const tax = this.getTaxSustainability()
       return traducirTax(valor, tax, this.$i18n.locale)
     }
   },
 
   computed: {
+    // Devuelve el objeto con todos los datos de la taxonomía de sostenibilidad
     sustain_tax () {
       return this.getTaxSustainability()
     },
+    // Devuelve el producto del que se muestran los datos de sostenibilidad
     producto () {
       return this.getActiveProduct() || productoVacio()
     },
+    // Devuelve el código del producto
     codigo () {
       return this.producto.code
     },
+    // devolver el valor de vot (con las votaciones del usuario a los productos) almacenado
     votaciones_usuario () {
       return this.getVot()
     },
+    // devuelve las votaciones del usuario para el producto actual
     votaciones_usuario_producto () {
       // console.log(`${JSON.stringify(this.votaciones_usuario)} ${this.codigo}`)
       const res = this.votaciones_usuario[this.codigo]

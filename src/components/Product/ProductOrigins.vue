@@ -26,6 +26,7 @@
 export default {
   name: 'ProductOrigins',
 
+  // - producto: Producto del que mostrar el orígen
   props: ['producto']
 }
 </script>

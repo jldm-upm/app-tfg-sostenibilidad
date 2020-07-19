@@ -8,7 +8,7 @@
         disabled
         v-for="ad in aditivos"
         :key="ad"
-        :label="traducir(ad, 'ingredients')"
+        :label="traducirIngrediente(ad)"
         />
     </q-card-section>
   </q-card>
@@ -24,12 +24,14 @@ export default {
   methods: {
     ...mapGetters('taxonomias', ['getTaxIngredientes']),
 
-    traducir (valor, taxomomia) {
+    // traduce el ingrediente
+    traducirIngrediente (valor) {
       const tax = this.getTaxIngredientes()
       return traducirTax(valor, tax, this.$i18n.locale)
     }
   },
 
+  // - aditivos: array de símbolos de aditivos a mostrar
   props: ['aditivos']
 }
 </script>

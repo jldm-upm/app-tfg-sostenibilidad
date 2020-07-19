@@ -24,6 +24,8 @@ export default {
   },
 
   computed: {
+    // devolver el valor de activeProduct almacenado ó el objeto que
+    // representa al producto vacío de datos
     getActiveProductOrEmpty () {
       return this.getActiveProduct() || productoVacio()
     }
