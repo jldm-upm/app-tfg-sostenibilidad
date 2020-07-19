@@ -8,7 +8,7 @@
   "scripts": {
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ./",
     "test": "echo \"No test specified\" && exit 0",
-    "locs": "git ls-files -- './*' ':(exclude)*/tax/*' ':(exclude)package-lock.json' ':(exclude)src/statics/*' ':(exclude)src-cordova' ':(exclude)*.png' 'src-cordova/config.xml' | xargs wc -l",
+    "locs": "git ls-files -- './*' ':(exclude)*/tax/*' ':(exclude)package-lock.json' ':(exclude)src/statics/*' ':(exclude)src-cordova' ':(exclude)*.png' ':(exclude)./*.txt' | xargs wc -l",
     "fun": "gource --seconds-per-day 0.5",
     "build_android": "quasar build -m cordova -T android",
     "test_android": "cd src-cordova && phonegap serve",
