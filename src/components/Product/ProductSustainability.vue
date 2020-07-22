@@ -76,7 +76,6 @@ export default {
     //  Un objeto con las votaciones (positivas, negativas y neutras) recibidas por el producto.
     //  El objeto tiene los campos: {true:..., null:...,false:...}
     votaciones (key) {
-
       const res = {}
       if (this.producto) {
         res.true = this.producto.sustainability[key + '_true'] || 0

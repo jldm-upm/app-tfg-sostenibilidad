@@ -110,7 +110,7 @@ export default {
         // devolver el valor de historySize almacenado
         return this.$store.state.appStatus.configuration.historySize
       },
-        set (val) {
+      set (val) {
         // almacenar el nuevo valor para historySize
         this.$store.commit('appStatus/setHistorySize', val)
       }
@@ -152,8 +152,8 @@ export default {
 
   watch: {
     lang: function (lang) {
-     // al cambiar el valor de lang, se cambia el locale del entorno y
-     // se almacena el nuevo valor
+      // al cambiar el valor de lang, se cambia el locale del entorno y
+      // se almacena el nuevo valor
       this.$i18n.locale = lang
       this.$store.commit('appStatus/setLanguage', lang)
     }

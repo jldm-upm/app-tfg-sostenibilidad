@@ -51,7 +51,6 @@ export default {
     }
   },
 
-
   computed: {
     // devolver el valor de activeProduct almacenado, si no hay ninguno devuelve el producto vacio
     producto () {
