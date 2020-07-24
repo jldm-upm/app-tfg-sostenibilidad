@@ -66,7 +66,8 @@ export default {
   map: {
     center: 'Center',
     noInterest: 'No Points',
-    noLocationService: 'No geolocation service available'
+    noLocationService: 'No geolocation service available',
+    search: 'Search'
   },
   maximize: 'Maximize',
   minimize: 'Minimize',

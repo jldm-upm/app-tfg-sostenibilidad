@@ -1,5 +1,8 @@
 <template>
   <div class="full">
+    <q-btn :label="$t('map.search')"
+           @click="busquedaCentradaEnMapa">
+    </q-btn>
     <div id='map'></div>
   </div>
 </template>
@@ -18,7 +21,9 @@ import { mapGetters } from 'vuex'
 export default {
   data () {
     return {
-      posicionUsuario: [0, 0]
+      posicionUsuario: [0, 0],
+
+      markers: []
     }
   },
 
@@ -46,17 +51,29 @@ export default {
     // })
     await this.map.setCenter(this.posicionUsuario)
 
-    // añadir los puntos de interés
-    const puntosInteres = await buscarMapbox('POI: ' + (this.getMapInterest()).join(','), this.map.getCenter())
-    for (const punto in puntosInteres) {
-      const marker = new mapboxgl.Marker().setLngLat(puntosInteres[punto])
-      marker.addTo(this.map)
-    }
+    await this.busquedaCentradaEnMapa()
   },
 
   methods: {
     ...mapGetters('appStatus', ['getCountry', 'getLanguage', 'getMapInterest']),
     ...mapGetters('taxonomias', ['getCountries']),
+
+    async busquedaCentradaEnMapa () {
+      for (const mark in this.markers) {
+        this.markers[mark].remove()
+      }
+
+      // añadir los puntos de interés
+      const puntosInteres = await buscarMapbox((this.getMapInterest()).join(','), this.map.getCenter())
+      for (const punto in puntosInteres) {
+        const marker = new mapboxgl.Marker().setLngLat(puntosInteres[punto])
+        this.markers.push(marker)
+      }
+
+      for (const mark in this.markers) {
+        this.markers[mark].addTo(this.map)
+      }
+    },
 
     // devolver la internacionalización del valor de country almacenado
     getPais () {
