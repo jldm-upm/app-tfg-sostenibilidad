@@ -11,17 +11,26 @@ import { MAPBOX_TOKEN } from './PRIVATE.js'
   Devuelve:
     Un string que representa una URL indicando el servicio y los parámetros necesarios para buscar el término
 */
-function componerBusquedaMapbox (termino, centro = null) {
-  const MAPBOX_SEARCH_URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/{busqueda}.json?{proximity}limit=10&access_token={accesstoken}'
+function componerBusquedaMapbox (termino, centro = null, tipos = 'poi') {
+  const MAPBOX_SEARCH_URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/{busqueda}.json?autocomplete=false{proximity}{tipos}&limit=10&access_token={accesstoken}'
 
   let res = MAPBOX_SEARCH_URL
+
   res = res.replace('{busqueda}', termino)
+
   res = res.replace('{accesstoken}', MAPBOX_TOKEN)
+
   if (centro !== null) {
     const centroString = Object.keys(centro).map(e => centro[e]).join(',')
-    res = res.replace('{proximity}', `proximity=${centroString}&`)
+    res = res.replace('{proximity}', `&proximity=${centroString}`)
   } else {
     res = res.replace('{proximity}', '')
+  }
+
+  if (tipos !== null) {
+    res = res.replace('{tipos}', `&types=${tipos}`)
+  } else {
+    res = res.replace('{tipos}', '')
   }
 
   return res
@@ -35,8 +44,8 @@ function componerBusquedaMapbox (termino, centro = null) {
   Devuelve:
     Un array de posiciones en las que se encuentran los términos
 */
-export async function buscarMapbox (termino, centro) {
-  const queryString = componerBusquedaMapbox(termino, centro)
+export async function buscarMapbox (termino, centro, tipos = 'poi') {
+  const queryString = componerBusquedaMapbox(termino, centro, tipos)
   let res = null
 
   try {
@@ -45,6 +54,7 @@ export async function buscarMapbox (termino, centro) {
     return null
   }
 
+  console.log(JSON.stringify(res.data))
   const devolver = res.data.features.map((f) => f.center)
 
   return devolver
@@ -68,7 +78,7 @@ export function obtenerPosicion (pais, cordovaPermissions = null) {
           resolve([posicion.coords.longitude, posicion.coords.latitude])
         },
         function () {
-          buscarMapbox('country: ' + pais)
+          buscarMapbox(pais, null, 'country')
             .then(function (arrayPos) {
               reject(arrayPos[0])
             })
@@ -77,7 +87,7 @@ export function obtenerPosicion (pais, cordovaPermissions = null) {
             })
         })
     } else {
-      buscarMapbox('country: ' + pais)
+      buscarMapbox(pais, null, 'country')
         .then(function (arrayPos) {
           reject(arrayPos[0])
         })
